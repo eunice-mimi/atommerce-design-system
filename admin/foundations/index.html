@@ -3,24 +3,20 @@
 <header class="global-header">
   <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
   <nav class="product-tabs" aria-label="서비스 선택">
-    <a class="product-tab" href="../../mindcafe/index.html">MindCafe</a><a class="product-tab" href="../../tarotbom/index.html">Tarotbom</a><a class="product-tab" href="../../expert/index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab active" href="../index.html">Admin</a>
+    <a class="product-tab" href="../../mindcafe/index.html">MindCafe</a><a class="product-tab" href="../../tarobom/index.html">Tarobom</a><a class="product-tab" href="../../expert/index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab active" href="../index.html">Admin</a>
     <a class="product-tab" href="../../ai-guide.html">AI Guide</a>
   </nav>
 </header><aside class="local-sidebar">
 <div class="local-service"><a href="../index.html">Admin</a></div>
-<div class="local-nav">
-<div class="local-group open">
-<div class="local-group-head">
-<a class="local-group-overview active" href="index.html">Foundations</a>
-<button class="local-group-chevron" type="button" aria-label="Foundations 하위 메뉴 열기" aria-expanded="true"><span>⌄</span></button>
-</div>
-<div class="local-group-items">
+<nav class="local-nav" aria-label="서비스 문서 메뉴">
+<a class="local-category active" href="index.html">Foundations</a>
+<div class="local-children">
 <a class="local-link" href="color.html">Color</a>
-</div></div>
-<a class="local-simple-link" href="../components/index.html">Components</a>
-<a class="local-simple-link" href="../patterns/index.html">Patterns</a>
-<a class="local-simple-link" href="../templates/index.html">Templates</a>
-</div></aside>
+</div>
+<a class="local-category" href="../components/index.html">Components</a>
+<a class="local-category" href="../patterns/index.html">Patterns</a>
+<a class="local-category" href="../templates/index.html">Templates</a>
+</nav></aside>
 <main class="main"><div class="content coming-page">
       <div class="eyebrow">ADMIN</div>
       <h1>Foundations</h1>
@@ -29,15 +25,4 @@
 </main>
 <script>
 const sb=document.getElementById('sidebarToggle'); if(sb) sb.addEventListener('click',()=>document.body.classList.toggle('sidebar-collapsed'));
-</script><script>
-(function(){
-document.querySelectorAll('.local-group-chevron').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      const g=btn.closest('.local-group');
-      g.classList.toggle('open');
-      btn.setAttribute('aria-expanded',g.classList.contains('open')?'true':'false');
-    });
-  });
-})();
-</script>
-</body></html>
+</script></body></html>

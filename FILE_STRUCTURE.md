@@ -41,7 +41,7 @@ atommerce-design-system/
 │       ├── index.html
 │       └── ...
 │
-├── tarotbom/
+├── tarobom/
 │   ├── index.html
 │   ├── foundations/
 │   │   ├── index.html
@@ -80,7 +80,7 @@ atommerce-design-system/
 
 ## Color rule
 - `mindcafe/foundations/color.html`: MindCafe mode
-- `tarotbom/foundations/color.html`: Tarotbom mode
+- `tarobom/foundations/color.html`: Tarobom mode
 - `expert/foundations/color.html`: expert mode
 - `admin/foundations/color.html`: Admin mode
 - `center/foundations/color.html`: 별도 mode 확인 전 Coming soon

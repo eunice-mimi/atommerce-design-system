@@ -254,3 +254,250 @@ body.home-page .main{margin-left:0}
 .local-service{
   padding-right:10px;
 }
+
+
+/* v31 — plain sidebar navigation: no arrows, no dropdown controls */
+.local-sidebar{
+  padding:22px 14px 36px;
+}
+.local-service{
+  padding:0 10px 16px;
+  margin-bottom:10px;
+  border-bottom:1px solid #f0f2f3;
+}
+.local-nav{
+  margin-top:4px;
+}
+.local-category{
+  display:flex;
+  align-items:center;
+  min-height:38px;
+  padding:0 10px;
+  margin:1px 0;
+  border-radius:7px;
+  text-decoration:none;
+  color:#424a52;
+  font-size:13px;
+  font-weight:700;
+  background:transparent;
+  border:0;
+  appearance:none;
+}
+.local-category:hover{
+  background:var(--soft);
+}
+.local-category.active{
+  color:var(--accent);
+  background:var(--accent-soft);
+}
+.local-children{
+  padding:2px 0 8px 8px;
+}
+.local-children .local-link{
+  display:flex;
+  align-items:center;
+  min-height:32px;
+  padding:0 10px;
+  margin:1px 0;
+  border-radius:6px;
+  text-decoration:none;
+  color:#737d86;
+  font-size:12px;
+  font-weight:550;
+}
+.local-children .local-link:hover{
+  background:var(--soft);
+}
+.local-children .local-link.active{
+  color:var(--accent);
+  background:var(--accent-soft);
+}
+/* Retire every previous sidebar control completely */
+.local-group,
+.local-group-head,
+.local-group-overview,
+.local-group-chevron,
+.local-group-items,
+.local-simple-link,
+.sidebar-toggle{
+  all:unset;
+  display:none!important;
+}
+.sidebar-collapsed{
+  --sidebar-w:220px!important;
+}
+
+
+/* v32 — simple home / AI Guide */
+.home-main{margin-left:0!important}
+.home-content{max-width:1040px}
+.home-hero{padding:42px 0 56px}
+.home-hero h1{max-width:680px;font-size:52px}
+.home-products h2{margin:0 0 18px;font-size:20px}
+.home-service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.home-service-card{
+  display:block;
+  min-height:126px;
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  text-decoration:none;
+}
+.home-service-card:hover{border-color:#cbd1d6;background:#fafbfc}
+.home-service-name{font-size:17px;font-weight:800;letter-spacing:-.02em}
+.home-service-desc{margin-top:8px;color:var(--muted);font-size:12px;line-height:1.55}
+
+.ai-overview-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ai-preview-rules .ai-lines{width:220px}
+.ai-preview-rules i{display:block;height:11px;margin:10px 0;border-radius:5px;background:#e5e9ec}
+.ai-preview-rules i:nth-child(1){width:74%}
+.ai-preview-rules i:nth-child(2){width:100%}
+.ai-preview-rules i:nth-child(3){width:86%}
+.ai-preview-rules i:nth-child(4){width:62%}
+.ai-preview-code code{
+  display:block;
+  width:230px;
+  color:#5e6871;
+  font:11px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+.ai-preview-terminal code{
+  display:block;
+  width:240px;
+  padding:16px;
+  border-radius:10px;
+  background:#171a1f;
+  color:#eef2f2;
+  font:11px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+.ai-children{display:block!important}
+
+@media(max-width:900px){
+  .home-service-grid,.ai-overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+  .home-service-grid,.ai-overview-grid{grid-template-columns:1fr}
+  .home-hero h1{font-size:38px}
+}
+
+
+/* v33 — simple implementation detail pages (Components / Patterns / Templates) */
+body.detail-ref{overflow:hidden}
+body.detail-ref .main{
+  height:calc(100vh - var(--header-h));
+  min-height:0;
+  overflow:hidden;
+}
+body.detail-ref .content{
+  width:min(1200px,calc(100% - 56px));
+  height:100%;
+  margin:0 auto;
+  padding:34px 0 0;
+}
+body.detail-ref .detail-ref-page{
+  height:100%;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  border:0!important;
+  border-radius:0!important;
+  background:#fff!important;
+  overflow:hidden;
+}
+body.detail-ref .detail-ref-header{
+  flex:0 0 auto;
+  padding:0 0 22px;
+  border:0;
+  border-bottom:1px solid var(--line);
+  align-items:flex-end;
+}
+body.detail-ref .detail-ref-heading h1{font-size:42px}
+body.detail-ref .detail-ref-actions{gap:8px;padding-bottom:2px}
+body.detail-ref .detail-ref-open{
+  width:40px;height:40px;padding:0;
+  display:grid;place-items:center;
+  border:1px solid #d6dce0;
+  border-radius:9px;background:#fff;color:#59636c;
+  text-decoration:none;font-size:15px;font-weight:800;
+}
+body.detail-ref .detail-ref-copy{
+  min-width:94px;height:40px;padding:0 16px;
+  border:1px solid var(--text);border-radius:9px;
+  background:var(--text);color:#fff;
+  font-size:12px;font-weight:800;cursor:pointer;
+}
+body.detail-ref .detail-ref-copy:hover{background:#343b42;border-color:#343b42}
+body.detail-ref .detail-ref-copy.is-copied{background:var(--accent);border-color:var(--accent)}
+
+body.detail-ref .detail-ref-workspace{
+  flex:1 1 auto;
+  min-height:0;
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(420px,.92fr);
+  overflow:hidden;
+}
+body.detail-ref .detail-ref-left{
+  height:100%;
+  min-width:0;
+  overflow:hidden;
+  padding:24px 26px 28px 0;
+  border-right:1px solid var(--line);
+}
+body.detail-ref .detail-ref-preview-card{
+  height:100%;
+  min-height:0;
+  overflow:hidden;
+  padding:0;
+  border:0!important;
+  border-radius:0!important;
+  background:#fff!important;
+}
+body.detail-ref .detail-ref-tabs{margin:0 0 18px}
+body.detail-ref .detail-ref-right{
+  height:100%;
+  min-width:0;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  padding:4px 8px 54px 30px;
+  scrollbar-width:thin;
+  scrollbar-color:#cbd1d6 transparent;
+}
+body.detail-ref .detail-ref-right::-webkit-scrollbar{width:7px}
+body.detail-ref .detail-ref-right::-webkit-scrollbar-thumb{background:#cbd1d6;border-radius:999px}
+
+body.detail-ref .detail-doc-section{
+  padding:28px 0;
+  border-bottom:1px solid #edf0f2;
+}
+body.detail-ref .detail-doc-section:first-child{padding-top:20px}
+body.detail-ref .detail-doc-section .card{
+  border:0!important;border-radius:0!important;background:transparent!important;
+}
+body.detail-ref .detail-doc-section .card-pad{padding:0!important}
+
+/* no large outer wrapper around previews/code; local example surfaces can remain */
+body.detail-ref .detail-code-shell,
+body.detail-ref .detail-code-shell > div{
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+body.detail-ref .detail-usage-gallery .usage-frame{box-shadow:none}
+
+@media(max-width:1000px){
+  body.detail-ref{overflow:auto}
+  body.detail-ref .main{height:auto;min-height:100vh;overflow:visible}
+  body.detail-ref .content{height:auto;padding-top:32px}
+  body.detail-ref .detail-ref-page{height:auto;overflow:visible}
+  body.detail-ref .detail-ref-workspace{display:block;overflow:visible}
+  body.detail-ref .detail-ref-left{
+    height:auto;overflow:visible;padding-right:0;border-right:0;border-bottom:1px solid var(--line)
+  }
+  body.detail-ref .detail-ref-preview-card{height:auto;overflow:visible}
+  body.detail-ref .detail-ref-right{height:auto;overflow:visible;padding:18px 0 50px}
+}

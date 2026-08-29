@@ -4,19 +4,23 @@
 <header class="global-header">
   <a class="global-logo" href="../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
   <nav class="product-tabs" aria-label="서비스 선택">
-    <a class="product-tab" href="../mindcafe/index.html">MindCafe</a><a class="product-tab" href="../tarotbom/index.html">Tarotbom</a><a class="product-tab" href="../expert/index.html">Expert Console</a><a class="product-tab" href="../center/index.html">Center Console</a><a class="product-tab" href="../admin/index.html">Admin</a>
+    <a class="product-tab" href="../mindcafe/index.html">MindCafe</a><a class="product-tab" href="../tarobom/index.html">Tarobom</a><a class="product-tab" href="../expert/index.html">Expert Console</a><a class="product-tab" href="../center/index.html">Center Console</a><a class="product-tab" href="../admin/index.html">Admin</a>
     <a class="product-tab active" href="../ai-guide.html">AI Guide</a>
   </nav>
 </header>
+
 <aside class="local-sidebar">
-<div class="local-service">
-    <a href="../ai-guide.html">AI Guide</a>
-  </div>
-  <div class="local-nav"><div class="local-group open">
-              <button class="local-group-title" type="button">AI Guide<span>⌄</span></button>
-              <div class="local-group-items"><a class="local-link" href="../ai-guide.html">Overview</a><a class="local-link" href="usage-guide.html">Usage Guide</a><a class="local-link" href="llms-guide.html">llms.txt</a><a class="local-link active" href="claude-skill.html">Claude Skill</a></div>
-            </div></div>
+  <div class="local-service"><a href="../ai-guide.html">AI Guide</a></div>
+  <nav class="local-nav" aria-label="AI Guide 메뉴">
+    <a class="local-category" href="../ai-guide.html">Overview</a>
+    <div class="local-children ai-children">
+      <a class="local-link" href="usage-guide.html">Usage Guide</a>
+      <a class="local-link" href="llms-guide.html">llms.txt</a>
+      <a class="local-link active" href="claude-skill.html">Claude Skill</a>
+    </div>
+  </nav>
 </aside>
+
 <main class="main"><div class="content">
 <a class="backlink" href="../ai-guide.html">← AI Guide</a>
 <div class="eyebrow">AI Guide</div>
@@ -65,145 +69,4 @@ Button, Input, Typography는 디자인 시스템 문서를 따라줘.</div>
   </div>
 </div>
 </div></main>
-<script>
-document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{const el=document.getElementById(btn.dataset.copy);try{await navigator.clipboard.writeText(el.innerText.trim());const t=btn.textContent;btn.textContent='Copied';setTimeout(()=>btn.textContent=t,1000)}catch(e){alert('복사할 수 없습니다.')}}));
-
-
-(function(){
-  const toast = document.createElement('div');
-  toast.className='url-toast'; toast.id='urlToast'; toast.textContent='복사했어요';
-  document.body.appendChild(toast);
-
-  function notify(msg){
-    toast.textContent=msg; toast.classList.add('show');
-    setTimeout(()=>toast.classList.remove('show'),1200);
-  }
-  window.dsNotify = notify;
-
-  document.querySelectorAll('[data-copy-url]').forEach(btn=>{
-    btn.addEventListener('click', async ()=>{
-      try{
-        await navigator.clipboard.writeText(location.href);
-        notify('현재 페이지 URL을 복사했어요');
-      }catch(e){ notify('URL 복사에 실패했어요'); }
-    });
-  });
-
-  document.querySelectorAll('[data-tabs]').forEach(tabset=>{
-    const buttons=[...tabset.querySelectorAll('.tab-btn')];
-    const panels=[...tabset.parentElement.querySelectorAll('.tab-panel')];
-    buttons.forEach(btn=>btn.addEventListener('click',()=>{
-      buttons.forEach(b=>b.classList.remove('active'));
-      panels.forEach(p=>p.classList.remove('active'));
-      btn.classList.add('active');
-      const p=document.getElementById(btn.dataset.tab);
-      if(p) p.classList.add('active');
-    }));
-  });
-
-  const searchInput=document.getElementById('dsSearch');
-  const results=document.getElementById('dsSearchResults');
-  if(searchInput && results){
-    const items=[
-      ['Foundations','foundations.html'],['Typography','typography.html'],['Color','color.html'],
-      ['Spacing','spacing.html'],['Radius','radius.html'],['Components','components.html'],
-      ['Button','button.html'],['Input','input.html'],['Checkbox','checkbox.html'],['Badge','badge.html'],['Card','card.html'],
-      ['Patterns','patterns.html'],['Form','form.html'],['Navigation','navigation.html'],['Empty State','empty-state.html'],
-      ['Templates','templates.html'],['Form Grid','form-grid.html'],['Modal','modal.html'],
-      ['AI Guide','ai-guide.html'],['Usage Guide','usage-guide.html'],['llms.txt','llms-guide.html'],['Claude Code Skill','claude-skill.html']
-    ];
-    function render(q){
-      q=q.trim().toLowerCase();
-      if(!q){results.classList.remove('show');results.innerHTML='';return;}
-      const found=items.filter(([n])=>n.toLowerCase().includes(q)).slice(0,8);
-      results.innerHTML=found.map(([n,u])=>`<a href="${u}">${n}</a>`).join('');
-      results.classList.toggle('show',found.length>0);
-    }
-    searchInput.addEventListener('input',e=>render(e.target.value));
-  }
-})();
-
-const cmd=document.getElementById('installCommand');
-if(cmd){
-  const base=location.protocol==='file:'?'https://atommerce-design-system.vercel.app':location.origin;
-  cmd.textContent=`mkdir -p ~/.claude/skills/atommerce-design-system && curl -fsSL ${base}/skill/SKILL.md -o ~/.claude/skills/atommerce-design-system/SKILL.md`;
-}
-
-
-
-
-
-
-
-</script><script>
-(function(){
-  const el = document.getElementById('lastUpdated');
-  if(!el) return;
-
-  function formatDate(value){
-    const d = new Date(value);
-    if(Number.isNaN(d.getTime())) return null;
-    return new Intl.DateTimeFormat('ko-KR', {
-      year:'numeric',
-      month:'2-digit',
-      day:'2-digit'
-    }).format(d).replace(/\.\s?/g, '.').replace(/\.$/, '');
-  }
-
-  async function setLatestUpdate(){
-    let value = null;
-
-    // On Vercel, use the Last-Modified header of the homepage.
-    // Because the site is redeployed when GitHub changes, this works as
-    // an automatic "latest deployed update" indicator across all pages.
-    if(location.protocol === 'http:' || location.protocol === 'https:'){
-      try{
-        const res = await fetch('../index.html', {
-          method:'HEAD',
-          cache:'no-store'
-        });
-        value = res.headers.get('last-modified');
-      }catch(e){}
-    }
-
-    // Fallback for local preview.
-    if(!value) value = document.lastModified;
-
-    const formatted = formatDate(value);
-    el.textContent = formatted ? `최근 업데이트 ${formatted}` : '최근 업데이트';
-  }
-
-  setLatestUpdate();
-})();
-</script>
-<script>
-(function(){
-  const btn = document.getElementById('sidebarToggle');
-  if(!btn) return;
-
-  const saved = localStorage.getItem('atommerce-sidebar-collapsed');
-  if(saved === '1'){
-    document.body.classList.add('sidebar-collapsed');
-    btn.textContent = '›';
-    btn.setAttribute('aria-label','사이드바 펼치기');
-  }
-
-  btn.addEventListener('click', function(){
-    const collapsed = document.body.classList.toggle('sidebar-collapsed');
-    btn.textContent = collapsed ? '›' : '‹';
-    btn.setAttribute('aria-label', collapsed ? '사이드바 펼치기' : '사이드바 접기');
-    localStorage.setItem('atommerce-sidebar-collapsed', collapsed ? '1' : '0');
-  });
-})();
-</script>
-
-
-<script>
-(function(){
-  document.querySelectorAll('.local-group-title').forEach(btn=>{
-    btn.addEventListener('click',()=>btn.closest('.local-group').classList.toggle('open'));
-  });
-})();
-</script>
-
 </body></html>
