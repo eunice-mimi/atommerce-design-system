@@ -46,6 +46,103 @@
 @media(max-width:640px){.component-guide .doc-head{display:block;padding-top:36px}.doc-actions{margin-top:20px}.demo-board{padding:20px 16px}}
 
 .control-row{display:flex;align-items:center;gap:4px;font-size:16px;color:#373D44}.cb{width:18px;height:18px;border:1px solid #D2D6DB;border-radius:4px;background:#fff;margin:3px}.cb.on{background:#007777;border-color:#007777}.radio{width:18px;height:18px;border:1px solid #D2D6DB;border-radius:50%;background:#fff;margin:3px}.radio.on{border-color:#007777}
+
+/* v70 — simpler documentation presentation */
+.component-guide{max-width:900px}
+.component-guide .doc-head{padding:56px 0 38px}
+.component-guide .doc-head h1{font-size:32px;margin-bottom:12px}
+.component-guide .doc-head p{max-width:640px;color:#7E8A96}
+.doc-actions a,.doc-actions button{
+  height:36px;padding:0 12px;border-radius:8px;font-size:11px
+}
+.page-index{
+  gap:20px;padding:16px 0;background:#fff
+}
+.page-index a{font-size:11px;color:#8C969F}
+.guide-section{
+  padding:64px 0;
+  border-bottom:0;
+}
+.guide-section + .guide-section{
+  border-top:1px solid #EEF0F2;
+}
+.guide-kicker{
+  margin-bottom:7px;
+  font-size:10px;
+  color:#A6ADB4;
+}
+.guide-section h2{
+  margin-bottom:24px;
+  font-size:20px;
+}
+.guide-desc{
+  margin-top:-14px;
+  margin-bottom:28px;
+  max-width:680px;
+  color:#7E8A96;
+}
+.demo-board{
+  padding:36px 32px;
+  border:0;
+  border-radius:0;
+  background:#FAFBFC;
+}
+.variant-grid{
+  gap:32px 28px;
+}
+.variant-card,
+.size-card,
+.family-item{
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+}
+.variant-card h3{
+  margin-bottom:14px;
+  font-size:12px;
+  font-weight:600;
+  color:#68727B;
+}
+.size-head{
+  margin-bottom:14px;
+  padding-bottom:10px;
+  border-bottom:1px solid #EEF0F2;
+}
+.family-list{gap:0 32px}
+.family-item{
+  padding:15px 0;
+  border-bottom:1px solid #EEF0F2;
+}
+.family-item strong{font-size:12px}
+.family-item span{font-size:11px}
+.anatomy-grid{gap:40px}
+.anatomy-item{
+  padding:12px 0;
+  border-bottom:1px solid #EEF0F2;
+}
+.anatomy-num{
+  width:18px;height:18px;
+  font-size:9px;
+  background:#F3F5F7;
+}
+.spec-table th,.spec-table td{
+  padding:14px 0;
+  border-bottom:1px solid #EEF0F2;
+}
+.spec-table th{width:180px}
+.note{
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#7E8A96;
+}
+@media(max-width:640px){
+  .guide-section{padding:48px 0}
+  .demo-board{padding:28px 20px}
+}
+
 </style></head>
 <body><header class="global-header">
   <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
@@ -90,6 +187,18 @@
 </aside><main class="main"><div class="content"><article class="component-guide">
 <header class="doc-head"><div><div class="eyebrow">Component · Selection &amp; Input</div><h1>Radio</h1><p>Radio control과 label을 함께 사용하는 선택 컴포넌트입니다.</p></div>
 <div class="doc-actions"><a href="https://www.figma.com/design/OuM9vyMhabODr7BtlRlhe3/-System--Atommerce-Core-Design-System?node-id=360-33319&m=dev" target="_blank" rel="noopener">Figma ↗</a><button class="copy-url" type="button">URL 복사</button></div></header>
-<nav class="page-index" aria-label="On this page"><a href="#overview">Radio</a><a href="#anatomy">구성 요소</a><a href="#variants">Selection</a><a href="#states">상태</a><a href="#size">크기</a><a href="#clickable">Clickable area</a><a href="#gap">Gap</a><a href="#spec">확인된 속성</a></nav><section class="guide-section" id="overview"><div class="guide-kicker">Overview</div><h2>Radio</h2><div class="demo-board"><div class="control-row"><span class="radio"></span><span>내용을 입력하세요</span></div></div></section><section class="guide-section" id="anatomy"><div class="guide-kicker">Anatomy</div><h2>구성 요소</h2><div class="anatomy-grid"><div class="demo-board"><div class="control-row"><span class="radio"></span><span>내용을 입력하세요</span></div></div><div class="anatomy-list"><div class="anatomy-item"><span class="anatomy-num">1</span><div><strong>Control</strong></div></div><div class="anatomy-item"><span class="anatomy-num">2</span><div><strong>Label</strong></div></div></div></div></section><section class="guide-section" id="variants"><div class="guide-kicker">Variants</div><h2>Selection</h2><div class="variant-grid"><div class="variant-card"><h3>Off</h3><div class="control-row"><span class="radio"></span><span>내용을 입력하세요</span></div></div><div class="variant-card"><h3>On</h3><div class="control-row"><span class="radio on"></span><span>내용을 입력하세요</span></div></div></div></section><section class="guide-section" id="states"><div class="guide-kicker">States</div><h2>상태</h2><table class="spec-table"><tr><th>Default</th><td>기본</td></tr><tr><th>hover</th><td>Hover</td></tr><tr><th>pressed</th><td>Pressed</td></tr><tr><th>disabled</th><td>Disabled</td></tr></table></section><section class="guide-section" id="size"><div class="guide-kicker">Size</div><h2>크기</h2><table class="spec-table"><tr><th>md</th><td>Control frame 24 · control 18 · text 16</td></tr><tr><th>sm</th><td>Text 14 · size variant</td></tr></table></section><section class="guide-section" id="clickable"><div class="guide-kicker">Clickable area</div><h2>Clickable area</h2><div class="note">Montage는 clickable area를 별도 규칙으로 설명하지만, Atommerce Figma에서는 동일한 touch/click area 정책을 확인하지 못했습니다. 따라서 공식 규칙으로 추가하지 않습니다.</div></section><section class="guide-section" id="gap"><div class="guide-kicker">Gap</div><h2>Gap</h2><div class="note">반복 배치 시 간격 규칙은 Atommerce Figma에서 확인되지 않았습니다.</div></section><section class="guide-section" id="spec"><div class="guide-kicker">Specification</div><h2>확인된 속성</h2><table class="spec-table"><tr><th>Selection</th><td>selected: false · true</td></tr><tr><th>state</th><td>Default · disabled · hover · pressed</td></tr><tr><th>size</th><td>md · sm</td></tr></table></section></article></div></main>
+<nav class="page-index" aria-label="On this page"><a href="#overview">Radio</a><a href="#anatomy">구성 요소</a><a href="#variants">Selection</a><a href="#states">상태</a><a href="#size">크기</a><a href="#clickable">Clickable area</a><a href="#gap">Gap</a><a href="#how-to-use">How to use</a><a href="#spec">확인된 속성</a></nav><section class="guide-section" id="overview"><div class="guide-kicker">Overview</div><h2>Radio</h2><div class="demo-board"><div class="control-row"><span class="radio"></span><span>내용을 입력하세요</span></div></div></section><section class="guide-section" id="anatomy"><div class="guide-kicker">Anatomy</div><h2>구성 요소</h2><div class="anatomy-grid"><div class="demo-board"><div class="control-row"><span class="radio"></span><span>내용을 입력하세요</span></div></div><div class="anatomy-list"><div class="anatomy-item"><span class="anatomy-num">1</span><div><strong>Control</strong></div></div><div class="anatomy-item"><span class="anatomy-num">2</span><div><strong>Label</strong></div></div></div></div></section><section class="guide-section" id="variants"><div class="guide-kicker">Variants</div><h2>Radio</h2><div class="variant-grid"><div class="variant-card"><h3>Off</h3><div class="control-row"><span class="radio"></span><span>내용을 입력하세요</span></div></div><div class="variant-card"><h3>On</h3><div class="control-row"><span class="radio on"></span><span>내용을 입력하세요</span></div></div></div></section><section class="guide-section" id="states"><div class="guide-kicker">States</div><h2>상태</h2><table class="spec-table"><tr><th>Default</th><td>기본</td></tr><tr><th>hover</th><td>Hover</td></tr><tr><th>pressed</th><td>Pressed</td></tr><tr><th>disabled</th><td>Disabled</td></tr></table></section><section class="guide-section" id="size"><div class="guide-kicker">Size</div><h2>크기</h2><table class="spec-table"><tr><th>md</th><td>Control frame 24 · control 18 · text 16</td></tr><tr><th>sm</th><td>Text 14 · size variant</td></tr></table></section><section class="guide-section" id="clickable">
+      <div class="guide-kicker">Clickable area</div>
+      <h2>Clickable area</h2>
+      <div class="note">Montage처럼 클릭 영역을 별도 가이드 항목으로 분리했습니다. 다만 Atommerce의 Control+Label 또는 Cell 전체 영역에 대한 공식 클릭 범위는 현재 Figma에서 확인되지 않아 수치를 정의하지 않습니다.</div>
+    </section><section class="guide-section" id="gap">
+      <div class="guide-kicker">Gap</div>
+      <h2>Gap</h2>
+      <div class="note">반복 배치 간격을 별도 항목으로 두되, Montage의 8px/4배수 규칙을 Atommerce 규칙으로 복사하지 않습니다. Atommerce 기준은 아직 확인되지 않았습니다.</div>
+    </section><section class="guide-section" id="how-to-use">
+      <div class="guide-kicker">How to use</div>
+      <h2>How to use</h2>
+      <div class="note">Montage처럼 Do / Don’t 가이드 영역을 둘 수 있습니다. 현재 Atommerce Figma에는 Radio의 배치 방향이나 조합 사용 규칙이 명시되어 있지 않아 임의의 Do / Don’t는 추가하지 않았습니다.</div>
+    </section><section class="guide-section" id="spec"><div class="guide-kicker">Specification</div><h2>확인된 속성</h2><table class="spec-table"><tr><th>Selection</th><td>selected: false · true</td></tr><tr><th>state</th><td>Default · disabled · hover · pressed</td></tr><tr><th>size</th><td>md · sm</td></tr></table></section></article></div></main>
 <script>(function(){const b=document.querySelector('.copy-url');if(b)b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);const o=b.textContent;b.textContent='복사됨';setTimeout(()=>b.textContent=o,1000)}catch(e){}})})();</script>
 </body></html>

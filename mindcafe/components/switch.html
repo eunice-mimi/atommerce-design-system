@@ -44,7 +44,104 @@
 .swatch{display:inline-block;width:12px;height:12px;margin-right:6px;border:1px solid rgba(0,0,0,.06);border-radius:3px;vertical-align:-2px}
 @media(max-width:900px){.anatomy-grid{grid-template-columns:1fr}.variant-grid,.family-list{grid-template-columns:1fr}.size-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.component-guide .doc-head{display:block;padding-top:36px}.doc-actions{margin-top:20px}.demo-board{padding:20px 16px}}
-.switch{width:44px;height:24px;border-radius:42px;position:relative;background:#E1E4E8}.switch:after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff}.switch.on{background:#007777}.switch.on:after{left:23px}</style></head>
+.switch{width:44px;height:24px;border-radius:42px;position:relative;background:#E1E4E8}.switch:after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff}.switch.on{background:#007777}.switch.on:after{left:23px}
+/* v70 — simpler documentation presentation */
+.component-guide{max-width:900px}
+.component-guide .doc-head{padding:56px 0 38px}
+.component-guide .doc-head h1{font-size:32px;margin-bottom:12px}
+.component-guide .doc-head p{max-width:640px;color:#7E8A96}
+.doc-actions a,.doc-actions button{
+  height:36px;padding:0 12px;border-radius:8px;font-size:11px
+}
+.page-index{
+  gap:20px;padding:16px 0;background:#fff
+}
+.page-index a{font-size:11px;color:#8C969F}
+.guide-section{
+  padding:64px 0;
+  border-bottom:0;
+}
+.guide-section + .guide-section{
+  border-top:1px solid #EEF0F2;
+}
+.guide-kicker{
+  margin-bottom:7px;
+  font-size:10px;
+  color:#A6ADB4;
+}
+.guide-section h2{
+  margin-bottom:24px;
+  font-size:20px;
+}
+.guide-desc{
+  margin-top:-14px;
+  margin-bottom:28px;
+  max-width:680px;
+  color:#7E8A96;
+}
+.demo-board{
+  padding:36px 32px;
+  border:0;
+  border-radius:0;
+  background:#FAFBFC;
+}
+.variant-grid{
+  gap:32px 28px;
+}
+.variant-card,
+.size-card,
+.family-item{
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+}
+.variant-card h3{
+  margin-bottom:14px;
+  font-size:12px;
+  font-weight:600;
+  color:#68727B;
+}
+.size-head{
+  margin-bottom:14px;
+  padding-bottom:10px;
+  border-bottom:1px solid #EEF0F2;
+}
+.family-list{gap:0 32px}
+.family-item{
+  padding:15px 0;
+  border-bottom:1px solid #EEF0F2;
+}
+.family-item strong{font-size:12px}
+.family-item span{font-size:11px}
+.anatomy-grid{gap:40px}
+.anatomy-item{
+  padding:12px 0;
+  border-bottom:1px solid #EEF0F2;
+}
+.anatomy-num{
+  width:18px;height:18px;
+  font-size:9px;
+  background:#F3F5F7;
+}
+.spec-table th,.spec-table td{
+  padding:14px 0;
+  border-bottom:1px solid #EEF0F2;
+}
+.spec-table th{width:180px}
+.note{
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:#7E8A96;
+}
+@media(max-width:640px){
+  .guide-section{padding:48px 0}
+  .demo-board{padding:28px 20px}
+}
+
+</style></head>
 <body><header class="global-header">
   <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
   <nav class="product-tabs" aria-label="서비스 선택">
