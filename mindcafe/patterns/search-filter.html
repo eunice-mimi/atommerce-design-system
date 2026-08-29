@@ -1,16 +1,75 @@
-<!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Search &amp; Filter · Atommerce Design System</title><link rel="stylesheet" href="../../style.css">
-</head>
-<body class="detail-ref">
-<header class="global-header">
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Search &amp; Filter · Atommerce Design System</title><link rel="stylesheet" href="../../style.css"><style>
+.doc-guide{max-width:900px;padding-bottom:104px}
+.doc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:56px 0 38px;border-bottom:1px solid #E8EBED}
+.doc-head h1{margin:4px 0 12px;font-size:32px;line-height:1.25}
+.doc-head p{max-width:650px;margin:0;font-size:13px;line-height:1.65;color:#7E8A96}
+.doc-actions{display:flex;align-items:center;gap:8px;padding-top:8px}
+.doc-actions a,.doc-actions button{
+  display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;
+  width:92px;height:36px;padding:0 12px;border:1px solid #DDE2E6;border-radius:8px;
+  font:inherit;font-size:11px;line-height:1;font-weight:700;text-decoration:none;white-space:nowrap;cursor:pointer
+}
+.doc-actions a{background:#fff;color:#373D44;border-color:#DDE2E6}
+.doc-actions button{background:#20262C;color:#fff;border-color:#20262C}
+.doc-actions a:hover{background:#FAFBFC}.doc-actions button:hover{background:#373D44;border-color:#373D44}
+.page-index{display:flex;gap:20px;overflow:auto;padding:16px 0;border-bottom:1px solid #E8EBED;scrollbar-width:none}
+.page-index::-webkit-scrollbar{display:none}
+.page-index a{flex:0 0 auto;font-size:11px;color:#8C969F;text-decoration:none}
+.page-index a:hover{color:#373D44}
+.doc-section{scroll-margin-top:84px;padding:64px 0;border-bottom:0}
+.doc-section + .doc-section{border-top:1px solid #EEF0F2}
+.doc-kicker{margin-bottom:7px;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#A6ADB4}
+.doc-section h2{margin:0 0 24px;font-size:20px;line-height:1.35}
+.doc-desc{max-width:700px;margin:-14px 0 28px;font-size:13px;line-height:1.65;color:#7E8A96}
+.demo-board{padding:36px 32px;border:0;background:#FAFBFC;overflow:auto}
+.simple-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
+.simple-item{padding:15px 0;border-bottom:1px solid #EEF0F2}
+.simple-item strong{display:block;margin-bottom:5px;font-size:12px;color:#373D44}
+.simple-item span{display:block;font-size:11px;line-height:1.55;color:#7E8A96}
+.spec-table{width:100%;border-collapse:collapse}
+.spec-table th,.spec-table td{padding:14px 0;border-bottom:1px solid #EEF0F2;font-size:11px;text-align:left;vertical-align:top}
+.spec-table th{width:180px;color:#7E8A96;font-weight:700}.spec-table td{color:#373D44}
+.spec-table tr:last-child th,.spec-table tr:last-child td{border-bottom:0}
+.note{font-size:11px;line-height:1.7;color:#7E8A96}
+.flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.flow-box{min-width:110px;padding:12px 14px;border:1px solid #E1E4E8;background:#fff;font-size:11px;color:#373D44;text-align:center}
+.flow-arrow{font-size:12px;color:#B0B7BE}
+.source-status{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:999px;background:#F3F5F7;font-size:10px;color:#68727B}
+.state-demo{display:grid;gap:12px}
+.placeholder-line{height:12px;border-radius:6px;background:#E1E4E8}
+.placeholder-line.short{width:40%}.placeholder-line.med{width:68%}.placeholder-line.long{width:92%}
+.spinner{width:24px;height:24px;border:2px solid #007777;border-right-color:transparent;border-radius:50%}
+.empty-demo{display:grid;place-items:center;min-height:230px;text-align:center}
+.empty-demo .graphic{width:72px;height:72px;border-radius:18px;background:#EEF0F2;margin-bottom:16px}
+.empty-demo strong{display:block;font-size:16px;color:#373D44}
+.empty-demo span{display:block;margin-top:7px;font-size:12px;color:#7E8A96}
+.table-demo{min-width:620px;border-top:1px solid #EEF0F2}
+.table-row{display:grid;grid-template-columns:72px 1fr 72px 72px 72px;min-height:44px;border-bottom:1px solid #EEF0F2}
+.table-row>span{display:flex;align-items:center;padding:0 10px;border-right:1px solid #F3F5F7;font-size:11px;color:#68727B}
+.table-row.head{background:#F5F7F9;font-weight:700}
+.searchbar-demo{display:flex;align-items:center;justify-content:space-between;gap:20px;min-width:650px;height:88px;padding:0 24px;background:#fff;border:1px solid #EEF0F2}
+.searchbar-demo .side{display:flex;gap:8px;align-items:center}
+.pill{height:36px;padding:0 12px;display:inline-flex;align-items:center;border:1px solid #E1E4E8;border-radius:8px;font-size:11px;color:#4E5760;background:#fff}
+.pagination{display:flex;align-items:center;gap:8px;min-width:620px;height:72px;justify-content:center}
+.pg{height:40px;min-width:40px;padding:0 12px;display:grid;place-items:center;font-size:11px;color:#4E5760}
+.pg.active{color:#565CDF}
+.template-frame{border:1px solid #E8EBED;background:#fff;min-height:300px;display:grid}
+.template-bar{height:52px;border-bottom:1px solid #EEF0F2;background:#FAFBFC}
+.template-body{display:grid;grid-template-columns:34% 66%;min-height:248px}
+.template-pane{padding:20px;border-right:1px solid #EEF0F2}.template-pane:last-child{border-right:0}
+.dashboard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.metric{padding:18px;border:1px solid #EEF0F2;background:#fff}.metric small{display:block;color:#7E8A96;font-size:10px}.metric strong{display:block;margin-top:8px;font-size:20px}
+@media(max-width:900px){.simple-grid{grid-template-columns:1fr}.dashboard-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.doc-head{display:block;padding-top:36px}.doc-actions{margin-top:20px}.doc-section{padding:48px 0}.demo-board{padding:28px 20px}.template-body{grid-template-columns:1fr}.template-pane{border-right:0;border-bottom:1px solid #EEF0F2}}
+</style></head>
+<body><header class="global-header">
   <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
   <nav class="product-tabs" aria-label="서비스 선택">
     <a class="product-tab active" href="../index.html">MindCafe</a><a class="product-tab" href="../../tarobom/index.html">Tarobom</a><a class="product-tab" href="../../expert/index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab" href="../../admin/index.html">Admin</a>
     <a class="product-tab" href="../../ai-guide.html">AI Guide</a>
   </nav>
-</header>
-<aside class="local-sidebar">
+</header><aside class="local-sidebar">
 <div class="local-service"><a href="../index.html">MindCafe</a></div>
 <nav class="local-nav" aria-label="MindCafe 문서 메뉴">
 <a class="local-category" href="../foundations/index.html">Foundations</a>
@@ -27,56 +86,9 @@
 <a class="local-link" href="confirmation.html">Confirmation</a>
 </div>
 <a class="local-category" href="../templates/index.html">Templates</a>
-</nav></aside>
-
-<main class="main">
-<div class="content"><div class="coming-page"><div class="eyebrow">Coming Soon</div><h1>Search & Filter</h1>
-<p class="lead">검색·필터·정렬 조합의 UX 규칙을 정리합니다.</p>
-<div class="coming-box">
-<span class="status-chip">Coming Soon</span>
-<h2 style="margin-top:14px">문서화 예정</h2>
-<p>Figma에서 실제 토큰, variant, state, 사용 예시를 확인한 뒤 이 페이지를 채웁니다. 확인되지 않은 값은 임의로 만들지 않습니다.</p>
-</div></div></div>
-</main>
-<script>
-g.classList.toggle('open');btn.setAttribute('aria-expanded',g.classList.contains('open')?'true':'false');}));
-
-(function(){
-);
- }
-})();
-</script>
-
-<script>
-(function(){
-    });
-})();
-</script>
-
-
-<script>
-(function(){
-  const copyBtn = document.querySelector('.detail-ref-copy');
-  if(copyBtn && !copyBtn.dataset.ready){
-    copyBtn.dataset.ready='1';
-    copyBtn.addEventListener('click', async () => {
-      const url=window.location.href;
-      try{
-        if(navigator.clipboard && window.isSecureContext){
-          await navigator.clipboard.writeText(url);
-        }else{
-          const ta=document.createElement('textarea');
-          ta.value=url; ta.setAttribute('readonly','');
-          ta.style.position='fixed'; ta.style.opacity='0';
-          document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
-        }
-        copyBtn.textContent='복사됨';
-        copyBtn.classList.add('is-copied');
-        setTimeout(()=>{copyBtn.textContent='URL 복사';copyBtn.classList.remove('is-copied');},1200);
-      }catch(e){}
-    });
-  }
-})();
-</script>
-
+</nav></aside><main class="main"><div class="content"><article class="doc-guide">
+<header class="doc-head"><div><div class="eyebrow">Pattern</div><h1>Search &amp; Filter</h1><p>검색 조건을 변경하고 결과 범위를 좁히는 Search &amp; Filter 패턴입니다.</p></div>
+<div class="doc-actions"><a href="https://www.figma.com/design/OuM9vyMhabODr7BtlRlhe3/-System--Atommerce-Core-Design-System?node-id=7234-4838&m=dev" target="_blank" rel="noopener">Figma ↗</a><button class="copy-url">URL 복사</button></div></header>
+<nav class="page-index"><a href="#overview">Search filter bar</a><a href="#structure">구조</a><a href="#related">관련 components</a><a href="#usage">Usage</a></nav><section class="doc-section" id="overview"><div class="doc-kicker">Overview</div><h2>Search filter bar</h2><p class="doc-desc">Figma guide text에 '검색 조건을 변경하기 위한 기능을 제공합니다.'라고 정의되어 있습니다.</p><div class="demo-board"><div class="searchbar-demo"><div class="side"><span class="pill">Search</span><span class="pill">Filter</span></div><div class="side"><span class="pill">Control</span><span class="pill">Control</span></div></div></div></section><section class="doc-section" id="structure"><div class="doc-kicker">Structure</div><h2>구조</h2><table class="spec-table"><tr><th>검색필터 set</th><td>type=전체</td></tr><tr><th>control-left</th><td>2 child slots 확인</td></tr><tr><th>control-right</th><td>5 child slots 확인</td></tr><tr><th>component sample</th><td>1440 × 88</td></tr></table></section><section class="doc-section" id="related"><div class="doc-kicker">Related</div><h2>관련 components</h2><div class="simple-grid"><div class="simple-item"><strong>Text field</strong><span>검색어 입력</span></div><div class="simple-item"><strong>Select / Dropdown</strong><span>조건 선택</span></div><div class="simple-item"><strong>Chip</strong><span>선택 조건 표현 가능 component family</span></div><div class="simple-item"><strong>Button</strong><span>Action component</span></div></div></section><section class="doc-section" id="usage"><div class="doc-kicker">Usage</div><h2>Usage</h2><div class="note">필터 적용 즉시 반영 여부, 초기화 버튼 위치, 모바일 collapse 정책은 Figma guide에서 확인되지 않았습니다.</div></section></article></div></main>
+<script>(function(){const b=document.querySelector('.copy-url');if(b)b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);const o=b.textContent;b.textContent='복사됨';setTimeout(()=>b.textContent=o,1000)}catch(e){}})})();</script>
 </body></html>
