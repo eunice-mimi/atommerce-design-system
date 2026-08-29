@@ -13,6 +13,19 @@
   user-select:none;
 }
 .grouped-components .local-group-label:first-child{margin-top:8px}
+
+.component-overview-group{margin-top:38px}
+.component-overview-group:first-of-type{margin-top:26px}
+.component-overview-group-title{
+  margin-bottom:12px;
+  font-size:11px;
+  line-height:1.4;
+  font-weight:600;
+  color:#9AA3AB;
+  letter-spacing:.02em;
+  user-select:none;
+}
+
 </style>
 </head>
 <body>
@@ -32,23 +45,20 @@
 <div class="local-group-label">Actions</div>
 <a class="local-link" href="button.html">Button</a>
 <a class="local-link" href="chip.html">Chip</a>
-
-<div class="local-group-label">Selection &amp; Input</div>
+<div class="local-group-label">Selection & Input</div>
 <a class="local-link" href="input.html">Input / Field</a>
 <a class="local-link" href="checkbox.html">Checkbox</a>
 <a class="local-link" href="radio.html">Radio</a>
 <a class="local-link" href="switch.html">Switch</a>
 <a class="local-link" href="select.html">Select</a>
 <a class="local-link" href="textarea.html">Textarea</a>
-
 <div class="local-group-label">Data Display</div>
 <a class="local-link" href="badge.html">Badge</a>
 <a class="local-link" href="avatar.html">Avatar</a>
 <a class="local-link" href="card.html">Card</a>
 <a class="local-link" href="tabs.html">Tabs</a>
 <a class="local-link" href="accordion.html">Accordion</a>
-
-<div class="local-group-label">Feedback &amp; Overlay</div>
+<div class="local-group-label">Feedback & Overlay</div>
 <a class="local-link" href="tooltip.html">Tooltip</a>
 <a class="local-link" href="toast.html">Toast / Message</a>
 <a class="local-link" href="modal.html">Dialog / Modal</a>
@@ -60,14 +70,30 @@
 <main class="main">
 <div class="content">
   <div class="overview-head"><div class="eyebrow">COMPONENTS</div><h1>Components</h1></div>
-  <div class="overview-grid"><a class="overview-card" href="button.html">
+  <section class="component-overview-group">
+  <div class="component-overview-group-title">Actions</div>
+  <div class="overview-grid">
+    <a class="overview-card" href="button.html">
   <div class="overview-preview"><div class="pv-button"><span class="p">Primary</span><span class="s">Secondary</span></div></div>
   <div class="overview-card-body">
     <h3 class="overview-card-title">Button</h3>
     <p class="overview-card-desc">행동의 위계, 크기, 상태를 표현하는 버튼</p>
     <span class="status-chip ready">Available</span>
   </div>
-</a><a class="overview-card" href="input.html">
+</a><a class="overview-card" href="chip.html">
+  <div class="overview-preview"><div class="pv-chip"><i></i><i></i><i></i></div></div>
+  <div class="overview-card-body">
+    <h3 class="overview-card-title">Chip</h3>
+    <p class="overview-card-desc">선택, 필터, 속성을 간결하게 표시</p>
+    <span class="status-chip ready">Available</span>
+  </div>
+</a>
+  </div>
+</section>
+<section class="component-overview-group">
+  <div class="component-overview-group-title">Selection & Input</div>
+  <div class="overview-grid">
+    <a class="overview-card" href="input.html">
   <div class="overview-preview"><div class="pv-input"><i></i><i></i></div></div>
   <div class="overview-card-body">
     <h3 class="overview-card-title">Input / Field</h3>
@@ -109,18 +135,17 @@
     <p class="overview-card-desc">여러 줄 텍스트 입력</p>
     <span class="status-chip ready">Available</span>
   </div>
-</a><a class="overview-card" href="badge.html">
+</a>
+  </div>
+</section>
+<section class="component-overview-group">
+  <div class="component-overview-group-title">Data Display</div>
+  <div class="overview-grid">
+    <a class="overview-card" href="badge.html">
   <div class="overview-preview"><div class="pv-chip"><i style="width:58px;height:24px"></i><i style="width:72px;height:24px"></i></div></div>
   <div class="overview-card-body">
     <h3 class="overview-card-title">Badge</h3>
     <p class="overview-card-desc">상태, 수량, 보조 정보를 짧게 표시</p>
-    <span class="status-chip ready">Available</span>
-  </div>
-</a><a class="overview-card" href="chip.html">
-  <div class="overview-preview"><div class="pv-chip"><i></i><i></i><i></i></div></div>
-  <div class="overview-card-body">
-    <h3 class="overview-card-title">Chip</h3>
-    <p class="overview-card-desc">선택, 필터, 속성을 간결하게 표시</p>
     <span class="status-chip ready">Available</span>
   </div>
 </a><a class="overview-card" href="avatar.html">
@@ -144,7 +169,20 @@
     <p class="overview-card-desc">동일 위계 콘텐츠 사이를 전환</p>
     <span class="status-chip ready">Available</span>
   </div>
-</a><a class="overview-card" href="tooltip.html">
+</a><a class="overview-card" href="accordion.html">
+  <div class="overview-preview"><div class="pv-pattern"><i></i><i></i><i></i></div></div>
+  <div class="overview-card-body">
+    <h3 class="overview-card-title">Accordion</h3>
+    <p class="overview-card-desc">정보 영역을 펼치고 접어 밀도를 조절</p>
+    <span class="status-chip ready">Available</span>
+  </div>
+</a>
+  </div>
+</section>
+<section class="component-overview-group">
+  <div class="component-overview-group-title">Feedback & Overlay</div>
+  <div class="overview-grid">
+    <a class="overview-card" href="tooltip.html">
   <div class="overview-preview"><div class="pv-dialog" style="width:180px;padding:12px;background:#373d44;color:#fff;font-size:11px">Tooltip</div></div>
   <div class="overview-card-body">
     <h3 class="overview-card-title">Tooltip</h3>
@@ -165,27 +203,13 @@
     <p class="overview-card-desc">현재 맥락 위에서 확인 또는 결정을 요구</p>
     <span class="status-chip ready">Available</span>
   </div>
-</a><a class="overview-card" href="accordion.html">
-  <div class="overview-preview"><div class="pv-pattern"><i></i><i></i><i></i></div></div>
-  <div class="overview-card-body">
-    <h3 class="overview-card-title">Accordion</h3>
-    <p class="overview-card-desc">정보 영역을 펼치고 접어 밀도를 조절</p>
-    <span class="status-chip ready">Available</span>
+</a>
   </div>
-</a></div>
+</section>
 </div>
 </main>
-<script>
-(function(){
-);
- }
-})();
-</script>
 
-<script>
-(function(){
-  });
-})();
-</script>
+
+
 
 </body></html>

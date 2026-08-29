@@ -70,6 +70,11 @@
 }
 .grouped-components .local-group-label:first-child{margin-top:8px}
 
+
+.trailing-holder{display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.demo-field[data-size="sm"] .trailing-ghost{height:32px;font-size:14px}
+.demo-field[data-size="md"] .trailing-ghost{height:36px}
+
 </style>
 </head>
 <body class="detail-ref input-doc">
@@ -149,7 +154,7 @@
             <img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt="">
             <span class="caret"></span>
             <span class="demo-text">내용을 입력하세요</span>
-            <span id="trailingMount"></span>
+            <span id="trailingMount" class="trailing-holder"></span>
           </div>
           <div class="demo-bottom">
             <span class="helper">내용을 입력하세요</span>
@@ -297,59 +302,74 @@
 (function(){
   const tabs=[...document.querySelectorAll('.detail-ref-tab')];
   const panels=[...document.querySelectorAll('.detail-ref-panel')];
-  tabs.forEach(tab=>tab.addEventListener('click',()=>{
-    tabs.forEach(t=>t.classList.toggle('active',t===tab));
-    panels.forEach(p=>p.classList.toggle('active',p.dataset.refPanel===tab.dataset.refTab));
-  }));
+
+  tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      tabs.forEach(t=>t.classList.toggle('active',t===tab));
+      panels.forEach(p=>p.classList.toggle('active',p.dataset.refPanel===tab.dataset.refTab));
+    });
+  });
 
   const demo=document.getElementById('demoField');
-  const size=document.getElementById('sizeSelect');
-  const state=document.getElementById('stateSelect');
-  const trailing=document.getElementById('trailingSelect');
-  const mount=document.getElementById('trailingMount');
+  const sizeSelect=document.getElementById('sizeSelect');
+  const stateSelect=document.getElementById('stateSelect');
+  const trailingSelect=document.getElementById('trailingSelect');
+  const trailingMount=document.getElementById('trailingMount');
+
+  const searchIcon='https://www.figma.com/api/mcp/asset/d17eb8b5-169f-48b0-96c2-7b1bfd6aceb9.svg';
 
   function renderTrailing(){
-    mount.innerHTML='';
-    if(trailing.value==='unit'){
-      const el=document.createElement('span');
-      el.className='trailing-unit'; el.textContent='단위'; mount.replaceWith(el);
-      el.id='trailingMount';
-    } else if(trailing.value==='icon'){
-      const img=document.createElement('img');
-      img.className='trailing-icon'; img.src='https://www.figma.com/api/mcp/asset/d17eb8b5-169f-48b0-96c2-7b1bfd6aceb9.svg'; img.alt=''; mount.replaceWith(img); img.id='trailingMount';
-    } else if(trailing.value==='btn_ghost'){
-      const b=document.createElement('button');
-      b.className='trailing-ghost'; b.type='button'; b.textContent='버튼'; mount.replaceWith(b); b.id='trailingMount';
-    }
-  }
+    trailingMount.replaceChildren();
 
-  function refreshMount(){
-    let current=document.getElementById('trailingMount');
-    if(!current){
-      const span=document.createElement('span');
-      span.id='trailingMount';
-      demo.querySelector('.demo-box').appendChild(span);
+    if(trailingSelect.value==='unit'){
+      const unit=document.createElement('span');
+      unit.className='trailing-unit';
+      unit.textContent='단위';
+      trailingMount.appendChild(unit);
+      return;
+    }
+
+    if(trailingSelect.value==='icon'){
+      const icon=document.createElement('img');
+      icon.className='trailing-icon';
+      icon.src=searchIcon;
+      icon.alt='';
+      trailingMount.appendChild(icon);
+      return;
+    }
+
+    if(trailingSelect.value==='btn_ghost'){
+      const button=document.createElement('button');
+      button.className='trailing-ghost';
+      button.type='button';
+      button.textContent='버튼';
+      trailingMount.appendChild(button);
     }
   }
 
   function render(){
-    demo.dataset.size=size.value;
-    demo.dataset.state=state.value;
-    refreshMount();
+    demo.dataset.size=sizeSelect.value;
+    demo.dataset.state=stateSelect.value;
     renderTrailing();
   }
 
-  [size,state,trailing].forEach(el=>el.addEventListener('change',render));
+  [sizeSelect,stateSelect,trailingSelect].forEach(control=>{
+    control.addEventListener('change',render);
+  });
+
   render();
 
   const copyBtn=document.querySelector('.detail-ref-copy');
-  copyBtn.addEventListener('click',async()=>{
-    try{
-      await navigator.clipboard.writeText(window.location.href);
-      copyBtn.textContent='복사됨';
-      setTimeout(()=>copyBtn.textContent='URL 복사',1000);
-    }catch(e){}
-  });
+  if(copyBtn){
+    copyBtn.addEventListener('click',async()=>{
+      try{
+        await navigator.clipboard.writeText(window.location.href);
+        const original=copyBtn.textContent;
+        copyBtn.textContent='복사됨';
+        setTimeout(()=>copyBtn.textContent=original,1000);
+      }catch(e){}
+    });
+  }
 })();
 </script>
 </body>
