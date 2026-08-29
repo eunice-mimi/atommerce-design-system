@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Input · Atommerce Design System</title><link href="../../style.css" rel="stylesheet"/>
+</head>
+<body class="detail-ref">
+<header class="global-header">
+  <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
+  <nav class="product-tabs" aria-label="서비스 선택">
+    <a class="product-tab active" href="../index.html">MindCafe</a><a class="product-tab" href="../../tarotbom/index.html">Tarotbom</a><a class="product-tab" href="../../expert/index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab" href="../../admin/index.html">Admin</a>
+    <a class="product-tab" href="../../ai-guide.html">AI Guide</a>
+  </nav>
+</header>
+<aside class="local-sidebar">
+  <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="사이드바 접기">‹</button>
+  <div class="local-service"><a href="../index.html">MindCafe</a></div>
+  <div class="local-nav">
+    <div class="local-group">
+      <div class="local-group-head">
+        <a class="local-group-overview" href="../foundations/index.html">Foundations</a>
+        <button class="local-group-chevron" type="button" aria-label="Foundations 하위 메뉴 열기" aria-expanded="false"><span>⌄</span></button>
+      </div>
+      <div class="local-group-items">
+        <a class="local-link" href="../foundations/color.html">Color</a>
+        <a class="local-link" href="../foundations/typography.html">Typography</a>
+        <a class="local-link" href="../foundations/spacing.html">Spacing</a>
+        <a class="local-link" href="../foundations/grid.html">Grid &amp; Layout</a>
+        <a class="local-link" href="../foundations/radius.html">Radius</a>
+        <a class="local-link" href="../foundations/elevation.html">Elevation</a>
+        <a class="local-link" href="../foundations/iconography.html">Iconography</a>
+        <a class="local-link" href="../foundations/motion.html">Motion</a>
+        <a class="local-link" href="../foundations/accessibility.html">Accessibility</a>
+      </div>
+    </div>
+    <div class="local-group open">
+      <div class="local-group-head">
+        <a class="local-group-overview" href="index.html">Components</a>
+        <button class="local-group-chevron" type="button" aria-label="Components 하위 메뉴 열기" aria-expanded="true"><span>⌄</span></button>
+      </div>
+      <div class="local-group-items">
+        <a class="local-link" href="button.html">Button</a>
+        <a class="local-link active" href="input.html">Input / Field</a>
+        <a class="local-link" href="checkbox.html">Checkbox</a>
+        <a class="local-link" href="radio.html">Radio</a>
+        <a class="local-link" href="switch.html">Switch</a>
+        <a class="local-link" href="select.html">Select</a>
+        <a class="local-link" href="textarea.html">Textarea</a>
+        <a class="local-link" href="badge.html">Badge</a>
+        <a class="local-link" href="chip.html">Chip</a>
+        <a class="local-link" href="avatar.html">Avatar</a>
+        <a class="local-link" href="card.html">Card</a>
+        <a class="local-link" href="tabs.html">Tabs</a>
+        <a class="local-link" href="tooltip.html">Tooltip</a>
+        <a class="local-link" href="toast.html">Toast / Message</a>
+        <a class="local-link" href="modal.html">Dialog / Modal</a>
+        <a class="local-link" href="accordion.html">Accordion</a>
+      </div>
+    </div>
+    <div class="local-group">
+      <div class="local-group-head">
+        <a class="local-group-overview" href="../patterns/index.html">Patterns</a>
+        <button class="local-group-chevron" type="button" aria-label="Patterns 하위 메뉴 열기" aria-expanded="false"><span>⌄</span></button>
+      </div>
+      <div class="local-group-items">
+        <a class="local-link" href="../patterns/form.html">Form</a>
+        <a class="local-link" href="../patterns/navigation.html">Navigation</a>
+        <a class="local-link" href="../patterns/search-filter.html">Search &amp; Filter</a>
+        <a class="local-link" href="../patterns/table-list.html">Table &amp; List</a>
+        <a class="local-link" href="../patterns/empty-state.html">Empty State</a>
+        <a class="local-link" href="../patterns/loading.html">Loading</a>
+        <a class="local-link" href="../patterns/error-validation.html">Error &amp; Validation</a>
+        <a class="local-link" href="../patterns/confirmation.html">Confirmation</a>
+      </div>
+    </div>
+    <div class="local-group">
+      <div class="local-group-head">
+        <a class="local-group-overview" href="../templates/index.html">Templates</a>
+        <button class="local-group-chevron" type="button" aria-label="Templates 하위 메뉴 열기" aria-expanded="false"><span>⌄</span></button>
+      </div>
+      <div class="local-group-items">
+        <a class="local-link" href="../templates/app-shell.html">App Shell</a>
+        <a class="local-link" href="../templates/form-grid.html">Form Grid</a>
+        <a class="local-link" href="../templates/list-detail.html">List / Detail</a>
+        <a class="local-link" href="../templates/dashboard.html">Dashboard</a>
+        <a class="local-link" href="../templates/full-screen.html">Full Screen</a>
+      </div>
+    </div>
+  </div>
+</aside>
+<main class="main"><div class="content">
+<div class="detail-ref-page">
+<header class="detail-ref-header">
+<div class="detail-ref-heading">
+<div class="eyebrow">Component</div>
+<h1>Input</h1>
+<p class="lead">Figma Core library의 <code>text-field</code>를 기준으로 입력 컴포넌트의 기본 구조와 구현 코드를 정리합니다.</p>
+</div>
+<div class="detail-ref-actions">
+<a aria-label="새 창에서 열기" class="detail-ref-open" href="#">↗</a>
+<button class="detail-ref-copy" type="button">URL 복사</button>
+</div>
+</header>
+<div class="detail-ref-workspace">
+<section class="detail-ref-left">
+<div class="detail-ref-preview-card">
+<div class="detail-ref-tabs">
+<button class="detail-ref-tab active" data-ref-tab="preview" type="button">Preview</button><button class="detail-ref-tab" data-ref-tab="usage" type="button">Usage</button><button class="detail-ref-tab" data-ref-tab="code" type="button">Code</button>
+</div>
+<div class="detail-ref-panel-wrap">
+<div class="detail-ref-panel active" data-ref-panel="preview"><div class=""><div class="card"><div class="detail-visual-stage"><div class="preview"><div class="preview-inner"><div class="demo-stack">
+<div class="ds-field"><label class="ds-label">Label</label><input class="ds-input" placeholder="Placeholder"/><div class="ds-helper">Helper text</div></div>
+<div class="ds-field"><label class="ds-label">Error</label><input class="ds-input is-error" value="잘못된 입력"/><div class="ds-helper error">입력값을 확인해주세요.</div></div>
+<div class="ds-field"><label class="ds-label">Disabled</label><input class="ds-input" disabled="" value="Disabled"/></div>
+</div></div></div></div></div><div class="component-meta"><span>Figma component: text-field</span><span>Default / Focus / Error / Disabled</span></div></div></div><div class="detail-ref-panel" data-ref-panel="usage">
+<div class="detail-usage-gallery">
+<div class="detail-usage-shot"><div class="usage-frame compact"><div class="usage-stack">
+<div class="usage-line sm"></div><div class="usage-input"></div><div class="usage-line md"></div>
+</div></div></div>
+<div class="detail-usage-shot"><div class="usage-frame compact"><div class="usage-stack">
+<div class="usage-line sm"></div><div class="usage-input"></div><div class="usage-line sm"></div>
+</div></div></div>
+<div class="detail-usage-shot wide"><div class="usage-frame"><div class="usage-stack">
+<div class="usage-row" style="gap:12px"><div style="flex:1"><div class="usage-line sm"></div><div style="height:8px"></div><div class="usage-input"></div></div><div style="flex:1"><div class="usage-line sm"></div><div style="height:8px"></div><div class="usage-input"></div></div></div>
+</div></div></div>
+</div>
+</div><div class="detail-ref-panel" data-ref-panel="code"><div class="detail-code-shell"><div class="">
+<div class="card card-pad"><div class="code-head"><h3>HTML</h3></div><pre id="inputHtml">&lt;label class="ds-field"&gt;
+  &lt;span class="ds-label"&gt;Label&lt;/span&gt;
+  &lt;input class="ds-input" placeholder="Placeholder" /&gt;
+  &lt;span class="ds-helper"&gt;Helper text&lt;/span&gt;
+&lt;/label&gt;</pre><div style="height:14px"></div><div class="code-head"><h3>CSS</h3></div><pre id="inputCss">.ds-input {
+  height: 48px;
+  border: 1px solid var(--comp-style-neutral-deeper-200);
+  border-radius: 12px;
+  padding: 0 14px;
+}
+
+.ds-input:focus {
+  border-color: var(--comp-style-primary-default-500);
+}</pre></div>
+</div></div></div>
+</div>
+</div>
+</section>
+<aside class="detail-ref-right"><section class="detail-doc-section">
+<div class="detail-doc-kicker">Design intent</div>
+<h2>디자인 의도</h2>
+<p class="lead">Figma Core library의 <code>text-field</code>를 기준으로 입력 컴포넌트의 기본 구조와 구현 코드를 정리합니다.</p>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Structure</div>
+<h2>구조 / Properties</h2>
+<table class="spec-table"><tr><th>Role</th><td>Label · Field · Helper / Error</td></tr><tr><th>State</th><td>Default · Focus · Error · Disabled</td></tr><tr><th>Behavior</th><td>입력값과 상태 메시지를 함께 관리</td></tr></table>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Design token</div>
+<h2>Design Token</h2>
+<div class="spec-note">정확한 토큰 값은 해당 컴포넌트의 Figma / Registry에 문서화된 값만 사용합니다.</div>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Spacing</div>
+<h2>Spacing</h2>
+<div class="spec-note">Spacing은 문서화된 semantic spacing token을 우선 사용합니다. 정확한 값이 없는 경우 임의 값을 생성하지 않습니다.</div>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Radius</div>
+<h2>Radius</h2>
+<div class="spec-note">Radius는 해당 컴포넌트에 정의된 semantic radius token을 사용합니다.</div>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Typography</div>
+<h2>Typography</h2>
+<div class="spec-note">Typography는 UI 역할에 맞는 Component / Body / Title semantic style을 사용합니다.</div>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Behavior</div>
+<h2>State / Behavior</h2>
+<div class=""><div class="card card-pad"><ul class="usage-list"><li>Label은 입력값의 목적을 명확하게 설명합니다.</li><li>Placeholder는 예시나 입력 형식을 보조할 때만 사용합니다.</li><li>Error는 border와 helper message를 함께 노출합니다.</li><li>Disabled는 사용자가 수정할 수 없는 상태에만 사용합니다.</li></ul></div></div>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Accessibility</div>
+<h2>Accessibility</h2>
+<p>label과 input을 연결하고 helper/error 메시지가 입력 필드와 함께 해석되도록 합니다.</p>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">For AI</div>
+<h2>AI Guidance</h2>
+<div class=""><div class="card card-pad"><div class="code-head"></div><div class="prompt-box" id="inputPrompt">Atommerce Core Design System의 text-field를 사용한다.
+Label / input / helper text 구조를 유지한다.
+Error는 색상만 바꾸지 말고 error helper message도 함께 제공한다.
+semantic token을 우선하고 임의의 input state를 만들지 않는다.</div></div></div>
+</section></aside>
+</div>
+</div>
+</div></main>
+<script>
+document.querySelectorAll('.local-group-chevron').forEach(btn=>btn.addEventListener('click',()=>{const g=btn.closest('.local-group');g.classList.toggle('open');btn.setAttribute('aria-expanded',g.classList.contains('open')?'true':'false');}));
+
+(function(){
+  const el = document.getElementById('lastUpdated');
+  if(!el) return;
+
+  function formatDate(value){
+    const d = new Date(value);
+    if(Number.isNaN(d.getTime())) return null;
+    return new Intl.DateTimeFormat('ko-KR', {
+      year:'numeric',
+      month:'2-digit',
+      day:'2-digit'
+    }).format(d).replace(/\.\s?/g, '.').replace(/\.$/, '');
+  }
+
+  async function setLatestUpdate(){
+    let value = null;
+
+    // On Vercel, use the Last-Modified header of the homepage.
+    // Because the site is redeployed when GitHub changes, this works as
+    // an automatic "latest deployed update" indicator across all pages.
+    if(location.protocol === 'http:' || location.protocol === 'https:'){
+      try{
+        const res = await fetch('../../index.html', {
+          method:'HEAD',
+          cache:'no-store'
+        });
+        value = res.headers.get('last-modified');
+      }catch(e){}
+    }
+
+    // Fallback for local preview.
+    if(!value) value = document.lastModified;
+
+    const formatted = formatDate(value);
+    el.textContent = formatted ? `최근 업데이트 ${formatted}` : '최근 업데이트';
+  }
+
+  setLatestUpdate();
+})();
+</script>
+<script>
+(function(){
+  const tabs = document.querySelectorAll('.detail-ref-tab');
+  const panels = document.querySelectorAll('.detail-ref-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.refTab;
+      tabs.forEach(t => t.classList.toggle('active', t === tab));
+      panels.forEach(p => p.classList.toggle('active', p.dataset.refPanel === target));
+    });
+  });
+
+  const openBtn = document.querySelector('.detail-ref-open');
+  if(openBtn){
+    openBtn.addEventListener('click', e => {
+      e.preventDefault();
+      window.open(window.location.href, '_blank', 'noopener');
+    });
+  }
+
+  const copyBtn = document.querySelector('.detail-ref-copy');
+  if(copyBtn){
+    copyBtn.addEventListener('click', async () => {
+      const url = window.location.href;
+      try{
+        await navigator.clipboard.writeText(url);
+        const old = copyBtn.textContent;
+        copyBtn.textContent = '복사 완료';
+        setTimeout(() => copyBtn.textContent = old, 1200);
+      }catch(e){
+        window.prompt('아래 URL을 복사하세요.', url);
+      }
+    });
+  }
+})();
+</script>
+<script>
+(function(){
+  const btn = document.getElementById('sidebarToggle');
+  if(!btn) return;
+
+  const saved = localStorage.getItem('atommerce-sidebar-collapsed');
+  if(saved === '1'){
+    document.body.classList.add('sidebar-collapsed');
+    btn.textContent = '›';
+    btn.setAttribute('aria-label','사이드바 펼치기');
+  }
+
+  btn.addEventListener('click', function(){
+    const collapsed = document.body.classList.toggle('sidebar-collapsed');
+    btn.textContent = collapsed ? '›' : '‹';
+    btn.setAttribute('aria-label', collapsed ? '사이드바 펼치기' : '사이드바 접기');
+    localStorage.setItem('atommerce-sidebar-collapsed', collapsed ? '1' : '0');
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+    });
+})();
+</script>
+
+</body></html>

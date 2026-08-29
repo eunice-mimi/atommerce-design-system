@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Color · Admin · Atommerce Design System</title>
+<link rel="stylesheet" href="../../style.css">
+<style>
+.service-color-preview{margin-top:34px;padding:28px;background:#F3F5F7;border:1px solid var(--line);border-radius:14px}
+.service-sample{max-width:420px;margin:auto;padding:18px;background:#fff;border:1px solid var(--line);border-radius:14px}
+.service-card{padding:18px;border-radius:12px;background:#DEEFFF}
+.service-card h3{margin:0 0 7px;font-size:16px}
+.service-card p{margin:0;color:#66717a;font-size:12px}
+.service-actions{display:flex;gap:8px;margin-top:16px}
+.service-primary{border:0;border-radius:9px;padding:10px 14px;background:#1976D2;color:#FFFFFF;font-size:12px;font-weight:800}
+.service-secondary{border:0;border-radius:9px;padding:10px 14px;background:#EEF0F2;color:#373D44;font-size:12px;font-weight:800}
+.token-section{margin-top:42px}.token-section h2{font-size:20px;margin:0 0 14px}
+.inline-swatch{display:inline-block;width:14px;height:14px;border-radius:4px;border:1px solid rgba(0,0,0,.08);vertical-align:-2px;margin-right:7px}
+</style>
+</head>
+<body>
+<header class="global-header">
+  <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
+  <nav class="product-tabs"><a class="product-tab" href="../../mindcafe/index.html">MindCafe</a><a class="product-tab" href="../../tarotbom/index.html">Tarotbom</a><a class="product-tab" href="../../expert/index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab active" href="../index.html">Admin</a><a class="product-tab" href="../../ai-guide.html">AI Guide</a></nav>
+</header>
+<aside class="local-sidebar">
+<button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="사이드바 접기">‹</button>
+<div class="local-service"><a href="../index.html">Admin</a></div>
+<div class="local-nav">
+<div class="local-group open">
+<div class="local-group-head"><a class="local-group-overview" href="index.html">Foundations</a><button class="local-group-chevron" type="button" aria-expanded="true"><span>⌄</span></button></div>
+<div class="local-group-items"><a class="local-link active" href="color.html">Color</a></div>
+</div>
+<a class="local-simple-link" href="../components/index.html">Components</a>
+<a class="local-simple-link" href="../patterns/index.html">Patterns</a>
+<a class="local-simple-link" href="../templates/index.html">Templates</a>
+</div></aside>
+<main class="main">
+<div class="content">
+<div class="eyebrow">ADMIN · FOUNDATIONS</div>
+<h1>Color</h1>
+<div class="service-color-preview">
+  <div class="service-sample">
+    <div class="service-card">
+      <h3>Primary color preview</h3>
+      <p>서비스 mode의 semantic/component token 적용 예시</p>
+      <div class="service-actions"><button class="service-primary">Primary</button><button class="service-secondary">Secondary</button></div>
+    </div>
+  </div>
+</div>
+<section class="token-section">
+<h2>Color tokens</h2>
+<table><thead><tr><th>Token</th><th>Value</th></tr></thead><tbody><tr><td><code>sys/bg/primary-tint</code></td><td><span class="inline-swatch" style="background:#DEEFFF"></span>#DEEFFF</td></tr><tr><td><code>sys/text/primary/default(500)</code></td><td><span class="inline-swatch" style="background:#1976D2"></span>#1976D2</td></tr><tr><td><code>sys/text/primary/deep(700)</code></td><td><span class="inline-swatch" style="background:#0354A4"></span>#0354A4</td></tr><tr><td><code>comp/style/primary-tint/default(10)</code></td><td><span class="inline-swatch" style="background:#DEEFFF"></span>#DEEFFF</td></tr><tr><td><code>comp/style/primary-tint/deep(50)</code></td><td><span class="inline-swatch" style="background:#C9E5FF"></span>#C9E5FF</td></tr><tr><td><code>comp/style/primary-tint/deeper(100)</code></td><td><span class="inline-swatch" style="background:#ACD7FF"></span>#ACD7FF</td></tr><tr><td><code>comp/style/primary/default(500)</code></td><td><span class="inline-swatch" style="background:#1976D2"></span>#1976D2</td></tr><tr><td><code>comp/style/primary/deep(600)</code></td><td><span class="inline-swatch" style="background:#0C65BD"></span>#0C65BD</td></tr><tr><td><code>comp/style/primary/deeper(700)</code></td><td><span class="inline-swatch" style="background:#0354A4"></span>#0354A4</td></tr><tr><td><code>comp/cont/primary/default(500)</code></td><td><span class="inline-swatch" style="background:#1976D2"></span>#1976D2</td></tr><tr><td><code>comp/cont/primary/deep(700)</code></td><td><span class="inline-swatch" style="background:#0354A4"></span>#0354A4</td></tr><tr><td><code>comp/cont/inverse</code></td><td><span class="inline-swatch" style="background:#FFFFFF"></span>#FFFFFF</td></tr></tbody></table>
+</section>
+</div>
+</main>
+<script>
+(function(){
+ const btn=document.getElementById('sidebarToggle');
+ if(btn) btn.addEventListener('click',()=>document.body.classList.toggle('sidebar-collapsed'));
+ document.querySelectorAll('.local-group-chevron').forEach(btn=>btn.addEventListener('click',()=>{const g=btn.closest('.local-group');g.classList.toggle('open');btn.setAttribute('aria-expanded',g.classList.contains('open')?'true':'false')}));
+})();
+</script>
+</body></html>

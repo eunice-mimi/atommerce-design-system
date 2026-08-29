@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Accessibility · Atommerce Design System</title><link rel="stylesheet" href="../../style.css"></head>
+<body>
+<header class="global-header">
+  <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
+  <nav class="product-tabs" aria-label="서비스 선택">
+    <a class="product-tab active" href="../index.html">MindCafe</a><a class="product-tab" href="../../tarotbom/index.html">Tarotbom</a><a class="product-tab" href="../../expert/index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab" href="../../admin/index.html">Admin</a>
+    <a class="product-tab" href="../../ai-guide.html">AI Guide</a>
+  </nav>
+</header>
+<aside class="local-sidebar">
+  <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="사이드바 접기">‹</button>
+  <div class="local-service">
+    <a href="../index.html">MindCafe</a>
+  </div>
+  <div class="local-nav"><div class="local-group open">
+              <button class="local-group-title" type="button">Foundations<span>⌄</span></button>
+              <div class="local-group-items"><a class="local-link" href="index.html">Overview</a><a class="local-link" href="color.html">Color</a><a class="local-link" href="typography.html">Typography</a><a class="local-link" href="spacing.html">Spacing</a><a class="local-link" href="grid.html">Grid &amp; Layout</a><a class="local-link" href="radius.html">Radius</a><a class="local-link" href="elevation.html">Elevation</a><a class="local-link" href="iconography.html">Iconography</a><a class="local-link" href="motion.html">Motion</a><a class="local-link active" href="accessibility.html">Accessibility</a></div>
+            </div><div class="local-group">
+              <button class="local-group-title" type="button">Components<span>⌄</span></button>
+              <div class="local-group-items"><a class="local-link" href="../components/index.html">Overview</a><a class="local-link" href="../components/button.html">Button</a><a class="local-link" href="../components/input.html">Input / Field</a><a class="local-link" href="../components/checkbox.html">Checkbox</a><a class="local-link" href="../components/radio.html">Radio</a><a class="local-link" href="../components/switch.html">Switch</a><a class="local-link" href="../components/select.html">Select</a><a class="local-link" href="../components/textarea.html">Textarea</a><a class="local-link" href="../components/badge.html">Badge</a><a class="local-link" href="../components/chip.html">Chip</a><a class="local-link" href="../components/avatar.html">Avatar</a><a class="local-link" href="../components/card.html">Card</a><a class="local-link" href="../components/tabs.html">Tabs</a><a class="local-link" href="../components/tooltip.html">Tooltip</a><a class="local-link" href="../components/toast.html">Toast / Message</a><a class="local-link" href="../components/modal.html">Dialog / Modal</a><a class="local-link" href="../components/accordion.html">Accordion</a></div>
+            </div><div class="local-group">
+              <button class="local-group-title" type="button">Patterns<span>⌄</span></button>
+              <div class="local-group-items"><a class="local-link" href="../patterns/index.html">Overview</a><a class="local-link" href="../patterns/form.html">Form</a><a class="local-link" href="../patterns/navigation.html">Navigation</a><a class="local-link" href="../patterns/search-filter.html">Search &amp; Filter</a><a class="local-link" href="../patterns/table-list.html">Table &amp; List</a><a class="local-link" href="../patterns/empty-state.html">Empty State</a><a class="local-link" href="../patterns/loading.html">Loading</a><a class="local-link" href="../patterns/error-validation.html">Error &amp; Validation</a><a class="local-link" href="../patterns/confirmation.html">Confirmation</a></div>
+            </div><div class="local-group">
+              <button class="local-group-title" type="button">Templates<span>⌄</span></button>
+              <div class="local-group-items"><a class="local-link" href="../templates/index.html">Overview</a><a class="local-link" href="../templates/app-shell.html">App Shell</a><a class="local-link" href="../templates/form-grid.html">Form Grid</a><a class="local-link" href="../templates/list-detail.html">List / Detail</a><a class="local-link" href="../templates/dashboard.html">Dashboard</a><a class="local-link" href="../templates/full-screen.html">Full Screen</a></div>
+            </div></div>
+</aside>
+
+<main class="main">
+<div class="content"><div class="coming-page"><div class="eyebrow">Coming Soon</div><h1>Accessibility</h1>
+<p class="lead">Focus, contrast, keyboard, screen reader, semantic rule을 정리합니다.</p>
+<div class="coming-box">
+<span class="status-chip">Coming Soon</span>
+<h2 style="margin-top:14px">문서화 예정</h2>
+<p>Figma에서 실제 토큰, variant, state, 사용 예시를 확인한 뒤 이 페이지를 채웁니다. 확인되지 않은 값은 임의로 만들지 않습니다.</p>
+</div></div></div>
+</main>
+<script>
+(function(){
+ const btn=document.getElementById('sidebarToggle');
+ if(btn){
+  const saved=localStorage.getItem('atommerce-sidebar-collapsed');
+  if(saved==='1'){document.body.classList.add('sidebar-collapsed');btn.textContent='›';}
+  btn.addEventListener('click',()=>{
+   const c=document.body.classList.toggle('sidebar-collapsed');
+   btn.textContent=c?'›':'‹';
+   localStorage.setItem('atommerce-sidebar-collapsed',c?'1':'0');
+  });
+ }
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.local-group-title').forEach(btn=>{
+    btn.addEventListener('click',()=>btn.closest('.local-group').classList.toggle('open'));
+  });
+})();
+</script>
+
+</body></html>

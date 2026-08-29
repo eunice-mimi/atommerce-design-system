@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Textarea · Atommerce Design System</title><link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<header class="global-header">
+  <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
+  <nav class="product-tabs" aria-label="서비스 선택">
+    <a class="product-tab active" href="../index.html">MindCafe</a><a class="product-tab" href="../../tarotbom/index.html">Tarotbom</a><a class="product-tab" href="../../expert/index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab" href="../../admin/index.html">Admin</a>
+    <a class="product-tab" href="../../ai-guide.html">AI Guide</a>
+  </nav>
+</header>
+<aside class="local-sidebar">
+  <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="사이드바 접기">‹</button>
+  <div class="local-service"><a href="../index.html">MindCafe</a></div>
+  <div class="local-nav">
+    <div class="local-group">
+      <div class="local-group-head">
+        <a class="local-group-overview" href="../foundations/index.html">Foundations</a>
+        <button class="local-group-chevron" type="button" aria-label="Foundations 하위 메뉴 열기" aria-expanded="false"><span>⌄</span></button>
+      </div>
+      <div class="local-group-items">
+        <a class="local-link" href="../foundations/color.html">Color</a>
+        <a class="local-link" href="../foundations/typography.html">Typography</a>
+        <a class="local-link" href="../foundations/spacing.html">Spacing</a>
+        <a class="local-link" href="../foundations/grid.html">Grid &amp; Layout</a>
+        <a class="local-link" href="../foundations/radius.html">Radius</a>
+        <a class="local-link" href="../foundations/elevation.html">Elevation</a>
+        <a class="local-link" href="../foundations/iconography.html">Iconography</a>
+        <a class="local-link" href="../foundations/motion.html">Motion</a>
+        <a class="local-link" href="../foundations/accessibility.html">Accessibility</a>
+      </div>
+    </div>
+    <div class="local-group open">
+      <div class="local-group-head">
+        <a class="local-group-overview" href="index.html">Components</a>
+        <button class="local-group-chevron" type="button" aria-label="Components 하위 메뉴 열기" aria-expanded="true"><span>⌄</span></button>
+      </div>
+      <div class="local-group-items">
+        <a class="local-link" href="button.html">Button</a>
+        <a class="local-link" href="input.html">Input / Field</a>
+        <a class="local-link" href="checkbox.html">Checkbox</a>
+        <a class="local-link" href="radio.html">Radio</a>
+        <a class="local-link" href="switch.html">Switch</a>
+        <a class="local-link" href="select.html">Select</a>
+        <a class="local-link active" href="textarea.html">Textarea</a>
+        <a class="local-link" href="badge.html">Badge</a>
+        <a class="local-link" href="chip.html">Chip</a>
+        <a class="local-link" href="avatar.html">Avatar</a>
+        <a class="local-link" href="card.html">Card</a>
+        <a class="local-link" href="tabs.html">Tabs</a>
+        <a class="local-link" href="tooltip.html">Tooltip</a>
+        <a class="local-link" href="toast.html">Toast / Message</a>
+        <a class="local-link" href="modal.html">Dialog / Modal</a>
+        <a class="local-link" href="accordion.html">Accordion</a>
+      </div>
+    </div>
+    <div class="local-group">
+      <div class="local-group-head">
+        <a class="local-group-overview" href="../patterns/index.html">Patterns</a>
+        <button class="local-group-chevron" type="button" aria-label="Patterns 하위 메뉴 열기" aria-expanded="false"><span>⌄</span></button>
+      </div>
+      <div class="local-group-items">
+        <a class="local-link" href="../patterns/form.html">Form</a>
+        <a class="local-link" href="../patterns/navigation.html">Navigation</a>
+        <a class="local-link" href="../patterns/search-filter.html">Search &amp; Filter</a>
+        <a class="local-link" href="../patterns/table-list.html">Table &amp; List</a>
+        <a class="local-link" href="../patterns/empty-state.html">Empty State</a>
+        <a class="local-link" href="../patterns/loading.html">Loading</a>
+        <a class="local-link" href="../patterns/error-validation.html">Error &amp; Validation</a>
+        <a class="local-link" href="../patterns/confirmation.html">Confirmation</a>
+      </div>
+    </div>
+    <div class="local-group">
+      <div class="local-group-head">
+        <a class="local-group-overview" href="../templates/index.html">Templates</a>
+        <button class="local-group-chevron" type="button" aria-label="Templates 하위 메뉴 열기" aria-expanded="false"><span>⌄</span></button>
+      </div>
+      <div class="local-group-items">
+        <a class="local-link" href="../templates/app-shell.html">App Shell</a>
+        <a class="local-link" href="../templates/form-grid.html">Form Grid</a>
+        <a class="local-link" href="../templates/list-detail.html">List / Detail</a>
+        <a class="local-link" href="../templates/dashboard.html">Dashboard</a>
+        <a class="local-link" href="../templates/full-screen.html">Full Screen</a>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<main class="main">
+<div class="content"><div class="coming-page"><div class="eyebrow">Coming Soon</div><h1>Textarea</h1>
+<p class="lead">여러 줄 입력 field의 상태와 resize/validation 규칙을 정리합니다.</p>
+<div class="coming-box">
+<span class="status-chip">Coming Soon</span>
+<h2 style="margin-top:14px">문서화 예정</h2>
+<p>Figma에서 실제 토큰, variant, state, 사용 예시를 확인한 뒤 이 페이지를 채웁니다. 확인되지 않은 값은 임의로 만들지 않습니다.</p>
+</div></div></div>
+</main>
+<script>
+document.querySelectorAll('.local-group-chevron').forEach(btn=>btn.addEventListener('click',()=>{const g=btn.closest('.local-group');g.classList.toggle('open');btn.setAttribute('aria-expanded',g.classList.contains('open')?'true':'false');}));
+
+(function(){
+ const btn=document.getElementById('sidebarToggle');
+ if(btn){
+  const saved=localStorage.getItem('atommerce-sidebar-collapsed');
+  if(saved==='1'){document.body.classList.add('sidebar-collapsed');btn.textContent='›';}
+  btn.addEventListener('click',()=>{
+   const c=document.body.classList.toggle('sidebar-collapsed');
+   btn.textContent=c?'›':'‹';
+   localStorage.setItem('atommerce-sidebar-collapsed',c?'1':'0');
+  });
+ }
+})();
+</script>
+
+<script>
+(function(){
+    });
+})();
+</script>
+
+</body></html>

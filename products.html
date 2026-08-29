@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product Scopes · Atommerce Design System</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="global-header">
+  <a class="global-logo" href="index.html"><span class="global-logo-text">Atommerce Design System</span></a>
+  <nav class="product-tabs" aria-label="서비스 선택">
+    <a class="product-tab active" href="mindcafe/index.html">MindCafe</a><a class="product-tab" href="tarotbom/index.html">Tarotbom</a><a class="product-tab" href="expert/index.html">Expert Console</a><a class="product-tab" href="center/index.html">Center Console</a><a class="product-tab" href="admin/index.html">Admin</a>
+    <a class="product-tab" href="ai-guide.html">AI Guide</a>
+  </nav>
+</header>
+<aside class="local-sidebar">
+  <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="사이드바 접기">‹</button>
+  <div class="local-service">
+    <a href="mindcafe/index.html">MindCafe</a>
+  </div>
+  <div class="local-nav"><div class="local-group">
+              <button class="local-group-title" type="button">Foundations<span>⌄</span></button>
+              <div class="local-group-items"><a class="local-link" href="mindcafe/foundations/index.html">Overview</a><a class="local-link" href="mindcafe/foundations/color.html">Color</a><a class="local-link" href="mindcafe/foundations/typography.html">Typography</a><a class="local-link" href="mindcafe/foundations/spacing.html">Spacing</a><a class="local-link" href="mindcafe/foundations/grid.html">Grid &amp; Layout</a><a class="local-link" href="mindcafe/foundations/radius.html">Radius</a><a class="local-link" href="mindcafe/foundations/elevation.html">Elevation</a><a class="local-link" href="mindcafe/foundations/iconography.html">Iconography</a><a class="local-link" href="mindcafe/foundations/motion.html">Motion</a><a class="local-link" href="mindcafe/foundations/accessibility.html">Accessibility</a></div>
+            </div><div class="local-group">
+              <button class="local-group-title" type="button">Components<span>⌄</span></button>
+              <div class="local-group-items"><a class="local-link" href="mindcafe/components/index.html">Overview</a><a class="local-link" href="mindcafe/components/button.html">Button</a><a class="local-link" href="mindcafe/components/input.html">Input / Field</a><a class="local-link" href="mindcafe/components/checkbox.html">Checkbox</a><a class="local-link" href="mindcafe/components/radio.html">Radio</a><a class="local-link" href="mindcafe/components/switch.html">Switch</a><a class="local-link" href="mindcafe/components/select.html">Select</a><a class="local-link" href="mindcafe/components/textarea.html">Textarea</a><a class="local-link" href="mindcafe/components/badge.html">Badge</a><a class="local-link" href="mindcafe/components/chip.html">Chip</a><a class="local-link" href="mindcafe/components/avatar.html">Avatar</a><a class="local-link" href="mindcafe/components/card.html">Card</a><a class="local-link" href="mindcafe/components/tabs.html">Tabs</a><a class="local-link" href="mindcafe/components/tooltip.html">Tooltip</a><a class="local-link" href="mindcafe/components/toast.html">Toast / Message</a><a class="local-link" href="mindcafe/components/modal.html">Dialog / Modal</a><a class="local-link" href="mindcafe/components/accordion.html">Accordion</a></div>
+            </div><div class="local-group">
+              <button class="local-group-title" type="button">Patterns<span>⌄</span></button>
+              <div class="local-group-items"><a class="local-link" href="mindcafe/patterns/index.html">Overview</a><a class="local-link" href="mindcafe/patterns/form.html">Form</a><a class="local-link" href="mindcafe/patterns/navigation.html">Navigation</a><a class="local-link" href="mindcafe/patterns/search-filter.html">Search &amp; Filter</a><a class="local-link" href="mindcafe/patterns/table-list.html">Table &amp; List</a><a class="local-link" href="mindcafe/patterns/empty-state.html">Empty State</a><a class="local-link" href="mindcafe/patterns/loading.html">Loading</a><a class="local-link" href="mindcafe/patterns/error-validation.html">Error &amp; Validation</a><a class="local-link" href="mindcafe/patterns/confirmation.html">Confirmation</a></div>
+            </div><div class="local-group">
+              <button class="local-group-title" type="button">Templates<span>⌄</span></button>
+              <div class="local-group-items"><a class="local-link" href="mindcafe/templates/index.html">Overview</a><a class="local-link" href="mindcafe/templates/app-shell.html">App Shell</a><a class="local-link" href="mindcafe/templates/form-grid.html">Form Grid</a><a class="local-link" href="mindcafe/templates/list-detail.html">List / Detail</a><a class="local-link" href="mindcafe/templates/dashboard.html">Dashboard</a><a class="local-link" href="mindcafe/templates/full-screen.html">Full Screen</a></div>
+            </div></div>
+</aside>
+
+<main class="main">
+<div class="content"><div class="eyebrow">Products</div><h1>Product Scopes</h1>
+<p class="lead">Core Design System을 기본으로 사용하되, 서비스별 Brand Color, Navigation, Layout, 전용 Component처럼 달라지는 규칙만 Override합니다.</p>
+<div class="taxonomy-note">Core 규칙 → Product Scope Override → 상세 Component 규칙 순으로 적용합니다.</div>
+<div class="ds-section"><div class="ds-card-grid"><a class="ds-card" href="mindcafe/index.html">
+<div class="ds-card-preview">MindCafe</div>
+<div class="ds-card-title"><span>MindCafe</span><span class="status-chip ready">Ready</span></div>
+<div class="ds-card-desc">메인 소비자 서비스. Core 기본값을 우선 적용</div>
+</a><a class="ds-card" href="tarotbom/index.html">
+<div class="ds-card-preview">Tarotbom</div>
+<div class="ds-card-title"><span>Tarotbom</span><span class="status-chip ready">Ready</span></div>
+<div class="ds-card-desc">타로봄 전용 brand / product asset 관리</div>
+</a><a class="ds-card" href="expert/index.html">
+<div class="ds-card-preview">Expert Console</div>
+<div class="ds-card-title"><span>Expert Console</span><span class="status-chip ready">Ready</span></div>
+<div class="ds-card-desc">전문가 업무용 list / card / navigation override</div>
+</a><a class="ds-card" href="center/index.html">
+<div class="ds-card-preview">Center Console</div>
+<div class="ds-card-title"><span>Center Console</span><span class="status-chip ready">Ready</span></div>
+<div class="ds-card-desc">센터 운영용 layout / navigation override</div>
+</a><a class="ds-card" href="admin/index.html">
+<div class="ds-card-preview">Admin</div>
+<div class="ds-card-title"><span>Admin</span><span class="status-chip ready">Ready</span></div>
+<div class="ds-card-desc">내부 운영용 navigation과 admin color token override</div>
+</a></div></div></div>
+</main>
+<script>
+(function(){
+ const btn=document.getElementById('sidebarToggle');
+ if(btn){
+  const saved=localStorage.getItem('atommerce-sidebar-collapsed');
+  if(saved==='1'){document.body.classList.add('sidebar-collapsed');btn.textContent='›';}
+  btn.addEventListener('click',()=>{
+   const c=document.body.classList.toggle('sidebar-collapsed');
+   btn.textContent=c?'›':'‹';
+   localStorage.setItem('atommerce-sidebar-collapsed',c?'1':'0');
+  });
+ }
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.local-group-title').forEach(btn=>{
+    btn.addEventListener('click',()=>btn.closest('.local-group').classList.toggle('open'));
+  });
+})();
+</script>
+
+</body></html>

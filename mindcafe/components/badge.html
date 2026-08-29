@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Badge · Atommerce Design System</title><link href="../../style.css" rel="stylesheet"/></head>
+<body class="detail-ref">
+<header class="global-header">
+  <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
+  <nav class="product-tabs" aria-label="서비스 선택">
+    <a class="product-tab active" href="../index.html">MindCafe</a><a class="product-tab" href="../../tarotbom/index.html">Tarotbom</a><a class="product-tab" href="../../expert/index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab" href="../../admin/index.html">Admin</a>
+    <a class="product-tab" href="../../ai-guide.html">AI Guide</a>
+  </nav>
+</header>
+<aside class="local-sidebar">
+  <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="사이드바 접기">‹</button>
+  <div class="local-service">
+    <a href="../index.html">MindCafe</a>
+  </div>
+  <div class="local-nav"><div class="local-group">
+              <button class="local-group-title" type="button">Foundations<span>⌄</span></button>
+              <div class="local-group-items"><a class="local-link" href="../foundations/index.html">Overview</a><a class="local-link" href="../foundations/color.html">Color</a><a class="local-link" href="../foundations/typography.html">Typography</a><a class="local-link" href="../foundations/spacing.html">Spacing</a><a class="local-link" href="../foundations/grid.html">Grid &amp; Layout</a><a class="local-link" href="../foundations/radius.html">Radius</a><a class="local-link" href="../foundations/elevation.html">Elevation</a><a class="local-link" href="../foundations/iconography.html">Iconography</a><a class="local-link" href="../foundations/motion.html">Motion</a><a class="local-link" href="../foundations/accessibility.html">Accessibility</a></div>
+            </div><div class="local-group open">
+              <button class="local-group-title" type="button">Components<span>⌄</span></button>
+              <div class="local-group-items"><a class="local-link" href="index.html">Overview</a><a class="local-link" href="button.html">Button</a><a class="local-link" href="input.html">Input / Field</a><a class="local-link" href="checkbox.html">Checkbox</a><a class="local-link" href="radio.html">Radio</a><a class="local-link" href="switch.html">Switch</a><a class="local-link" href="select.html">Select</a><a class="local-link" href="textarea.html">Textarea</a><a class="local-link active" href="badge.html">Badge</a><a class="local-link" href="chip.html">Chip</a><a class="local-link" href="avatar.html">Avatar</a><a class="local-link" href="card.html">Card</a><a class="local-link" href="tabs.html">Tabs</a><a class="local-link" href="tooltip.html">Tooltip</a><a class="local-link" href="toast.html">Toast / Message</a><a class="local-link" href="modal.html">Dialog / Modal</a><a class="local-link" href="accordion.html">Accordion</a></div>
+            </div><div class="local-group">
+              <button class="local-group-title" type="button">Patterns<span>⌄</span></button>
+              <div class="local-group-items"><a class="local-link" href="../patterns/index.html">Overview</a><a class="local-link" href="../patterns/form.html">Form</a><a class="local-link" href="../patterns/navigation.html">Navigation</a><a class="local-link" href="../patterns/search-filter.html">Search &amp; Filter</a><a class="local-link" href="../patterns/table-list.html">Table &amp; List</a><a class="local-link" href="../patterns/empty-state.html">Empty State</a><a class="local-link" href="../patterns/loading.html">Loading</a><a class="local-link" href="../patterns/error-validation.html">Error &amp; Validation</a><a class="local-link" href="../patterns/confirmation.html">Confirmation</a></div>
+            </div><div class="local-group">
+              <button class="local-group-title" type="button">Templates<span>⌄</span></button>
+              <div class="local-group-items"><a class="local-link" href="../templates/index.html">Overview</a><a class="local-link" href="../templates/app-shell.html">App Shell</a><a class="local-link" href="../templates/form-grid.html">Form Grid</a><a class="local-link" href="../templates/list-detail.html">List / Detail</a><a class="local-link" href="../templates/dashboard.html">Dashboard</a><a class="local-link" href="../templates/full-screen.html">Full Screen</a></div>
+            </div></div>
+</aside>
+<main class="main"><div class="content">
+<div class="detail-ref-page">
+<header class="detail-ref-header">
+<div class="detail-ref-heading">
+<div class="eyebrow">Component</div>
+<h1>Badge</h1>
+<p class="lead">Figma Core library에 존재하는 <code>badge</code>를 문서화한 기본 구현입니다.</p>
+</div>
+<div class="detail-ref-actions">
+<a aria-label="새 창에서 열기" class="detail-ref-open" href="#">↗</a>
+<button class="detail-ref-copy" type="button">URL 복사</button>
+</div>
+</header>
+<div class="detail-ref-workspace">
+<section class="detail-ref-left">
+<div class="detail-ref-preview-card">
+<div class="detail-ref-tabs">
+<button class="detail-ref-tab active" data-ref-tab="preview" type="button">Preview</button><button class="detail-ref-tab" data-ref-tab="usage" type="button">Usage</button><button class="detail-ref-tab" data-ref-tab="code" type="button">Code</button>
+</div>
+<div class="detail-ref-panel-wrap">
+<div class="detail-ref-panel active" data-ref-panel="preview"><div class=""><div class="card"><div class="detail-visual-stage"><div class="preview"><div class="preview-inner"><div class="demo-row">
+<span class="ds-badge primary">Primary</span><span class="ds-badge neutral">Neutral</span><span class="ds-badge negative">Error</span><span class="ds-badge success">Success</span>
+</div></div></div></div></div><div class="component-meta"><span>Figma component: badge</span><span>Semantic status label</span></div></div></div><div class="detail-ref-panel" data-ref-panel="usage">
+<div class="detail-usage-gallery">
+<div class="detail-usage-shot"><div class="usage-frame compact"><div class="usage-row space"><div class="usage-line md"></div><span class="usage-badge">진행 중</span></div></div></div>
+<div class="detail-usage-shot"><div class="usage-frame compact"><div class="usage-stack">
+<div class="usage-row space"><div class="usage-line sm"></div><span class="usage-badge">신규</span></div>
+<div class="usage-row space"><div class="usage-line md"></div><span class="usage-badge">완료</span></div>
+</div></div></div>
+</div>
+</div><div class="detail-ref-panel" data-ref-panel="code"><div class="detail-code-shell"><div class="">
+<div class="card card-pad"><div class="code-head"><h3>HTML</h3></div><pre id="badgeHtml">&lt;span class="ds-badge ds-badge--primary"&gt;Primary&lt;/span&gt;</pre><div style="height:14px"></div><div class="code-head"><h3>CSS</h3></div><pre id="badgeCss">.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ds-badge--primary {
+  background: var(--comp-style-primary-tint-default-10);
+  color: var(--comp-cont-primary-deep-700);
+}</pre></div>
+</div></div></div>
+</div>
+</div>
+</section>
+<aside class="detail-ref-right"><section class="detail-doc-section">
+<div class="detail-doc-kicker">Design intent</div>
+<h2>디자인 의도</h2>
+<p class="lead">Figma Core library에 존재하는 <code>badge</code>를 문서화한 기본 구현입니다.</p>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Structure</div>
+<h2>구조 / Properties</h2>
+<table class="spec-table"><tr><th>Role</th><td>Status / Label</td></tr><tr><th>Behavior</th><td>짧은 상태 정보를 보조적으로 표시</td></tr><tr><th>Content</th><td>짧고 즉시 이해 가능한 텍스트</td></tr></table>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Design token</div>
+<h2>Design Token</h2>
+<div class="spec-note">정확한 토큰 값은 해당 컴포넌트의 Figma / Registry에 문서화된 값만 사용합니다.</div>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Spacing</div>
+<h2>Spacing</h2>
+<div class="spec-note">Spacing은 문서화된 semantic spacing token을 우선 사용합니다. 정확한 값이 없는 경우 임의 값을 생성하지 않습니다.</div>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Radius</div>
+<h2>Radius</h2>
+<div class="spec-note">Radius는 해당 컴포넌트에 정의된 semantic radius token을 사용합니다.</div>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Typography</div>
+<h2>Typography</h2>
+<div class="spec-note">Typography는 UI 역할에 맞는 Component / Body / Title semantic style을 사용합니다.</div>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Behavior</div>
+<h2>State / Behavior</h2>
+<div class=""><div class="card card-pad"><ul class="usage-list"><li>짧은 상태 또는 분류 정보를 표현합니다.</li><li>긴 문장이나 주요 CTA를 Badge로 표현하지 않습니다.</li><li>색상만으로 의미를 전달하지 않고 텍스트 라벨을 함께 사용합니다.</li></ul></div></div>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">Accessibility</div>
+<h2>Accessibility</h2>
+<p>상태를 색상만으로 전달하지 않고 텍스트 의미를 함께 제공합니다.</p>
+</section><section class="detail-doc-section">
+<div class="detail-doc-kicker">For AI</div>
+<h2>AI Guidance</h2>
+<div class=""><div class="card card-pad"><div class="code-head"></div><div class="prompt-box" id="badgePrompt">Atommerce Core Design System의 badge component를 사용한다.
+Badge는 상태·분류처럼 짧은 보조 정보에만 사용한다.
+색상과 텍스트 의미가 일치해야 한다.
+새로운 Badge color를 임의로 만들지 않는다.</div></div></div>
+</section></aside>
+</div>
+</div>
+</div></main>
+<script>
+(function(){
+  const el = document.getElementById('lastUpdated');
+  if(!el) return;
+
+  function formatDate(value){
+    const d = new Date(value);
+    if(Number.isNaN(d.getTime())) return null;
+    return new Intl.DateTimeFormat('ko-KR', {
+      year:'numeric',
+      month:'2-digit',
+      day:'2-digit'
+    }).format(d).replace(/\.\s?/g, '.').replace(/\.$/, '');
+  }
+
+  async function setLatestUpdate(){
+    let value = null;
+
+    // On Vercel, use the Last-Modified header of the homepage.
+    // Because the site is redeployed when GitHub changes, this works as
+    // an automatic "latest deployed update" indicator across all pages.
+    if(location.protocol === 'http:' || location.protocol === 'https:'){
+      try{
+        const res = await fetch('../../index.html', {
+          method:'HEAD',
+          cache:'no-store'
+        });
+        value = res.headers.get('last-modified');
+      }catch(e){}
+    }
+
+    // Fallback for local preview.
+    if(!value) value = document.lastModified;
+
+    const formatted = formatDate(value);
+    el.textContent = formatted ? `최근 업데이트 ${formatted}` : '최근 업데이트';
+  }
+
+  setLatestUpdate();
+})();
+</script>
+<script>
+(function(){
+  const tabs = document.querySelectorAll('.detail-ref-tab');
+  const panels = document.querySelectorAll('.detail-ref-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.refTab;
+      tabs.forEach(t => t.classList.toggle('active', t === tab));
+      panels.forEach(p => p.classList.toggle('active', p.dataset.refPanel === target));
+    });
+  });
+
+  const openBtn = document.querySelector('.detail-ref-open');
+  if(openBtn){
+    openBtn.addEventListener('click', e => {
+      e.preventDefault();
+      window.open(window.location.href, '_blank', 'noopener');
+    });
+  }
+
+  const copyBtn = document.querySelector('.detail-ref-copy');
+  if(copyBtn){
+    copyBtn.addEventListener('click', async () => {
+      const url = window.location.href;
+      try{
+        await navigator.clipboard.writeText(url);
+        const old = copyBtn.textContent;
+        copyBtn.textContent = '복사 완료';
+        setTimeout(() => copyBtn.textContent = old, 1200);
+      }catch(e){
+        window.prompt('아래 URL을 복사하세요.', url);
+      }
+    });
+  }
+})();
+</script>
+<script>
+(function(){
+  const btn = document.getElementById('sidebarToggle');
+  if(!btn) return;
+
+  const saved = localStorage.getItem('atommerce-sidebar-collapsed');
+  if(saved === '1'){
+    document.body.classList.add('sidebar-collapsed');
+    btn.textContent = '›';
+    btn.setAttribute('aria-label','사이드바 펼치기');
+  }
+
+  btn.addEventListener('click', function(){
+    const collapsed = document.body.classList.toggle('sidebar-collapsed');
+    btn.textContent = collapsed ? '›' : '‹';
+    btn.setAttribute('aria-label', collapsed ? '사이드바 펼치기' : '사이드바 접기');
+    localStorage.setItem('atommerce-sidebar-collapsed', collapsed ? '1' : '0');
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  document.querySelectorAll('.local-group-title').forEach(btn=>{
+    btn.addEventListener('click',()=>btn.closest('.local-group').classList.toggle('open'));
+  });
+})();
+</script>
+
+</body></html>

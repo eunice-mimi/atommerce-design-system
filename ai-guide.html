@@ -1,0 +1,160 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Guide · Atommerce Design System</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="global-header">
+  <a class="global-logo" href="index.html"><span class="global-logo-text">Atommerce Design System</span></a>
+  <nav class="product-tabs" aria-label="서비스 선택">
+    <a class="product-tab" href="mindcafe/index.html">MindCafe</a><a class="product-tab" href="tarotbom/index.html">Tarotbom</a><a class="product-tab" href="expert/index.html">Expert Console</a><a class="product-tab" href="center/index.html">Center Console</a><a class="product-tab" href="admin/index.html">Admin</a>
+    <a class="product-tab active" href="ai-guide.html">AI Guide</a>
+  </nav>
+</header>
+<aside class="local-sidebar">
+  <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="사이드바 접기">‹</button>
+  <div class="local-service">
+    <a href="ai-guide.html">AI Guide</a>
+  </div>
+  <div class="local-nav"><div class="local-group open">
+              <button class="local-group-title" type="button">AI Guide<span>⌄</span></button>
+              <div class="local-group-items"><a class="local-link active" href="ai-guide.html">Overview</a><a class="local-link" href="ai-guide/usage-guide.html">Usage Guide</a><a class="local-link" href="ai-guide/llms-guide.html">llms.txt</a><a class="local-link" href="ai-guide/claude-skill.html">Claude Skill</a></div>
+            </div></div>
+</aside>
+<main class="main"><div class="content"><div class="eyebrow">AI Guide</div><h1>AI Guide</h1><p class="lead">Claude Code, Codex 등 AI 코딩 도구가 Atommerce Design System을 구현 규칙으로 사용하도록 안내합니다.</p><div class="catalog"><a class="catalog-card" href="ai-guide/usage-guide.html"><div class="catalog-thumb"><div class="mini-ui"><div class="mini-title"></div><div class="mini-line"></div><div class="mini-line"></div><div class="mini-line short"></div><div style="padding:10px;border-left:3px solid #007777;background:#f3fbfa"></div></div></div><div class="catalog-card-body"><div class="catalog-title">Usage Guide</div><div class="catalog-desc">AI가 따라야 하는 기본 생성 규칙</div><span class="tag">Available</span></div></a><a class="catalog-card" href="ai-guide/llms-guide.html"><div class="catalog-thumb"><div class="mini-ui"><div style="font-family:ui-monospace,monospace;font-size:12px;color:#4a535d"># Atommerce Design System<br><br>## Foundations<br>/typography<br>/colors<br><br>## Components<br>/button<br>/input</div></div></div><div class="catalog-card-body"><div class="catalog-title">llms.txt</div><div class="catalog-desc">AI가 사이트 구조를 읽을 수 있는 목차 파일</div><span class="tag">Next</span></div></a><a class="catalog-card" href="ai-guide/claude-skill.html"><div class="catalog-thumb"><div class="mini-ui"><div style="background:#171a1f;color:#eef2f2;border-radius:10px;padding:14px;font-family:ui-monospace,monospace;font-size:11px;line-height:1.6">$ install skill<br>✓ registered<br>✓ llms.txt connected</div></div></div><div class="catalog-card-body"><div class="catalog-title">Claude Code Skill</div><div class="catalog-desc">디자인 시스템 규칙을 자동 주입하는 설치 가이드</div><span class="tag">Next</span></div></a></div>
+<div class="note" style="margin-top:18px">
+  <strong>권장 흐름</strong><br>
+  Skill 1회 설치 → 필요한 상세 문서의 복사하기 → Claude에 붙여넣고 화면 생성 요청.
+  Skill은 공통 정책을, 상세 페이지는 개별 구현 규칙을 담고 있으며, 복사하기는 해당 페이지 URL만 복사합니다.
+</div>
+</div></main>
+<script>
+document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{const el=document.getElementById(btn.dataset.copy);try{await navigator.clipboard.writeText(el.innerText.trim());const t=btn.textContent;btn.textContent='Copied';setTimeout(()=>btn.textContent=t,1000)}catch(e){alert('복사할 수 없습니다.')}}));
+
+
+(function(){
+  const toast = document.createElement('div');
+  toast.className='url-toast'; toast.id='urlToast'; toast.textContent='복사했어요';
+  document.body.appendChild(toast);
+
+  function notify(msg){
+    toast.textContent=msg; toast.classList.add('show');
+    setTimeout(()=>toast.classList.remove('show'),1200);
+  }
+  window.dsNotify = notify;
+
+  document.querySelectorAll('[data-copy-url]').forEach(btn=>{
+    btn.addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(location.href);
+        notify('현재 페이지 URL을 복사했어요');
+      }catch(e){ notify('URL 복사에 실패했어요'); }
+    });
+  });
+
+  document.querySelectorAll('[data-tabs]').forEach(tabset=>{
+    const buttons=[...tabset.querySelectorAll('.tab-btn')];
+    const panels=[...tabset.parentElement.querySelectorAll('.tab-panel')];
+    buttons.forEach(btn=>btn.addEventListener('click',()=>{
+      buttons.forEach(b=>b.classList.remove('active'));
+      panels.forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      const p=document.getElementById(btn.dataset.tab);
+      if(p) p.classList.add('active');
+    }));
+  });
+
+  const searchInput=document.getElementById('dsSearch');
+  const results=document.getElementById('dsSearchResults');
+  if(searchInput && results){
+    const items=[
+      ['Foundations','foundations.html'],['Typography','typography.html'],['Color','color.html'],
+      ['Spacing','spacing.html'],['Radius','radius.html'],['Components','components.html'],
+      ['Button','button.html'],['Input','input.html'],['Checkbox','checkbox.html'],['Badge','badge.html'],['Card','card.html'],
+      ['Patterns','patterns.html'],['Form','form.html'],['Navigation','navigation.html'],['Empty State','empty-state.html'],
+      ['Templates','templates.html'],['Form Grid','form-grid.html'],['Modal','modal.html'],
+      ['AI Guide','ai-guide.html'],['Usage Guide','usage-guide.html'],['llms.txt','llms-guide.html'],['Claude Code Skill','claude-skill.html']
+    ];
+    function render(q){
+      q=q.trim().toLowerCase();
+      if(!q){results.classList.remove('show');results.innerHTML='';return;}
+      const found=items.filter(([n])=>n.toLowerCase().includes(q)).slice(0,8);
+      results.innerHTML=found.map(([n,u])=>`<a href="${u}">${n}</a>`).join('');
+      results.classList.toggle('show',found.length>0);
+    }
+    searchInput.addEventListener('input',e=>render(e.target.value));
+  }
+})();
+
+
+
+
+</script><script>
+(function(){
+  const el = document.getElementById('lastUpdated');
+  if(!el) return;
+
+  function formatDate(value){
+    const d = new Date(value);
+    if(Number.isNaN(d.getTime())) return null;
+    return new Intl.DateTimeFormat('ko-KR', {
+      year:'numeric',
+      month:'2-digit',
+      day:'2-digit'
+    }).format(d).replace(/\.\s?/g, '.').replace(/\.$/, '');
+  }
+
+  async function setLatestUpdate(){
+    let value = null;
+
+    // On Vercel, use the Last-Modified header of the homepage.
+    // Because the site is redeployed when GitHub changes, this works as
+    // an automatic "latest deployed update" indicator across all pages.
+    if(location.protocol === 'http:' || location.protocol === 'https:'){
+      try{
+        const res = await fetch('index.html', {
+          method:'HEAD',
+          cache:'no-store'
+        });
+        value = res.headers.get('last-modified');
+      }catch(e){}
+    }
+
+    // Fallback for local preview.
+    if(!value) value = document.lastModified;
+
+    const formatted = formatDate(value);
+    el.textContent = formatted ? `최근 업데이트 ${formatted}` : '최근 업데이트';
+  }
+
+  setLatestUpdate();
+})();
+</script>
+<script>
+(function(){
+  const btn = document.getElementById('sidebarToggle');
+  if(!btn) return;
+
+  const saved = localStorage.getItem('atommerce-sidebar-collapsed');
+  if(saved === '1'){
+    document.body.classList.add('sidebar-collapsed');
+    btn.textContent = '›';
+    btn.setAttribute('aria-label','사이드바 펼치기');
+  }
+
+  btn.addEventListener('click', function(){
+    const collapsed = document.body.classList.toggle('sidebar-collapsed');
+    btn.textContent = collapsed ? '›' : '‹';
+    btn.setAttribute('aria-label', collapsed ? '사이드바 펼치기' : '사이드바 접기');
+    localStorage.setItem('atommerce-sidebar-collapsed', collapsed ? '1' : '0');
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  document.querySelectorAll('.local-group-title').forEach(btn=>{
+    btn.addEventListener('click',()=>btn.closest('.local-group').classList.toggle('open'));
+  });
+})();
+</script>
+
+</body></html>
