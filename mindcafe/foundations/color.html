@@ -57,6 +57,108 @@
 }
 </style>
 
+
+<style>
+/* v36 alignment fix */
+.color-section{max-width:100%}
+.component-group{margin-top:30px}
+.component-group h3{
+  margin:0 0 10px;
+  font-size:14px;
+  line-height:1.4;
+}
+.component-table-wrap{
+  width:100%;
+  overflow-x:auto;
+  border-top:1px solid var(--line);
+}
+.component-table{
+  width:100%;
+  min-width:0;
+  table-layout:fixed;
+  border-collapse:collapse;
+}
+.component-table th,
+.component-table td{
+  padding:10px 8px;
+  vertical-align:middle;
+  box-sizing:border-box;
+}
+.component-table th:first-child,
+.component-table td:first-child{
+  width:76%;
+  text-align:left;
+}
+.component-table th:last-child,
+.component-table td:last-child{
+  width:24%;
+  text-align:left;
+}
+.component-table th{
+  font-size:11px;
+  line-height:1.3;
+  color:#7B858D;
+  font-weight:700;
+}
+.component-table td{
+  font-size:11px;
+  line-height:1.45;
+}
+.component-table td code{
+  display:block;
+  padding:0;
+  background:none;
+  white-space:normal;
+  word-break:break-word;
+}
+.component-table td:last-child{
+  white-space:nowrap;
+}
+.component-table td:last-child .swatch{
+  margin-right:6px;
+}
+</style>
+
+
+<style>
+.color-pick{cursor:pointer}
+button.color-pick{font:inherit;color:inherit}
+.token-row.color-pick{
+  width:100%;border:0;background:transparent;text-align:left;
+}
+.token-row.color-pick:hover,
+.token-row.color-pick.is-selected{background:#F7F9FA}
+.palette-item.color-pick{
+  display:block;width:100%;padding:0;border:0;background:#fff;text-align:left;
+}
+.palette-item.color-pick:hover,
+.palette-item.color-pick.is-selected{outline:2px solid #373D44;outline-offset:-2px}
+.component-table tr.color-pick:hover,
+.component-table tr.color-pick.is-selected{background:#F7F9FA}
+
+.color-popover{
+  position:fixed;z-index:1000;width:292px;
+  padding:16px;border:1px solid #E1E4E8;border-radius:12px;
+  background:#fff;box-shadow:0 10px 30px rgba(21,24,24,.12);
+  color:#252B31;
+}
+.color-popover[hidden]{display:none}
+.color-popover-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.color-popover-swatch{width:28px;height:28px;border-radius:7px;border:1px solid rgba(0,0,0,.08);flex:0 0 auto}
+.color-popover-token{min-width:0;font:700 11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all}
+.color-popover-grid{display:grid;grid-template-columns:58px 1fr;gap:8px 10px;align-items:start;font-size:11px}
+.color-popover-label{color:#8A939B}
+.color-popover-value{min-width:0;word-break:break-all}
+.color-popover-copy{
+  margin-top:14px;width:100%;height:34px;border:1px solid #D7DCE0;border-radius:8px;
+  background:#fff;color:#373D44;font-size:11px;font-weight:750;cursor:pointer;
+}
+.color-popover-copy:hover{background:#F7F9FA}
+@media(max-width:700px){
+  .color-popover{left:16px!important;right:16px;width:auto}
+}
+</style>
+
 </head>
 <body>
 <header class="global-header">
@@ -117,70 +219,70 @@
     </div>
     <div class="semantic-grid"><div class="semantic-group">
       <div class="semantic-title">Background</div>
-      <div class="token-row">
-          <div class="token-name">sys/bg/default</div>
-          <div class="token-value"><span class="swatch" style="background:#F3F5F7"></span>#F3F5F7</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/bg/alt</div>
-          <div class="token-value"><span class="swatch" style="background:#FFFFFF"></span>#FFFFFF</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/bg/primary-tint</div>
-          <div class="token-value"><span class="swatch" style="background:#D4F8F8"></span>#D4F8F8</div>
-        </div>
+      <button class="token-row color-pick" type="button" data-token="sys/bg/default" data-hex="#F3F5F7" data-alias="ref/neutral/50">
+      <span class="token-name">sys/bg/default</span>
+      <span class="token-value"><span class="swatch" style="background:#F3F5F7"></span>#F3F5F7</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/bg/alt" data-hex="#FFFFFF" data-alias="ref/base/white">
+      <span class="token-name">sys/bg/alt</span>
+      <span class="token-value"><span class="swatch" style="background:#FFFFFF"></span>#FFFFFF</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/bg/primary-tint" data-hex="#D4F8F8" data-alias="ref/primary/10">
+      <span class="token-name">sys/bg/primary-tint</span>
+      <span class="token-value"><span class="swatch" style="background:#D4F8F8"></span>#D4F8F8</span>
+    </button>
     </div><div class="semantic-group">
       <div class="semantic-title">Surface</div>
-      <div class="token-row">
-          <div class="token-name">sys/surface/default</div>
-          <div class="token-value"><span class="swatch" style="background:#FFFFFF"></span>#FFFFFF</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/surface/alt</div>
-          <div class="token-value"><span class="swatch" style="background:#FAFBFC"></span>#FAFBFC</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/surface/hover</div>
-          <div class="token-value"><span class="swatch" style="background:#FAFBFC"></span>#FAFBFC</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/surface/active</div>
-          <div class="token-value"><span class="swatch" style="background:#F3F5F7"></span>#F3F5F7</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/surface/primary-tint</div>
-          <div class="token-value"><span class="swatch" style="background:#D4F8F8"></span>#D4F8F8</div>
-        </div>
+      <button class="token-row color-pick" type="button" data-token="sys/surface/default" data-hex="#FFFFFF" data-alias="ref/base/white">
+      <span class="token-name">sys/surface/default</span>
+      <span class="token-value"><span class="swatch" style="background:#FFFFFF"></span>#FFFFFF</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/surface/alt" data-hex="#FAFBFC" data-alias="ref/neutral/10">
+      <span class="token-name">sys/surface/alt</span>
+      <span class="token-value"><span class="swatch" style="background:#FAFBFC"></span>#FAFBFC</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/surface/hover" data-hex="#FAFBFC" data-alias="ref/neutral/10">
+      <span class="token-name">sys/surface/hover</span>
+      <span class="token-value"><span class="swatch" style="background:#FAFBFC"></span>#FAFBFC</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/surface/active" data-hex="#F3F5F7" data-alias="ref/neutral/50">
+      <span class="token-name">sys/surface/active</span>
+      <span class="token-value"><span class="swatch" style="background:#F3F5F7"></span>#F3F5F7</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/surface/primary-tint" data-hex="#D4F8F8" data-alias="ref/primary/10">
+      <span class="token-name">sys/surface/primary-tint</span>
+      <span class="token-value"><span class="swatch" style="background:#D4F8F8"></span>#D4F8F8</span>
+    </button>
     </div><div class="semantic-group">
       <div class="semantic-title">Text</div>
-      <div class="token-row">
-          <div class="token-name">sys/text/default(900)</div>
-          <div class="token-value"><span class="swatch" style="background:#373D44"></span>#373D44</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/text/light(700)</div>
-          <div class="token-value"><span class="swatch" style="background:#4E5760"></span>#4E5760</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/text/lightest(500)</div>
-          <div class="token-value"><span class="swatch" style="background:#7E8A96"></span>#7E8A96</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/text/primary/default(500)</div>
-          <div class="token-value"><span class="swatch" style="background:#007777"></span>#007777</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/text/primary/deep(700)</div>
-          <div class="token-value"><span class="swatch" style="background:#005454"></span>#005454</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/text/negative/default</div>
-          <div class="token-value"><span class="swatch" style="background:#F0143C"></span>#F0143C</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/text/sub/default(900)</div>
-          <div class="token-value"><span class="swatch" style="background:#373D44"></span>#373D44</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/text/sub/light(700)</div>
-          <div class="token-value"><span class="swatch" style="background:#4E5760"></span>#4E5760</div>
-        </div><div class="token-row">
-          <div class="token-name">sys/text/sub/lightest(500)</div>
-          <div class="token-value"><span class="swatch" style="background:#7E8A96"></span>#7E8A96</div>
-        </div>
+      <button class="token-row color-pick" type="button" data-token="sys/text/default(900)" data-hex="#373D44" data-alias="ref/neutral/900">
+      <span class="token-name">sys/text/default(900)</span>
+      <span class="token-value"><span class="swatch" style="background:#373D44"></span>#373D44</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/text/light(700)" data-hex="#4E5760" data-alias="ref/neutral/700">
+      <span class="token-name">sys/text/light(700)</span>
+      <span class="token-value"><span class="swatch" style="background:#4E5760"></span>#4E5760</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/text/lightest(500)" data-hex="#7E8A96" data-alias="ref/neutral/500">
+      <span class="token-name">sys/text/lightest(500)</span>
+      <span class="token-value"><span class="swatch" style="background:#7E8A96"></span>#7E8A96</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/text/primary/default(500)" data-hex="#007777" data-alias="ref/primary/500">
+      <span class="token-name">sys/text/primary/default(500)</span>
+      <span class="token-value"><span class="swatch" style="background:#007777"></span>#007777</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/text/primary/deep(700)" data-hex="#005454" data-alias="ref/primary/700">
+      <span class="token-name">sys/text/primary/deep(700)</span>
+      <span class="token-value"><span class="swatch" style="background:#005454"></span>#005454</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/text/negative/default" data-hex="#F0143C" data-alias="ref/extended/red/500">
+      <span class="token-name">sys/text/negative/default</span>
+      <span class="token-value"><span class="swatch" style="background:#F0143C"></span>#F0143C</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/text/sub/default(900)" data-hex="#373D44" data-alias="ref/neutral/900">
+      <span class="token-name">sys/text/sub/default(900)</span>
+      <span class="token-value"><span class="swatch" style="background:#373D44"></span>#373D44</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/text/sub/light(700)" data-hex="#4E5760" data-alias="ref/neutral/700">
+      <span class="token-name">sys/text/sub/light(700)</span>
+      <span class="token-value"><span class="swatch" style="background:#4E5760"></span>#4E5760</span>
+    </button><button class="token-row color-pick" type="button" data-token="sys/text/sub/lightest(500)" data-hex="#7E8A96" data-alias="ref/neutral/500">
+      <span class="token-name">sys/text/sub/lightest(500)</span>
+      <span class="token-value"><span class="swatch" style="background:#7E8A96"></span>#7E8A96</span>
+    </button>
     </div><div class="semantic-group">
       <div class="semantic-title">Overlay</div>
-      <div class="token-row">
-          <div class="token-name">sys/overlay/dim</div>
-          <div class="token-value"><span class="swatch" style="background:#373D4480"></span>#373D4480</div>
-        </div>
+      <button class="token-row color-pick" type="button" data-token="sys/overlay/dim" data-hex="#373D4480" data-alias="ref/alpha/50">
+      <span class="token-name">sys/overlay/dim</span>
+      <span class="token-value"><span class="swatch" style="background:#373D4480"></span>#373D4480</span>
+    </button>
     </div></div>
   </section>
 
@@ -189,343 +291,343 @@
       <h2>Reference</h2>
       <span class="color-section-note">Color scale</span>
     </div>
-    <h3>Primary</h3><div class="palette-wrap"><div class="palette-row"><div class="palette-item">
-          <div class="palette-color" style="background:#F6FFFF"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/primary/5</div>
-            <div class="palette-hex">#F6FFFF</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#D4F8F8"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/primary/10</div>
-            <div class="palette-hex">#D4F8F8</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#A2EDEE"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/primary/50</div>
-            <div class="palette-hex">#A2EDEE</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#70DCDC"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/primary/100</div>
-            <div class="palette-hex">#70DCDC</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#3CD0D0"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/primary/200</div>
-            <div class="palette-hex">#3CD0D0</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#00BBBA"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/primary/300</div>
-            <div class="palette-hex">#00BBBA</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#007777"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/primary/500</div>
-            <div class="palette-hex">#007777</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#006969"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/primary/600</div>
-            <div class="palette-hex">#006969</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#005454"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/primary/700</div>
-            <div class="palette-hex">#005454</div>
-          </div>
-        </div></div></div><h3>Neutral</h3><div class="palette-wrap"><div class="palette-row"><div class="palette-item">
-          <div class="palette-color" style="background:#FAFBFC"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/neutral/10</div>
-            <div class="palette-hex">#FAFBFC</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#F3F5F7"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/neutral/50</div>
-            <div class="palette-hex">#F3F5F7</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#EEF0F2"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/neutral/100</div>
-            <div class="palette-hex">#EEF0F2</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#E1E4E8"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/neutral/150</div>
-            <div class="palette-hex">#E1E4E8</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#D2D6DB"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/neutral/200</div>
-            <div class="palette-hex">#D2D6DB</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#B6BDC4"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/neutral/300</div>
-            <div class="palette-hex">#B6BDC4</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#7E8A96"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/neutral/500</div>
-            <div class="palette-hex">#7E8A96</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#4E5760"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/neutral/700</div>
-            <div class="palette-hex">#4E5760</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#373D44"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/neutral/900</div>
-            <div class="palette-hex">#373D44</div>
-          </div>
-        </div></div></div><h3>Red</h3><div class="palette-wrap"><div class="palette-row"><div class="palette-item">
-          <div class="palette-color" style="background:#FFF5F6"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/red/30</div>
-            <div class="palette-hex">#FFF5F6</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#FEEAED"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/red/50</div>
-            <div class="palette-hex">#FEEAED</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#FFC7D1"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/red/100</div>
-            <div class="palette-hex">#FFC7D1</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#FF97A9"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/red/200</div>
-            <div class="palette-hex">#FF97A9</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#FF6984"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/red/300</div>
-            <div class="palette-hex">#FF6984</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#F0143C"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/red/500</div>
-            <div class="palette-hex">#F0143C</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#D40E32"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/red/600</div>
-            <div class="palette-hex">#D40E32</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#B50B2B"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/red/700</div>
-            <div class="palette-hex">#B50B2B</div>
-          </div>
-        </div></div></div><h3>Yellow</h3><div class="palette-wrap"><div class="palette-row"><div class="palette-item">
-          <div class="palette-color" style="background:#FFF7E3"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/yellow/100</div>
-            <div class="palette-hex">#FFF7E3</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#FFEEC2"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/yellow/200</div>
-            <div class="palette-hex">#FFEEC2</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#FFE5A3"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/yellow/300</div>
-            <div class="palette-hex">#FFE5A3</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#FFCE4F"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/yellow/500</div>
-            <div class="palette-hex">#FFCE4F</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#FFC42B"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/yellow/600</div>
-            <div class="palette-hex">#FFC42B</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#FFBA08"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/yellow/700</div>
-            <div class="palette-hex">#FFBA08</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#FAA131"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/yellow/800</div>
-            <div class="palette-hex">#FAA131</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#EB8E02"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/yellow/900</div>
-            <div class="palette-hex">#EB8E02</div>
-          </div>
-        </div></div></div><h3>Blue</h3><div class="palette-wrap"><div class="palette-row"><div class="palette-item">
-          <div class="palette-color" style="background:#DEEFFF"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/blue/50</div>
-            <div class="palette-hex">#DEEFFF</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#C9E5FF"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/blue/100</div>
-            <div class="palette-hex">#C9E5FF</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#ACD7FF"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/blue/200</div>
-            <div class="palette-hex">#ACD7FF</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#1976D2"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/blue/500</div>
-            <div class="palette-hex">#1976D2</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#0C65BD"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/blue/600</div>
-            <div class="palette-hex">#0C65BD</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#0354A4"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/blue/700</div>
-            <div class="palette-hex">#0354A4</div>
-          </div>
-        </div></div></div><h3>Green</h3><div class="palette-wrap"><div class="palette-row"><div class="palette-item">
-          <div class="palette-color" style="background:#E0FFE1"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/green/50</div>
-            <div class="palette-hex">#E0FFE1</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#BBFCBD"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/green/100</div>
-            <div class="palette-hex">#BBFCBD</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#81F788"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/green/200</div>
-            <div class="palette-hex">#81F788</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#4AF058"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/green/300</div>
-            <div class="palette-hex">#4AF058</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#17D326"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/green/500</div>
-            <div class="palette-hex">#17D326</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#11B81E"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/green/600</div>
-            <div class="palette-hex">#11B81E</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#099915"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/green/700</div>
-            <div class="palette-hex">#099915</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#05730E"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/green/800</div>
-            <div class="palette-hex">#05730E</div>
-          </div>
-        </div></div></div><h3>Green 2</h3><div class="palette-wrap"><div class="palette-row"><div class="palette-item">
-          <div class="palette-color" style="background:#F0FAF6"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/green2/50</div>
-            <div class="palette-hex">#F0FAF6</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#15C47E"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/green2/600</div>
-            <div class="palette-hex">#15C47E</div>
-          </div>
-        </div></div></div><h3>Orange</h3><div class="palette-wrap"><div class="palette-row"><div class="palette-item">
-          <div class="palette-color" style="background:#FFEEE5"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/orange/100</div>
-            <div class="palette-hex">#FFEEE5</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#FAA131"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/orange/600</div>
-            <div class="palette-hex">#FAA131</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#F57800"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/extended/orange/700</div>
-            <div class="palette-hex">#F57800</div>
-          </div>
-        </div></div></div><h3>Base / Alpha</h3><div class="palette-wrap"><div class="palette-row"><div class="palette-item">
-          <div class="palette-color" style="background:#FFFFFF"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/base/white</div>
-            <div class="palette-hex">#FFFFFF</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#151818"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/base/black</div>
-            <div class="palette-hex">#151818</div>
-          </div>
-        </div><div class="palette-item">
-          <div class="palette-color" style="background:#373D4480"></div>
-          <div class="palette-meta">
-            <div class="palette-token">ref/alpha/50</div>
-            <div class="palette-hex">#373D4480</div>
-          </div>
-        </div></div></div>
+    <h3>Primary</h3><div class="palette-wrap"><div class="palette-row"><button class="palette-item color-pick" type="button" data-token="ref/primary/5" data-hex="#F6FFFF" data-alias="">
+      <span class="palette-color" style="background:#F6FFFF"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/primary/5</span>
+        <span class="palette-hex">#F6FFFF</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/primary/10" data-hex="#D4F8F8" data-alias="">
+      <span class="palette-color" style="background:#D4F8F8"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/primary/10</span>
+        <span class="palette-hex">#D4F8F8</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/primary/50" data-hex="#A2EDEE" data-alias="">
+      <span class="palette-color" style="background:#A2EDEE"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/primary/50</span>
+        <span class="palette-hex">#A2EDEE</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/primary/100" data-hex="#70DCDC" data-alias="">
+      <span class="palette-color" style="background:#70DCDC"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/primary/100</span>
+        <span class="palette-hex">#70DCDC</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/primary/200" data-hex="#3CD0D0" data-alias="">
+      <span class="palette-color" style="background:#3CD0D0"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/primary/200</span>
+        <span class="palette-hex">#3CD0D0</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/primary/300" data-hex="#00BBBA" data-alias="">
+      <span class="palette-color" style="background:#00BBBA"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/primary/300</span>
+        <span class="palette-hex">#00BBBA</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/primary/500" data-hex="#007777" data-alias="">
+      <span class="palette-color" style="background:#007777"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/primary/500</span>
+        <span class="palette-hex">#007777</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/primary/600" data-hex="#006969" data-alias="">
+      <span class="palette-color" style="background:#006969"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/primary/600</span>
+        <span class="palette-hex">#006969</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/primary/700" data-hex="#005454" data-alias="">
+      <span class="palette-color" style="background:#005454"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/primary/700</span>
+        <span class="palette-hex">#005454</span>
+      </span>
+    </button></div></div><h3>Neutral</h3><div class="palette-wrap"><div class="palette-row"><button class="palette-item color-pick" type="button" data-token="ref/neutral/10" data-hex="#FAFBFC" data-alias="">
+      <span class="palette-color" style="background:#FAFBFC"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/neutral/10</span>
+        <span class="palette-hex">#FAFBFC</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/neutral/50" data-hex="#F3F5F7" data-alias="">
+      <span class="palette-color" style="background:#F3F5F7"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/neutral/50</span>
+        <span class="palette-hex">#F3F5F7</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/neutral/100" data-hex="#EEF0F2" data-alias="">
+      <span class="palette-color" style="background:#EEF0F2"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/neutral/100</span>
+        <span class="palette-hex">#EEF0F2</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/neutral/150" data-hex="#E1E4E8" data-alias="">
+      <span class="palette-color" style="background:#E1E4E8"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/neutral/150</span>
+        <span class="palette-hex">#E1E4E8</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/neutral/200" data-hex="#D2D6DB" data-alias="">
+      <span class="palette-color" style="background:#D2D6DB"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/neutral/200</span>
+        <span class="palette-hex">#D2D6DB</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/neutral/300" data-hex="#B6BDC4" data-alias="">
+      <span class="palette-color" style="background:#B6BDC4"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/neutral/300</span>
+        <span class="palette-hex">#B6BDC4</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/neutral/500" data-hex="#7E8A96" data-alias="">
+      <span class="palette-color" style="background:#7E8A96"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/neutral/500</span>
+        <span class="palette-hex">#7E8A96</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/neutral/700" data-hex="#4E5760" data-alias="">
+      <span class="palette-color" style="background:#4E5760"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/neutral/700</span>
+        <span class="palette-hex">#4E5760</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/neutral/900" data-hex="#373D44" data-alias="">
+      <span class="palette-color" style="background:#373D44"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/neutral/900</span>
+        <span class="palette-hex">#373D44</span>
+      </span>
+    </button></div></div><h3>Red</h3><div class="palette-wrap"><div class="palette-row"><button class="palette-item color-pick" type="button" data-token="ref/extended/red/30" data-hex="#FFF5F6" data-alias="">
+      <span class="palette-color" style="background:#FFF5F6"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/red/30</span>
+        <span class="palette-hex">#FFF5F6</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/red/50" data-hex="#FEEAED" data-alias="">
+      <span class="palette-color" style="background:#FEEAED"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/red/50</span>
+        <span class="palette-hex">#FEEAED</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/red/100" data-hex="#FFC7D1" data-alias="">
+      <span class="palette-color" style="background:#FFC7D1"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/red/100</span>
+        <span class="palette-hex">#FFC7D1</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/red/200" data-hex="#FF97A9" data-alias="">
+      <span class="palette-color" style="background:#FF97A9"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/red/200</span>
+        <span class="palette-hex">#FF97A9</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/red/300" data-hex="#FF6984" data-alias="">
+      <span class="palette-color" style="background:#FF6984"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/red/300</span>
+        <span class="palette-hex">#FF6984</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/red/500" data-hex="#F0143C" data-alias="">
+      <span class="palette-color" style="background:#F0143C"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/red/500</span>
+        <span class="palette-hex">#F0143C</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/red/600" data-hex="#D40E32" data-alias="">
+      <span class="palette-color" style="background:#D40E32"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/red/600</span>
+        <span class="palette-hex">#D40E32</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/red/700" data-hex="#B50B2B" data-alias="">
+      <span class="palette-color" style="background:#B50B2B"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/red/700</span>
+        <span class="palette-hex">#B50B2B</span>
+      </span>
+    </button></div></div><h3>Yellow</h3><div class="palette-wrap"><div class="palette-row"><button class="palette-item color-pick" type="button" data-token="ref/extended/yellow/100" data-hex="#FFF7E3" data-alias="">
+      <span class="palette-color" style="background:#FFF7E3"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/yellow/100</span>
+        <span class="palette-hex">#FFF7E3</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/yellow/200" data-hex="#FFEEC2" data-alias="">
+      <span class="palette-color" style="background:#FFEEC2"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/yellow/200</span>
+        <span class="palette-hex">#FFEEC2</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/yellow/300" data-hex="#FFE5A3" data-alias="">
+      <span class="palette-color" style="background:#FFE5A3"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/yellow/300</span>
+        <span class="palette-hex">#FFE5A3</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/yellow/500" data-hex="#FFCE4F" data-alias="">
+      <span class="palette-color" style="background:#FFCE4F"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/yellow/500</span>
+        <span class="palette-hex">#FFCE4F</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/yellow/600" data-hex="#FFC42B" data-alias="">
+      <span class="palette-color" style="background:#FFC42B"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/yellow/600</span>
+        <span class="palette-hex">#FFC42B</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/yellow/700" data-hex="#FFBA08" data-alias="">
+      <span class="palette-color" style="background:#FFBA08"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/yellow/700</span>
+        <span class="palette-hex">#FFBA08</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/yellow/800" data-hex="#FAA131" data-alias="">
+      <span class="palette-color" style="background:#FAA131"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/yellow/800</span>
+        <span class="palette-hex">#FAA131</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/yellow/900" data-hex="#EB8E02" data-alias="">
+      <span class="palette-color" style="background:#EB8E02"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/yellow/900</span>
+        <span class="palette-hex">#EB8E02</span>
+      </span>
+    </button></div></div><h3>Blue</h3><div class="palette-wrap"><div class="palette-row"><button class="palette-item color-pick" type="button" data-token="ref/extended/blue/50" data-hex="#DEEFFF" data-alias="">
+      <span class="palette-color" style="background:#DEEFFF"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/blue/50</span>
+        <span class="palette-hex">#DEEFFF</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/blue/100" data-hex="#C9E5FF" data-alias="">
+      <span class="palette-color" style="background:#C9E5FF"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/blue/100</span>
+        <span class="palette-hex">#C9E5FF</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/blue/200" data-hex="#ACD7FF" data-alias="">
+      <span class="palette-color" style="background:#ACD7FF"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/blue/200</span>
+        <span class="palette-hex">#ACD7FF</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/blue/500" data-hex="#1976D2" data-alias="">
+      <span class="palette-color" style="background:#1976D2"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/blue/500</span>
+        <span class="palette-hex">#1976D2</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/blue/600" data-hex="#0C65BD" data-alias="">
+      <span class="palette-color" style="background:#0C65BD"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/blue/600</span>
+        <span class="palette-hex">#0C65BD</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/blue/700" data-hex="#0354A4" data-alias="">
+      <span class="palette-color" style="background:#0354A4"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/blue/700</span>
+        <span class="palette-hex">#0354A4</span>
+      </span>
+    </button></div></div><h3>Green</h3><div class="palette-wrap"><div class="palette-row"><button class="palette-item color-pick" type="button" data-token="ref/extended/green/50" data-hex="#E0FFE1" data-alias="">
+      <span class="palette-color" style="background:#E0FFE1"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/green/50</span>
+        <span class="palette-hex">#E0FFE1</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/green/100" data-hex="#BBFCBD" data-alias="">
+      <span class="palette-color" style="background:#BBFCBD"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/green/100</span>
+        <span class="palette-hex">#BBFCBD</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/green/200" data-hex="#81F788" data-alias="">
+      <span class="palette-color" style="background:#81F788"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/green/200</span>
+        <span class="palette-hex">#81F788</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/green/300" data-hex="#4AF058" data-alias="">
+      <span class="palette-color" style="background:#4AF058"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/green/300</span>
+        <span class="palette-hex">#4AF058</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/green/500" data-hex="#17D326" data-alias="">
+      <span class="palette-color" style="background:#17D326"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/green/500</span>
+        <span class="palette-hex">#17D326</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/green/600" data-hex="#11B81E" data-alias="">
+      <span class="palette-color" style="background:#11B81E"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/green/600</span>
+        <span class="palette-hex">#11B81E</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/green/700" data-hex="#099915" data-alias="">
+      <span class="palette-color" style="background:#099915"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/green/700</span>
+        <span class="palette-hex">#099915</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/green/800" data-hex="#05730E" data-alias="">
+      <span class="palette-color" style="background:#05730E"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/green/800</span>
+        <span class="palette-hex">#05730E</span>
+      </span>
+    </button></div></div><h3>Green 2</h3><div class="palette-wrap"><div class="palette-row"><button class="palette-item color-pick" type="button" data-token="ref/extended/green2/50" data-hex="#F0FAF6" data-alias="">
+      <span class="palette-color" style="background:#F0FAF6"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/green2/50</span>
+        <span class="palette-hex">#F0FAF6</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/green2/600" data-hex="#15C47E" data-alias="">
+      <span class="palette-color" style="background:#15C47E"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/green2/600</span>
+        <span class="palette-hex">#15C47E</span>
+      </span>
+    </button></div></div><h3>Orange</h3><div class="palette-wrap"><div class="palette-row"><button class="palette-item color-pick" type="button" data-token="ref/extended/orange/100" data-hex="#FFEEE5" data-alias="">
+      <span class="palette-color" style="background:#FFEEE5"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/orange/100</span>
+        <span class="palette-hex">#FFEEE5</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/orange/600" data-hex="#FAA131" data-alias="">
+      <span class="palette-color" style="background:#FAA131"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/orange/600</span>
+        <span class="palette-hex">#FAA131</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/extended/orange/700" data-hex="#F57800" data-alias="">
+      <span class="palette-color" style="background:#F57800"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/extended/orange/700</span>
+        <span class="palette-hex">#F57800</span>
+      </span>
+    </button></div></div><h3>Base / Alpha</h3><div class="palette-wrap"><div class="palette-row"><button class="palette-item color-pick" type="button" data-token="ref/base/white" data-hex="#FFFFFF" data-alias="">
+      <span class="palette-color" style="background:#FFFFFF"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/base/white</span>
+        <span class="palette-hex">#FFFFFF</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/base/black" data-hex="#151818" data-alias="">
+      <span class="palette-color" style="background:#151818"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/base/black</span>
+        <span class="palette-hex">#151818</span>
+      </span>
+    </button><button class="palette-item color-pick" type="button" data-token="ref/alpha/50" data-hex="#373D4480" data-alias="">
+      <span class="palette-color" style="background:#373D4480"></span>
+      <span class="palette-meta">
+        <span class="palette-token">ref/alpha/50</span>
+        <span class="palette-hex">#373D4480</span>
+      </span>
+    </button></div></div>
   </section>
 
   <section class="color-section">
@@ -538,7 +640,61 @@
       <div class="component-table-wrap">
         <table class="component-table">
           <thead><tr><th>Token</th><th>Value</th></tr></thead>
-          <tbody><tr><td><code>comp/style/none</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FFFFFF"></span> #FFFFFF</td></tr><tr><td><code>comp/style/primary-tint/default(10)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#D4F8F8"></span> #D4F8F8</td></tr><tr><td><code>comp/style/primary-tint/deep(50)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#A2EDEE"></span> #A2EDEE</td></tr><tr><td><code>comp/style/primary-tint/deeper(100)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#70DCDC"></span> #70DCDC</td></tr><tr><td><code>comp/style/primary/default(500)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#007777"></span> #007777</td></tr><tr><td><code>comp/style/primary/deep(600)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#006969"></span> #006969</td></tr><tr><td><code>comp/style/primary/deeper(700)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#005454"></span> #005454</td></tr><tr><td><code>comp/style/neutral/lightest(10)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FAFBFC"></span> #FAFBFC</td></tr><tr><td><code>comp/style/neutral/light(50)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#F3F5F7"></span> #F3F5F7</td></tr><tr><td><code>comp/style/neutral/default(100)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#EEF0F2"></span> #EEF0F2</td></tr><tr><td><code>comp/style/neutral/deep(150)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#E1E4E8"></span> #E1E4E8</td></tr><tr><td><code>comp/style/neutral/deeper(200)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#D2D6DB"></span> #D2D6DB</td></tr><tr><td><code>comp/style/neutral/dark(300)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#B6BDC4"></span> #B6BDC4</td></tr><tr><td><code>comp/style/neutral/darker(500)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#7E8A96"></span> #7E8A96</td></tr><tr><td><code>comp/style/neutral/darkest(900)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#373D44"></span> #373D44</td></tr><tr><td><code>comp/style/negative/default</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#F0143C"></span> #F0143C</td></tr><tr><td><code>comp/style/negative/deep</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#D40E32"></span> #D40E32</td></tr><tr><td><code>comp/style/negative/deeper</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#B50B2B"></span> #B50B2B</td></tr></tbody>
+          <tbody><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/none" data-hex="#FFFFFF" data-alias="ref/base/white">
+      <td><code>comp/style/none</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FFFFFF"></span> #FFFFFF</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/primary-tint/default(10)" data-hex="#D4F8F8" data-alias="ref/primary/10">
+      <td><code>comp/style/primary-tint/default(10)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#D4F8F8"></span> #D4F8F8</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/primary-tint/deep(50)" data-hex="#A2EDEE" data-alias="ref/primary/50">
+      <td><code>comp/style/primary-tint/deep(50)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#A2EDEE"></span> #A2EDEE</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/primary-tint/deeper(100)" data-hex="#70DCDC" data-alias="ref/primary/100">
+      <td><code>comp/style/primary-tint/deeper(100)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#70DCDC"></span> #70DCDC</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/primary/default(500)" data-hex="#007777" data-alias="ref/primary/500">
+      <td><code>comp/style/primary/default(500)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#007777"></span> #007777</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/primary/deep(600)" data-hex="#006969" data-alias="ref/primary/600">
+      <td><code>comp/style/primary/deep(600)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#006969"></span> #006969</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/primary/deeper(700)" data-hex="#005454" data-alias="ref/primary/700">
+      <td><code>comp/style/primary/deeper(700)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#005454"></span> #005454</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/neutral/lightest(10)" data-hex="#FAFBFC" data-alias="ref/neutral/10">
+      <td><code>comp/style/neutral/lightest(10)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FAFBFC"></span> #FAFBFC</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/neutral/light(50)" data-hex="#F3F5F7" data-alias="ref/neutral/50">
+      <td><code>comp/style/neutral/light(50)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#F3F5F7"></span> #F3F5F7</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/neutral/default(100)" data-hex="#EEF0F2" data-alias="ref/neutral/100">
+      <td><code>comp/style/neutral/default(100)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#EEF0F2"></span> #EEF0F2</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/neutral/deep(150)" data-hex="#E1E4E8" data-alias="ref/neutral/150">
+      <td><code>comp/style/neutral/deep(150)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#E1E4E8"></span> #E1E4E8</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/neutral/deeper(200)" data-hex="#D2D6DB" data-alias="ref/neutral/200">
+      <td><code>comp/style/neutral/deeper(200)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#D2D6DB"></span> #D2D6DB</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/neutral/dark(300)" data-hex="#B6BDC4" data-alias="ref/neutral/300">
+      <td><code>comp/style/neutral/dark(300)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#B6BDC4"></span> #B6BDC4</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/neutral/darker(500)" data-hex="#7E8A96" data-alias="ref/neutral/500">
+      <td><code>comp/style/neutral/darker(500)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#7E8A96"></span> #7E8A96</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/neutral/darkest(900)" data-hex="#373D44" data-alias="ref/neutral/900">
+      <td><code>comp/style/neutral/darkest(900)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#373D44"></span> #373D44</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/negative/default" data-hex="#F0143C" data-alias="ref/extended/red/500">
+      <td><code>comp/style/negative/default</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#F0143C"></span> #F0143C</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/negative/deep" data-hex="#D40E32" data-alias="ref/extended/red/600">
+      <td><code>comp/style/negative/deep</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#D40E32"></span> #D40E32</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/style/negative/deeper" data-hex="#B50B2B" data-alias="ref/extended/red/700">
+      <td><code>comp/style/negative/deeper</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#B50B2B"></span> #B50B2B</td>
+    </tr></tbody>
         </table>
       </div>
     </div><div class="component-group">
@@ -546,7 +702,37 @@
       <div class="component-table-wrap">
         <table class="component-table">
           <thead><tr><th>Token</th><th>Value</th></tr></thead>
-          <tbody><tr><td><code>comp/cont/none</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FFFFFF"></span> #FFFFFF</td></tr><tr><td><code>comp/cont/inverse</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FFFFFF"></span> #FFFFFF</td></tr><tr><td><code>comp/cont/primary/default(500)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#007777"></span> #007777</td></tr><tr><td><code>comp/cont/primary/deep(700)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#005454"></span> #005454</td></tr><tr><td><code>comp/cont/neutral/default(900)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#373D44"></span> #373D44</td></tr><tr><td><code>comp/cont/neutral/light(700)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#4E5760"></span> #4E5760</td></tr><tr><td><code>comp/cont/neutral/lightest(500)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#7E8A96"></span> #7E8A96</td></tr><tr><td><code>comp/cont/neutral/disabled/default(300)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#B6BDC4"></span> #B6BDC4</td></tr><tr><td><code>comp/cont/neutral/disabled/light(200)</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#D2D6DB"></span> #D2D6DB</td></tr><tr><td><code>comp/cont/negative/default</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#F0143C"></span> #F0143C</td></tr></tbody>
+          <tbody><tr class="color-pick" tabindex="0" role="button" data-token="comp/cont/none" data-hex="#FFFFFF" data-alias="ref/base/white">
+      <td><code>comp/cont/none</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FFFFFF"></span> #FFFFFF</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/cont/inverse" data-hex="#FFFFFF" data-alias="ref/base/white">
+      <td><code>comp/cont/inverse</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FFFFFF"></span> #FFFFFF</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/cont/primary/default(500)" data-hex="#007777" data-alias="ref/primary/500">
+      <td><code>comp/cont/primary/default(500)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#007777"></span> #007777</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/cont/primary/deep(700)" data-hex="#005454" data-alias="ref/primary/700">
+      <td><code>comp/cont/primary/deep(700)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#005454"></span> #005454</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/cont/neutral/default(900)" data-hex="#373D44" data-alias="ref/neutral/900">
+      <td><code>comp/cont/neutral/default(900)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#373D44"></span> #373D44</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/cont/neutral/light(700)" data-hex="#4E5760" data-alias="ref/neutral/700">
+      <td><code>comp/cont/neutral/light(700)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#4E5760"></span> #4E5760</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/cont/neutral/lightest(500)" data-hex="#7E8A96" data-alias="ref/neutral/500">
+      <td><code>comp/cont/neutral/lightest(500)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#7E8A96"></span> #7E8A96</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/cont/neutral/disabled/default(300)" data-hex="#B6BDC4" data-alias="ref/neutral/300">
+      <td><code>comp/cont/neutral/disabled/default(300)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#B6BDC4"></span> #B6BDC4</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/cont/neutral/disabled/light(200)" data-hex="#D2D6DB" data-alias="ref/neutral/200">
+      <td><code>comp/cont/neutral/disabled/light(200)</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#D2D6DB"></span> #D2D6DB</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/cont/negative/default" data-hex="#F0143C" data-alias="ref/extended/red/500">
+      <td><code>comp/cont/negative/default</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#F0143C"></span> #F0143C</td>
+    </tr></tbody>
         </table>
       </div>
     </div><div class="component-group">
@@ -554,7 +740,28 @@
       <div class="component-table-wrap">
         <table class="component-table">
           <thead><tr><th>Token</th><th>Value</th></tr></thead>
-          <tbody><tr><td><code>comp/design/red/lightest</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FEEAED"></span> #FEEAED</td></tr><tr><td><code>comp/design/red/default</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#F0143C"></span> #F0143C</td></tr><tr><td><code>comp/design/red/deep</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#D40E32"></span> #D40E32</td></tr><tr><td><code>comp/design/red/darkest</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#B50B2B"></span> #B50B2B</td></tr><tr><td><code>comp/design/yellow/lightest</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FFF7E3"></span> #FFF7E3</td></tr><tr><td><code>comp/design/yellow/default</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FFCE4F"></span> #FFCE4F</td></tr><tr><td><code>comp/design/yellow/darkest</code></td><td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#EB8E02"></span> #EB8E02</td></tr></tbody>
+          <tbody><tr class="color-pick" tabindex="0" role="button" data-token="comp/design/red/lightest" data-hex="#FEEAED" data-alias="ref/extended/red/50">
+      <td><code>comp/design/red/lightest</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FEEAED"></span> #FEEAED</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/design/red/default" data-hex="#F0143C" data-alias="ref/extended/red/500">
+      <td><code>comp/design/red/default</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#F0143C"></span> #F0143C</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/design/red/deep" data-hex="#D40E32" data-alias="ref/extended/red/600">
+      <td><code>comp/design/red/deep</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#D40E32"></span> #D40E32</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/design/red/darkest" data-hex="#B50B2B" data-alias="ref/extended/red/700">
+      <td><code>comp/design/red/darkest</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#B50B2B"></span> #B50B2B</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/design/yellow/lightest" data-hex="#FFF7E3" data-alias="ref/extended/yellow/100">
+      <td><code>comp/design/yellow/lightest</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FFF7E3"></span> #FFF7E3</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/design/yellow/default" data-hex="#FFCE4F" data-alias="ref/extended/yellow/500">
+      <td><code>comp/design/yellow/default</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#FFCE4F"></span> #FFCE4F</td>
+    </tr><tr class="color-pick" tabindex="0" role="button" data-token="comp/design/yellow/darkest" data-hex="#EB8E02" data-alias="ref/extended/yellow/900">
+      <td><code>comp/design/yellow/darkest</code></td>
+      <td><span class="swatch" style="display:inline-block;vertical-align:-3px;background:#EB8E02"></span> #EB8E02</td>
+    </tr></tbody>
         </table>
       </div>
     </div>
@@ -659,5 +866,81 @@ document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('clic
 })();
 </script>
 
+
+
+<div class="color-popover" id="colorPopover" hidden>
+  <div class="color-popover-head">
+    <span class="color-popover-swatch" id="colorPopoverSwatch"></span>
+    <div class="color-popover-token" id="colorPopoverToken"></div>
+  </div>
+  <div class="color-popover-grid">
+    <div class="color-popover-label">HEX</div><div class="color-popover-value" id="colorPopoverHex"></div>
+    <div class="color-popover-label">Source</div><div class="color-popover-value" id="colorPopoverAlias"></div>
+  </div>
+  <button class="color-popover-copy" id="colorPopoverCopy" type="button">Token 복사</button>
+</div>
+
+
+<script>
+(function(){
+  const pop=document.getElementById('colorPopover');
+  const sw=document.getElementById('colorPopoverSwatch');
+  const tok=document.getElementById('colorPopoverToken');
+  const hex=document.getElementById('colorPopoverHex');
+  const alias=document.getElementById('colorPopoverAlias');
+  const copy=document.getElementById('colorPopoverCopy');
+  let current=null;
+
+  function close(){
+    pop.hidden=true;
+    if(current) current.classList.remove('is-selected');
+    current=null;
+  }
+
+  function openFor(el){
+    if(current) current.classList.remove('is-selected');
+    current=el; el.classList.add('is-selected');
+    const token=el.dataset.token||'';
+    const value=el.dataset.hex||'';
+    const source=el.dataset.alias||'Reference value';
+    tok.textContent=token;
+    hex.textContent=value;
+    alias.textContent=source;
+    sw.style.background=value;
+
+    pop.hidden=false;
+    const r=el.getBoundingClientRect();
+    const pw=292, ph=170, gap=10;
+    let left=Math.min(r.left, window.innerWidth-pw-16);
+    left=Math.max(16,left);
+    let top=r.bottom+gap;
+    if(top+ph>window.innerHeight-16) top=Math.max(16,r.top-ph-gap);
+    pop.style.left=left+'px';
+    pop.style.top=top+'px';
+  }
+
+  document.querySelectorAll('.color-pick').forEach(el=>{
+    el.addEventListener('click',e=>{e.stopPropagation();openFor(el)});
+    el.addEventListener('keydown',e=>{
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();openFor(el)}
+    });
+  });
+
+  copy.addEventListener('click',async e=>{
+    e.stopPropagation();
+    if(!current) return;
+    const value=current.dataset.token||'';
+    try{await navigator.clipboard.writeText(value)}catch(_){}
+    copy.textContent='복사됨';
+    setTimeout(()=>copy.textContent='Token 복사',1000);
+  });
+
+  document.addEventListener('click',e=>{
+    if(!pop.contains(e.target)) close();
+  });
+  window.addEventListener('resize',close);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+})();
+</script>
 
 </body></html>
