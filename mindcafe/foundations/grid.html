@@ -4,7 +4,7 @@
 
 
 <style>
-.grid-doc{max-width:1040px;padding-bottom:64px}.grid-doc h1{margin:0;font-size:34px}.grid-doc .eyebrow{margin-bottom:10px}
+.grid-doc{max-width:none;padding-bottom:64px}.grid-doc h1{margin:0;font-size:34px}.grid-doc .eyebrow{margin-bottom:10px}
 .grid-section{padding:38px 0;border-bottom:1px solid #ECEFF1}.grid-section:last-child{border-bottom:0}.grid-section h2{margin:0 0 10px;font-size:18px}.grid-section h3{margin:24px 0 8px;font-size:14px}.grid-section p{max-width:760px;margin:0;color:#68727B;font-size:12px;line-height:1.65}
 .spec-table{width:100%;margin-top:18px;border-collapse:collapse;table-layout:fixed}.spec-table th,.spec-table td{padding:11px 8px;border-bottom:1px solid #EDF0F2;text-align:left;font-size:11px}.spec-table th{color:#858E96}.spec-table td:first-child{font-weight:750}
 .spacing-rule-intro{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.spacing-rule-card{padding-top:12px;border-top:1px solid #E5E8EA}.spacing-rule-card span{display:block;color:#8A939B;font-size:10px}.spacing-rule-card strong{display:block;margin-top:4px;font-size:13px}
@@ -36,7 +36,7 @@
 <style>
 /* v47 · Grid section width alignment */
 .grid-doc{
-  max-width:1040px;
+  max-width:none;
 }
 .grid-section > h2,
 .grid-section > h3,
@@ -150,7 +150,7 @@
 
 <style>
 /* v50 · Grid foundation tabs */
-.grid-doc{max-width:1040px}
+.grid-doc{max-width:none}
 .grid-tabs{
   display:flex;
   gap:28px;
@@ -195,6 +195,29 @@
 }
 @media(max-width:760px){
   .grid-tabs{gap:18px}
+}
+</style>
+
+
+<style>
+/* v51 · Foundation horizontal alignment */
+.grid-doc{
+  max-width:none!important;
+  width:100%;
+  box-sizing:border-box;
+}
+.grid-tabs,
+.grid-panel,
+.grid-panel .grid-section,
+.grid-panel .spec-table,
+.grid-panel .spacing-rule-intro,
+.grid-panel .spacing-ruler,
+.grid-panel .mode-tabs,
+.grid-panel .mode-panel,
+.grid-panel .layout-list,
+.grid-panel .layout-example{
+  width:100%;
+  box-sizing:border-box;
 }
 </style>
 
