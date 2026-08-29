@@ -21,7 +21,6 @@ atommerce-design-system/
 │   │   ├── index.html
 │   │   ├── color.html
 │   │   ├── typography.html
-│   │   ├── spacing.html
 │   │   ├── grid.html
 │   │   ├── radius.html
 │   │   ├── elevation.html
