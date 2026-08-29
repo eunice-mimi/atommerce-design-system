@@ -188,6 +188,270 @@
   border-color:#373D44;
 }
 
+
+/* v74 — Components / Patterns / Templates aligned to Foundation visual language */
+
+/* page width + heading */
+.component-guide,
+.doc-guide{
+  max-width:none !important;
+  padding-bottom:72px !important;
+}
+.component-guide .doc-head,
+.doc-guide .doc-head{
+  padding:0 0 0 !important;
+  margin:0 !important;
+  border-bottom:0 !important;
+  align-items:flex-start !important;
+}
+.component-guide .doc-head .eyebrow,
+.doc-guide .doc-head .eyebrow{
+  margin-bottom:10px !important;
+}
+.component-guide .doc-head h1,
+.doc-guide .doc-head h1{
+  margin:0 !important;
+  font-size:32px !important;
+  line-height:1.15 !important;
+  font-weight:750 !important;
+  letter-spacing:-.02em !important;
+}
+.component-guide .doc-head p,
+.doc-guide .doc-head p{
+  margin:14px 0 0 !important;
+  max-width:760px !important;
+  font-size:13px !important;
+  line-height:1.65 !important;
+  color:#68727B !important;
+}
+
+/* Figma / URL actions */
+.component-guide .doc-actions,
+.doc-guide .doc-actions{
+  padding-top:0 !important;
+  margin-top:0 !important;
+}
+.component-guide .doc-actions a,
+.component-guide .doc-actions button,
+.doc-guide .doc-actions a,
+.doc-guide .doc-actions button{
+  width:92px !important;
+  height:36px !important;
+  border-radius:8px !important;
+  font-size:11px !important;
+  font-weight:700 !important;
+}
+
+/* Same tab visual style as Foundation */
+.component-guide .page-index,
+.doc-guide .page-index{
+  display:flex !important;
+  gap:28px !important;
+  margin-top:28px !important;
+  padding:0 !important;
+  overflow-x:auto !important;
+  border-bottom:1px solid #E8EBED !important;
+  background:transparent !important;
+  scrollbar-width:none;
+}
+.component-guide .page-index::-webkit-scrollbar,
+.doc-guide .page-index::-webkit-scrollbar{display:none}
+.component-guide .page-index a,
+.doc-guide .page-index a{
+  position:relative !important;
+  flex:0 0 auto !important;
+  padding:0 0 11px !important;
+  border:0 !important;
+  background:transparent !important;
+  color:#A0A7AD !important;
+  font-size:12px !important;
+  line-height:1.35 !important;
+  font-weight:700 !important;
+  text-decoration:none !important;
+}
+.component-guide .page-index a.active,
+.component-guide .page-index a:hover,
+.doc-guide .page-index a.active,
+.doc-guide .page-index a:hover{
+  color:#20262C !important;
+}
+.component-guide .page-index a.active::after,
+.doc-guide .page-index a.active::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:-1px;
+  height:2px;
+  background:#20262C;
+}
+
+/* Foundation-like section rhythm */
+.component-guide .guide-section,
+.doc-guide .doc-section{
+  padding:38px 0 !important;
+  border-top:0 !important;
+  border-bottom:1px solid #ECEFF1 !important;
+}
+.component-guide .guide-section:last-child,
+.doc-guide .doc-section:last-child{
+  border-bottom:0 !important;
+}
+.component-guide .guide-kicker,
+.doc-guide .doc-kicker{
+  margin-bottom:8px !important;
+  color:#8A939B !important;
+  font-size:10px !important;
+}
+.component-guide .guide-section h2,
+.doc-guide .doc-section h2{
+  margin:0 0 10px !important;
+  font-size:20px !important;
+  line-height:1.35 !important;
+  font-weight:750 !important;
+}
+.component-guide .guide-desc,
+.doc-guide .doc-desc{
+  margin:0 0 18px !important;
+  max-width:760px !important;
+  color:#68727B !important;
+  font-size:12px !important;
+  line-height:1.65 !important;
+}
+
+/* Foundation-like visual card */
+.component-guide .demo-board,
+.doc-guide .demo-board{
+  margin-top:18px !important;
+  padding:22px !important;
+  border:1px solid #E5E8EA !important;
+  border-radius:12px !important;
+  background:#FFFFFF !important;
+}
+
+/* Foundation-like cards */
+.component-guide .variant-grid,
+.component-guide .size-grid,
+.doc-guide .simple-grid{
+  gap:14px !important;
+  margin-top:18px !important;
+}
+.component-guide .variant-card,
+.component-guide .size-card,
+.component-guide .family-item,
+.doc-guide .simple-item{
+  padding:14px !important;
+  border:1px solid #E5E8EA !important;
+  border-radius:12px !important;
+  background:#FFFFFF !important;
+}
+.component-guide .variant-card h3{
+  margin:0 0 10px !important;
+  font-size:13px !important;
+}
+.component-guide .family-list,
+.doc-guide .simple-grid{
+  gap:14px !important;
+}
+.component-guide .family-item,
+.doc-guide .simple-item{
+  border-bottom:1px solid #E5E8EA !important;
+}
+
+/* Anatomy uses same lightweight spec-card language */
+.component-guide .anatomy-grid{
+  gap:20px !important;
+  margin-top:18px !important;
+}
+.component-guide .anatomy-list{
+  gap:0 !important;
+}
+.component-guide .anatomy-item{
+  padding:11px 0 !important;
+  border-bottom:1px solid #EDF0F2 !important;
+}
+.component-guide .anatomy-num{
+  width:20px !important;
+  height:20px !important;
+  background:#F3F5F7 !important;
+  color:#68727B !important;
+}
+
+/* Tables match Foundation */
+.component-guide .spec-table,
+.doc-guide .spec-table{
+  margin-top:18px !important;
+  table-layout:fixed;
+}
+.component-guide .spec-table th,
+.component-guide .spec-table td,
+.doc-guide .spec-table th,
+.doc-guide .spec-table td{
+  padding:11px 8px !important;
+  border-bottom:1px solid #EDF0F2 !important;
+  font-size:11px !important;
+  line-height:1.5 !important;
+}
+.component-guide .spec-table th,
+.doc-guide .spec-table th{
+  color:#858E96 !important;
+  font-weight:700 !important;
+}
+
+/* Notes should not look like a different design system */
+.component-guide .note,
+.component-guide .usage-note,
+.component-guide .code-note,
+.doc-guide .note{
+  margin-top:18px !important;
+  padding:14px !important;
+  border:1px solid #E5E8EA !important;
+  border-radius:12px !important;
+  background:#FAFBFC !important;
+  color:#68727B !important;
+  font-size:11px !important;
+  line-height:1.65 !important;
+}
+
+/* Pattern/template visual samples also inherit Foundation card language */
+.doc-guide .template-frame,
+.doc-guide .searchbar-demo,
+.doc-guide .metric,
+.doc-guide .flow-box{
+  border-color:#E5E8EA !important;
+  border-radius:12px !important;
+}
+.doc-guide .template-frame,
+.doc-guide .metric,
+.doc-guide .flow-box{
+  background:#FFFFFF !important;
+}
+.doc-guide .template-bar{
+  border-radius:12px 12px 0 0;
+}
+
+/* Mobile */
+@media(max-width:760px){
+  .component-guide .doc-head,
+  .doc-guide .doc-head{
+    display:block !important;
+  }
+  .component-guide .doc-actions,
+  .doc-guide .doc-actions{
+    margin-top:20px !important;
+  }
+  .component-guide .page-index,
+  .doc-guide .page-index{
+    gap:18px !important;
+  }
+  .component-guide .guide-section,
+  .doc-guide .doc-section{
+    padding:32px 0 !important;
+  }
+  .component-guide .demo-board,
+  .doc-guide .demo-board{
+    padding:16px !important;
+  }
+}
+
 </style></head>
 <body><header class="global-header">
   <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
@@ -232,7 +496,7 @@
 </aside><main class="main"><div class="content"><article class="component-guide">
 <header class="doc-head"><div><div class="eyebrow">Component · Selection &amp; Input</div><h1>Radio</h1><p>Radio control과 label을 함께 사용하는 선택 컴포넌트입니다.</p></div>
 <div class="doc-actions"><a href="https://www.figma.com/design/OuM9vyMhabODr7BtlRlhe3/-System--Atommerce-Core-Design-System?node-id=360-33319&m=dev" target="_blank" rel="noopener">Figma ↗</a><button class="copy-url" type="button">URL 복사</button></div></header>
-<nav class="page-index" aria-label="On this page"><a href="#overview">Radio</a><a href="#anatomy">구성 요소</a><a href="#variants">Selection</a><a href="#states">상태</a><a href="#size">크기</a><a href="#clickable">Clickable area</a><a href="#gap">Gap</a><a href="#how-to-use">How to use</a><a href="#spec">확인된 속성</a></nav><section class="guide-section" id="overview"><div class="guide-kicker">Overview</div><h2>Radio</h2><div class="demo-board"><div class="control-row"><span class="radio"></span><span>내용을 입력하세요</span></div></div></section><section class="guide-section" id="anatomy"><div class="guide-kicker">Anatomy</div><h2>구성 요소</h2><div class="anatomy-grid"><div class="demo-board"><div class="control-row"><span class="radio"></span><span>내용을 입력하세요</span></div></div><div class="anatomy-list"><div class="anatomy-item"><span class="anatomy-num">1</span><div><strong>Control</strong></div></div><div class="anatomy-item"><span class="anatomy-num">2</span><div><strong>Label</strong></div></div></div></div></section><section class="guide-section" id="variants"><div class="guide-kicker">Variants</div><h2>Radio</h2><div class="variant-grid"><div class="variant-card"><h3>Off</h3><div class="control-row"><span class="radio"></span><span>내용을 입력하세요</span></div></div><div class="variant-card"><h3>On</h3><div class="control-row"><span class="radio on"></span><span>내용을 입력하세요</span></div></div></div></section><section class="guide-section" id="states"><div class="guide-kicker">States</div><h2>상태</h2><table class="spec-table"><tr><th>Default</th><td>기본</td></tr><tr><th>hover</th><td>Hover</td></tr><tr><th>pressed</th><td>Pressed</td></tr><tr><th>disabled</th><td>Disabled</td></tr></table></section><section class="guide-section" id="size"><div class="guide-kicker">Size</div><h2>크기</h2><table class="spec-table"><tr><th>md</th><td>Control frame 24 · control 18 · text 16</td></tr><tr><th>sm</th><td>Text 14 · size variant</td></tr></table></section><section class="guide-section" id="clickable">
+<nav class="page-index" aria-label="On this page"><a class="active" href="#overview">Radio</a><a href="#anatomy">구성 요소</a><a href="#variants">Selection</a><a href="#states">상태</a><a href="#size">크기</a><a href="#clickable">Clickable area</a><a href="#gap">Gap</a><a href="#how-to-use">How to use</a><a href="#spec">확인된 속성</a></nav><section class="guide-section" id="overview"><div class="guide-kicker">Overview</div><h2>Radio</h2><div class="demo-board"><div class="control-row"><span class="radio"></span><span>내용을 입력하세요</span></div></div></section><section class="guide-section" id="anatomy"><div class="guide-kicker">Anatomy</div><h2>구성 요소</h2><div class="anatomy-grid"><div class="demo-board"><div class="control-row"><span class="radio"></span><span>내용을 입력하세요</span></div></div><div class="anatomy-list"><div class="anatomy-item"><span class="anatomy-num">1</span><div><strong>Control</strong></div></div><div class="anatomy-item"><span class="anatomy-num">2</span><div><strong>Label</strong></div></div></div></div></section><section class="guide-section" id="variants"><div class="guide-kicker">Variants</div><h2>Radio</h2><div class="variant-grid"><div class="variant-card"><h3>Off</h3><div class="control-row"><span class="radio"></span><span>내용을 입력하세요</span></div></div><div class="variant-card"><h3>On</h3><div class="control-row"><span class="radio on"></span><span>내용을 입력하세요</span></div></div></div></section><section class="guide-section" id="states"><div class="guide-kicker">States</div><h2>상태</h2><table class="spec-table"><tr><th>Default</th><td>기본</td></tr><tr><th>hover</th><td>Hover</td></tr><tr><th>pressed</th><td>Pressed</td></tr><tr><th>disabled</th><td>Disabled</td></tr></table></section><section class="guide-section" id="size"><div class="guide-kicker">Size</div><h2>크기</h2><table class="spec-table"><tr><th>md</th><td>Control frame 24 · control 18 · text 16</td></tr><tr><th>sm</th><td>Text 14 · size variant</td></tr></table></section><section class="guide-section" id="clickable">
       <div class="guide-kicker">Clickable area</div>
       <h2>Clickable area</h2>
       <div class="note">Montage처럼 클릭 영역을 별도 가이드 항목으로 분리했습니다. 다만 Atommerce의 Control+Label 또는 Cell 전체 영역에 대한 공식 클릭 범위는 현재 Figma에서 확인되지 않아 수치를 정의하지 않습니다.</div>
@@ -246,4 +510,15 @@
       <div class="note">Montage처럼 Do / Don’t 가이드 영역을 둘 수 있습니다. 현재 Atommerce Figma에는 Radio의 배치 방향이나 조합 사용 규칙이 명시되어 있지 않아 임의의 Do / Don’t는 추가하지 않았습니다.</div>
     </section><section class="guide-section" id="spec"><div class="guide-kicker">Specification</div><h2>확인된 속성</h2><table class="spec-table"><tr><th>Selection</th><td>selected: false · true</td></tr><tr><th>state</th><td>Default · disabled · hover · pressed</td></tr><tr><th>size</th><td>md · sm</td></tr></table></section></article></div></main>
 <script>(function(){const b=document.querySelector('.copy-url');if(b)b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);const o=b.textContent;b.textContent='복사됨';setTimeout(()=>b.textContent=o,1000)}catch(e){}})})();</script>
+<script id="v74PageIndexTabs">
+(function(){
+  const nav=document.querySelector('.page-index');
+  if(!nav) return;
+  const links=[...nav.querySelectorAll('a')];
+  links.forEach(link=>link.addEventListener('click',()=>{
+    links.forEach(x=>x.classList.remove('active'));
+    link.classList.add('active');
+  }));
+})();
+</script>
 </body></html>

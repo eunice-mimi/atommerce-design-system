@@ -62,6 +62,270 @@
 .metric{padding:18px;border:1px solid #EEF0F2;background:#fff}.metric small{display:block;color:#7E8A96;font-size:10px}.metric strong{display:block;margin-top:8px;font-size:20px}
 @media(max-width:900px){.simple-grid{grid-template-columns:1fr}.dashboard-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.doc-head{display:block;padding-top:36px}.doc-actions{margin-top:20px}.doc-section{padding:48px 0}.demo-board{padding:28px 20px}.template-body{grid-template-columns:1fr}.template-pane{border-right:0;border-bottom:1px solid #EEF0F2}}
+
+/* v74 — Components / Patterns / Templates aligned to Foundation visual language */
+
+/* page width + heading */
+.component-guide,
+.doc-guide{
+  max-width:none !important;
+  padding-bottom:72px !important;
+}
+.component-guide .doc-head,
+.doc-guide .doc-head{
+  padding:0 0 0 !important;
+  margin:0 !important;
+  border-bottom:0 !important;
+  align-items:flex-start !important;
+}
+.component-guide .doc-head .eyebrow,
+.doc-guide .doc-head .eyebrow{
+  margin-bottom:10px !important;
+}
+.component-guide .doc-head h1,
+.doc-guide .doc-head h1{
+  margin:0 !important;
+  font-size:32px !important;
+  line-height:1.15 !important;
+  font-weight:750 !important;
+  letter-spacing:-.02em !important;
+}
+.component-guide .doc-head p,
+.doc-guide .doc-head p{
+  margin:14px 0 0 !important;
+  max-width:760px !important;
+  font-size:13px !important;
+  line-height:1.65 !important;
+  color:#68727B !important;
+}
+
+/* Figma / URL actions */
+.component-guide .doc-actions,
+.doc-guide .doc-actions{
+  padding-top:0 !important;
+  margin-top:0 !important;
+}
+.component-guide .doc-actions a,
+.component-guide .doc-actions button,
+.doc-guide .doc-actions a,
+.doc-guide .doc-actions button{
+  width:92px !important;
+  height:36px !important;
+  border-radius:8px !important;
+  font-size:11px !important;
+  font-weight:700 !important;
+}
+
+/* Same tab visual style as Foundation */
+.component-guide .page-index,
+.doc-guide .page-index{
+  display:flex !important;
+  gap:28px !important;
+  margin-top:28px !important;
+  padding:0 !important;
+  overflow-x:auto !important;
+  border-bottom:1px solid #E8EBED !important;
+  background:transparent !important;
+  scrollbar-width:none;
+}
+.component-guide .page-index::-webkit-scrollbar,
+.doc-guide .page-index::-webkit-scrollbar{display:none}
+.component-guide .page-index a,
+.doc-guide .page-index a{
+  position:relative !important;
+  flex:0 0 auto !important;
+  padding:0 0 11px !important;
+  border:0 !important;
+  background:transparent !important;
+  color:#A0A7AD !important;
+  font-size:12px !important;
+  line-height:1.35 !important;
+  font-weight:700 !important;
+  text-decoration:none !important;
+}
+.component-guide .page-index a.active,
+.component-guide .page-index a:hover,
+.doc-guide .page-index a.active,
+.doc-guide .page-index a:hover{
+  color:#20262C !important;
+}
+.component-guide .page-index a.active::after,
+.doc-guide .page-index a.active::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:-1px;
+  height:2px;
+  background:#20262C;
+}
+
+/* Foundation-like section rhythm */
+.component-guide .guide-section,
+.doc-guide .doc-section{
+  padding:38px 0 !important;
+  border-top:0 !important;
+  border-bottom:1px solid #ECEFF1 !important;
+}
+.component-guide .guide-section:last-child,
+.doc-guide .doc-section:last-child{
+  border-bottom:0 !important;
+}
+.component-guide .guide-kicker,
+.doc-guide .doc-kicker{
+  margin-bottom:8px !important;
+  color:#8A939B !important;
+  font-size:10px !important;
+}
+.component-guide .guide-section h2,
+.doc-guide .doc-section h2{
+  margin:0 0 10px !important;
+  font-size:20px !important;
+  line-height:1.35 !important;
+  font-weight:750 !important;
+}
+.component-guide .guide-desc,
+.doc-guide .doc-desc{
+  margin:0 0 18px !important;
+  max-width:760px !important;
+  color:#68727B !important;
+  font-size:12px !important;
+  line-height:1.65 !important;
+}
+
+/* Foundation-like visual card */
+.component-guide .demo-board,
+.doc-guide .demo-board{
+  margin-top:18px !important;
+  padding:22px !important;
+  border:1px solid #E5E8EA !important;
+  border-radius:12px !important;
+  background:#FFFFFF !important;
+}
+
+/* Foundation-like cards */
+.component-guide .variant-grid,
+.component-guide .size-grid,
+.doc-guide .simple-grid{
+  gap:14px !important;
+  margin-top:18px !important;
+}
+.component-guide .variant-card,
+.component-guide .size-card,
+.component-guide .family-item,
+.doc-guide .simple-item{
+  padding:14px !important;
+  border:1px solid #E5E8EA !important;
+  border-radius:12px !important;
+  background:#FFFFFF !important;
+}
+.component-guide .variant-card h3{
+  margin:0 0 10px !important;
+  font-size:13px !important;
+}
+.component-guide .family-list,
+.doc-guide .simple-grid{
+  gap:14px !important;
+}
+.component-guide .family-item,
+.doc-guide .simple-item{
+  border-bottom:1px solid #E5E8EA !important;
+}
+
+/* Anatomy uses same lightweight spec-card language */
+.component-guide .anatomy-grid{
+  gap:20px !important;
+  margin-top:18px !important;
+}
+.component-guide .anatomy-list{
+  gap:0 !important;
+}
+.component-guide .anatomy-item{
+  padding:11px 0 !important;
+  border-bottom:1px solid #EDF0F2 !important;
+}
+.component-guide .anatomy-num{
+  width:20px !important;
+  height:20px !important;
+  background:#F3F5F7 !important;
+  color:#68727B !important;
+}
+
+/* Tables match Foundation */
+.component-guide .spec-table,
+.doc-guide .spec-table{
+  margin-top:18px !important;
+  table-layout:fixed;
+}
+.component-guide .spec-table th,
+.component-guide .spec-table td,
+.doc-guide .spec-table th,
+.doc-guide .spec-table td{
+  padding:11px 8px !important;
+  border-bottom:1px solid #EDF0F2 !important;
+  font-size:11px !important;
+  line-height:1.5 !important;
+}
+.component-guide .spec-table th,
+.doc-guide .spec-table th{
+  color:#858E96 !important;
+  font-weight:700 !important;
+}
+
+/* Notes should not look like a different design system */
+.component-guide .note,
+.component-guide .usage-note,
+.component-guide .code-note,
+.doc-guide .note{
+  margin-top:18px !important;
+  padding:14px !important;
+  border:1px solid #E5E8EA !important;
+  border-radius:12px !important;
+  background:#FAFBFC !important;
+  color:#68727B !important;
+  font-size:11px !important;
+  line-height:1.65 !important;
+}
+
+/* Pattern/template visual samples also inherit Foundation card language */
+.doc-guide .template-frame,
+.doc-guide .searchbar-demo,
+.doc-guide .metric,
+.doc-guide .flow-box{
+  border-color:#E5E8EA !important;
+  border-radius:12px !important;
+}
+.doc-guide .template-frame,
+.doc-guide .metric,
+.doc-guide .flow-box{
+  background:#FFFFFF !important;
+}
+.doc-guide .template-bar{
+  border-radius:12px 12px 0 0;
+}
+
+/* Mobile */
+@media(max-width:760px){
+  .component-guide .doc-head,
+  .doc-guide .doc-head{
+    display:block !important;
+  }
+  .component-guide .doc-actions,
+  .doc-guide .doc-actions{
+    margin-top:20px !important;
+  }
+  .component-guide .page-index,
+  .doc-guide .page-index{
+    gap:18px !important;
+  }
+  .component-guide .guide-section,
+  .doc-guide .doc-section{
+    padding:32px 0 !important;
+  }
+  .component-guide .demo-board,
+  .doc-guide .demo-board{
+    padding:16px !important;
+  }
+}
+
 </style></head>
 <body><header class="global-header">
   <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
@@ -89,6 +353,17 @@
 </nav></aside><main class="main"><div class="content"><article class="doc-guide">
 <header class="doc-head"><div><div class="eyebrow">Template</div><h1>Dashboard</h1><p>상태와 핵심 정보를 요약해 보여주는 Dashboard 문서 페이지입니다. 전체 Dashboard screen template은 현재 Figma에서 확인되지 않았고 dashboard 관련 helper component만 확인됩니다.</p></div>
 <div class="doc-actions"><a href="https://www.figma.com/design/OuM9vyMhabODr7BtlRlhe3/-System--Atommerce-Core-Design-System?node-id=8770-85153&m=dev" target="_blank" rel="noopener">Figma ↗</a><button class="copy-url">URL 복사</button></div></header>
-<nav class="page-index"><a href="#overview">Dashboard</a><a href="#source">확인된 dashboard source</a><a href="#layout">Dashboard layout</a><a href="#usage">Usage</a></nav><section class="doc-section" id="overview"><div class="doc-kicker">Overview</div><h2>Dashboard</h2><div class="demo-board"><div class="dashboard-grid"><div class="metric"><small>Status</small><strong>In Progress</strong></div><div class="metric"><small>Status</small><strong>Final Design</strong></div><div class="metric"><small>Status</small><strong>Ready for dev</strong></div></div></div></section><section class="doc-section" id="source"><div class="doc-kicker">Source</div><h2>확인된 dashboard source</h2><table class="spec-table"><tr><th>status-dashboard</th><td>component set · status 3종</td></tr><tr><th>in-progress</th><td>#F0143C</td></tr><tr><th>final-design</th><td>#007777</td></tr><tr><th>Ready-for-dev</th><td>#3B30BF</td></tr><tr><th>title-dashboard</th><td>459 × 120 component 확인</td></tr></table></section><section class="doc-section" id="layout"><div class="doc-kicker">Layout</div><h2>Dashboard layout</h2><div class="note">KPI card grid, chart 영역, responsive column 규칙 등의 실제 Dashboard screen template은 현재 Design System Figma에서 확인되지 않았습니다. 따라서 시각 예시는 문서 구조를 보여주는 보조 예시이며 공식 screen spec으로 사용하면 안 됩니다.</div></section><section class="doc-section" id="usage"><div class="doc-kicker">Usage</div><h2>Usage</h2><div class="note">실제 Dashboard template을 공식화하려면 제품 화면 source를 추가로 연결해야 합니다.</div></section></article></div></main>
+<nav class="page-index"><a class="active" href="#overview">Dashboard</a><a href="#source">확인된 dashboard source</a><a href="#layout">Dashboard layout</a><a href="#usage">Usage</a></nav><section class="doc-section" id="overview"><div class="doc-kicker">Overview</div><h2>Dashboard</h2><div class="demo-board"><div class="dashboard-grid"><div class="metric"><small>Status</small><strong>In Progress</strong></div><div class="metric"><small>Status</small><strong>Final Design</strong></div><div class="metric"><small>Status</small><strong>Ready for dev</strong></div></div></div></section><section class="doc-section" id="source"><div class="doc-kicker">Source</div><h2>확인된 dashboard source</h2><table class="spec-table"><tr><th>status-dashboard</th><td>component set · status 3종</td></tr><tr><th>in-progress</th><td>#F0143C</td></tr><tr><th>final-design</th><td>#007777</td></tr><tr><th>Ready-for-dev</th><td>#3B30BF</td></tr><tr><th>title-dashboard</th><td>459 × 120 component 확인</td></tr></table></section><section class="doc-section" id="layout"><div class="doc-kicker">Layout</div><h2>Dashboard layout</h2><div class="note">KPI card grid, chart 영역, responsive column 규칙 등의 실제 Dashboard screen template은 현재 Design System Figma에서 확인되지 않았습니다. 따라서 시각 예시는 문서 구조를 보여주는 보조 예시이며 공식 screen spec으로 사용하면 안 됩니다.</div></section><section class="doc-section" id="usage"><div class="doc-kicker">Usage</div><h2>Usage</h2><div class="note">실제 Dashboard template을 공식화하려면 제품 화면 source를 추가로 연결해야 합니다.</div></section></article></div></main>
 <script>(function(){const b=document.querySelector('.copy-url');if(b)b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);const o=b.textContent;b.textContent='복사됨';setTimeout(()=>b.textContent=o,1000)}catch(e){}})})();</script>
+<script id="v74PageIndexTabs">
+(function(){
+  const nav=document.querySelector('.page-index');
+  if(!nav) return;
+  const links=[...nav.querySelectorAll('a')];
+  links.forEach(link=>link.addEventListener('click',()=>{
+    links.forEach(x=>x.classList.remove('active'));
+    link.classList.add('active');
+  }));
+})();
+</script>
 </body></html>
