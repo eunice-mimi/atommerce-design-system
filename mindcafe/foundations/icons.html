@@ -26,7 +26,7 @@
 .icon-popover.open{display:block}.pop-head{display:flex;justify-content:space-between;gap:12px}.pop-title{font-size:13px;font-weight:750;word-break:break-word}
 .pop-close{border:0;background:transparent;color:#7E8A96;font-size:18px;cursor:pointer}.pop-preview{display:grid;place-items:center;height:96px;margin:14px 0;border:1px solid #EDF0F2;border-radius:10px;background:#FAFBFC}
 .pop-preview img{width:32px;height:32px;object-fit:contain}.pop-meta{display:grid;grid-template-columns:62px 1fr;gap:7px 10px;margin:0;font-size:10px}.pop-meta dt{color:#8A939B}.pop-meta dd{margin:0}
-.copy-btn{width:100%;height:36px;margin-top:14px;border:1px solid #D2D6DB;border-radius:8px;background:#fff;font:inherit;font-size:11px;font-weight:700;cursor:pointer}
+.copy-btn,.download-btn{width:100%;height:36px;margin-top:10px;border:1px solid #D2D6DB;border-radius:8px;background:#fff;font:inherit;font-size:11px;font-weight:700;cursor:pointer}.download-btn{background:#20262C;color:#fff;border-color:#20262C}
 @media(max-width:1100px){.icon-grid{grid-template-columns:repeat(6,1fr)}}@media(max-width:760px){.icon-grid{grid-template-columns:repeat(4,1fr)}}@media(max-width:520px){.icon-grid{grid-template-columns:repeat(2,1fr)}}
 
 .sprite-cell{display:block;width:56px;height:56px;background-repeat:no-repeat;flex:0 0 56px}
@@ -1082,18 +1082,147 @@
 </div></main>
 
 <div class="icon-popover" id="iconPopover">
-<div class="pop-head"><div class="pop-title" id="popTitle"></div><button class="pop-close">×</button></div>
-<div class="pop-preview"><img id="popImg" alt=""><span id="popSprite" class="pop-sprite"></span></div>
-<dl class="pop-meta"><dt>Name</dt><dd id="popName"></dd><dt>Source</dt><dd>Atommerce Core Design System</dd><dt>Display</dt><dd>24px thumbnail</dd></dl>
-<button class="copy-btn" id="copyBtn">이름 복사</button></div>
+  <div class="pop-head">
+    <div class="pop-title" id="popTitle"></div>
+    <button class="pop-close" type="button" aria-label="닫기">×</button>
+  </div>
+  <div class="pop-preview">
+    <img id="popImg" alt="">
+    <span id="popSprite" class="pop-sprite"></span>
+  </div>
+  <dl class="pop-meta">
+    <dt>Name</dt><dd id="popName"></dd>
+    <dt>Source</dt><dd>Atommerce Core Design System</dd>
+    <dt>Display</dt><dd>24px thumbnail</dd>
+  </dl>
+  <button class="download-btn" id="downloadBtn" type="button">아이콘 다운로드</button>
+  <button class="copy-btn" id="copyBtn" type="button">이름 복사</button>
+</div>
 
 <script>
 (function(){
-const tabs=[...document.querySelectorAll('.foundation-tab')],panels=[...document.querySelectorAll('.icon-panel')];
-tabs.forEach(btn=>btn.addEventListener('click',()=>{tabs.forEach(b=>b.classList.toggle('active',b===btn));panels.forEach(p=>p.classList.toggle('active',p.dataset.panel===btn.dataset.tab));}));
-const st=[...document.querySelectorAll('.custom-subtab')],sp=[...document.querySelectorAll('.custom-panel')];
-st.forEach(btn=>btn.addEventListener('click',()=>{st.forEach(b=>b.classList.toggle('active',b===btn));sp.forEach(p=>p.classList.toggle('active',p.dataset.subpanel===btn.dataset.sub));}));
-const q=document.getElementById('basicSearch'),bc=[...document.querySelectorAll('#basicGrid .icon-card')];q.addEventListener('input',()=>{const v=q.value.trim().toLowerCase();let c=0;bc.forEach(card=>{const show=card.dataset.name.toLowerCase().includes(v);card.hidden=!show;if(show)c++;});document.getElementById('basicCount').textContent=c+' icons';});
-const pop=document.getElementById('iconPopover');let current='';document.querySelectorAll('.icon-card').forEach(card=>card.addEventListener('click',()=>{current=card.dataset.name;document.getElementById('popTitle').textContent=current;document.getElementById('popName').textContent=current;const img=document.getElementById('popImg');const spr=document.getElementById('popSprite');if(card.dataset.sprite){img.style.display='none';img.removeAttribute('src');spr.classList.add('on');spr.style.backgroundImage=`url('${card.dataset.sprite}')`;spr.style.backgroundPosition=`${card.dataset.posX}px ${card.dataset.posY}px`;spr.style.backgroundSize=`${card.dataset.spriteW}px ${card.dataset.spriteH}px`;}else{spr.classList.remove('on');spr.style.backgroundImage='';img.style.display='block';img.src=card.dataset.src||'';}const r=card.getBoundingClientRect();pop.style.left=Math.min(innerWidth-280,Math.max(16,r.left+r.width/2-130))+'px';pop.style.top=Math.min(innerHeight-250,Math.max(16,r.top-24))+'px';pop.classList.add('open');}));document.querySelector('.pop-close').addEventListener('click',()=>pop.classList.remove('open'));document.getElementById('copyBtn').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(current)}catch(e){}});
+  const pop=document.getElementById('iconPopover');
+  const tabs=[...document.querySelectorAll('.foundation-tab')];
+  const panels=[...document.querySelectorAll('.icon-panel')];
+  const subTabs=[...document.querySelectorAll('.custom-subtab')];
+  const subPanels=[...document.querySelectorAll('.custom-panel')];
+  let current='';
+  let currentCard=null;
+
+  function closePopover(){
+    pop.classList.remove('open');
+    currentCard=null;
+  }
+
+  tabs.forEach(btn=>btn.addEventListener('click',()=>{
+    tabs.forEach(b=>b.classList.toggle('active',b===btn));
+    panels.forEach(p=>p.classList.toggle('active',p.dataset.panel===btn.dataset.tab));
+    closePopover();
+  }));
+
+  subTabs.forEach(btn=>btn.addEventListener('click',()=>{
+    subTabs.forEach(b=>b.classList.toggle('active',b===btn));
+    subPanels.forEach(p=>p.classList.toggle('active',p.dataset.subpanel===btn.dataset.sub));
+    closePopover();
+  }));
+
+  const q=document.getElementById('basicSearch');
+  if(q){
+    const basicCards=[...document.querySelectorAll('#basicGrid .icon-card')];
+    q.addEventListener('input',()=>{
+      const v=q.value.trim().toLowerCase();
+      let visible=0;
+      basicCards.forEach(card=>{
+        const show=card.dataset.name.toLowerCase().includes(v);
+        card.hidden=!show;
+        if(show) visible++;
+      });
+      const count=document.getElementById('basicCount');
+      if(count) count.textContent=visible+' icons';
+      closePopover();
+    });
+  }
+
+  document.querySelectorAll('.icon-card').forEach(card=>{
+    card.addEventListener('click',()=>{
+      current=card.dataset.name || 'icon';
+      currentCard=card;
+
+      document.getElementById('popTitle').textContent=current;
+      document.getElementById('popName').textContent=current;
+
+      const img=document.getElementById('popImg');
+      const spr=document.getElementById('popSprite');
+
+      if(card.dataset.sprite){
+        img.style.display='none';
+        img.removeAttribute('src');
+        spr.classList.add('on');
+        spr.style.backgroundImage=`url('${card.dataset.sprite}')`;
+        spr.style.backgroundPosition=`${card.dataset.posX}px ${card.dataset.posY}px`;
+        spr.style.backgroundSize=`${card.dataset.spriteW}px ${card.dataset.spriteH}px`;
+      }else{
+        spr.classList.remove('on');
+        spr.style.backgroundImage='';
+        img.style.display='block';
+        img.src=card.dataset.src || '';
+      }
+
+      const r=card.getBoundingClientRect();
+      pop.style.left=Math.min(innerWidth-280,Math.max(16,r.left+r.width/2-130))+'px';
+      pop.style.top=Math.min(innerHeight-286,Math.max(16,r.top-24))+'px';
+      pop.classList.add('open');
+    });
+  });
+
+  document.querySelector('.pop-close').addEventListener('click',closePopover);
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closePopover(); });
+
+  document.getElementById('copyBtn').addEventListener('click',async()=>{
+    try{ await navigator.clipboard.writeText(current); }catch(e){}
+  });
+
+  document.getElementById('downloadBtn').addEventListener('click',()=>{
+    if(!currentCard) return;
+
+    // Basic icons already point to individual SVG assets.
+    if(currentCard.dataset.src){
+      const a=document.createElement('a');
+      a.href=currentCard.dataset.src;
+      a.download=(current||'icon')+'.svg';
+      a.rel='noopener';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      return;
+    }
+
+    // Custom icons are displayed from Figma sprite renders; crop the selected 56px cell.
+    if(currentCard.dataset.sprite){
+      const image=new Image();
+      image.crossOrigin='anonymous';
+      image.onload=()=>{
+        const canvas=document.createElement('canvas');
+        canvas.width=56;
+        canvas.height=56;
+        const ctx=canvas.getContext('2d');
+        const sx=Math.abs(parseFloat(currentCard.dataset.posX||'0'));
+        const sy=Math.abs(parseFloat(currentCard.dataset.posY||'0'));
+        ctx.drawImage(image,sx,sy,56,56,0,0,56,56);
+        canvas.toBlob(blob=>{
+          if(!blob) return;
+          const url=URL.createObjectURL(blob);
+          const a=document.createElement('a');
+          a.href=url;
+          a.download=(current||'icon')+'.png';
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          setTimeout(()=>URL.revokeObjectURL(url),1000);
+        },'image/png');
+      };
+      image.src=currentCard.dataset.sprite;
+    }
+  });
 })();
 </script></body></html>
