@@ -338,19 +338,20 @@
 <nav class="local-nav" aria-label="MindCafe 문서 메뉴">
 <a class="local-category" href="../foundations/index.html">Foundations</a>
 <a class="local-category" href="../components/index.html">Components</a>
-<a class="local-category" href="index.html">Patterns</a>
+<a class="local-category active" href="index.html">Patterns</a>
 <div class="local-children">
 <a class="local-link active" href="form.html">Form</a>
 <a class="local-link" href="navigation.html">Navigation</a>
-<a class="local-link" href="search-filter.html">Search &amp; Filter</a>
-<a class="local-link" href="table-list.html">Table &amp; List</a>
+<a class="local-link" href="search-filter.html">Search & Filter</a>
+<a class="local-link" href="table-list.html">Table & List</a>
 <a class="local-link" href="empty-state.html">Empty State</a>
 <a class="local-link" href="loading.html">Loading</a>
-<a class="local-link" href="error-validation.html">Error &amp; Validation</a>
+<a class="local-link" href="error-validation.html">Error & Validation</a>
 <a class="local-link" href="confirmation.html">Confirmation</a>
 </div>
 <a class="local-category" href="../templates/index.html">Templates</a>
-</nav></aside><main class="main"><div class="content"><article class="doc-guide">
+</nav>
+</aside><main class="main"><div class="content"><article class="doc-guide">
 <header class="doc-head"><div><div class="eyebrow">Pattern</div><h1>Form</h1><p>여러 입력 컴포넌트를 조합하여 정보를 입력·검증·제출하는 Form 패턴입니다.</p></div>
 <div class="doc-actions"><a href="https://www.figma.com/design/OuM9vyMhabODr7BtlRlhe3/-System--Atommerce-Core-Design-System?node-id=361-33449&m=dev" target="_blank" rel="noopener">Figma ↗</a><button class="copy-url">URL 복사</button></div></header>
 <nav class="page-index"><a class="active" href="#overview">Form</a><a href="#components">구성 components</a><a href="#validation">Validation</a><a href="#accessibility">Accessibility</a></nav><section class="doc-section" id="overview"><div class="doc-kicker">Overview</div><h2>Form</h2><p class="doc-desc">Montage처럼 Form을 개별 입력 컴포넌트의 조합 구조로 설명하되, Atommerce의 실제 component set만 연결합니다.</p><div class="demo-board"><div class="flow"><span class="flow-box">Label</span><span class="flow-arrow">→</span><span class="flow-box">Field</span><span class="flow-arrow">→</span><span class="flow-box">Helper / Error</span><span class="flow-arrow">→</span><span class="flow-box">Action</span></div></div></section><section class="doc-section" id="components"><div class="doc-kicker">Related components</div><h2>구성 components</h2><div class="simple-grid"><div class="simple-item"><strong>Text field</strong><span>state 7종 · size lg/md/sm · trailing 4종</span></div><div class="simple-item"><strong>Textarea</strong><span>state 7종</span></div><div class="simple-item"><strong>Select</strong><span>field_drop-down</span></div><div class="simple-item"><strong>Checkbox / Radio / Switch</strong><span>Selection controls</span></div><div class="simple-item"><strong>Button</strong><span>Action</span></div></div></section><section class="doc-section" id="validation"><div class="doc-kicker">Validation</div><h2>Validation</h2><div class="note">Label–field–helper/error 구조는 개별 field component에서 확인됩니다. 하지만 전체 Form의 submit validation 순서, required 정책, focus 이동 규칙은 별도 확인이 필요합니다.</div></section><section class="doc-section" id="accessibility"><div class="doc-kicker">Accessibility</div><h2>Accessibility</h2><div class="note">Montage는 label/id, aria-describedby 연결을 명시하지만 Atommerce 코드 규칙은 확인되지 않았으므로 해당 구현 규칙을 공식 Atommerce 가이드로 복사하지 않았습니다.</div></section></article></div></main>
