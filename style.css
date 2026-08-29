@@ -393,7 +393,7 @@ body.detail-ref .main{
   overflow:hidden;
 }
 body.detail-ref .content{
-  width:min(1200px,calc(100% - 56px));
+  width:min(1180px,calc(100% - 64px));
   height:100%;
   margin:0 auto;
   padding:34px 0 0;
@@ -555,4 +555,22 @@ body.detail-ref .detail-ref-right{
     overflow:visible;
     padding:18px 0 50px;
   }
+}
+
+
+/* v52 · canonical documentation page gutter
+   Desktop: 32px each side, max content width 1180px
+   Mobile: 16px each side */
+:root{
+  --doc-content-max:1180px;
+  --doc-side-margin:32px;
+}
+.content,
+body.detail-ref .content{
+  width:min(var(--doc-content-max),calc(100% - (var(--doc-side-margin) * 2)))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+@media(max-width:760px){
+  :root{--doc-side-margin:16px}
 }
