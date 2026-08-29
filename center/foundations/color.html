@@ -9,8 +9,31 @@
 <a class="product-tab active" href="../index.html">Center Console</a>
 <a class="product-tab" href="../../admin/index.html">Admin</a>
 <a class="product-tab" href="../../ai-guide.html">AI Guide</a></nav></header>
-<aside class="local-sidebar"><div class="local-service"><a href="../index.html">Center Console</a></div>
-<div class="local-nav"><a class="local-simple-link active" href="index.html">Foundations</a>
-<a class="local-simple-link" href="../components/index.html">Components</a><a class="local-simple-link" href="../patterns/index.html">Patterns</a><a class="local-simple-link" href="../templates/index.html">Templates</a></div></aside>
+<aside class="local-sidebar">
+<div class="local-service"><a href="../index.html">Center Console</a></div>
+<div class="local-nav">
+<div class="local-group open">
+<div class="local-group-head">
+<a class="local-group-overview" href="index.html">Foundations</a>
+<button class="local-group-chevron" type="button" aria-label="Foundations 하위 메뉴 열기" aria-expanded="true"><span>⌄</span></button>
+</div>
+<div class="local-group-items">
+<a class="local-link active" href="color.html">Color</a>
+</div></div>
+<a class="local-simple-link" href="../components/index.html">Components</a>
+<a class="local-simple-link" href="../patterns/index.html">Patterns</a>
+<a class="local-simple-link" href="../templates/index.html">Templates</a>
+</div></aside>
 <main class="main"><div class="content coming-page"><div class="eyebrow">CENTER CONSOLE · FOUNDATIONS</div><h1>Color</h1>
-<div class="coming-box">Coming soon</div></div></main></body></html>
+<div class="coming-box">Coming soon</div></div></main><script>
+(function(){
+document.querySelectorAll('.local-group-chevron').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const g=btn.closest('.local-group');
+      g.classList.toggle('open');
+      btn.setAttribute('aria-expanded',g.classList.contains('open')?'true':'false');
+    });
+  });
+})();
+</script>
+</body></html>

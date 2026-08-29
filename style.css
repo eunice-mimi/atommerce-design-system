@@ -244,3 +244,13 @@ body.home-page .main{margin-left:0}
   .grid2{grid-template-columns:1fr}
   .detail-ref-right{padding:4px 18px 30px}
 }
+
+
+/* v30: fixed local sidebar, no collapse control */
+.sidebar-toggle{display:none!important}
+.sidebar-collapsed{--sidebar-w:220px!important}
+.sidebar-collapsed .local-service a,
+.sidebar-collapsed .local-nav{visibility:visible!important}
+.local-service{
+  padding-right:10px;
+}

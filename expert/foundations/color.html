@@ -23,13 +23,16 @@
   <nav class="product-tabs"><a class="product-tab" href="../../mindcafe/index.html">MindCafe</a><a class="product-tab" href="../../tarotbom/index.html">Tarotbom</a><a class="product-tab active" href="../index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab" href="../../admin/index.html">Admin</a><a class="product-tab" href="../../ai-guide.html">AI Guide</a></nav>
 </header>
 <aside class="local-sidebar">
-<button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="사이드바 접기">‹</button>
 <div class="local-service"><a href="../index.html">Expert Console</a></div>
 <div class="local-nav">
 <div class="local-group open">
-<div class="local-group-head"><a class="local-group-overview" href="index.html">Foundations</a><button class="local-group-chevron" type="button" aria-expanded="true"><span>⌄</span></button></div>
-<div class="local-group-items"><a class="local-link active" href="color.html">Color</a></div>
+<div class="local-group-head">
+<a class="local-group-overview" href="index.html">Foundations</a>
+<button class="local-group-chevron" type="button" aria-label="Foundations 하위 메뉴 열기" aria-expanded="true"><span>⌄</span></button>
 </div>
+<div class="local-group-items">
+<a class="local-link active" href="color.html">Color</a>
+</div></div>
 <a class="local-simple-link" href="../components/index.html">Components</a>
 <a class="local-simple-link" href="../patterns/index.html">Patterns</a>
 <a class="local-simple-link" href="../templates/index.html">Templates</a>
@@ -55,9 +58,7 @@
 </main>
 <script>
 (function(){
- const btn=document.getElementById('sidebarToggle');
- if(btn) btn.addEventListener('click',()=>document.body.classList.toggle('sidebar-collapsed'));
- document.querySelectorAll('.local-group-chevron').forEach(btn=>btn.addEventListener('click',()=>{const g=btn.closest('.local-group');g.classList.toggle('open');btn.setAttribute('aria-expanded',g.classList.contains('open')?'true':'false')}));
+document.querySelectorAll('.local-group-chevron').forEach(btn=>btn.addEventListener('click',()=>{const g=btn.closest('.local-group');g.classList.toggle('open');btn.setAttribute('aria-expanded',g.classList.contains('open')?'true':'false')}));
 })();
 </script>
 </body></html>

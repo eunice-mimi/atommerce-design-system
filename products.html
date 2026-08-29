@@ -10,8 +10,7 @@
   </nav>
 </header>
 <aside class="local-sidebar">
-  <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="사이드바 접기">‹</button>
-  <div class="local-service">
+<div class="local-service">
     <a href="mindcafe/index.html">MindCafe</a>
   </div>
   <div class="local-nav"><div class="local-group">
@@ -57,15 +56,7 @@
 </main>
 <script>
 (function(){
- const btn=document.getElementById('sidebarToggle');
- if(btn){
-  const saved=localStorage.getItem('atommerce-sidebar-collapsed');
-  if(saved==='1'){document.body.classList.add('sidebar-collapsed');btn.textContent='›';}
-  btn.addEventListener('click',()=>{
-   const c=document.body.classList.toggle('sidebar-collapsed');
-   btn.textContent=c?'›':'‹';
-   localStorage.setItem('atommerce-sidebar-collapsed',c?'1':'0');
-  });
+);
  }
 })();
 </script>

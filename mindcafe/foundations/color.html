@@ -1,105 +1,37 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Color · Atommerce Design System</title><link rel="stylesheet" href="../../style.css">
+
 <style>
-.color-page{max-width:1160px}
-.color-meta{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 6px}
-.color-pill{display:inline-flex;align-items:center;min-height:26px;padding:0 9px;border:1px solid #dde2e6;border-radius:999px;background:#fff;color:#66717a;font-size:11px;font-weight:700}
-.color-pill.verified{background:#f0fbfb;border-color:#b9e9e9;color:#006969}
+.color-page{max-width:1040px}
+.color-preview{margin-top:32px;padding:28px;background:#F7F8F9;border:1px solid var(--line);border-radius:14px}
+.color-preview-ui{max-width:430px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.color-preview-head{padding:18px 20px;border-bottom:1px solid var(--line)}
+.color-preview-head strong{display:block;font-size:16px}
+.color-preview-head span{display:block;margin-top:5px;color:#7E8A96;font-size:11px}
+.color-preview-body{padding:18px}
+.color-preview-card{padding:16px;border-radius:12px;background:#D4F8F8}
+.color-preview-card strong{font-size:14px}
+.color-preview-card p{margin:6px 0 14px;color:#4E5760;font-size:12px}
+.color-preview-actions{display:flex;gap:8px}
+.color-preview-actions button{border:0;border-radius:9px;padding:10px 13px;font-size:12px;font-weight:800}
+.color-preview-actions .primary{background:#007777;color:#fff}
+.color-preview-actions .secondary{background:#EEF0F2;color:#373D44}
 .color-section{margin-top:48px}
-.color-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:16px}
-.color-section-head h2{margin:0}
-.color-section-head p{margin:0;color:#7a848d;font-size:12px}
-.token-flow{display:grid;grid-template-columns:1fr 36px 1fr 36px 1fr;align-items:stretch;margin-top:22px}
-.token-flow-card{padding:20px;border:1px solid #e1e5e8;border-radius:16px;background:#fff}
-.token-flow-card strong{display:block;margin-bottom:7px;font-size:14px}
-.token-flow-card code{font-size:11px;color:#006969}
-.token-flow-arrow{display:grid;place-items:center;color:#a2aab1;font-size:20px}
-.color-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.color-token{border:1px solid #e1e5e8;border-radius:14px;overflow:hidden;background:#fff}
-.color-swatch{height:92px;border-bottom:1px solid #e1e5e8}
-.color-token-body{padding:12px 13px 13px}
-.color-token-name{font-size:11px;line-height:1.45;color:#59636c;word-break:break-all}
-.color-token-value{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:7px;font-size:12px;font-weight:800;color:#252b31}
-.copy-value{border:0;background:transparent;color:#8a939b;font-size:11px;cursor:pointer;padding:2px}
-.copy-value:hover{color:#006969}
-.palette-row{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));border:1px solid #e1e5e8;border-radius:16px;overflow:hidden;background:#fff}
-.palette-cell{min-width:0}
-.palette-color{height:88px}
-.palette-info{padding:10px;border-top:1px solid rgba(0,0,0,.05);background:#fff}
-.palette-step{font-size:11px;font-weight:800;color:#252b31}
-.palette-hex{margin-top:3px;font-size:10px;color:#7b858d}
-.token-table-wrap{overflow:auto;border:1px solid #e1e5e8;border-radius:16px;background:#fff}
-.token-table{width:100%;border-collapse:collapse;min-width:760px}
-.token-table th,.token-table td{padding:13px 14px;border-bottom:1px solid #edf0f2;text-align:left;font-size:12px;vertical-align:middle}
-.token-table th{background:#fafbfc;color:#59636c;font-weight:800}
+.color-section h2{margin:0 0 16px;font-size:20px}
+.palette-row{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.palette-cell{min-width:0;background:#fff}
+.palette-color{height:74px}
+.palette-info{padding:9px 10px;border-top:1px solid rgba(0,0,0,.06)}
+.palette-step{font-size:11px;font-weight:800}
+.palette-hex{margin-top:3px;color:#7B858D;font-size:10px}
+.token-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}
+.token-table{width:100%;border-collapse:collapse;min-width:680px}
+.token-table th,.token-table td{padding:11px 13px;border-bottom:1px solid #EDF0F2;text-align:left;font-size:12px}
+.token-table th{color:#7B858D;font-weight:700;background:#FAFBFC}
 .token-table tr:last-child td{border-bottom:0}
 .inline-swatch{display:inline-block;width:14px;height:14px;border-radius:4px;border:1px solid rgba(0,0,0,.08);vertical-align:-2px;margin-right:7px}
-.service-compare{display:grid;grid-template-columns:1.3fr repeat(4,1fr);border:1px solid #e1e5e8;border-radius:16px;overflow:hidden;background:#fff}
-.service-compare>div{padding:12px 13px;border-right:1px solid #edf0f2;border-bottom:1px solid #edf0f2;font-size:11px}
-.service-compare>div:nth-child(5n){border-right:0}
-.service-compare .head{background:#fafbfc;font-weight:800;color:#59636c}
-.service-compare .token{font-weight:700;color:#3a4249;word-break:break-all}
-.service-value{display:flex;align-items:center;gap:7px;font-weight:700}
-.rule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.rule-card{padding:18px;border:1px solid #e1e5e8;border-radius:14px;background:#fff}
-.rule-card h3{margin:0 0 7px;font-size:14px}
-.rule-card p{margin:0;color:#69737c;font-size:12px;line-height:1.65}
-.color-note{padding:15px 17px;border-left:3px solid #007777;background:#f5fbfb;color:#536069;font-size:12px;line-height:1.7}
-@media(max-width:1050px){
- .color-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
- .palette-row{grid-template-columns:repeat(4,minmax(0,1fr))}
- .token-flow{grid-template-columns:1fr}
- .token-flow-arrow{height:34px;transform:rotate(90deg)}
-}
-@media(max-width:720px){
- .color-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .palette-row{grid-template-columns:repeat(2,minmax(0,1fr))}
- .rule-grid{grid-template-columns:1fr}
- .service-compare{grid-template-columns:1.35fr repeat(2,1fr)}
- .service-compare .expert,.service-compare .admin{display:none}
-}
-</style>
-
-
-<style>
-.live-preview-section{margin-top:40px}
-.preview-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
-.preview-tabs{display:flex;gap:8px;flex-wrap:wrap}
-.preview-tab{border:1px solid #dde2e6;background:#fff;color:#66717a;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:800;cursor:pointer}
-.preview-tab.is-active{background:#373D44;color:#fff;border-color:#373D44}
-.preview-caption{font-size:12px;color:#7a848d}
-.preview-shell{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:16px;padding:22px;border:1px solid #e1e5e8;border-radius:18px;background:#F3F5F7;transition:background .2s ease}
-.preview-phone{max-width:390px;margin:0 auto;width:100%;background:#fff;border:1px solid #e1e5e8;border-radius:24px;overflow:hidden}
-.preview-phone-head{padding:18px 18px 12px;border-bottom:1px solid #eef0f2;background:#fff}
-.preview-kicker{font-size:11px;color:#7E8A96;margin-bottom:4px}
-.preview-phone-head h3{margin:0;font-size:18px;color:#373D44}
-.preview-body{padding:16px;background:#FAFBFC}
-.preview-card{padding:16px;border-radius:16px;background:#D4F8F8;margin-bottom:12px}
-.preview-card-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.preview-card-title{font-size:15px;font-weight:800;color:#373D44}
-.preview-badge{padding:5px 8px;border-radius:999px;background:#007777;color:#fff;font-size:10px;font-weight:800}
-.preview-card p{margin:8px 0 0;color:#4E5760;font-size:12px;line-height:1.55}
-.preview-action{display:flex;gap:8px;margin-top:14px}
-.preview-btn{flex:1;min-height:42px;border:0;border-radius:12px;font-size:13px;font-weight:800;cursor:default}
-.preview-btn-primary{background:#007777;color:#fff}
-.preview-btn-secondary{background:#EEF0F2;color:#373D44}
-.preview-input{margin-top:12px;padding:12px 13px;border:1px solid #D2D6DB;border-radius:12px;background:#fff;color:#7E8A96;font-size:12px}
-.preview-message{margin-top:12px;padding:12px 13px;border-radius:12px;background:#FEEAED;color:#F0143C;font-size:12px;font-weight:700}
-.preview-side{display:flex;flex-direction:column;gap:12px}
-.preview-side-card{padding:16px;border:1px solid #e1e5e8;border-radius:14px;background:#fff}
-.preview-side-card h4{margin:0 0 10px;font-size:13px}
-.preview-token-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid #f0f2f4;font-size:11px}
-.preview-token-row:first-of-type{border-top:0}
-.preview-token-name{color:#59636c;word-break:break-all}
-.preview-token-value{display:flex;align-items:center;gap:6px;font-weight:800;color:#252b31;white-space:nowrap}
-.preview-dot{width:12px;height:12px;border-radius:4px;border:1px solid rgba(0,0,0,.08)}
-@media(max-width:900px){
-  .preview-shell{grid-template-columns:1fr}
-  .preview-side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media(max-width:620px){
-  .preview-side{grid-template-columns:1fr}
-}
+@media(max-width:900px){.palette-row{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:600px){.palette-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 
 </head>
@@ -112,289 +44,125 @@
   </nav>
 </header>
 <aside class="local-sidebar">
-  <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="사이드바 접기">‹</button>
-  <div class="local-service">
-    <a href="../index.html">MindCafe</a>
-  </div>
-  <div class="local-nav"><div class="local-group open">
-              <button class="local-group-title" type="button">Foundations<span>⌄</span></button>
-              <div class="local-group-items"><a class="local-link" href="index.html">Overview</a><a class="local-link active" href="color.html">Color</a><a class="local-link" href="typography.html">Typography</a><a class="local-link" href="spacing.html">Spacing</a><a class="local-link" href="grid.html">Grid &amp; Layout</a><a class="local-link" href="radius.html">Radius</a><a class="local-link" href="elevation.html">Elevation</a><a class="local-link" href="iconography.html">Iconography</a><a class="local-link" href="motion.html">Motion</a><a class="local-link" href="accessibility.html">Accessibility</a></div>
-            </div><div class="local-group">
-              <button class="local-group-title" type="button">Components<span>⌄</span></button>
-              <div class="local-group-items"><a class="local-link" href="../components/index.html">Overview</a><a class="local-link" href="../components/button.html">Button</a><a class="local-link" href="../components/input.html">Input / Field</a><a class="local-link" href="../components/checkbox.html">Checkbox</a><a class="local-link" href="../components/radio.html">Radio</a><a class="local-link" href="../components/switch.html">Switch</a><a class="local-link" href="../components/select.html">Select</a><a class="local-link" href="../components/textarea.html">Textarea</a><a class="local-link" href="../components/badge.html">Badge</a><a class="local-link" href="../components/chip.html">Chip</a><a class="local-link" href="../components/avatar.html">Avatar</a><a class="local-link" href="../components/card.html">Card</a><a class="local-link" href="../components/tabs.html">Tabs</a><a class="local-link" href="../components/tooltip.html">Tooltip</a><a class="local-link" href="../components/toast.html">Toast / Message</a><a class="local-link" href="../components/modal.html">Dialog / Modal</a><a class="local-link" href="../components/accordion.html">Accordion</a></div>
-            </div><div class="local-group">
-              <button class="local-group-title" type="button">Patterns<span>⌄</span></button>
-              <div class="local-group-items"><a class="local-link" href="../patterns/index.html">Overview</a><a class="local-link" href="../patterns/form.html">Form</a><a class="local-link" href="../patterns/navigation.html">Navigation</a><a class="local-link" href="../patterns/search-filter.html">Search &amp; Filter</a><a class="local-link" href="../patterns/table-list.html">Table &amp; List</a><a class="local-link" href="../patterns/empty-state.html">Empty State</a><a class="local-link" href="../patterns/loading.html">Loading</a><a class="local-link" href="../patterns/error-validation.html">Error &amp; Validation</a><a class="local-link" href="../patterns/confirmation.html">Confirmation</a></div>
-            </div><div class="local-group">
-              <button class="local-group-title" type="button">Templates<span>⌄</span></button>
-              <div class="local-group-items"><a class="local-link" href="../templates/index.html">Overview</a><a class="local-link" href="../templates/app-shell.html">App Shell</a><a class="local-link" href="../templates/form-grid.html">Form Grid</a><a class="local-link" href="../templates/list-detail.html">List / Detail</a><a class="local-link" href="../templates/dashboard.html">Dashboard</a><a class="local-link" href="../templates/full-screen.html">Full Screen</a></div>
-            </div></div>
-</aside>
-<main class="main"><div class="content color-page">
-  <a class="backlink" href="index.html">← Foundations</a>
-  <div class="eyebrow">MindCafe · Foundations</div>
+<div class="local-service"><a href="../index.html">MindCafe</a></div>
+<div class="local-nav">
+<div class="local-group open">
+<div class="local-group-head">
+<a class="local-group-overview" href="index.html">Foundations</a>
+<button class="local-group-chevron" type="button" aria-label="Foundations 하위 메뉴 열기" aria-expanded="true"><span>⌄</span></button>
+</div>
+<div class="local-group-items">
+<a class="local-link active" href="color.html">Color</a>
+<a class="local-link" href="typography.html">Typography</a>
+<a class="local-link" href="spacing.html">Spacing</a>
+<a class="local-link" href="grid.html">Grid &amp; Layout</a>
+<a class="local-link" href="radius.html">Radius</a>
+<a class="local-link" href="elevation.html">Elevation</a>
+<a class="local-link" href="iconography.html">Iconography</a>
+<a class="local-link" href="motion.html">Motion</a>
+<a class="local-link" href="accessibility.html">Accessibility</a>
+</div></div>
+<div class="local-group">
+<div class="local-group-head">
+<a class="local-group-overview" href="../components/index.html">Components</a>
+<button class="local-group-chevron" type="button" aria-label="Components 하위 메뉴 열기" aria-expanded="false"><span>⌄</span></button>
+</div>
+<div class="local-group-items">
+<a class="local-link" href="../components/button.html">Button</a>
+<a class="local-link" href="../components/input.html">Input / Field</a>
+<a class="local-link" href="../components/checkbox.html">Checkbox</a>
+<a class="local-link" href="../components/radio.html">Radio</a>
+<a class="local-link" href="../components/switch.html">Switch</a>
+<a class="local-link" href="../components/select.html">Select</a>
+<a class="local-link" href="../components/textarea.html">Textarea</a>
+<a class="local-link" href="../components/badge.html">Badge</a>
+<a class="local-link" href="../components/chip.html">Chip</a>
+<a class="local-link" href="../components/avatar.html">Avatar</a>
+<a class="local-link" href="../components/card.html">Card</a>
+<a class="local-link" href="../components/tabs.html">Tabs</a>
+<a class="local-link" href="../components/tooltip.html">Tooltip</a>
+<a class="local-link" href="../components/toast.html">Toast / Message</a>
+<a class="local-link" href="../components/modal.html">Dialog / Modal</a>
+<a class="local-link" href="../components/accordion.html">Accordion</a>
+</div></div>
+<div class="local-group">
+<div class="local-group-head">
+<a class="local-group-overview" href="../patterns/index.html">Patterns</a>
+<button class="local-group-chevron" type="button" aria-label="Patterns 하위 메뉴 열기" aria-expanded="false"><span>⌄</span></button>
+</div>
+<div class="local-group-items">
+<a class="local-link" href="../patterns/form.html">Form</a>
+<a class="local-link" href="../patterns/navigation.html">Navigation</a>
+<a class="local-link" href="../patterns/search-filter.html">Search &amp; Filter</a>
+<a class="local-link" href="../patterns/table-list.html">Table &amp; List</a>
+<a class="local-link" href="../patterns/empty-state.html">Empty State</a>
+<a class="local-link" href="../patterns/loading.html">Loading</a>
+<a class="local-link" href="../patterns/error-validation.html">Error &amp; Validation</a>
+<a class="local-link" href="../patterns/confirmation.html">Confirmation</a>
+</div></div>
+<div class="local-group">
+<div class="local-group-head">
+<a class="local-group-overview" href="../templates/index.html">Templates</a>
+<button class="local-group-chevron" type="button" aria-label="Templates 하위 메뉴 열기" aria-expanded="false"><span>⌄</span></button>
+</div>
+<div class="local-group-items">
+<a class="local-link" href="../templates/app-shell.html">App Shell</a>
+<a class="local-link" href="../templates/form-grid.html">Form Grid</a>
+<a class="local-link" href="../templates/list-detail.html">List / Detail</a>
+<a class="local-link" href="../templates/dashboard.html">Dashboard</a>
+<a class="local-link" href="../templates/full-screen.html">Full Screen</a>
+</div></div>
+</div></aside>
+<main class="main">
+<div class="content color-page">
+  <div class="eyebrow">MINDCAFE · FOUNDATIONS</div>
   <h1>Color</h1>
-  <p class="lead">색상은 원시 색상값을 직접 사용하는 대신 <strong>Reference → System → Component</strong> 계층으로 관리합니다. 현재 페이지는 Figma의 <strong>Color Token</strong> 컬렉션 중 <strong>Mindcafe mode</strong>를 기준으로 작성했습니다.</p>
 
-  <div class="color-meta">
-    <span class="color-pill verified">Figma verified</span>
-    <span class="color-pill">Collection · Color Token</span>
-    <span class="color-pill">129 variables</span>
-    <span class="color-pill">Mode · Mindcafe</span>
+  <div class="color-preview">
+    <div class="color-preview-ui">
+      <div class="color-preview-head">
+        <strong>상담을 이어가볼까요?</strong>
+        <span>MindCafe color token 적용 예시</span>
+      </div>
+      <div class="color-preview-body">
+        <div class="color-preview-card">
+          <strong>다음 상담 예약</strong>
+          <p>최근 상담 내용을 이어서 다음 회기를 예약할 수 있어요.</p>
+          <div class="color-preview-actions">
+            <button class="primary" type="button">상담 예약하기</button>
+            <button class="secondary" type="button">나중에</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <section class="color-section">
-    <div class="color-section-head"><h2>Token architecture</h2><p>사용 화면에서는 System / Component token을 우선합니다.</p></div>
-    <div class="token-flow">
-      <div class="token-flow-card"><strong>Reference</strong><code>ref/primary/500</code><p>실제 색상 팔레트 값. 토큰의 원천이며 화면에서 직접 사용하는 것은 지양합니다.</p></div>
-      <div class="token-flow-arrow">→</div>
-      <div class="token-flow-card"><strong>System</strong><code>sys/text/primary/default(500)</code><p>배경, 표면, 텍스트처럼 역할과 의미를 가진 색상입니다.</p></div>
-      <div class="token-flow-arrow">→</div>
-      <div class="token-flow-card"><strong>Component</strong><code>comp/style/primary/default(500)</code><p>Button 등 실제 컴포넌트의 상태와 용도에 연결되는 색상입니다.</p></div>
-    </div>
-  </section>
-
-  
-  <section class="color-section live-preview-section">
-    <div class="color-section-head">
-      <h2>Live Preview</h2>
-      <p>같은 UI에 서비스별 Figma Color Token mode를 적용합니다.</p>
-    </div>
-
-    <div class="preview-toolbar">
-      <div class="preview-tabs" role="tablist" aria-label="Service color mode">
-        <button class="preview-tab is-active" type="button" data-preview-mode="mindcafe" role="tab" aria-selected="true">MindCafe</button>
-        <button class="preview-tab" type="button" data-preview-mode="tarotbom" role="tab" aria-selected="false">Tarotbom</button>
-        <button class="preview-tab" type="button" data-preview-mode="admin" role="tab" aria-selected="false">Admin</button>
-        <button class="preview-tab" type="button" data-preview-mode="expert" role="tab" aria-selected="false">Expert</button>
-      </div>
-      <div class="preview-caption">Preview는 이미지가 아니라 HTML/CSS로 렌더링됩니다.</div>
-    </div>
-
-    <div class="preview-shell" data-preview-shell>
-      <div class="preview-phone">
-        <div class="preview-phone-head">
-          <div class="preview-kicker">Today</div>
-          <h3>상담을 이어가볼까요?</h3>
-        </div>
-        <div class="preview-body">
-          <div class="preview-card" data-preview-card>
-            <div class="preview-card-top">
-              <div class="preview-card-title">다음 상담 예약</div>
-              <span class="preview-badge" data-preview-badge>예약 가능</span>
-            </div>
-            <p>최근 상담 내용을 이어서 전문가와 다음 회기를 예약할 수 있어요.</p>
-            <div class="preview-action">
-              <button class="preview-btn preview-btn-primary" type="button" data-preview-primary>상담 예약하기</button>
-              <button class="preview-btn preview-btn-secondary" type="button">나중에</button>
-            </div>
-          </div>
-
-          <div class="preview-input">상담 주제 또는 전문가 검색</div>
-          <div class="preview-message">예약 변경 시 상담 시작 전 안내를 확인해주세요.</div>
-        </div>
-      </div>
-
-      <div class="preview-side">
-        <div class="preview-side-card">
-          <h4>Applied tokens</h4>
-          <div class="preview-token-row">
-            <span class="preview-token-name">sys/bg/default</span>
-            <span class="preview-token-value"><i class="preview-dot" data-dot="bg"></i><span data-value="bg">#F3F5F7</span></span>
-          </div>
-          <div class="preview-token-row">
-            <span class="preview-token-name">sys/bg/primary-tint</span>
-            <span class="preview-token-value"><i class="preview-dot" data-dot="tint"></i><span data-value="tint">#D4F8F8</span></span>
-          </div>
-          <div class="preview-token-row">
-            <span class="preview-token-name">comp/style/primary/default(500)</span>
-            <span class="preview-token-value"><i class="preview-dot" data-dot="primary"></i><span data-value="primary">#007777</span></span>
-          </div>
-          <div class="preview-token-row">
-            <span class="preview-token-name">comp/cont/inverse</span>
-            <span class="preview-token-value"><i class="preview-dot" data-dot="inverse"></i><span data-value="inverse">#FFFFFF</span></span>
-          </div>
-        </div>
-
-        <div class="preview-side-card">
-          <h4>Why this matters</h4>
-          <p style="margin:0;color:#69737c;font-size:12px;line-height:1.65">
-            UI 구조와 token name은 유지하고 서비스 mode만 바꾸면 브랜드 컬러가 함께 전환됩니다.
-            서비스별로 색상을 하드코딩하지 않는 것이 기본 원칙입니다.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="color-section">
-    <div class="color-section-head"><h2>System colors</h2><p>MindCafe semantic tokens</p></div>
-    <div class="color-grid"><div class="color-token">
-      <div class="color-swatch" style="background:#F3F5F7"></div>
-      <div class="color-token-body">
-        <div class="color-token-name">sys/bg/default</div>
-        <div class="color-token-value"><span>#F3F5F7</span><button class="copy-value" data-color-copy="sys/bg/default">Copy</button></div>
-      </div>
-    </div><div class="color-token">
-      <div class="color-swatch" style="background:#FFFFFF"></div>
-      <div class="color-token-body">
-        <div class="color-token-name">sys/bg/alt</div>
-        <div class="color-token-value"><span>#FFFFFF</span><button class="copy-value" data-color-copy="sys/bg/alt">Copy</button></div>
-      </div>
-    </div><div class="color-token">
-      <div class="color-swatch" style="background:#D4F8F8"></div>
-      <div class="color-token-body">
-        <div class="color-token-name">sys/bg/primary-tint</div>
-        <div class="color-token-value"><span>#D4F8F8</span><button class="copy-value" data-color-copy="sys/bg/primary-tint">Copy</button></div>
-      </div>
-    </div><div class="color-token">
-      <div class="color-swatch" style="background:#FFFFFF"></div>
-      <div class="color-token-body">
-        <div class="color-token-name">sys/surface/default</div>
-        <div class="color-token-value"><span>#FFFFFF</span><button class="copy-value" data-color-copy="sys/surface/default">Copy</button></div>
-      </div>
-    </div><div class="color-token">
-      <div class="color-swatch" style="background:#FAFBFC"></div>
-      <div class="color-token-body">
-        <div class="color-token-name">sys/surface/alt</div>
-        <div class="color-token-value"><span>#FAFBFC</span><button class="copy-value" data-color-copy="sys/surface/alt">Copy</button></div>
-      </div>
-    </div><div class="color-token">
-      <div class="color-swatch" style="background:#373D4480"></div>
-      <div class="color-token-body">
-        <div class="color-token-name">sys/overlay/dim</div>
-        <div class="color-token-value"><span>#373D4480</span><button class="copy-value" data-color-copy="sys/overlay/dim">Copy</button></div>
-      </div>
-    </div><div class="color-token">
-      <div class="color-swatch" style="background:#373D44"></div>
-      <div class="color-token-body">
-        <div class="color-token-name">sys/text/default(900)</div>
-        <div class="color-token-value"><span>#373D44</span><button class="copy-value" data-color-copy="sys/text/default(900)">Copy</button></div>
-      </div>
-    </div><div class="color-token">
-      <div class="color-swatch" style="background:#4E5760"></div>
-      <div class="color-token-body">
-        <div class="color-token-name">sys/text/light(700)</div>
-        <div class="color-token-value"><span>#4E5760</span><button class="copy-value" data-color-copy="sys/text/light(700)">Copy</button></div>
-      </div>
-    </div><div class="color-token">
-      <div class="color-swatch" style="background:#7E8A96"></div>
-      <div class="color-token-body">
-        <div class="color-token-name">sys/text/lightest(500)</div>
-        <div class="color-token-value"><span>#7E8A96</span><button class="copy-value" data-color-copy="sys/text/lightest(500)">Copy</button></div>
-      </div>
-    </div><div class="color-token">
-      <div class="color-swatch" style="background:#007777"></div>
-      <div class="color-token-body">
-        <div class="color-token-name">sys/text/primary/default(500)</div>
-        <div class="color-token-value"><span>#007777</span><button class="copy-value" data-color-copy="sys/text/primary/default(500)">Copy</button></div>
-      </div>
-    </div><div class="color-token">
-      <div class="color-swatch" style="background:#005454"></div>
-      <div class="color-token-body">
-        <div class="color-token-name">sys/text/primary/deep(700)</div>
-        <div class="color-token-value"><span>#005454</span><button class="copy-value" data-color-copy="sys/text/primary/deep(700)">Copy</button></div>
-      </div>
-    </div><div class="color-token">
-      <div class="color-swatch" style="background:#F0143C"></div>
-      <div class="color-token-body">
-        <div class="color-token-name">sys/text/negative/default</div>
-        <div class="color-token-value"><span>#F0143C</span><button class="copy-value" data-color-copy="sys/text/negative/default">Copy</button></div>
-      </div>
-    </div></div>
+    <h2>Primary</h2>
+    <div class="palette-row"><div class="palette-cell"><div class="palette-color" style="background:#F6FFFF"></div><div class="palette-info"><div class="palette-step">5</div><div class="palette-hex">#F6FFFF</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#D4F8F8"></div><div class="palette-info"><div class="palette-step">10</div><div class="palette-hex">#D4F8F8</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#A2EDEE"></div><div class="palette-info"><div class="palette-step">50</div><div class="palette-hex">#A2EDEE</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#70DCDC"></div><div class="palette-info"><div class="palette-step">100</div><div class="palette-hex">#70DCDC</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#3CD0D0"></div><div class="palette-info"><div class="palette-step">200</div><div class="palette-hex">#3CD0D0</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#00BBBA"></div><div class="palette-info"><div class="palette-step">300</div><div class="palette-hex">#00BBBA</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#007777"></div><div class="palette-info"><div class="palette-step">500</div><div class="palette-hex">#007777</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#005454"></div><div class="palette-info"><div class="palette-step">700</div><div class="palette-hex">#005454</div></div></div></div>
   </section>
 
   <section class="color-section">
-    <div class="color-section-head"><h2>Primary</h2><p><code>ref/primary/*</code></p></div>
-    <div class="palette-row"><div class="palette-cell"><div class="palette-color" style="background:#F6FFFF"></div>
-        <div class="palette-info"><div class="palette-step">5</div><div class="palette-hex">#F6FFFF</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#D4F8F8"></div>
-        <div class="palette-info"><div class="palette-step">10</div><div class="palette-hex">#D4F8F8</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#A2EDEE"></div>
-        <div class="palette-info"><div class="palette-step">50</div><div class="palette-hex">#A2EDEE</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#70DCDC"></div>
-        <div class="palette-info"><div class="palette-step">100</div><div class="palette-hex">#70DCDC</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#3CD0D0"></div>
-        <div class="palette-info"><div class="palette-step">200</div><div class="palette-hex">#3CD0D0</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#00BBBA"></div>
-        <div class="palette-info"><div class="palette-step">300</div><div class="palette-hex">#00BBBA</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#007777"></div>
-        <div class="palette-info"><div class="palette-step">500</div><div class="palette-hex">#007777</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#005454"></div>
-        <div class="palette-info"><div class="palette-step">700</div><div class="palette-hex">#005454</div></div></div></div>
+    <h2>Neutral</h2>
+    <div class="palette-row"><div class="palette-cell"><div class="palette-color" style="background:#FAFBFC"></div><div class="palette-info"><div class="palette-step">10</div><div class="palette-hex">#FAFBFC</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#F3F5F7"></div><div class="palette-info"><div class="palette-step">50</div><div class="palette-hex">#F3F5F7</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#EEF0F2"></div><div class="palette-info"><div class="palette-step">100</div><div class="palette-hex">#EEF0F2</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#E1E4E8"></div><div class="palette-info"><div class="palette-step">150</div><div class="palette-hex">#E1E4E8</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#D2D6DB"></div><div class="palette-info"><div class="palette-step">200</div><div class="palette-hex">#D2D6DB</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#B6BDC4"></div><div class="palette-info"><div class="palette-step">300</div><div class="palette-hex">#B6BDC4</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#7E8A96"></div><div class="palette-info"><div class="palette-step">500</div><div class="palette-hex">#7E8A96</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#373D44"></div><div class="palette-info"><div class="palette-step">900</div><div class="palette-hex">#373D44</div></div></div></div>
   </section>
 
   <section class="color-section">
-    <div class="color-section-head"><h2>Neutral</h2><p><code>ref/neutral/*</code></p></div>
-    <div class="palette-row"><div class="palette-cell"><div class="palette-color" style="background:#FAFBFC"></div>
-        <div class="palette-info"><div class="palette-step">10</div><div class="palette-hex">#FAFBFC</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#F3F5F7"></div>
-        <div class="palette-info"><div class="palette-step">50</div><div class="palette-hex">#F3F5F7</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#EEF0F2"></div>
-        <div class="palette-info"><div class="palette-step">100</div><div class="palette-hex">#EEF0F2</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#E1E4E8"></div>
-        <div class="palette-info"><div class="palette-step">150</div><div class="palette-hex">#E1E4E8</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#D2D6DB"></div>
-        <div class="palette-info"><div class="palette-step">200</div><div class="palette-hex">#D2D6DB</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#B6BDC4"></div>
-        <div class="palette-info"><div class="palette-step">300</div><div class="palette-hex">#B6BDC4</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#7E8A96"></div>
-        <div class="palette-info"><div class="palette-step">500</div><div class="palette-hex">#7E8A96</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#373D44"></div>
-        <div class="palette-info"><div class="palette-step">900</div><div class="palette-hex">#373D44</div></div></div></div>
+    <h2>Negative</h2>
+    <div class="palette-row"><div class="palette-cell"><div class="palette-color" style="background:#FFF5F6"></div><div class="palette-info"><div class="palette-step">30</div><div class="palette-hex">#FFF5F6</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#FEEAED"></div><div class="palette-info"><div class="palette-step">50</div><div class="palette-hex">#FEEAED</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#FFC7D1"></div><div class="palette-info"><div class="palette-step">100</div><div class="palette-hex">#FFC7D1</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#FF97A9"></div><div class="palette-info"><div class="palette-step">200</div><div class="palette-hex">#FF97A9</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#FF6984"></div><div class="palette-info"><div class="palette-step">300</div><div class="palette-hex">#FF6984</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#F0143C"></div><div class="palette-info"><div class="palette-step">500</div><div class="palette-hex">#F0143C</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#D40E32"></div><div class="palette-info"><div class="palette-step">600</div><div class="palette-hex">#D40E32</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#B50B2B"></div><div class="palette-info"><div class="palette-step">700</div><div class="palette-hex">#B50B2B</div></div></div></div>
   </section>
 
   <section class="color-section">
-    <div class="color-section-head"><h2>Negative</h2><p><code>ref/extended/red/*</code></p></div>
-    <div class="palette-row"><div class="palette-cell"><div class="palette-color" style="background:#FFF5F6"></div>
-        <div class="palette-info"><div class="palette-step">30</div><div class="palette-hex">#FFF5F6</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#FEEAED"></div>
-        <div class="palette-info"><div class="palette-step">50</div><div class="palette-hex">#FEEAED</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#FFC7D1"></div>
-        <div class="palette-info"><div class="palette-step">100</div><div class="palette-hex">#FFC7D1</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#FF97A9"></div>
-        <div class="palette-info"><div class="palette-step">200</div><div class="palette-hex">#FF97A9</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#FF6984"></div>
-        <div class="palette-info"><div class="palette-step">300</div><div class="palette-hex">#FF6984</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#F0143C"></div>
-        <div class="palette-info"><div class="palette-step">500</div><div class="palette-hex">#F0143C</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#D40E32"></div>
-        <div class="palette-info"><div class="palette-step">600</div><div class="palette-hex">#D40E32</div></div></div><div class="palette-cell"><div class="palette-color" style="background:#B50B2B"></div>
-        <div class="palette-info"><div class="palette-step">700</div><div class="palette-hex">#B50B2B</div></div></div></div>
-  </section>
-
-  <section class="color-section">
-    <div class="color-section-head"><h2>Component tokens</h2><p>컴포넌트 구현 시 우선 사용하는 색상 계층</p></div>
+    <h2>Tokens</h2>
     <div class="token-table-wrap">
       <table class="token-table">
-        <thead><tr><th>Token</th><th>MindCafe value</th><th>Role</th></tr></thead>
-        <tbody><tr><td><code>comp/style/primary-tint/default(10)</code></td><td><span class="inline-swatch" style="background:#D4F8F8"></span>#D4F8F8</td><td>Primary tint background</td></tr><tr><td><code>comp/style/primary-tint/deep(50)</code></td><td><span class="inline-swatch" style="background:#A2EDEE"></span>#A2EDEE</td><td>Primary tint hover</td></tr><tr><td><code>comp/style/primary-tint/deeper(100)</code></td><td><span class="inline-swatch" style="background:#70DCDC"></span>#70DCDC</td><td>Primary tint pressed</td></tr><tr><td><code>comp/style/primary/default(500)</code></td><td><span class="inline-swatch" style="background:#007777"></span>#007777</td><td>Primary default</td></tr><tr><td><code>comp/style/primary/deep(600)</code></td><td><span class="inline-swatch" style="background:#006969"></span>#006969</td><td>Primary hover</td></tr><tr><td><code>comp/style/primary/deeper(700)</code></td><td><span class="inline-swatch" style="background:#005454"></span>#005454</td><td>Primary pressed / loading</td></tr><tr><td><code>comp/style/negative/default</code></td><td><span class="inline-swatch" style="background:#F0143C"></span>#F0143C</td><td>Negative / destructive</td></tr><tr><td><code>comp/style/neutral/default(100)</code></td><td><span class="inline-swatch" style="background:#EEF0F2"></span>#EEF0F2</td><td>Neutral default</td></tr><tr><td><code>comp/style/neutral/deep(150)</code></td><td><span class="inline-swatch" style="background:#E1E4E8"></span>#E1E4E8</td><td>Neutral hover</td></tr><tr><td><code>comp/style/neutral/deeper(200)</code></td><td><span class="inline-swatch" style="background:#D2D6DB"></span>#D2D6DB</td><td>Neutral pressed / disabled bg</td></tr><tr><td><code>comp/cont/inverse</code></td><td><span class="inline-swatch" style="background:#FFFFFF"></span>#FFFFFF</td><td>Inverse content</td></tr><tr><td><code>comp/cont/primary/default(500)</code></td><td><span class="inline-swatch" style="background:#007777"></span>#007777</td><td>Primary content</td></tr><tr><td><code>comp/cont/primary/deep(700)</code></td><td><span class="inline-swatch" style="background:#005454"></span>#005454</td><td>Deep primary content</td></tr><tr><td><code>comp/cont/neutral/default(900)</code></td><td><span class="inline-swatch" style="background:#373D44"></span>#373D44</td><td>Default neutral content</td></tr><tr><td><code>comp/cont/neutral/light(700)</code></td><td><span class="inline-swatch" style="background:#4E5760"></span>#4E5760</td><td>Secondary neutral content</td></tr><tr><td><code>comp/cont/neutral/lightest(500)</code></td><td><span class="inline-swatch" style="background:#7E8A96"></span>#7E8A96</td><td>Tertiary neutral content</td></tr><tr><td><code>comp/cont/neutral/disabled/default(300)</code></td><td><span class="inline-swatch" style="background:#B6BDC4"></span>#B6BDC4</td><td>Disabled content</td></tr></tbody>
+        <thead><tr><th>Token</th><th>Value</th></tr></thead>
+        <tbody><tr><td><code>sys/bg/default</code></td><td><span class="inline-swatch" style="background:#F3F5F7"></span>#F3F5F7</td></tr><tr><td><code>sys/bg/alt</code></td><td><span class="inline-swatch" style="background:#FFFFFF"></span>#FFFFFF</td></tr><tr><td><code>sys/bg/primary-tint</code></td><td><span class="inline-swatch" style="background:#D4F8F8"></span>#D4F8F8</td></tr><tr><td><code>sys/surface/default</code></td><td><span class="inline-swatch" style="background:#FFFFFF"></span>#FFFFFF</td></tr><tr><td><code>sys/surface/alt</code></td><td><span class="inline-swatch" style="background:#FAFBFC"></span>#FAFBFC</td></tr><tr><td><code>sys/text/default(900)</code></td><td><span class="inline-swatch" style="background:#373D44"></span>#373D44</td></tr><tr><td><code>sys/text/light(700)</code></td><td><span class="inline-swatch" style="background:#4E5760"></span>#4E5760</td></tr><tr><td><code>sys/text/lightest(500)</code></td><td><span class="inline-swatch" style="background:#7E8A96"></span>#7E8A96</td></tr><tr><td><code>sys/text/primary/default(500)</code></td><td><span class="inline-swatch" style="background:#007777"></span>#007777</td></tr><tr><td><code>sys/text/primary/deep(700)</code></td><td><span class="inline-swatch" style="background:#005454"></span>#005454</td></tr><tr><td><code>sys/text/negative/default</code></td><td><span class="inline-swatch" style="background:#F0143C"></span>#F0143C</td></tr><tr><td><code>comp/style/primary/default(500)</code></td><td><span class="inline-swatch" style="background:#007777"></span>#007777</td></tr><tr><td><code>comp/style/primary/deep(600)</code></td><td><span class="inline-swatch" style="background:#006969"></span>#006969</td></tr><tr><td><code>comp/style/primary/deeper(700)</code></td><td><span class="inline-swatch" style="background:#005454"></span>#005454</td></tr><tr><td><code>comp/cont/inverse</code></td><td><span class="inline-swatch" style="background:#FFFFFF"></span>#FFFFFF</td></tr><tr><td><code>comp/cont/neutral/default(900)</code></td><td><span class="inline-swatch" style="background:#373D44"></span>#373D44</td></tr><tr><td><code>comp/cont/neutral/disabled/default(300)</code></td><td><span class="inline-swatch" style="background:#B6BDC4"></span>#B6BDC4</td></tr></tbody>
       </table>
     </div>
   </section>
-
-  <section class="color-section">
-    <div class="color-section-head"><h2>Service modes</h2><p>같은 semantic/component token이 서비스 mode에 따라 변경됩니다.</p></div>
-    <div class="color-note">Figma의 Color Token 컬렉션에는 <strong>Mindcafe, Tarotbom, Admin, expert, partners, SDK</strong> mode가 정의되어 있습니다. 따라서 서비스별 페이지에서 raw hex를 새로 정의하기보다 동일한 token name에 해당 서비스 mode를 적용하는 방식이 기본입니다.</div>
-    <div style="height:14px"></div>
-    <div class="service-compare"><div class="head">Token</div><div class="head">MindCafe</div><div class="head">Tarotbom</div><div class="head admin">Admin</div><div class="head expert">Expert</div><div class="token">sys/bg/primary-tint</div>
-    <div><span class="inline-swatch" style="background:#D4F8F8"></span>#D4F8F8</div>
-    <div><span class="inline-swatch" style="background:#FFF7E3"></span>#FFF7E3</div>
-    <div class="admin"><span class="inline-swatch" style="background:#DEEFFF"></span>#DEEFFF</div>
-    <div class="expert"><span class="inline-swatch" style="background:#EDEFF8"></span>#EDEFF8</div><div class="token">sys/text/primary/default(500)</div>
-    <div><span class="inline-swatch" style="background:#007777"></span>#007777</div>
-    <div><span class="inline-swatch" style="background:#FFBA08"></span>#FFBA08</div>
-    <div class="admin"><span class="inline-swatch" style="background:#1976D2"></span>#1976D2</div>
-    <div class="expert"><span class="inline-swatch" style="background:#4D59A2"></span>#4D59A2</div><div class="token">comp/style/primary/default(500)</div>
-    <div><span class="inline-swatch" style="background:#007777"></span>#007777</div>
-    <div><span class="inline-swatch" style="background:#FFCE4F"></span>#FFCE4F</div>
-    <div class="admin"><span class="inline-swatch" style="background:#1976D2"></span>#1976D2</div>
-    <div class="expert"><span class="inline-swatch" style="background:#34495E"></span>#34495E</div><div class="token">comp/style/primary/deep(600)</div>
-    <div><span class="inline-swatch" style="background:#006969"></span>#006969</div>
-    <div><span class="inline-swatch" style="background:#FFC42B"></span>#FFC42B</div>
-    <div class="admin"><span class="inline-swatch" style="background:#0C65BD"></span>#0C65BD</div>
-    <div class="expert"><span class="inline-swatch" style="background:#2B3E52"></span>#2B3E52</div><div class="token">comp/cont/inverse</div>
-    <div><span class="inline-swatch" style="background:#FFFFFF"></span>#FFFFFF</div>
-    <div><span class="inline-swatch" style="background:#373D44"></span>#373D44</div>
-    <div class="admin"><span class="inline-swatch" style="background:#FFFFFF"></span>#FFFFFF</div>
-    <div class="expert"><span class="inline-swatch" style="background:#FFFFFF"></span>#FFFFFF</div></div>
-  </section>
-
-  <section class="color-section">
-    <div class="color-section-head"><h2>Usage rules</h2></div>
-    <div class="rule-grid">
-      <div class="rule-card"><h3>Semantic token 우선</h3><p>제품 화면에서는 <code>sys/*</code> 또는 <code>comp/*</code>를 사용합니다. <code>ref/*</code>는 색상의 원천값을 정의할 때 사용합니다.</p></div>
-      <div class="rule-card"><h3>서비스별 hex 하드코딩 금지</h3><p>MindCafe, Tarotbom, Admin, Expert의 Primary가 달라도 token name을 유지하고 Figma mode를 통해 값을 분리합니다.</p></div>
-      <div class="rule-card"><h3>State는 Component token 사용</h3><p>Default / Hover / Pressed / Disabled처럼 상태가 있는 UI는 각 컴포넌트 문서의 <code>comp/style/*</code>, <code>comp/cont/*</code> 규칙을 따릅니다.</p></div>
-      <div class="rule-card"><h3>확인되지 않은 토큰은 만들지 않기</h3><p>현재 Figma Color Token 컬렉션에 없는 이름이나 값은 임의로 추가하지 않습니다. 필요한 경우 디자인 시스템에 먼저 정의합니다.</p></div>
-    </div>
-  </section>
-
-  <section class="color-section">
-    <div class="color-note"><strong>참고:</strong> Center Console은 현재 이 Color Token 컬렉션에서 별도의 mode 이름으로 확인되지 않았습니다. Center 전용 색상 규칙은 별도 라이브러리/자산 확인 후 문서화합니다.</div>
-  </section>
 </div>
+
 </main>
 <script>
 document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',async()=>{const el=document.getElementById(btn.dataset.copy);try{await navigator.clipboard.writeText(el.innerText.trim());const t=btn.textContent;btn.textContent='Copied';setTimeout(()=>btn.textContent=t,1000)}catch(e){alert('복사할 수 없습니다.')}}));
@@ -522,8 +290,6 @@ document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('clic
 
 <script>
 (function(){
-  document.querySelectorAll('.local-group-title').forEach(btn=>{
-    btn.addEventListener('click',()=>btn.closest('.local-group').classList.toggle('open'));
   });
 })();
 </script>
@@ -561,77 +327,13 @@ document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('clic
 
 <script>
 (function(){
-  const root = document.querySelector('[data-preview-shell]');
-  if(!root || root.dataset.ready === '1') return;
-  root.dataset.ready = '1';
-
-  const modes = {
-    mindcafe: {
-      bg:'#F3F5F7',
-      tint:'#D4F8F8',
-      primary:'#007777',
-      inverse:'#FFFFFF',
-      textPrimary:'#007777'
-    },
-    tarotbom: {
-      bg:'#F3F5F7',
-      tint:'#FFF7E3',
-      primary:'#FFCE4F',
-      inverse:'#373D44',
-      textPrimary:'#FFBA08'
-    },
-    admin: {
-      bg:'#F3F5F7',
-      tint:'#DEEFFF',
-      primary:'#1976D2',
-      inverse:'#FFFFFF',
-      textPrimary:'#1976D2'
-    },
-    expert: {
-      bg:'#F3F5F7',
-      tint:'#EDEFF8',
-      primary:'#34495E',
-      inverse:'#FFFFFF',
-      textPrimary:'#4D59A2'
-    }
-  };
-
-  const tabs = document.querySelectorAll('[data-preview-mode]');
-  const card = document.querySelector('[data-preview-card]');
-  const badge = document.querySelector('[data-preview-badge]');
-  const primaryBtn = document.querySelector('[data-preview-primary]');
-
-  function applyMode(key){
-    const m = modes[key];
-    if(!m) return;
-
-    root.style.background = m.bg;
-    card.style.background = m.tint;
-    badge.style.background = m.primary;
-    badge.style.color = m.inverse;
-    primaryBtn.style.background = m.primary;
-    primaryBtn.style.color = m.inverse;
-
-    ['bg','tint','primary','inverse'].forEach(name=>{
-      const valueNode = document.querySelector(`[data-value="${name}"]`);
-      const dot = document.querySelector(`[data-dot="${name}"]`);
-      if(valueNode) valueNode.textContent = m[name].toUpperCase();
-      if(dot) dot.style.background = m[name];
+document.querySelectorAll('.local-group-chevron').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const g=btn.closest('.local-group');
+      g.classList.toggle('open');
+      btn.setAttribute('aria-expanded',g.classList.contains('open')?'true':'false');
     });
-
-    tabs.forEach(tab=>{
-      const active = tab.dataset.previewMode === key;
-      tab.classList.toggle('is-active', active);
-      tab.setAttribute('aria-selected', active ? 'true' : 'false');
-    });
-  }
-
-  tabs.forEach(tab=>{
-    tab.addEventListener('click', ()=>applyMode(tab.dataset.previewMode));
   });
-
-  applyMode('mindcafe');
 })();
 </script>
-
 </body></html>
