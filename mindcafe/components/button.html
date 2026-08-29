@@ -1,104 +1,55 @@
-<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Button · Atommerce Design System</title>
-<link rel="stylesheet" href="../../style.css">
-<style>
-.local-group-label{
-  margin:18px 0 6px;padding:0 12px;font-size:10px;line-height:1.4;
-  font-weight:600;letter-spacing:.02em;color:#B0B7BE;pointer-events:none;user-select:none
-}
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Button · Atommerce Design System</title><link rel="stylesheet" href="../../style.css"><style>
+.local-group-label{margin:18px 0 6px;padding:0 12px;font-size:10px;line-height:1.4;font-weight:600;letter-spacing:.02em;color:#B0B7BE;pointer-events:none;user-select:none}
 .grouped-components .local-group-label:first-child{margin-top:8px}
-
-.button-guide{max-width:980px;padding-bottom:100px}
-.button-guide .doc-head{
-  display:flex;align-items:flex-start;justify-content:space-between;gap:24px;
-  padding:58px 0 32px;border-bottom:1px solid #E8EBED
-}
-.button-guide .doc-head h1{margin:4px 0 10px;font-size:32px;line-height:1.25}
-.button-guide .doc-head p{max-width:680px;margin:0;font-size:13px;line-height:1.65;color:#68727B}
-.button-guide .doc-actions{display:flex;gap:8px;padding-top:8px}
-.button-guide .doc-actions a,.button-guide .doc-actions button{
-  height:40px;padding:0 14px;border:1px solid #DDE2E6;border-radius:9px;background:#fff;
-  color:#373D44;font:inherit;font-size:11px;font-weight:700;text-decoration:none;cursor:pointer
-}
-.button-guide .doc-actions button{background:#20262C;color:#fff;border-color:#20262C}
-
-.guide-section{padding:52px 0;border-bottom:1px solid #E8EBED}
+.component-guide{max-width:980px;padding-bottom:104px}
+.component-guide .doc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:58px 0 32px;border-bottom:1px solid #E8EBED}
+.component-guide .doc-head h1{margin:4px 0 10px;font-size:32px;line-height:1.25}
+.component-guide .doc-head p{max-width:700px;margin:0;font-size:13px;line-height:1.65;color:#68727B}
+.doc-actions{display:flex;gap:8px;padding-top:8px}
+.doc-actions a,.doc-actions button{height:40px;padding:0 14px;border:1px solid #DDE2E6;border-radius:9px;background:#fff;color:#373D44;font:inherit;font-size:11px;font-weight:700;text-decoration:none;cursor:pointer}
+.doc-actions button{background:#20262C;color:#fff;border-color:#20262C}
+.page-index{display:flex;gap:18px;overflow:auto;padding:14px 0;border-bottom:1px solid #E8EBED;scrollbar-width:none}
+.page-index::-webkit-scrollbar{display:none}
+.page-index a{flex:0 0 auto;font-size:11px;color:#7E8A96;text-decoration:none}
+.page-index a:hover{color:#373D44}
+.guide-section{scroll-margin-top:84px;padding:52px 0;border-bottom:1px solid #E8EBED}
 .guide-section:last-child{border-bottom:0}
 .guide-kicker{margin-bottom:8px;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#9AA3AB}
 .guide-section h2{margin:0 0 10px;font-size:20px;line-height:1.35}
-.guide-desc{max-width:760px;margin:0 0 24px;font-size:13px;line-height:1.65;color:#68727B}
-
-.demo-board{padding:32px;border:1px solid #E8EBED;border-radius:12px;background:#FAFBFC}
-.atom-btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:4px;min-width:40px;
-  border:0;font-family:inherit;font-weight:700;white-space:nowrap;box-sizing:border-box
-}
-.atom-btn[data-size="lg"]{height:48px;padding:12px 16px;border-radius:12px;font-size:18px}
-.atom-btn[data-size="md"]{height:40px;padding:8px 12px;border-radius:8px;font-size:16px}
-.atom-btn[data-size="sm"]{height:32px;padding:6px 12px;border-radius:8px;font-size:14px}
-.icon-dot{display:inline-block;border:2px solid currentColor;border-radius:50%}
-.atom-btn[data-size="lg"] .icon-dot{width:16px;height:16px}
-.atom-btn[data-size="md"] .icon-dot{width:14px;height:14px}
-.atom-btn[data-size="sm"] .icon-dot{width:12px;height:12px}
-.loading-ring{display:inline-block;border:2px solid currentColor;border-right-color:transparent;border-radius:50%}
-.atom-btn[data-size="lg"] .loading-ring{width:16px;height:16px}
-.atom-btn[data-size="md"] .loading-ring{width:14px;height:14px}
-.atom-btn[data-size="sm"] .loading-ring{width:12px;height:12px}
-
-.anatomy-wrap{display:grid;grid-template-columns:minmax(360px,1fr) 280px;gap:30px;align-items:center}
+.guide-desc{max-width:770px;margin:0 0 24px;font-size:13px;line-height:1.65;color:#68727B}
+.demo-board{padding:32px;border:1px solid #E8EBED;border-radius:12px;background:#FAFBFC;overflow:auto}
+.anatomy-grid{display:grid;grid-template-columns:minmax(340px,1fr) 280px;gap:30px;align-items:center}
 .anatomy-list{display:grid;gap:8px}
 .anatomy-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-bottom:1px solid #EDF0F2}
 .anatomy-num{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#EEF0F2;font-size:10px;font-weight:700;color:#4E5760;flex:0 0 auto}
 .anatomy-item strong{display:block;font-size:12px;color:#373D44}
 .anatomy-item span{display:block;margin-top:3px;font-size:11px;color:#7E8A96}
-
 .variant-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .variant-card{padding:22px;border:1px solid #E8EBED;border-radius:12px;background:#fff}
-.variant-card h3{margin:0 0 18px;font-size:13px}
-.variant-note{margin-top:14px;font-size:11px;color:#7E8A96}
-
-.state-table-wrap{overflow-x:auto}
-.state-table{width:100%;border-collapse:separate;border-spacing:0 12px;min-width:720px}
-.state-table th{padding:0 10px 8px;text-align:left;font-size:10px;color:#9AA3AB}
-.state-table td{padding:12px 10px;background:#FAFBFC;border-top:1px solid #EDF0F2;border-bottom:1px solid #EDF0F2}
-.state-table td:first-child{border-left:1px solid #EDF0F2;border-radius:10px 0 0 10px;font-size:11px;font-weight:700;color:#68727B}
-.state-table td:last-child{border-right:1px solid #EDF0F2;border-radius:0 10px 10px 0}
-
+.variant-card h3{margin:0 0 16px;font-size:13px}
+.family-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.family-item{padding:14px 16px;border:1px solid #E8EBED;border-radius:10px;background:#fff}
+.family-item strong{display:block;margin-bottom:5px;font-size:12px}
+.family-item span{display:block;font-size:11px;line-height:1.55;color:#7E8A96}
 .size-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .size-card{padding:22px;border:1px solid #E8EBED;border-radius:12px;background:#fff}
 .size-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.size-head strong{font-size:13px}
-.size-head span{font-size:11px;color:#7E8A96}
+.size-head strong{font-size:13px}.size-head span{font-size:11px;color:#7E8A96}
+.spec-table{width:100%;border-collapse:collapse}
+.spec-table th,.spec-table td{padding:13px 12px;border-bottom:1px solid #EDF0F2;font-size:11px;text-align:left;vertical-align:top}
+.spec-table th{width:160px;color:#7E8A96;font-weight:700}.spec-table td{color:#373D44}
+.spec-table tr:last-child th,.spec-table tr:last-child td{border-bottom:0}
+.note{padding:18px 20px;border:1px solid #E8EBED;border-radius:10px;background:#FAFBFC;font-size:11px;line-height:1.65;color:#68727B}
+.swatch{display:inline-block;width:12px;height:12px;margin-right:6px;border:1px solid rgba(0,0,0,.06);border-radius:3px;vertical-align:-2px}
+@media(max-width:900px){.anatomy-grid{grid-template-columns:1fr}.variant-grid,.family-list{grid-template-columns:1fr}.size-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.component-guide .doc-head{display:block;padding-top:36px}.doc-actions{margin-top:20px}.demo-board{padding:20px 16px}}
 
-.spec-table2{width:100%;border-collapse:collapse}
-.spec-table2 th,.spec-table2 td{padding:13px 12px;border-bottom:1px solid #EDF0F2;font-size:11px;text-align:left;vertical-align:top}
-.spec-table2 th{width:150px;color:#7E8A96;font-weight:700}
-.spec-table2 td{color:#373D44}
-.spec-table2 tr:last-child th,.spec-table2 tr:last-child td{border-bottom:0}
-
-.property-chips{display:flex;flex-wrap:wrap;gap:8px}
-.property-chip{padding:8px 10px;border-radius:8px;background:#F3F5F7;font-size:11px;color:#4E5760}
-
-.code-note{padding:18px 20px;border:1px solid #E8EBED;border-radius:10px;background:#FAFBFC;font-size:11px;line-height:1.6;color:#68727B}
-
-@media(max-width:900px){
-  .anatomy-wrap{grid-template-columns:1fr}
-  .variant-grid{grid-template-columns:1fr}
-  .size-grid{grid-template-columns:1fr}
-}
-@media(max-width:640px){
-  .button-guide .doc-head{display:block;padding-top:36px}
-  .button-guide .doc-actions{margin-top:20px}
-  .demo-board{padding:20px 16px;overflow-x:auto}
-}
-</style>
-</head>
-<body>
-<header class="global-header">
+.atom-btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;min-width:40px;border:0;font-family:inherit;font-weight:700;white-space:nowrap}
+.atom-btn.lg{height:48px;padding:12px 16px;border-radius:12px;font-size:18px}.atom-btn.md{height:40px;padding:8px 12px;border-radius:8px;font-size:16px}.atom-btn.sm{height:32px;padding:6px 12px;border-radius:8px;font-size:14px}
+.loader{width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%}
+</style></head>
+<body><header class="global-header">
   <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
   <nav class="product-tabs" aria-label="서비스 선택">
     <a class="product-tab active" href="../index.html">MindCafe</a>
@@ -108,8 +59,7 @@
     <a class="product-tab" href="../../admin/index.html">Admin</a>
     <a class="product-tab" href="../../ai-guide.html">AI Guide</a>
   </nav>
-</header>
-<aside class="local-sidebar">
+</header><aside class="local-sidebar">
 <div class="local-service"><a href="../index.html">MindCafe</a></div>
 <nav class="local-nav" aria-label="MindCafe 문서 메뉴">
 <a class="local-category" href="../foundations/index.html">Foundations</a>
@@ -139,210 +89,9 @@
 <a class="local-category" href="../patterns/index.html">Patterns</a>
 <a class="local-category" href="../templates/index.html">Templates</a>
 </nav>
-</aside>
-
-<main class="main">
-<div class="content">
-<article class="button-guide">
-
-<header class="doc-head">
-  <div>
-    <div class="eyebrow">Component · Actions</div>
-    <h1>Button</h1>
-    <p>사용자가 작업을 실행하는 Button 컴포넌트입니다. 아래 문서는 Atommerce Core Design System의 Figma Button 구성과 확인된 variant만 기준으로 정리합니다.</p>
-  </div>
-  <div class="doc-actions">
-    <a href="https://www.figma.com/design/OuM9vyMhabODr7BtlRlhe3/-System--Atommerce-Core-Design-System?node-id=358-27200&m=dev" target="_blank" rel="noopener">Figma ↗</a>
-    <button id="copyUrl" type="button">URL 복사</button>
-  </div>
-</header>
-
-<section class="guide-section">
-  <div class="guide-kicker">Overview</div>
-  <h2>Button</h2>
-  <p class="guide-desc">size, hierarchy, state를 조합해 사용하며 leadingIcon과 trailingIcon을 선택적으로 사용할 수 있습니다.</p>
-  <div class="demo-board">
-    <button class="atom-btn" data-size="lg" style="background:#007777;color:#fff" type="button">버튼이름</button>
-  </div>
-</section>
-
-<section class="guide-section">
-  <div class="guide-kicker">Anatomy</div>
-  <h2>구성 요소</h2>
-  <p class="guide-desc">Figma Button에서 확인된 요소를 기준으로 구조를 나눴습니다.</p>
-  <div class="anatomy-wrap">
-    <div class="demo-board">
-      <button class="atom-btn" data-size="lg" style="background:#007777;color:#fff" type="button">
-        <span class="icon-dot" aria-hidden="true"></span>
-        <span>버튼이름</span>
-        <span class="icon-dot" aria-hidden="true"></span>
-      </button>
-    </div>
-    <div class="anatomy-list">
-      <div class="anatomy-item"><span class="anatomy-num">1</span><div><strong>Leading icon</strong><span>선택적으로 표시되는 앞쪽 아이콘</span></div></div>
-      <div class="anatomy-item"><span class="anatomy-num">2</span><div><strong>Label</strong><span>Button 텍스트</span></div></div>
-      <div class="anatomy-item"><span class="anatomy-num">3</span><div><strong>Trailing icon</strong><span>선택적으로 표시되는 뒤쪽 아이콘</span></div></div>
-      <div class="anatomy-item"><span class="anatomy-num">4</span><div><strong>Container</strong><span>size와 hierarchy에 따라 스타일이 적용되는 영역</span></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="guide-section">
-  <div class="guide-kicker">Variants</div>
-  <h2>Hierarchy</h2>
-  <p class="guide-desc">Figma에는 다섯 가지 hierarchy가 정의되어 있습니다.</p>
-  <div class="variant-grid">
-    <div class="variant-card"><h3>primary</h3><button class="atom-btn" data-size="lg" style="background:#007777;color:#fff" type="button">버튼이름</button></div>
-    <div class="variant-card"><h3>secondary</h3><button class="atom-btn" data-size="lg" style="background:#D4F8F8;color:#005454" type="button">버튼이름</button></div>
-    <div class="variant-card"><h3>tertiary</h3><button class="atom-btn" data-size="lg" style="background:#EEF0F2;color:#373D44" type="button">버튼이름</button></div>
-    <div class="variant-card"><h3>destructive</h3><button class="atom-btn" data-size="lg" style="background:#F0143C;color:#fff" type="button">버튼이름</button></div>
-    <div class="variant-card"><h3>destructive-tint</h3><button class="atom-btn" data-size="lg" style="background:#FEEAED;color:#F0143C" type="button">버튼이름</button></div>
-  </div>
-</section>
-
-<section class="guide-section">
-  <div class="guide-kicker">Icon options</div>
-  <h2>아이콘 조합</h2>
-  <p class="guide-desc">leadingIcon과 trailingIcon은 optional property로 정의되어 있습니다.</p>
-  <div class="variant-grid">
-    <div class="variant-card"><h3>Label only</h3><button class="atom-btn" data-size="lg" style="background:#007777;color:#fff" type="button">버튼이름</button></div>
-    <div class="variant-card"><h3>Leading icon + label</h3><button class="atom-btn" data-size="lg" style="background:#007777;color:#fff" type="button"><span class="icon-dot"></span>버튼이름</button></div>
-    <div class="variant-card"><h3>Label + trailing icon</h3><button class="atom-btn" data-size="lg" style="background:#007777;color:#fff" type="button">버튼이름<span class="icon-dot"></span></button></div>
-    <div class="variant-card"><h3>Leading + label + trailing</h3><button class="atom-btn" data-size="lg" style="background:#007777;color:#fff" type="button"><span class="icon-dot"></span>버튼이름<span class="icon-dot"></span></button></div>
-  </div>
-</section>
-
-<section class="guide-section">
-  <div class="guide-kicker">States</div>
-  <h2>상태</h2>
-  <p class="guide-desc">각 hierarchy의 Default / hover / pressed / loading / disabled 상태를 비교합니다.</p>
-  <div class="state-table-wrap">
-    <table class="state-table">
-      <thead><tr><th>Hierarchy</th><th>Default</th><th>hover</th><th>pressed</th><th>loading</th><th>disabled</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>primary</td>
-          <td><button class="atom-btn" data-size="sm" style="background:#007777;color:#fff">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#006969;color:#fff">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#005454;color:#fff">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#005454;color:#fff;width:40px;padding:0"><span class="loading-ring"></span></button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#D2D6DB;color:#fff">버튼</button></td>
-        </tr>
-        <tr>
-          <td>secondary</td>
-          <td><button class="atom-btn" data-size="sm" style="background:#D4F8F8;color:#005454">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#A2EDEE;color:#005454">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#70DCDC;color:#005454">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#70DCDC;color:#005454;width:40px;padding:0"><span class="loading-ring"></span></button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#F3F5F7;color:#B6BDC4">버튼</button></td>
-        </tr>
-        <tr>
-          <td>tertiary</td>
-          <td><button class="atom-btn" data-size="sm" style="background:#EEF0F2;color:#373D44">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#E1E4E8;color:#373D44">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#D2D6DB;color:#373D44">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#D2D6DB;color:#373D44;width:40px;padding:0"><span class="loading-ring"></span></button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#F3F5F7;color:#B6BDC4">버튼</button></td>
-        </tr>
-        <tr>
-          <td>destructive</td>
-          <td><button class="atom-btn" data-size="sm" style="background:#F0143C;color:#fff">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#D40E32;color:#fff">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#B50B2B;color:#fff">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#B50B2B;color:#fff;width:40px;padding:0"><span class="loading-ring"></span></button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#D2D6DB;color:#fff">버튼</button></td>
-        </tr>
-        <tr>
-          <td>destructive-tint</td>
-          <td><button class="atom-btn" data-size="sm" style="background:#FEEAED;color:#F0143C">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#FFC7D1;color:#F0143C">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#FF97A9;color:#F0143C">버튼</button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#FF97A9;color:#fff;width:40px;padding:0"><span class="loading-ring"></span></button></td>
-          <td><button class="atom-btn" data-size="sm" style="background:#F3F5F7;color:#B6BDC4">버튼</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<section class="guide-section">
-  <div class="guide-kicker">Size</div>
-  <h2>크기</h2>
-  <p class="guide-desc">Figma에서 확인된 lg / md / sm 세 가지 size를 비교합니다.</p>
-  <div class="size-grid">
-    <div class="size-card"><div class="size-head"><strong>lg</strong><span>48px</span></div><button class="atom-btn" data-size="lg" style="background:#007777;color:#fff">버튼이름</button></div>
-    <div class="size-card"><div class="size-head"><strong>md</strong><span>40px</span></div><button class="atom-btn" data-size="md" style="background:#007777;color:#fff">버튼이름</button></div>
-    <div class="size-card"><div class="size-head"><strong>sm</strong><span>32px</span></div><button class="atom-btn" data-size="sm" style="background:#007777;color:#fff">버튼이름</button></div>
-  </div>
-</section>
-
-<section class="guide-section">
-  <div class="guide-kicker">Button loading</div>
-  <h2>Loading</h2>
-  <p class="guide-desc">loading state에서는 label 대신 loading indicator가 표시되며 size별 loading width가 별도로 정의되어 있습니다.</p>
-  <div class="size-grid">
-    <div class="size-card"><div class="size-head"><strong>lg</strong><span>56 × 48</span></div><button class="atom-btn" data-size="lg" style="background:#005454;color:#fff;width:56px;padding:0"><span class="loading-ring"></span></button></div>
-    <div class="size-card"><div class="size-head"><strong>md</strong><span>44 × 40</span></div><button class="atom-btn" data-size="md" style="background:#005454;color:#fff;width:44px;padding:0"><span class="loading-ring"></span></button></div>
-    <div class="size-card"><div class="size-head"><strong>sm</strong><span>40 × 32</span></div><button class="atom-btn" data-size="sm" style="background:#005454;color:#fff;width:40px;padding:0"><span class="loading-ring"></span></button></div>
-  </div>
-</section>
-
-<section class="guide-section">
-  <div class="guide-kicker">Specification</div>
-  <h2>확인된 속성</h2>
-  <table class="spec-table2">
-    <tr><th>size</th><td>lg · md · sm</td></tr>
-    <tr><th>hierarchy</th><td>primary · secondary · tertiary · destructive · destructive-tint</td></tr>
-    <tr><th>state</th><td>Default · hover · pressed · loading · disabled</td></tr>
-    <tr><th>SDK</th><td>off · on</td></tr>
-    <tr><th>Optional</th><td>leadingIcon · trailingIcon</td></tr>
-    <tr><th>lg</th><td>Height 48 · Radius 12 · Padding 12 / 16 · Gap 4 · Min width 40 · Icon 20 / 24 · Component / XLarge / Accent 18 Bold · Loading width 56</td></tr>
-    <tr><th>md</th><td>Height 40 · Radius 8 · Padding 8 / 12 · Gap 4 · Min width 40 · Icon 20 · Component / Large / Accent 16 Bold · Loading width 44</td></tr>
-    <tr><th>sm</th><td>Height 32 · Radius 8 · Padding 6 / 12 · Gap 4 · Min width 40 · Icon 16 · Component / Medium / Accent 14 Bold · Loading width 40</td></tr>
-  </table>
-</section>
-
-<section class="guide-section">
-  <div class="guide-kicker">Optional properties</div>
-  <h2>옵션</h2>
-  <div class="property-chips">
-    <span class="property-chip">leadingIcon</span>
-    <span class="property-chip">trailingIcon</span>
-    <span class="property-chip">SDK off</span>
-    <span class="property-chip">SDK on</span>
-  </div>
-</section>
-
-<section class="guide-section">
-  <div class="guide-kicker">Usage</div>
-  <h2>Usage guidance</h2>
-  <div class="code-note">Atommerce Button의 hierarchy별 사용 목적, 배치 우선순위, 여러 버튼을 함께 사용할 때의 레이아웃 규칙은 현재 확인된 Figma 정보에 포함되어 있지 않습니다. 따라서 원티드 Montage의 Usage / Application / Hierarchy 규칙을 그대로 가져오지 않았습니다.</div>
-</section>
-
-<section class="guide-section">
-  <div class="guide-kicker">Code</div>
-  <h2>Code mapping</h2>
-  <div class="code-note">현재 실제 서비스 코드와 Figma Button 간 Code Connect / API 매핑은 확인되지 않았습니다. 따라서 임의의 컴포넌트 API는 문서에 추가하지 않습니다.</div>
-</section>
-
-</article>
-</div>
-</main>
-
-<script>
-(function(){
-  const btn=document.getElementById('copyUrl');
-  if(btn){
-    btn.addEventListener('click',async()=>{
-      try{
-        await navigator.clipboard.writeText(window.location.href);
-        const old=btn.textContent;
-        btn.textContent='복사됨';
-        setTimeout(()=>btn.textContent=old,1000);
-      }catch(e){}
-    });
-  }
-})();
-</script>
-</body>
-</html>
+</aside><main class="main"><div class="content"><article class="component-guide">
+<header class="doc-head"><div><div class="eyebrow">Component · Actions</div><h1>Button</h1><p>Atommerce Figma Button의 구조, hierarchy, state, size를 정리합니다.</p></div>
+<div class="doc-actions"><a href="https://www.figma.com/design/OuM9vyMhabODr7BtlRlhe3/-System--Atommerce-Core-Design-System?node-id=358-27200&m=dev" target="_blank" rel="noopener">Figma ↗</a><button class="copy-url" type="button">URL 복사</button></div></header>
+<nav class="page-index" aria-label="On this page"><a href="#overview">Button</a><a href="#anatomy">구성 요소</a><a href="#variants">Hierarchy</a><a href="#states">상태</a><a href="#size">크기</a><a href="#loading">Loading</a><a href="#spec">확인된 속성</a><a href="#usage">Atommerce usage</a></nav><section class="guide-section" id="overview"><div class="guide-kicker">Overview</div><h2>Button</h2><p class="guide-desc">작업 실행을 위한 Button입니다.</p><div class="demo-board"><button class="atom-btn lg" style="background:#007777;color:#fff">버튼이름</button></div></section><section class="guide-section" id="anatomy"><div class="guide-kicker">Anatomy</div><h2>구성 요소</h2><div class="anatomy-grid"><div class="demo-board"><button class="atom-btn lg" style="background:#007777;color:#fff">버튼이름</button></div><div class="anatomy-list"><div class="anatomy-item"><span class="anatomy-num">1</span><div><strong>Leading icon</strong><span>Optional</span></div></div><div class="anatomy-item"><span class="anatomy-num">2</span><div><strong>Label</strong><span>Button text</span></div></div><div class="anatomy-item"><span class="anatomy-num">3</span><div><strong>Trailing icon</strong><span>Optional</span></div></div><div class="anatomy-item"><span class="anatomy-num">4</span><div><strong>Container</strong><span>Size / hierarchy style</span></div></div></div></div></section><section class="guide-section" id="variants"><div class="guide-kicker">Variants</div><h2>Hierarchy</h2><div class="variant-grid"><div class="variant-card"><h3>primary</h3><button class="atom-btn lg" style="background:#007777;color:#fff">버튼이름</button></div><div class="variant-card"><h3>secondary</h3><button class="atom-btn lg" style="background:#D4F8F8;color:#005454">버튼이름</button></div><div class="variant-card"><h3>tertiary</h3><button class="atom-btn lg" style="background:#EEF0F2;color:#373D44">버튼이름</button></div><div class="variant-card"><h3>destructive</h3><button class="atom-btn lg" style="background:#F0143C;color:#fff">버튼이름</button></div><div class="variant-card"><h3>destructive-tint</h3><button class="atom-btn lg" style="background:#FEEAED;color:#F0143C">버튼이름</button></div></div></section><section class="guide-section" id="states"><div class="guide-kicker">States</div><h2>상태</h2><table class="spec-table"><tr><th>Default</th><td>기본</td></tr><tr><th>hover</th><td>Hover</td></tr><tr><th>pressed</th><td>Pressed</td></tr><tr><th>loading</th><td>Loading indicator · lg 56 / md 44 / sm 40 width</td></tr><tr><th>disabled</th><td>Disabled</td></tr></table></section><section class="guide-section" id="size"><div class="guide-kicker">Size</div><h2>크기</h2><div class="size-grid"><div class="size-card"><div class="size-head"><strong>lg</strong><span>48px</span></div><button class="atom-btn lg" style="background:#007777;color:#fff">버튼이름</button></div><div class="size-card"><div class="size-head"><strong>md</strong><span>40px</span></div><button class="atom-btn md" style="background:#007777;color:#fff">버튼이름</button></div><div class="size-card"><div class="size-head"><strong>sm</strong><span>32px</span></div><button class="atom-btn sm" style="background:#007777;color:#fff">버튼이름</button></div></div></section><section class="guide-section" id="loading"><div class="guide-kicker">Button loading</div><h2>Loading</h2><div class="size-grid"><div class="size-card"><div class="size-head"><strong>lg</strong><span>56 × 48</span></div><button class="atom-btn lg" style="width:56px;padding:0;background:#005454;color:#fff"><span class="loader"></span></button></div><div class="size-card"><div class="size-head"><strong>md</strong><span>44 × 40</span></div><button class="atom-btn md" style="width:44px;padding:0;background:#005454;color:#fff"><span class="loader"></span></button></div><div class="size-card"><div class="size-head"><strong>sm</strong><span>40 × 32</span></div><button class="atom-btn sm" style="width:40px;padding:0;background:#005454;color:#fff"><span class="loader"></span></button></div></div></section><section class="guide-section" id="spec"><div class="guide-kicker">Specification</div><h2>확인된 속성</h2><table class="spec-table"><tr><th>size</th><td>lg · md · sm</td></tr><tr><th>hierarchy</th><td>primary · secondary · tertiary · destructive · destructive-tint</td></tr><tr><th>state</th><td>Default · hover · pressed · loading · disabled</td></tr><tr><th>SDK</th><td>off · on</td></tr><tr><th>Optional</th><td>leadingIcon · trailingIcon</td></tr><tr><th>lg</th><td>48 / radius 12 / padding 12·16 / gap 4 / min 40 / text 18 Bold</td></tr><tr><th>md</th><td>40 / radius 8 / padding 8·12 / gap 4 / min 40 / text 16 Bold</td></tr><tr><th>sm</th><td>32 / radius 8 / padding 6·12 / gap 4 / min 40 / text 14 Bold</td></tr></table></section><section class="guide-section" id="usage"><div class="guide-kicker">Usage</div><h2>Atommerce usage</h2><div class="note">Montage의 Application / Hierarchy / Button layout처럼 사용 맥락을 설명하는 구조는 참고했지만, Atommerce Figma에서 확인되지 않은 우선순위·배치 규칙은 문서에 추가하지 않았습니다.</div></section></article></div></main>
+<script>(function(){const b=document.querySelector('.copy-url');if(b)b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);const o=b.textContent;b.textContent='복사됨';setTimeout(()=>b.textContent=o,1000)}catch(e){}})})();</script>
+</body></html>

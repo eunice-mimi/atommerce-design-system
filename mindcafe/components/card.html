@@ -1,30 +1,61 @@
-<!DOCTYPE html>
-
-<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Card · Atommerce Design System</title><link href="../../style.css" rel="stylesheet"/><style>
-.local-group-label{
-  margin:18px 0 6px;
-  padding:0 12px;
-  font-size:10px;
-  line-height:1.4;
-  font-weight:600;
-  letter-spacing:.02em;
-  color:#B0B7BE;
-  pointer-events:none;
-  user-select:none;
-}
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Card · Atommerce Design System</title><link rel="stylesheet" href="../../style.css"><style>
+.local-group-label{margin:18px 0 6px;padding:0 12px;font-size:10px;line-height:1.4;font-weight:600;letter-spacing:.02em;color:#B0B7BE;pointer-events:none;user-select:none}
 .grouped-components .local-group-label:first-child{margin-top:8px}
-</style>
-</head>
-<body class="detail-ref">
-<header class="global-header">
+.component-guide{max-width:980px;padding-bottom:104px}
+.component-guide .doc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:58px 0 32px;border-bottom:1px solid #E8EBED}
+.component-guide .doc-head h1{margin:4px 0 10px;font-size:32px;line-height:1.25}
+.component-guide .doc-head p{max-width:700px;margin:0;font-size:13px;line-height:1.65;color:#68727B}
+.doc-actions{display:flex;gap:8px;padding-top:8px}
+.doc-actions a,.doc-actions button{height:40px;padding:0 14px;border:1px solid #DDE2E6;border-radius:9px;background:#fff;color:#373D44;font:inherit;font-size:11px;font-weight:700;text-decoration:none;cursor:pointer}
+.doc-actions button{background:#20262C;color:#fff;border-color:#20262C}
+.page-index{display:flex;gap:18px;overflow:auto;padding:14px 0;border-bottom:1px solid #E8EBED;scrollbar-width:none}
+.page-index::-webkit-scrollbar{display:none}
+.page-index a{flex:0 0 auto;font-size:11px;color:#7E8A96;text-decoration:none}
+.page-index a:hover{color:#373D44}
+.guide-section{scroll-margin-top:84px;padding:52px 0;border-bottom:1px solid #E8EBED}
+.guide-section:last-child{border-bottom:0}
+.guide-kicker{margin-bottom:8px;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#9AA3AB}
+.guide-section h2{margin:0 0 10px;font-size:20px;line-height:1.35}
+.guide-desc{max-width:770px;margin:0 0 24px;font-size:13px;line-height:1.65;color:#68727B}
+.demo-board{padding:32px;border:1px solid #E8EBED;border-radius:12px;background:#FAFBFC;overflow:auto}
+.anatomy-grid{display:grid;grid-template-columns:minmax(340px,1fr) 280px;gap:30px;align-items:center}
+.anatomy-list{display:grid;gap:8px}
+.anatomy-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-bottom:1px solid #EDF0F2}
+.anatomy-num{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#EEF0F2;font-size:10px;font-weight:700;color:#4E5760;flex:0 0 auto}
+.anatomy-item strong{display:block;font-size:12px;color:#373D44}
+.anatomy-item span{display:block;margin-top:3px;font-size:11px;color:#7E8A96}
+.variant-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.variant-card{padding:22px;border:1px solid #E8EBED;border-radius:12px;background:#fff}
+.variant-card h3{margin:0 0 16px;font-size:13px}
+.family-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.family-item{padding:14px 16px;border:1px solid #E8EBED;border-radius:10px;background:#fff}
+.family-item strong{display:block;margin-bottom:5px;font-size:12px}
+.family-item span{display:block;font-size:11px;line-height:1.55;color:#7E8A96}
+.size-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.size-card{padding:22px;border:1px solid #E8EBED;border-radius:12px;background:#fff}
+.size-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.size-head strong{font-size:13px}.size-head span{font-size:11px;color:#7E8A96}
+.spec-table{width:100%;border-collapse:collapse}
+.spec-table th,.spec-table td{padding:13px 12px;border-bottom:1px solid #EDF0F2;font-size:11px;text-align:left;vertical-align:top}
+.spec-table th{width:160px;color:#7E8A96;font-weight:700}.spec-table td{color:#373D44}
+.spec-table tr:last-child th,.spec-table tr:last-child td{border-bottom:0}
+.note{padding:18px 20px;border:1px solid #E8EBED;border-radius:10px;background:#FAFBFC;font-size:11px;line-height:1.65;color:#68727B}
+.swatch{display:inline-block;width:12px;height:12px;margin-right:6px;border:1px solid rgba(0,0,0,.06);border-radius:3px;vertical-align:-2px}
+@media(max-width:900px){.anatomy-grid{grid-template-columns:1fr}.variant-grid,.family-list{grid-template-columns:1fr}.size-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.component-guide .doc-head{display:block;padding-top:36px}.doc-actions{margin-top:20px}.demo-board{padding:20px 16px}}
+.card-demo{width:312px;height:59px;border:1px solid #EEF0F2;border-radius:12px;background:#fff;padding:12px 16px;display:flex;flex-direction:column;justify-content:center}.card-demo small{font-size:12px;color:#7E8A96}.card-demo strong{font-size:16px;color:#373D44}.card-demo.hover{background:#FAFBFC}.card-demo.press{background:#F3F5F7}</style></head>
+<body><header class="global-header">
   <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
   <nav class="product-tabs" aria-label="서비스 선택">
-    <a class="product-tab active" href="../index.html">MindCafe</a><a class="product-tab" href="../../tarobom/index.html">Tarobom</a><a class="product-tab" href="../../expert/index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab" href="../../admin/index.html">Admin</a>
+    <a class="product-tab active" href="../index.html">MindCafe</a>
+    <a class="product-tab" href="../../tarobom/index.html">Tarobom</a>
+    <a class="product-tab" href="../../expert/index.html">Expert Console</a>
+    <a class="product-tab" href="../../center/index.html">Center Console</a>
+    <a class="product-tab" href="../../admin/index.html">Admin</a>
     <a class="product-tab" href="../../ai-guide.html">AI Guide</a>
   </nav>
-</header>
-<aside class="local-sidebar">
+</header><aside class="local-sidebar">
 <div class="local-service"><a href="../index.html">MindCafe</a></div>
 <nav class="local-nav" aria-label="MindCafe 문서 메뉴">
 <a class="local-category" href="../foundations/index.html">Foundations</a>
@@ -53,125 +84,10 @@
 </div>
 <a class="local-category" href="../patterns/index.html">Patterns</a>
 <a class="local-category" href="../templates/index.html">Templates</a>
-</nav></aside>
-<main class="main"><div class="content">
-<div class="detail-ref-page">
-<header class="detail-ref-header">
-<div class="detail-ref-heading">
-<div class="eyebrow">Component</div>
-<h1>Card</h1>
-</div>
-<div class="detail-ref-actions">
-<a aria-label="새 창에서 열기" class="detail-ref-open" href="#">↗</a>
-<button class="detail-ref-copy" type="button">URL 복사</button>
-</div>
-</header>
-<div class="detail-ref-workspace">
-<section class="detail-ref-left">
-<div class="detail-ref-preview-card">
-<div class="detail-ref-tabs">
-<button class="detail-ref-tab active" data-ref-tab="preview" type="button">Preview</button><button class="detail-ref-tab" data-ref-tab="usage" type="button">Usage</button><button class="detail-ref-tab" data-ref-tab="code" type="button">Code</button>
-</div>
-<div class="detail-ref-panel-wrap">
-<div class="detail-ref-panel active" data-ref-panel="preview"><div class=""><div class="card"><div class="detail-visual-stage"><div class="preview"><div class="preview-inner"><article class="ds-card-demo"><div class="ds-card-media">Image / Content</div><div class="ds-card-body"><div class="ds-card-title">Card title</div><div class="ds-card-text">설명이나 핵심 정보를 카드 안에 배치합니다. 내용의 위계와 클릭 영역을 명확하게 유지합니다.</div><div class="ds-card-actions"><button class="ds-secondary-btn">Secondary</button><button class="ds-primary-btn">Primary</button></div></div></article></div></div></div></div><div class="component-meta"><span>Figma component: card / general card</span><span>Surface / Content / Action</span></div></div></div><div class="detail-ref-panel" data-ref-panel="usage">
-<div class="detail-usage-gallery">
-<div class="detail-usage-shot"><div class="usage-frame"><div class="usage-stack"><div class="usage-line sm"></div><div class="usage-line lg"></div><div class="usage-line md"></div></div></div></div>
-<div class="detail-usage-shot"><div class="usage-frame"><div class="usage-row space"><div><div class="usage-line sm"></div><div style="height:8px"></div><div class="usage-line md"></div></div><button class="usage-btn secondary">보기</button></div></div></div>
-</div>
-</div><div class="detail-ref-panel" data-ref-panel="code"><div class="detail-code-shell"><div class="">
-<div class="card card-pad"><div class="code-head"><h3>HTML</h3></div><pre id="cardHtml">&lt;article class="ds-card"&gt;
-  &lt;div class="ds-card__media"&gt;...&lt;/div&gt;
-  &lt;div class="ds-card__body"&gt;
-    &lt;h3 class="ds-card__title"&gt;Card title&lt;/h3&gt;
-    &lt;p class="ds-card__text"&gt;Description&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/article&gt;</pre><div style="height:14px"></div><div class="code-head"><h3>CSS</h3></div><pre id="cardCss">.ds-card {
-  border: 1px solid var(--comp-style-neutral-deep-150);
-  border-radius: 16px;
-  background: #fff;
-  overflow: hidden;
-}
-
-.ds-card__body {
-  padding: 18px;
-}</pre></div>
-</div></div></div>
-</div>
-</div>
-</section>
-<aside class="detail-ref-right"><section class="detail-doc-section">
-<div class="detail-doc-kicker">Design intent</div>
-<h2>디자인 의도</h2>
-<p class="lead">Core library의 <code>card</code> / <code>general card</code> 계열을 사용할 때 공통적으로 필요한 구조를 정리합니다.</p>
-</section><section class="detail-doc-section">
-<div class="detail-doc-kicker">Structure</div>
-<h2>구조 / Properties</h2>
-<table class="spec-table"><tr><th>Role</th><td>Surface · Content · Action</td></tr><tr><th>Behavior</th><td>관련 정보를 하나의 정보 단위로 그룹화</td></tr><tr><th>Interaction</th><td>필요한 경우 카드 또는 내부 Action을 클릭</td></tr></table>
-</section><section class="detail-doc-section">
-<div class="detail-doc-kicker">Design token</div>
-<h2>Design Token</h2>
-<div class="spec-note">정확한 토큰 값은 해당 컴포넌트의 Figma / Registry에 문서화된 값만 사용합니다.</div>
-</section><section class="detail-doc-section">
-<div class="detail-doc-kicker">Spacing</div>
-<h2>Spacing</h2>
-<div class="spec-note">Spacing은 문서화된 semantic spacing token을 우선 사용합니다. 정확한 값이 없는 경우 임의 값을 생성하지 않습니다.</div>
-</section><section class="detail-doc-section">
-<div class="detail-doc-kicker">Radius</div>
-<h2>Radius</h2>
-<div class="spec-note">Radius는 해당 컴포넌트에 정의된 semantic radius token을 사용합니다.</div>
-</section><section class="detail-doc-section">
-<div class="detail-doc-kicker">Typography</div>
-<h2>Typography</h2>
-<div class="spec-note">Typography는 UI 역할에 맞는 Component / Body / Title semantic style을 사용합니다.</div>
-</section><section class="detail-doc-section">
-<div class="detail-doc-kicker">Behavior</div>
-<h2>State / Behavior</h2>
-<div class=""><div class="card card-pad"><ul class="usage-list"><li>하나의 주제나 객체에 대한 정보를 묶을 때 사용합니다.</li><li>카드 전체가 클릭 가능한지, 내부 CTA만 클릭 가능한지 명확히 결정합니다.</li><li>카드 안에 너무 많은 서로 다른 행동을 넣지 않습니다.</li></ul></div></div>
-</section><section class="detail-doc-section">
-<div class="detail-doc-kicker">Accessibility</div>
-<h2>Accessibility</h2>
-<p>클릭 가능한 영역과 내부 Action의 역할이 충돌하지 않도록 semantic structure를 유지합니다.</p>
-</section><section class="detail-doc-section">
-<div class="detail-doc-kicker">For AI</div>
-<h2>AI Guidance</h2>
-<div class=""><div class="card card-pad"><div class="code-head"></div><div class="prompt-box" id="cardPrompt">Atommerce Core Design System의 card 또는 general card를 우선 사용한다.
-Card는 하나의 정보 단위를 묶는 container로 사용한다.
-내부 action hierarchy를 명확하게 유지하고 CTA를 과도하게 배치하지 않는다.
-정의된 Card variant가 있다면 새로운 surface style을 임의 생성하지 않는다.</div></div></div>
-</section></aside>
-</div>
-</div>
-</div></main>
-<script>
-(function(){
-  });
-})();
-</script>
-
-
-<script>
-(function(){
-  const copyBtn = document.querySelector('.detail-ref-copy');
-  if(copyBtn && !copyBtn.dataset.ready){
-    copyBtn.dataset.ready='1';
-    copyBtn.addEventListener('click', async () => {
-      const url=window.location.href;
-      try{
-        if(navigator.clipboard && window.isSecureContext){
-          await navigator.clipboard.writeText(url);
-        }else{
-          const ta=document.createElement('textarea');
-          ta.value=url; ta.setAttribute('readonly','');
-          ta.style.position='fixed'; ta.style.opacity='0';
-          document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
-        }
-        copyBtn.textContent='복사됨';
-        copyBtn.classList.add('is-copied');
-        setTimeout(()=>{copyBtn.textContent='URL 복사';copyBtn.classList.remove('is-copied');},1200);
-      }catch(e){}
-    });
-  }
-})();
-</script>
-
+</nav>
+</aside><main class="main"><div class="content"><article class="component-guide">
+<header class="doc-head"><div><div class="eyebrow">Component · Data Display</div><h1>Card</h1><p>Atommerce Card page의 여러 card component set을 한 페이지에서 정리합니다.</p></div>
+<div class="doc-actions"><a href="https://www.figma.com/design/OuM9vyMhabODr7BtlRlhe3/-System--Atommerce-Core-Design-System?node-id=9541-31530&m=dev" target="_blank" rel="noopener">Figma ↗</a><button class="copy-url" type="button">URL 복사</button></div></header>
+<nav class="page-index" aria-label="On this page"><a href="#overview">General card</a><a href="#anatomy">General card anatomy</a><a href="#variants">Card families</a><a href="#states">General card states</a><a href="#platform">Platform</a><a href="#skeleton">Skeleton</a><a href="#content-order">Content order</a><a href="#spec">General card</a></nav><section class="guide-section" id="overview"><div class="guide-kicker">Overview</div><h2>General card</h2><div class="demo-board"><div class="card-demo"><small>부가 설명</small><strong>주요 액션</strong></div></div></section><section class="guide-section" id="anatomy"><div class="guide-kicker">Anatomy</div><h2>General card anatomy</h2><div class="anatomy-grid"><div class="demo-board"><div class="card-demo"><small>부가 설명</small><strong>주요 액션</strong></div></div><div class="anatomy-list"><div class="anatomy-item"><span class="anatomy-num">1</span><div><strong>Supporting text</strong><span>12px</span></div></div><div class="anatomy-item"><span class="anatomy-num">2</span><div><strong>Primary text</strong><span>16px</span></div></div><div class="anatomy-item"><span class="anatomy-num">3</span><div><strong>Container</strong><span>312 × 59 · radius 12</span></div></div></div></div></section><section class="guide-section" id="variants"><div class="guide-kicker">Variants</div><h2>Card families</h2><div class="family-list"><div class="family-item"><strong>achievementCard</strong><span>Default / hover / pressed</span></div><div class="family-item"><strong>card_commerce</strong><span>state + direction</span></div><div class="family-item"><strong>card-test</strong><span>Default / hover / active</span></div><div class="family-item"><strong>general card</strong><span>Default / Hover / Pressed</span></div><div class="family-item"><strong>card_expert</strong><span>state + productType + direction</span></div><div class="family-item"><strong>vod-card</strong><span>state</span></div><div class="family-item"><strong>card-academy</strong><span>state</span></div><div class="family-item"><strong>eapCard</strong><span>bar off/on</span></div><div class="family-item"><strong>card_expert comment</strong><span>state</span></div><div class="family-item"><strong>card_expert_profile</strong><span>state</span></div><div class="family-item"><strong>card-notice</strong><span>opened</span></div><div class="family-item"><strong>card_review</strong><span>state + type</span></div><div class="family-item"><strong>card_coupon</strong><span>Default / focused</span></div><div class="family-item"><strong>card-counseling-product</strong><span>type + state + product</span></div><div class="family-item"><strong>baro-card</strong><span>type + pay-type</span></div><div class="family-item"><strong>card_expert_recommend</strong><span>state</span></div></div></section><section class="guide-section" id="states"><div class="guide-kicker">States</div><h2>General card states</h2><div class="variant-grid"><div class="variant-card"><h3>Default</h3><div class="card-demo"><small>부가 설명</small><strong>주요 액션</strong></div></div><div class="variant-card"><h3>Hover</h3><div class="card-demo hover"><small>부가 설명</small><strong>주요 액션</strong></div></div><div class="variant-card"><h3>Pressed</h3><div class="card-demo press"><small>부가 설명</small><strong>주요 액션</strong></div></div></div></section><section class="guide-section" id="platform"><div class="guide-kicker">Platform</div><h2>Platform</h2><div class="note">Montage는 Desktop / Mobile 카드 variant를 정의하지만 Atommerce general card에는 platform property가 확인되지 않았습니다.</div></section><section class="guide-section" id="skeleton"><div class="guide-kicker">Skeleton</div><h2>Skeleton</h2><div class="note">Atommerce Card의 Skeleton component 연결 규칙은 확인되지 않았습니다.</div></section><section class="guide-section" id="content-order"><div class="guide-kicker">Content order</div><h2>Content order</h2><div class="note">Card 내부 DOM / accessibility content order 규칙은 현재 Figma component metadata에서 확인되지 않아 공식 규칙으로 추가하지 않았습니다.</div></section><section class="guide-section" id="spec"><div class="guide-kicker">Specification</div><h2>General card</h2><table class="spec-table"><tr><th>size</th><td>312 × 59</td></tr><tr><th>radius</th><td>12</td></tr><tr><th>border</th><td>#EEF0F2</td></tr><tr><th>Default</th><td>#FFFFFF</td></tr><tr><th>Hover</th><td>#FAFBFC</td></tr><tr><th>Pressed</th><td>#F3F5F7</td></tr></table></section></article></div></main>
+<script>(function(){const b=document.querySelector('.copy-url');if(b)b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);const o=b.textContent;b.textContent='복사됨';setTimeout(()=>b.textContent=o,1000)}catch(e){}})})();</script>
 </body></html>
