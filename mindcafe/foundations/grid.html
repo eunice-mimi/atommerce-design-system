@@ -147,6 +147,57 @@
 .grid-section strong{font-weight:800}
 </style>
 
+
+<style>
+/* v50 · Grid foundation tabs */
+.grid-doc{max-width:1040px}
+.grid-tabs{
+  display:flex;
+  gap:28px;
+  margin-top:28px;
+  border-bottom:1px solid #E8EBED;
+  overflow-x:auto;
+}
+.grid-tab{
+  position:relative;
+  flex:0 0 auto;
+  appearance:none;
+  padding:0 0 11px;
+  border:0;
+  background:transparent;
+  color:#A0A7AD;
+  font:inherit;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+}
+.grid-tab.active{color:#20262C}
+.grid-tab.active::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:-1px;
+  height:2px;
+  background:#20262C;
+}
+.grid-panel{display:none;padding-top:34px}
+.grid-panel.active{display:block}
+.grid-panel .grid-section{
+  padding:0 0 44px;
+  border-bottom:0;
+}
+.grid-panel .grid-section + .grid-section{
+  padding-top:36px;
+  border-top:1px solid #ECEFF1;
+}
+.grid-panel-title{
+  margin:0 0 10px;
+  font-size:18px;
+}
+@media(max-width:760px){
+  .grid-tabs{gap:18px}
+}
+</style>
+
 </head>
 <body>
 <header class="global-header">
@@ -177,17 +228,21 @@
 
 <main class="main">
 
-<div class="content grid-doc"><div class="eyebrow">MINDCAFE · FOUNDATIONS</div><h1>Grid</h1>
 
-  <div class="grid-summary" aria-label="Grid 문서 목차">
-    <a href="#artboard-size">Artboard size</a>
-    <a href="#breakpoint">Breakpoint</a>
-    <a href="#spacing">Spacing</a>
-    <a href="#layout">Layout</a>
+<div class="content grid-doc">
+  <div class="eyebrow">MINDCAFE · FOUNDATIONS</div>
+  <h1>Grid</h1>
+
+  <div class="grid-tabs" role="tablist" aria-label="Grid sections">
+    <button class="grid-tab active" type="button" data-tab="artboard">Artboard</button>
+    <button class="grid-tab" type="button" data-tab="breakpoint">Breakpoint</button>
+    <button class="grid-tab" type="button" data-tab="spacing">Spacing</button>
+    <button class="grid-tab" type="button" data-tab="layout">Layout</button>
   </div>
 
-  
-  <section class="grid-section" id="artboard-size">
+  <div class="grid-panel active" data-panel="artboard">
+    <section class="grid-section">
+      
     <h2>Artboard size</h2>
     <p>대표 화면 크기를 기준으로 디자인하고, 실제 서비스에서는 breakpoint에 따라 유연하게 대응합니다. PC 콘텐츠 영역은 <strong>max-width 1280px</strong>을 기준으로 사용합니다.</p>
     <table class="artboard-list">
@@ -205,10 +260,13 @@
         <tr><td>PC</td><td>1440px</td><td>1280px</td><td>24px minimum</td></tr>
       </tbody>
     </table>
-  </section>
+  
+    </section>
+  </div>
 
-
-  <section class="grid-section" id="breakpoint">
+  <div class="grid-panel" data-panel="breakpoint">
+    <section class="grid-section">
+      
     <h2>Breakpoint</h2>
     <p>화면 너비에 따라 Spacing mode가 전환됩니다. breakpoint와 margin / gutter 값은 Figma의 Spacing variable collection을 기준으로 합니다.</p>
     <table class="spec-table">
@@ -229,8 +287,47 @@
         <tr><td>LG</td><td>1440px–</td><td>24px minimum</td><td>16px</td><td>80px</td><td>max 1280px</td></tr>
       </tbody>
     </table>
-  </section>
-<section class="grid-section" id="spacing"><h2>Spacing</h2><p>Grid / Layout spacing은 <strong>8px</strong>을 기준으로 사용합니다. <strong>4px 배수</strong>도 필요에 따라 사용할 수 있으며, <strong>1px · 2px</strong>은 다른 방법으로 해결하기 어려운 경우에만 예외적으로 사용합니다.</p><div class="spacing-rule-intro"><div class="spacing-rule-card"><span>Base unit</span><strong>8px</strong></div><div class="spacing-rule-card"><span>Available step</span><strong>4px 배수 사용 가능</strong></div><div class="spacing-rule-card"><span>Exception</span><strong>1px · 2px 필요 시 사용</strong></div></div><div class="spacing-ruler"><div class="spacing-ruler-track"><div class="spacing-marker exception" style="--w:2px"><span class="spacing-badge">1</span><i class="spacing-guide"></i><span class="spacing-marker-name">exception</span></div><div class="spacing-marker exception" style="--w:2px"><span class="spacing-badge">2</span><i class="spacing-guide"></i><span class="spacing-marker-name">exception</span></div><div class="spacing-marker available-step" style="--w:2px"><span class="spacing-badge">4</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker base" style="--w:4px"><span class="spacing-badge">8</span><i class="spacing-guide"></i><span class="spacing-base-label">기준</span><span class="spacing-marker-name">base</span></div><div class="spacing-marker available-step" style="--w:6px"><span class="spacing-badge">12</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:8px"><span class="spacing-badge">16</span><i class="spacing-guide"></i><span class="spacing-marker-name">2×</span></div><div class="spacing-marker available-step" style="--w:10px"><span class="spacing-badge">20</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:12px"><span class="spacing-badge">24</span><i class="spacing-guide"></i><span class="spacing-marker-name">3×</span></div><div class="spacing-marker available-step" style="--w:13px"><span class="spacing-badge">28</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:15px"><span class="spacing-badge">32</span><i class="spacing-guide"></i><span class="spacing-marker-name">4×</span></div><div class="spacing-marker available-step" style="--w:17px"><span class="spacing-badge">36</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:19px"><span class="spacing-badge">40</span><i class="spacing-guide"></i><span class="spacing-marker-name">5×</span></div><div class="spacing-marker available-step" style="--w:21px"><span class="spacing-badge">44</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:23px"><span class="spacing-badge">48</span><i class="spacing-guide"></i><span class="spacing-marker-name">6×</span></div><div class="spacing-marker available-step" style="--w:25px"><span class="spacing-badge">52</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:27px"><span class="spacing-badge">56</span><i class="spacing-guide"></i><span class="spacing-marker-name">7×</span></div><div class="spacing-marker available-step" style="--w:29px"><span class="spacing-badge">60</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:31px"><span class="spacing-badge">64</span><i class="spacing-guide"></i><span class="spacing-marker-name">8×</span></div><div class="spacing-marker available-step" style="--w:33px"><span class="spacing-badge">68</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:35px"><span class="spacing-badge">72</span><i class="spacing-guide"></i><span class="spacing-marker-name">9×</span></div><div class="spacing-marker available-step" style="--w:36px"><span class="spacing-badge">76</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:38px"><span class="spacing-badge">80</span><i class="spacing-guide"></i><span class="spacing-marker-name">10×</span></div></div></div><p class="spacing-rule-note">8px 배수를 우선하고, 4 / 12 / 20 / 28 / 36 / 44 / 52 / 60 / 68 / 76px처럼 4px 배수도 필요에 따라 사용할 수 있습니다. 1px · 2px은 border, optical adjustment 등 다른 방법으로 해결하기 어려운 경우에만 사용합니다.</p><div class="mode-tabs"><button class="mode-tab active" data-mode="xs">XS <span style="font-weight:500">320–600px</span></button><button class="mode-tab" data-mode="sm">SM <span style="font-weight:500">601–1023px</span></button><button class="mode-tab" data-mode="md">MD <span style="font-weight:500">1024–1439px</span></button><button class="mode-tab" data-mode="lg">LG <span style="font-weight:500">1440px–</span></button></div><div class="mode-panel active" data-panel="xs"><div class="token-line"><code>margin/side</code><div class="token-track"><div class="token-fill" style="width:72px"></div></div><div class="token-value">24px</div></div><div class="token-line"><code>margin/bottom</code><div class="token-track"><div class="token-fill" style="width:192px"></div></div><div class="token-value">64px</div></div><div class="token-line"><code>gap (= gutter)</code><div class="token-track"><div class="token-fill" style="width:40px"></div></div><div class="token-value">8px</div></div></div><div class="mode-panel" data-panel="sm"><div class="token-line"><code>margin/side</code><div class="token-track"><div class="token-fill" style="width:72px"></div></div><div class="token-value">24px</div></div><div class="token-line"><code>margin/bottom</code><div class="token-track"><div class="token-fill" style="width:192px"></div></div><div class="token-value">64px</div></div><div class="token-line"><code>gap (= gutter)</code><div class="token-track"><div class="token-fill" style="width:40px"></div></div><div class="token-value">8px</div></div></div><div class="mode-panel" data-panel="md"><div class="token-line"><code>margin/side</code><div class="token-track"><div class="token-fill" style="width:72px"></div></div><div class="token-value">24px</div></div><div class="token-line"><code>margin/bottom</code><div class="token-track"><div class="token-fill" style="width:192px"></div></div><div class="token-value">64px</div></div><div class="token-line"><code>gap (= gutter)</code><div class="token-track"><div class="token-fill" style="width:80px"></div></div><div class="token-value">16px</div></div></div><div class="mode-panel" data-panel="lg"><div class="token-line"><code>margin/side</code><div class="token-track"><div class="token-fill" style="width:72px"></div></div><div class="token-value">24px</div></div><div class="token-line"><code>margin/bottom</code><div class="token-track"><div class="token-fill" style="width:240px"></div></div><div class="token-value">80px</div></div><div class="token-line"><code>gap (= gutter)</code><div class="token-track"><div class="token-fill" style="width:80px"></div></div><div class="token-value">16px</div></div></div></section><section class="grid-section" id="cell-width"><h2>Cell width</h2><p>아래 값은 Figma Cell Width variable collection에 등록된 실제 값입니다.</p><div style="margin-top:14px"><div class="cell-row"><code>cell/min-width</code><div class="cell-visual"><div class="cell-bar" style="width:17.77777777777778%"></div></div><div class="cell-value">64px</div></div><div class="cell-row"><code>cell/max-width</code><div class="cell-visual"><div class="cell-bar" style="width:100.0%"></div></div><div class="cell-value">360px</div></div><div class="cell-row"><code>cell/fixed-sm</code><div class="cell-visual"><div class="cell-bar" style="width:17.77777777777778%"></div></div><div class="cell-value">64px</div></div><div class="cell-row"><code>cell/fixed-md</code><div class="cell-visual"><div class="cell-bar" style="width:33.33333333333333%"></div></div><div class="cell-value">120px</div></div><div class="cell-row"><code>cell/fixed-lg</code><div class="cell-visual"><div class="cell-bar" style="width:44.44444444444444%"></div></div><div class="cell-value">160px</div></div></div></section><section class="grid-section" id="layout"><h2>Layout</h2><p>Breakpoint의 side margin과 gutter, Cell width를 함께 사용합니다. 아래 열 개수는 이해를 위한 예시이며 고정 토큰은 아닙니다.</p><div class="layout-list"><div><h3>Mobile · XS</h3><div class="layout-example"><div class="layout-label"><span>320–600px</span><span>side 24px · gutter 8px</span></div><div class="layout-canvas" style="--cols:2;--side:24px;--g:8px"><div class=layout-cell>1</div><div class=layout-cell>2</div></div></div></div><div><h3>Tablet · SM</h3><div class="layout-example"><div class="layout-label"><span>601–1023px</span><span>side 24px · gutter 8px</span></div><div class="layout-canvas" style="--cols:3;--side:24px;--g:8px"><div class=layout-cell>1</div><div class=layout-cell>2</div><div class=layout-cell>3</div></div></div></div><div><h3>Tablet / Desktop · MD</h3><div class="layout-example"><div class="layout-label"><span>1024–1439px</span><span>side 24px · gutter 16px</span></div><div class="layout-canvas" style="--cols:6;--side:24px;--g:16px"><div class=layout-cell>1</div><div class=layout-cell>2</div><div class=layout-cell>3</div><div class=layout-cell>4</div><div class=layout-cell>5</div><div class=layout-cell>6</div></div></div></div><div><h3>Desktop · LG</h3><div class="layout-example"><div class="layout-label"><span>1440px–</span><span>side 24px · gutter 16px</span></div><div class="layout-canvas" style="--cols:12;--side:24px;--g:16px"><div class=layout-cell>1</div><div class=layout-cell>2</div><div class=layout-cell>3</div><div class=layout-cell>4</div><div class=layout-cell>5</div><div class=layout-cell>6</div><div class=layout-cell>7</div><div class=layout-cell>8</div><div class=layout-cell>9</div><div class=layout-cell>10</div><div class=layout-cell>11</div><div class=layout-cell>12</div></div></div></div></div><p class="layout-note">실제 구현에서는 콘텐츠와 컨테이너 크기에 맞춰 셀을 병합하거나 확장합니다.</p></section></div>
+  
+    </section>
+  </div>
+
+  <div class="grid-panel" data-panel="spacing">
+    <section class="grid-section">
+      <h2>Spacing</h2><p>Grid / Layout spacing은 <strong>8px</strong>을 기준으로 사용합니다. <strong>4px 배수</strong>도 필요에 따라 사용할 수 있으며, <strong>1px · 2px</strong>은 다른 방법으로 해결하기 어려운 경우에만 예외적으로 사용합니다.</p><div class="spacing-rule-intro"><div class="spacing-rule-card"><span>Base unit</span><strong>8px</strong></div><div class="spacing-rule-card"><span>Available step</span><strong>4px 배수 사용 가능</strong></div><div class="spacing-rule-card"><span>Exception</span><strong>1px · 2px 필요 시 사용</strong></div></div><div class="spacing-ruler"><div class="spacing-ruler-track"><div class="spacing-marker exception" style="--w:2px"><span class="spacing-badge">1</span><i class="spacing-guide"></i><span class="spacing-marker-name">exception</span></div><div class="spacing-marker exception" style="--w:2px"><span class="spacing-badge">2</span><i class="spacing-guide"></i><span class="spacing-marker-name">exception</span></div><div class="spacing-marker available-step" style="--w:2px"><span class="spacing-badge">4</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker base" style="--w:4px"><span class="spacing-badge">8</span><i class="spacing-guide"></i><span class="spacing-base-label">기준</span><span class="spacing-marker-name">base</span></div><div class="spacing-marker available-step" style="--w:6px"><span class="spacing-badge">12</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:8px"><span class="spacing-badge">16</span><i class="spacing-guide"></i><span class="spacing-marker-name">2×</span></div><div class="spacing-marker available-step" style="--w:10px"><span class="spacing-badge">20</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:12px"><span class="spacing-badge">24</span><i class="spacing-guide"></i><span class="spacing-marker-name">3×</span></div><div class="spacing-marker available-step" style="--w:13px"><span class="spacing-badge">28</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:15px"><span class="spacing-badge">32</span><i class="spacing-guide"></i><span class="spacing-marker-name">4×</span></div><div class="spacing-marker available-step" style="--w:17px"><span class="spacing-badge">36</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:19px"><span class="spacing-badge">40</span><i class="spacing-guide"></i><span class="spacing-marker-name">5×</span></div><div class="spacing-marker available-step" style="--w:21px"><span class="spacing-badge">44</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:23px"><span class="spacing-badge">48</span><i class="spacing-guide"></i><span class="spacing-marker-name">6×</span></div><div class="spacing-marker available-step" style="--w:25px"><span class="spacing-badge">52</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:27px"><span class="spacing-badge">56</span><i class="spacing-guide"></i><span class="spacing-marker-name">7×</span></div><div class="spacing-marker available-step" style="--w:29px"><span class="spacing-badge">60</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:31px"><span class="spacing-badge">64</span><i class="spacing-guide"></i><span class="spacing-marker-name">8×</span></div><div class="spacing-marker available-step" style="--w:33px"><span class="spacing-badge">68</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:35px"><span class="spacing-badge">72</span><i class="spacing-guide"></i><span class="spacing-marker-name">9×</span></div><div class="spacing-marker available-step" style="--w:36px"><span class="spacing-badge">76</span><i class="spacing-guide"></i><span class="spacing-marker-name">4-step</span></div><div class="spacing-marker primary-step" style="--w:38px"><span class="spacing-badge">80</span><i class="spacing-guide"></i><span class="spacing-marker-name">10×</span></div></div></div><p class="spacing-rule-note">8px 배수를 우선하고, 4 / 12 / 20 / 28 / 36 / 44 / 52 / 60 / 68 / 76px처럼 4px 배수도 필요에 따라 사용할 수 있습니다. 1px · 2px은 border, optical adjustment 등 다른 방법으로 해결하기 어려운 경우에만 사용합니다.</p><div class="mode-tabs"><button class="mode-tab active" data-mode="xs">XS <span style="font-weight:500">320–600px</span></button><button class="mode-tab" data-mode="sm">SM <span style="font-weight:500">601–1023px</span></button><button class="mode-tab" data-mode="md">MD <span style="font-weight:500">1024–1439px</span></button><button class="mode-tab" data-mode="lg">LG <span style="font-weight:500">1440px–</span></button></div><div class="mode-panel active" data-panel="xs"><div class="token-line"><code>margin/side</code><div class="token-track"><div class="token-fill" style="width:72px"></div></div><div class="token-value">24px</div></div><div class="token-line"><code>margin/bottom</code><div class="token-track"><div class="token-fill" style="width:192px"></div></div><div class="token-value">64px</div></div><div class="token-line"><code>gap (= gutter)</code><div class="token-track"><div class="token-fill" style="width:40px"></div></div><div class="token-value">8px</div></div></div><div class="mode-panel" data-panel="sm"><div class="token-line"><code>margin/side</code><div class="token-track"><div class="token-fill" style="width:72px"></div></div><div class="token-value">24px</div></div><div class="token-line"><code>margin/bottom</code><div class="token-track"><div class="token-fill" style="width:192px"></div></div><div class="token-value">64px</div></div><div class="token-line"><code>gap (= gutter)</code><div class="token-track"><div class="token-fill" style="width:40px"></div></div><div class="token-value">8px</div></div></div><div class="mode-panel" data-panel="md"><div class="token-line"><code>margin/side</code><div class="token-track"><div class="token-fill" style="width:72px"></div></div><div class="token-value">24px</div></div><div class="token-line"><code>margin/bottom</code><div class="token-track"><div class="token-fill" style="width:192px"></div></div><div class="token-value">64px</div></div><div class="token-line"><code>gap (= gutter)</code><div class="token-track"><div class="token-fill" style="width:80px"></div></div><div class="token-value">16px</div></div></div><div class="mode-panel" data-panel="lg"><div class="token-line"><code>margin/side</code><div class="token-track"><div class="token-fill" style="width:72px"></div></div><div class="token-value">24px</div></div><div class="token-line"><code>margin/bottom</code><div class="token-track"><div class="token-fill" style="width:240px"></div></div><div class="token-value">80px</div></div><div class="token-line"><code>gap (= gutter)</code><div class="token-track"><div class="token-fill" style="width:80px"></div></div><div class="token-value">16px</div></div></div>
+    </section>
+  </div>
+
+  <div class="grid-panel" data-panel="layout">
+    <section class="grid-section">
+      <h2>Cell width</h2><p>아래 값은 Figma Cell Width variable collection에 등록된 실제 값입니다.</p><div style="margin-top:14px"><div class="cell-row"><code>cell/min-width</code><div class="cell-visual"><div class="cell-bar" style="width:17.77777777777778%"></div></div><div class="cell-value">64px</div></div><div class="cell-row"><code>cell/max-width</code><div class="cell-visual"><div class="cell-bar" style="width:100.0%"></div></div><div class="cell-value">360px</div></div><div class="cell-row"><code>cell/fixed-sm</code><div class="cell-visual"><div class="cell-bar" style="width:17.77777777777778%"></div></div><div class="cell-value">64px</div></div><div class="cell-row"><code>cell/fixed-md</code><div class="cell-visual"><div class="cell-bar" style="width:33.33333333333333%"></div></div><div class="cell-value">120px</div></div><div class="cell-row"><code>cell/fixed-lg</code><div class="cell-visual"><div class="cell-bar" style="width:44.44444444444444%"></div></div><div class="cell-value">160px</div></div></div>
+    </section>
+    <section class="grid-section">
+      <h2>Layout</h2><p>Breakpoint의 side margin과 gutter, Cell width를 함께 사용합니다. 아래 열 개수는 이해를 위한 예시이며 고정 토큰은 아닙니다.</p><div class="layout-list"><div><h3>Mobile · XS</h3><div class="layout-example"><div class="layout-label"><span>320–600px</span><span>side 24px · gutter 8px</span></div><div class="layout-canvas" style="--cols:2;--side:24px;--g:8px"><div class=layout-cell>1</div><div class=layout-cell>2</div></div></div></div><div><h3>Tablet · SM</h3><div class="layout-example"><div class="layout-label"><span>601–1023px</span><span>side 24px · gutter 8px</span></div><div class="layout-canvas" style="--cols:3;--side:24px;--g:8px"><div class=layout-cell>1</div><div class=layout-cell>2</div><div class=layout-cell>3</div></div></div></div><div><h3>Tablet / Desktop · MD</h3><div class="layout-example"><div class="layout-label"><span>1024–1439px</span><span>side 24px · gutter 16px</span></div><div class="layout-canvas" style="--cols:6;--side:24px;--g:16px"><div class=layout-cell>1</div><div class=layout-cell>2</div><div class=layout-cell>3</div><div class=layout-cell>4</div><div class=layout-cell>5</div><div class=layout-cell>6</div></div></div></div><div><h3>Desktop · LG</h3><div class="layout-example"><div class="layout-label"><span>1440px–</span><span>side 24px · gutter 16px</span></div><div class="layout-canvas" style="--cols:12;--side:24px;--g:16px"><div class=layout-cell>1</div><div class=layout-cell>2</div><div class=layout-cell>3</div><div class=layout-cell>4</div><div class=layout-cell>5</div><div class=layout-cell>6</div><div class=layout-cell>7</div><div class=layout-cell>8</div><div class=layout-cell>9</div><div class=layout-cell>10</div><div class=layout-cell>11</div><div class=layout-cell>12</div></div></div></div></div><p class="layout-note">실제 구현에서는 콘텐츠와 컨테이너 크기에 맞춰 셀을 병합하거나 확장합니다.</p>
+    </section>
+  </div>
+</div>
+
 </main>
 
-<script>(function(){document.querySelectorAll('.mode-tab').forEach(btn=>btn.addEventListener('click',()=>{const s=btn.closest('.grid-section');s.querySelectorAll('.mode-tab').forEach(b=>b.classList.toggle('active',b===btn));s.querySelectorAll('.mode-panel').forEach(p=>p.classList.toggle('active',p.dataset.panel===btn.dataset.mode));}));})();</script></body></html>
+
+<script>
+(function(){
+  document.querySelectorAll('.grid-tab').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const root=btn.closest('.grid-doc');
+      root.querySelectorAll('.grid-tab').forEach(b=>b.classList.toggle('active',b===btn));
+      root.querySelectorAll('.grid-panel').forEach(p=>p.classList.toggle('active',p.dataset.panel===btn.dataset.tab));
+    });
+  });
+
+  document.querySelectorAll('.mode-tab').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const section=btn.closest('.grid-section');
+      section.querySelectorAll('.mode-tab').forEach(b=>b.classList.toggle('active',b===btn));
+      section.querySelectorAll('.mode-panel').forEach(p=>p.classList.toggle('active',p.dataset.panel===btn.dataset.mode));
+    });
+  });
+})();
+</script>
+
+</body></html>
