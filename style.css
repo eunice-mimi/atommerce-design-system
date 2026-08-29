@@ -731,3 +731,63 @@ html,body{
     --doc-fs-body:13px;
   }
 }
+
+
+/* v77 — sidebar typography normalization across all document sections */
+.local-sidebar,
+.local-sidebar *{
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-sizing:border-box;
+}
+.local-service a{
+  font-size:13px;
+  line-height:1.45;
+  font-weight:700;
+  color:#20262C;
+}
+.local-category{
+  display:block;
+  margin:0;
+  padding:10px 12px;
+  font-size:12px !important;
+  line-height:1.45 !important;
+  font-weight:700 !important;
+  letter-spacing:0 !important;
+  color:#373D44 !important;
+  text-decoration:none;
+}
+.local-category.active{
+  color:#20262C !important;
+}
+.local-children{
+  margin:0;
+  padding:0;
+}
+.local-link{
+  display:block;
+  padding:8px 12px !important;
+  font-size:11px !important;
+  line-height:1.45 !important;
+  font-weight:600 !important;
+  letter-spacing:0 !important;
+  color:#6F7A84 !important;
+  text-decoration:none;
+}
+.local-link:hover,
+.local-link.active{
+  color:#20262C !important;
+}
+.local-group-label{
+  margin:18px 0 6px !important;
+  padding:0 12px !important;
+  font-size:10px !important;
+  line-height:1.4 !important;
+  font-weight:600 !important;
+  letter-spacing:.02em !important;
+  color:#B0B7BE !important;
+  pointer-events:none;
+  user-select:none;
+}
+.grouped-components .local-group-label:first-child{
+  margin-top:8px !important;
+}
