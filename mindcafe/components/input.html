@@ -6,15 +6,43 @@
 <title>Input / Field · Atommerce Design System</title>
 <link rel="stylesheet" href="../../style.css">
 <style>
-.input-doc .detail-ref-preview-card{overflow:visible}
-.field-preview-stage{display:grid;place-items:center;min-height:300px;padding:40px;background:#FAFBFC;border-bottom:1px solid #EDF0F2}
+.local-group-label{
+  margin:18px 0 6px;padding:0 12px;font-size:10px;line-height:1.4;
+  font-weight:600;letter-spacing:.02em;color:#B0B7BE;pointer-events:none;user-select:none
+}
+.grouped-components .local-group-label:first-child{margin-top:8px}
+
+.input-guide{max-width:980px;padding-bottom:100px}
+.input-guide .doc-head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:24px;
+  padding:58px 0 32px;border-bottom:1px solid #E8EBED
+}
+.input-guide .doc-head h1{margin:4px 0 10px;font-size:32px;line-height:1.25}
+.input-guide .doc-head p{max-width:680px;margin:0;font-size:13px;line-height:1.65;color:#68727B}
+.input-guide .doc-actions{display:flex;gap:8px;padding-top:8px}
+.input-guide .doc-actions a,.input-guide .doc-actions button{
+  height:40px;padding:0 14px;border:1px solid #DDE2E6;border-radius:9px;background:#fff;
+  color:#373D44;font:inherit;font-size:11px;font-weight:700;text-decoration:none;cursor:pointer
+}
+.input-guide .doc-actions button{background:#20262C;color:#fff;border-color:#20262C}
+
+.guide-section{padding:52px 0;border-bottom:1px solid #E8EBED}
+.guide-section:last-child{border-bottom:0}
+.guide-kicker{margin-bottom:8px;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#9AA3AB}
+.guide-section h2{margin:0 0 10px;font-size:20px;line-height:1.35}
+.guide-desc{max-width:760px;margin:0 0 24px;font-size:13px;line-height:1.65;color:#68727B}
+
+.demo-board{padding:32px;border:1px solid #E8EBED;border-radius:12px;background:#FAFBFC}
 .demo-field{width:312px;display:flex;flex-direction:column;gap:4px}
 .demo-label{display:flex;align-items:center;padding:0 10px;font-size:12px;font-weight:500;line-height:1.4;color:#4E5760}
-.req{color:#F0143C}
-.demo-box{display:flex;align-items:center;gap:8px;width:100%;box-sizing:border-box;background:#fff;border:1px solid #E1E4E8}
-.demo-field[data-size="lg"] .demo-box{height:48px;border-radius:12px;padding:12px 4px 12px 16px}
-.demo-field[data-size="md"] .demo-box{height:44px;border-radius:12px;padding:12px 8px 12px 16px}
-.demo-field[data-size="sm"] .demo-box{height:36px;border-radius:8px;padding:8px 8px 8px 16px}
+.req{color:#007777}
+.demo-box{
+  display:flex;align-items:center;gap:8px;width:100%;box-sizing:border-box;
+  background:#fff;border:1px solid #E1E4E8
+}
+.demo-field[data-size="lg"] .demo-box{height:48px;border-radius:12px;padding:12px 16px}
+.demo-field[data-size="md"] .demo-box{height:44px;border-radius:12px;padding:12px 16px}
+.demo-field[data-size="sm"] .demo-box{height:36px;border-radius:8px;padding:8px 16px}
 .demo-leading{width:24px;height:24px;flex:0 0 auto}
 .demo-field[data-size="md"] .demo-leading,.demo-field[data-size="sm"] .demo-leading{width:20px;height:20px}
 .demo-text{flex:1;min-width:0;color:#7E8A96;font-weight:400;line-height:1;white-space:nowrap}
@@ -22,62 +50,71 @@
 .demo-field[data-size="sm"] .demo-text{font-size:14px}
 .demo-bottom{display:flex;align-items:center;justify-content:space-between;padding:0 12px;gap:16px;font-size:12px;line-height:1.6;color:#4E5760}
 .trailing-unit{font-size:14px;font-weight:700;color:#7E8A96}
-.trailing-icon{width:24px;height:24px}
-.trailing-ghost{height:40px;min-width:40px;padding:0 12px;border:0;background:transparent;color:#007777;font:inherit;font-size:16px;cursor:pointer}
-.demo-field[data-state="hover"] .demo-box{background:#FAFBFC}
-.demo-field[data-state="filled"] .demo-text{color:#373D44}
-.demo-field[data-state="auto-focused"] .demo-box,
-.demo-field[data-state="focused"] .demo-box{border-color:#007777}
-.demo-field[data-state="auto-focused"] .demo-text{color:#7E8A96}
-.demo-field[data-state="focused"] .demo-text{color:#373D44}
-.caret{display:none;width:1px;height:20px;background:#007777;flex:0 0 auto}
-.demo-field[data-state="auto-focused"] .caret{display:block;order:-1}
-.demo-field[data-state="focused"] .caret{display:block}
-.demo-field[data-state="error"] .demo-box{border-color:#F0143C}
-.demo-field[data-state="error"] .demo-text{color:#373D44}
-.demo-field[data-state="error"] .helper{color:#F0143C}
-.demo-field[data-state="disabled"] .demo-label,
-.demo-field[data-state="disabled"] .demo-bottom{color:#D2D6DB}
-.demo-field[data-state="disabled"] .demo-box{background:#FAFBFC;border-color:#EEF0F2}
-.demo-field[data-state="disabled"] .demo-text{color:#B6BDC4}
-.controls-panel{padding:20px}
-.controls-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.control-field label{display:block;margin-bottom:6px;font-size:11px;font-weight:700;color:#68727B}
-.control-field select{width:100%;height:38px;padding:0 10px;border:1px solid #DDE2E6;border-radius:8px;background:#fff;font:inherit;font-size:12px;color:#373D44}
-.preview-prop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.preview-prop{padding:14px;border:1px solid #E8EBED;border-radius:10px;background:#fff}
-.preview-prop strong{display:block;margin-bottom:6px;font-size:12px}
-.preview-prop p{margin:0;font-size:11px;color:#68727B}
-.source-row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #EDF0F2}
-.source-row:last-child{border-bottom:0}
-.source-key{font-size:11px;color:#7E8A96}
-.source-value{font-size:11px;font-weight:700;color:#373D44;text-align:right}
-.no-code{padding:18px;border:1px solid #E8EBED;border-radius:10px;background:#FAFBFC}
-.no-code strong{display:block;margin-bottom:6px;font-size:12px}
-.no-code p{margin:0;font-size:11px;color:#68727B}
-@media(max-width:780px){.controls-grid,.preview-prop-grid{grid-template-columns:1fr}}
+.trailing-icon{width:24px;height:24px;flex:0 0 auto}
+.trailing-ghost{margin:-8px -12px -8px 0;height:40px;min-width:40px;padding:0 12px;border:0;background:transparent;color:#007777;font:inherit;font-size:16px}
+.caret{display:inline-block;width:1px;height:20px;background:#007777;flex:0 0 auto}
 
-.local-group-label{
-  margin:18px 0 6px;
-  padding:0 12px;
-  font-size:10px;
-  line-height:1.4;
-  font-weight:600;
-  letter-spacing:.02em;
-  color:#B0B7BE;
-  pointer-events:none;
-  user-select:none;
+.anatomy-wrap{position:relative;display:grid;grid-template-columns:minmax(360px,1fr) 280px;gap:30px;align-items:center}
+.anatomy-list{display:grid;gap:8px}
+.anatomy-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-bottom:1px solid #EDF0F2}
+.anatomy-num{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#EEF0F2;font-size:10px;font-weight:700;color:#4E5760;flex:0 0 auto}
+.anatomy-item strong{display:block;font-size:12px;color:#373D44}
+.anatomy-item span{display:block;margin-top:3px;font-size:11px;color:#7E8A96}
+
+.variant-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.variant-card{padding:22px;border:1px solid #E8EBED;border-radius:12px;background:#fff}
+.variant-card h3{margin:0 0 18px;font-size:13px}
+.variant-card .demo-field{width:100%;max-width:360px}
+.variant-note{margin-top:14px;font-size:11px;color:#7E8A96}
+
+.state-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px}
+.state-item{min-width:0}
+.state-name{margin-bottom:10px;font-size:11px;font-weight:700;color:#68727B}
+.state-item .demo-field{width:100%;max-width:400px}
+.state-hover .demo-box{background:#FAFBFC}
+.state-filled .demo-text{color:#373D44}
+.state-auto .demo-box,.state-focus .demo-box{border-color:#007777}
+.state-auto .demo-text,.state-focus .demo-text{color:#7E8A96}
+.state-error .demo-box{border-color:#F0143C}
+.state-error .demo-text{color:#373D44}
+.state-error .helper{color:#F0143C}
+.state-disabled .demo-label,.state-disabled .demo-bottom{color:#D2D6DB}
+.state-disabled .req{color:#D2D6DB}
+.state-disabled .demo-box{background:#FAFBFC;border-color:#EEF0F2}
+.state-disabled .demo-text{color:#B6BDC4}
+.state-disabled .demo-leading{opacity:.42}
+
+.size-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.size-card{padding:22px;border:1px solid #E8EBED;border-radius:12px;background:#fff}
+.size-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.size-head strong{font-size:13px}
+.size-head span{font-size:11px;color:#7E8A96}
+.size-card .demo-field{width:100%}
+.spec-table2{width:100%;border-collapse:collapse}
+.spec-table2 th,.spec-table2 td{padding:13px 12px;border-bottom:1px solid #EDF0F2;font-size:11px;text-align:left;vertical-align:top}
+.spec-table2 th{width:150px;color:#7E8A96;font-weight:700}
+.spec-table2 td{color:#373D44}
+.spec-table2 tr:last-child th,.spec-table2 tr:last-child td{border-bottom:0}
+
+.property-chips{display:flex;flex-wrap:wrap;gap:8px}
+.property-chip{padding:8px 10px;border-radius:8px;background:#F3F5F7;font-size:11px;color:#4E5760}
+
+.code-note{padding:18px 20px;border:1px solid #E8EBED;border-radius:10px;background:#FAFBFC;font-size:11px;line-height:1.6;color:#68727B}
+
+@media(max-width:900px){
+  .anatomy-wrap{grid-template-columns:1fr}
+  .variant-grid,.state-grid{grid-template-columns:1fr}
+  .size-grid{grid-template-columns:1fr}
 }
-.grouped-components .local-group-label:first-child{margin-top:8px}
-
-
-.trailing-holder{display:flex;align-items:center;justify-content:center;flex:0 0 auto}
-.demo-field[data-size="sm"] .trailing-ghost{height:32px;font-size:14px}
-.demo-field[data-size="md"] .trailing-ghost{height:36px}
-
+@media(max-width:640px){
+  .input-guide .doc-head{display:block;padding-top:36px}
+  .input-guide .doc-actions{margin-top:20px}
+  .demo-board{padding:20px 16px;overflow-x:auto}
+  .demo-field{width:280px}
+}
 </style>
 </head>
-<body class="detail-ref input-doc">
+<body>
 <header class="global-header">
   <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
   <nav class="product-tabs" aria-label="서비스 선택">
@@ -89,7 +126,6 @@
     <a class="product-tab" href="../../ai-guide.html">AI Guide</a>
   </nav>
 </header>
-
 <aside class="local-sidebar">
 <div class="local-service"><a href="../index.html">MindCafe</a></div>
 <nav class="local-nav" aria-label="MindCafe 문서 메뉴">
@@ -124,249 +160,206 @@
 
 <main class="main">
 <div class="content">
-<div class="detail-ref-page">
-<header class="detail-ref-header">
-  <div class="detail-ref-heading">
-    <div class="eyebrow">Component</div>
+<article class="input-guide">
+
+<header class="doc-head">
+  <div>
+    <div class="eyebrow">Component · Selection &amp; Input</div>
     <h1>Input / Field</h1>
+    <p>사용자가 한 줄의 값을 입력하는 text-field 컴포넌트입니다. 아래 문서는 Atommerce Core Design System의 Figma text-field 구성과 확인된 variant를 기준으로 정리합니다.</p>
   </div>
-  <div class="detail-ref-actions">
-    <a class="detail-ref-open" href="https://www.figma.com/design/OuM9vyMhabODr7BtlRlhe3/-System--Atommerce-Core-Design-System?node-id=361-33449&m=dev" target="_blank" rel="noopener">↗</a>
-    <button class="detail-ref-copy" type="button">URL 복사</button>
+  <div class="doc-actions">
+    <a href="https://www.figma.com/design/OuM9vyMhabODr7BtlRlhe3/-System--Atommerce-Core-Design-System?node-id=361-33449&m=dev" target="_blank" rel="noopener">Figma ↗</a>
+    <button id="copyUrl" type="button">URL 복사</button>
   </div>
 </header>
 
-<div class="detail-ref-workspace">
-<section class="detail-ref-left">
-<div class="detail-ref-preview-card">
-  <div class="detail-ref-tabs">
-    <button class="detail-ref-tab active" data-ref-tab="preview" type="button">Preview</button>
-    <button class="detail-ref-tab" data-ref-tab="properties" type="button">Properties</button>
-    <button class="detail-ref-tab" data-ref-tab="code" type="button">Code</button>
+<section class="guide-section">
+  <div class="guide-kicker">Overview</div>
+  <h2>Text field</h2>
+  <p class="guide-desc">Label, 입력 영역, leading icon, trailing content, helper text, character counter를 조합할 수 있습니다. size는 lg / md / sm으로 구성됩니다.</p>
+  <div class="demo-board">
+    <div class="demo-field" data-size="lg">
+      <div class="demo-label">카테고리 레이블<span class="req">*</span></div>
+      <div class="demo-box">
+        <img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt="">
+        <span class="demo-text">내용을 입력하세요</span>
+      </div>
+      <div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div>
+    </div>
   </div>
+</section>
 
-  <div class="detail-ref-panel-wrap">
-    <div class="detail-ref-panel active" data-ref-panel="preview">
-      <div class="field-preview-stage">
-        <div class="demo-field" id="demoField" data-size="lg" data-state="Default">
-          <div class="demo-label">카테고리 레이블<span class="req">*</span></div>
-          <div class="demo-box">
-            <img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt="">
-            <span class="caret"></span>
-            <span class="demo-text">내용을 입력하세요</span>
-            <span id="trailingMount" class="trailing-holder"></span>
-          </div>
-          <div class="demo-bottom">
-            <span class="helper">내용을 입력하세요</span>
-            <span>0/00</span>
-          </div>
+<section class="guide-section">
+  <div class="guide-kicker">Anatomy</div>
+  <h2>구성 요소</h2>
+  <p class="guide-desc">Figma text-field에서 확인되는 요소를 기준으로 구조를 나눴습니다.</p>
+  <div class="anatomy-wrap">
+    <div class="demo-board">
+      <div class="demo-field" data-size="lg">
+        <div class="demo-label">카테고리 레이블<span class="req">*</span></div>
+        <div class="demo-box">
+          <img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt="">
+          <span class="demo-text">내용을 입력하세요</span>
+          <span class="trailing-unit">단위</span>
         </div>
-      </div>
-      <div class="controls-panel">
-        <div class="controls-grid">
-          <div class="control-field">
-            <label for="sizeSelect">Size</label>
-            <select id="sizeSelect">
-              <option value="lg">lg · 48px</option>
-              <option value="md">md · 44px</option>
-              <option value="sm">sm · 36px</option>
-            </select>
-          </div>
-          <div class="control-field">
-            <label for="stateSelect">State</label>
-            <select id="stateSelect">
-              <option value="Default">Default</option>
-              <option value="hover">hover</option>
-              <option value="filled">filled</option>
-              <option value="auto-focused">auto-focused</option>
-              <option value="focused">focused</option>
-              <option value="error">error</option>
-              <option value="disabled">disabled</option>
-            </select>
-          </div>
-          <div class="control-field">
-            <label for="trailingSelect">Trailing-type</label>
-            <select id="trailingSelect">
-              <option value="none">none</option>
-              <option value="btn_ghost">btn_ghost</option>
-              <option value="unit">unit</option>
-              <option value="icon">icon</option>
-            </select>
-          </div>
-        </div>
+        <div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div>
       </div>
     </div>
+    <div class="anatomy-list">
+      <div class="anatomy-item"><span class="anatomy-num">1</span><div><strong>Label</strong><span>필드 상단 레이블</span></div></div>
+      <div class="anatomy-item"><span class="anatomy-num">2</span><div><strong>Required mark</strong><span>필수 입력 표시</span></div></div>
+      <div class="anatomy-item"><span class="anatomy-num">3</span><div><strong>Leading icon</strong><span>입력 내용 앞의 아이콘 슬롯</span></div></div>
+      <div class="anatomy-item"><span class="anatomy-num">4</span><div><strong>Input text / Placeholder</strong><span>입력 값 또는 placeholder 영역</span></div></div>
+      <div class="anatomy-item"><span class="anatomy-num">5</span><div><strong>Trailing content</strong><span>none / btn_ghost / unit / icon</span></div></div>
+      <div class="anatomy-item"><span class="anatomy-num">6</span><div><strong>Bottom line</strong><span>Helper text와 character counter 영역</span></div></div>
+    </div>
+  </div>
+</section>
 
-    <div class="detail-ref-panel" data-ref-panel="properties">
-      <div class="controls-panel">
-        <div class="preview-prop-grid">
-          <div class="preview-prop"><strong>state</strong><p>Default · hover · filled · auto-focused · focused · error · disabled</p></div>
-          <div class="preview-prop"><strong>Trailing-type</strong><p>none · btn_ghost · unit · icon</p></div>
-          <div class="preview-prop"><strong>size</strong><p>lg · md · sm</p></div>
-          <div class="preview-prop"><strong>label</strong><p>Boolean</p></div>
-          <div class="preview-prop"><strong>requiredMark</strong><p>Boolean</p></div>
-          <div class="preview-prop"><strong>leadingIcon</strong><p>Boolean + size별 icon slot</p></div>
-          <div class="preview-prop"><strong>bottomLine</strong><p>Boolean</p></div>
-          <div class="preview-prop"><strong>helperText / charCounter</strong><p>Boolean</p></div>
-        </div>
+<section class="guide-section">
+  <div class="guide-kicker">Variants</div>
+  <h2>Trailing type</h2>
+  <p class="guide-desc">Figma에는 네 가지 trailing type이 정의되어 있습니다.</p>
+  <div class="variant-grid">
+    <div class="variant-card">
+      <h3>none</h3>
+      <div class="demo-field" data-size="lg">
+        <div class="demo-label">카테고리 레이블<span class="req">*</span></div>
+        <div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="demo-text">내용을 입력하세요</span></div>
+        <div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div>
       </div>
     </div>
-
-    <div class="detail-ref-panel" data-ref-panel="code">
-      <div class="controls-panel">
-        <div class="no-code">
-          <strong>Code mapping not confirmed</strong>
-          <p>실제 서비스 코드와 Figma text-field 간 Code Connect / API 매핑이 확인되지 않아 임의의 컴포넌트 API를 만들지 않았습니다.</p>
-        </div>
+    <div class="variant-card">
+      <h3>btn_ghost</h3>
+      <div class="demo-field" data-size="lg">
+        <div class="demo-label">카테고리 레이블<span class="req">*</span></div>
+        <div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="demo-text">내용을 입력하세요</span><button class="trailing-ghost" type="button">버튼</button></div>
+        <div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div>
+      </div>
+    </div>
+    <div class="variant-card">
+      <h3>unit</h3>
+      <div class="demo-field" data-size="lg">
+        <div class="demo-label">카테고리 레이블<span class="req">*</span></div>
+        <div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="demo-text">내용을 입력하세요</span><span class="trailing-unit">단위</span></div>
+        <div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div>
+      </div>
+    </div>
+    <div class="variant-card">
+      <h3>icon</h3>
+      <div class="demo-field" data-size="lg">
+        <div class="demo-label">카테고리 레이블<span class="req">*</span></div>
+        <div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="demo-text">내용을 입력하세요</span><img class="trailing-icon" src="https://www.figma.com/api/mcp/asset/d17eb8b5-169f-48b0-96c2-7b1bfd6aceb9.svg" alt=""></div>
+        <div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div>
       </div>
     </div>
   </div>
-</div>
 </section>
 
-<aside class="detail-ref-right">
-<section class="detail-doc-section">
-  <div class="detail-doc-kicker">Source</div>
-  <h2>Figma Source</h2>
-  <div class="source-row"><span class="source-key">Component set</span><span class="source-value">361:33449 · text-field</span></div>
-  <div class="source-row"><span class="source-key">Page</span><span class="source-value">Field (11.11)</span></div>
+<section class="guide-section">
+  <div class="guide-kicker">States</div>
+  <h2>상태</h2>
+  <p class="guide-desc">각 state를 한 화면에서 비교할 수 있도록 펼쳐서 표시합니다.</p>
+  <div class="state-grid">
+    <div class="state-item">
+      <div class="state-name">Default</div>
+      <div class="demo-field" data-size="lg"><div class="demo-label">카테고리 레이블<span class="req">*</span></div><div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="demo-text">내용을 입력하세요</span></div><div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div></div>
+    </div>
+    <div class="state-item state-hover">
+      <div class="state-name">hover</div>
+      <div class="demo-field" data-size="lg"><div class="demo-label">카테고리 레이블<span class="req">*</span></div><div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="demo-text">내용을 입력하세요</span></div><div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div></div>
+    </div>
+    <div class="state-item state-filled">
+      <div class="state-name">filled</div>
+      <div class="demo-field" data-size="lg"><div class="demo-label">카테고리 레이블<span class="req">*</span></div><div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="demo-text">입력된 내용</span></div><div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div></div>
+    </div>
+    <div class="state-item state-auto">
+      <div class="state-name">auto-focused</div>
+      <div class="demo-field" data-size="lg"><div class="demo-label">카테고리 레이블<span class="req">*</span></div><div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="caret"></span><span class="demo-text">내용을 입력하세요</span></div><div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div></div>
+    </div>
+    <div class="state-item state-focus">
+      <div class="state-name">focused</div>
+      <div class="demo-field" data-size="lg"><div class="demo-label">카테고리 레이블<span class="req">*</span></div><div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="caret"></span><span class="demo-text">내용을 입력하세요</span></div><div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div></div>
+    </div>
+    <div class="state-item state-error">
+      <div class="state-name">error</div>
+      <div class="demo-field" data-size="lg"><div class="demo-label">카테고리 레이블<span class="req">*</span></div><div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="demo-text">입력된 내용</span></div><div class="demo-bottom"><span class="helper">내용을 입력하세요</span><span>0/00</span></div></div>
+    </div>
+    <div class="state-item state-disabled">
+      <div class="state-name">disabled</div>
+      <div class="demo-field" data-size="lg"><div class="demo-label">카테고리 레이블<span class="req">*</span></div><div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="demo-text">내용을 입력하세요</span></div><div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div></div>
+    </div>
+  </div>
 </section>
 
-<section class="detail-doc-section">
-  <div class="detail-doc-kicker">Properties</div>
-  <h2>Properties</h2>
-  <table class="spec-table">
+<section class="guide-section">
+  <div class="guide-kicker">Size</div>
+  <h2>크기</h2>
+  <p class="guide-desc">Figma에서 확인된 lg / md / sm 세 가지 size를 비교합니다.</p>
+  <div class="size-grid">
+    <div class="size-card">
+      <div class="size-head"><strong>lg</strong><span>48px</span></div>
+      <div class="demo-field" data-size="lg"><div class="demo-label">카테고리 레이블<span class="req">*</span></div><div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="demo-text">내용을 입력하세요</span></div><div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div></div>
+    </div>
+    <div class="size-card">
+      <div class="size-head"><strong>md</strong><span>44px</span></div>
+      <div class="demo-field" data-size="md"><div class="demo-label">카테고리 레이블<span class="req">*</span></div><div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="demo-text">내용을 입력하세요</span></div><div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div></div>
+    </div>
+    <div class="size-card">
+      <div class="size-head"><strong>sm</strong><span>36px</span></div>
+      <div class="demo-field" data-size="sm"><div class="demo-label">카테고리 레이블<span class="req">*</span></div><div class="demo-box"><img class="demo-leading" src="https://www.figma.com/api/mcp/asset/281b5316-71e5-46e6-a58d-6154b396a7ac.svg" alt=""><span class="demo-text">내용을 입력하세요</span></div><div class="demo-bottom"><span>내용을 입력하세요</span><span>0/00</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="guide-section">
+  <div class="guide-kicker">Specification</div>
+  <h2>확인된 속성</h2>
+  <table class="spec-table2">
     <tr><th>state</th><td>Default · hover · filled · auto-focused · focused · error · disabled</td></tr>
     <tr><th>Trailing-type</th><td>none · btn_ghost · unit · icon</td></tr>
     <tr><th>size</th><td>lg · md · sm</td></tr>
     <tr><th>Optional</th><td>label · requiredMark · leadingIcon · bottomLine · helperText · charCounter</td></tr>
+    <tr><th>lg</th><td>Field height 48 · Radius 12 · Leading icon 24 · Text 16</td></tr>
+    <tr><th>md</th><td>Field height 44 · Radius 12 · Leading icon 20 · Text 16</td></tr>
+    <tr><th>sm</th><td>Field height 36 · Radius 8 · Leading icon 20 · Text 14</td></tr>
   </table>
 </section>
 
-<section class="detail-doc-section">
-  <div class="detail-doc-kicker">Size</div>
-  <h2>Size specification</h2>
-  <table class="spec-table">
-    <tr><th>lg</th><td>Field height 48 · Radius 12 · Left 16 · Right 4 (none / btn_ghost) · Leading icon 24 · Text 16</td></tr>
-    <tr><th>md</th><td>Field height 44 · Radius 12 · Left 16 · Right 8 · Leading icon 20 · Text 16</td></tr>
-    <tr><th>sm</th><td>Field height 36 · Radius 8 · Left 16 · Right 8 · Leading icon 20 · Text 14</td></tr>
-  </table>
-</section>
-
-<section class="detail-doc-section">
-  <div class="detail-doc-kicker">State</div>
-  <h2>State styles</h2>
-  <table class="spec-table">
-    <tr><th>Default</th><td>White surface · Border #E1E4E8 · Placeholder #7E8A96</td></tr>
-    <tr><th>hover</th><td>Surface #FAFBFC · Border #E1E4E8 · Placeholder #7E8A96</td></tr>
-    <tr><th>filled</th><td>White surface · Border #E1E4E8 · Content #373D44</td></tr>
-    <tr><th>auto-focused</th><td>Border #007777 · Placeholder #7E8A96 · caret</td></tr>
-    <tr><th>focused</th><td>Border #007777 · Content #373D44 · caret</td></tr>
-    <tr><th>error</th><td>Border #F0143C · Content #373D44 · Helper text #F0143C</td></tr>
-    <tr><th>disabled</th><td>Surface #FAFBFC · Border #EEF0F2 · Content #B6BDC4 · Label/Helper #D2D6DB</td></tr>
-  </table>
-</section>
-
-<section class="detail-doc-section">
-  <div class="detail-doc-kicker">Trailing</div>
-  <h2>Trailing types</h2>
-  <table class="spec-table">
-    <tr><th>none</th><td>Trailing content 없음</td></tr>
-    <tr><th>btn_ghost</th><td>Field 내부 ghost button</td></tr>
-    <tr><th>unit</th><td>14px Bold 단위 텍스트</td></tr>
-    <tr><th>icon</th><td>24px trailing icon</td></tr>
-  </table>
-</section>
-
-<section class="detail-doc-section">
-  <div class="detail-doc-kicker">For AI</div>
-  <h2>AI Guidance</h2>
-  <div class="card card-pad">
-    <div class="prompt-box">Atommerce text-field는 Figma에 확인된 property만 사용한다.
-
-- state: Default | hover | filled | auto-focused | focused | error | disabled
-- Trailing-type: none | btn_ghost | unit | icon
-- size: lg | md | sm
-- label / requiredMark / leadingIcon / bottomLine / helperText / charCounter는 optional property로 취급한다.
-- Figma에 없는 state, size, trailing type을 임의로 추가하지 않는다.
-- 실제 코드 API가 확인되기 전에는 Figma property 이름을 서비스 코드 API로 단정하지 않는다.</div>
+<section class="guide-section">
+  <div class="guide-kicker">Optional properties</div>
+  <h2>옵션</h2>
+  <div class="property-chips">
+    <span class="property-chip">label</span>
+    <span class="property-chip">requiredMark</span>
+    <span class="property-chip">leadingIcon</span>
+    <span class="property-chip">bottomLine</span>
+    <span class="property-chip">helperText</span>
+    <span class="property-chip">charCounter</span>
   </div>
 </section>
-</aside>
-</div>
-</div>
+
+<section class="guide-section">
+  <div class="guide-kicker">Code</div>
+  <h2>Code mapping</h2>
+  <div class="code-note">현재 실제 서비스 코드와 Figma text-field 간 Code Connect / API 매핑은 확인되지 않았습니다. 따라서 임의의 컴포넌트 API는 문서에 추가하지 않습니다.</div>
+</section>
+
+</article>
 </div>
 </main>
 
 <script>
 (function(){
-  const tabs=[...document.querySelectorAll('.detail-ref-tab')];
-  const panels=[...document.querySelectorAll('.detail-ref-panel')];
-
-  tabs.forEach(tab=>{
-    tab.addEventListener('click',()=>{
-      tabs.forEach(t=>t.classList.toggle('active',t===tab));
-      panels.forEach(p=>p.classList.toggle('active',p.dataset.refPanel===tab.dataset.refTab));
-    });
-  });
-
-  const demo=document.getElementById('demoField');
-  const sizeSelect=document.getElementById('sizeSelect');
-  const stateSelect=document.getElementById('stateSelect');
-  const trailingSelect=document.getElementById('trailingSelect');
-  const trailingMount=document.getElementById('trailingMount');
-
-  const searchIcon='https://www.figma.com/api/mcp/asset/d17eb8b5-169f-48b0-96c2-7b1bfd6aceb9.svg';
-
-  function renderTrailing(){
-    trailingMount.replaceChildren();
-
-    if(trailingSelect.value==='unit'){
-      const unit=document.createElement('span');
-      unit.className='trailing-unit';
-      unit.textContent='단위';
-      trailingMount.appendChild(unit);
-      return;
-    }
-
-    if(trailingSelect.value==='icon'){
-      const icon=document.createElement('img');
-      icon.className='trailing-icon';
-      icon.src=searchIcon;
-      icon.alt='';
-      trailingMount.appendChild(icon);
-      return;
-    }
-
-    if(trailingSelect.value==='btn_ghost'){
-      const button=document.createElement('button');
-      button.className='trailing-ghost';
-      button.type='button';
-      button.textContent='버튼';
-      trailingMount.appendChild(button);
-    }
-  }
-
-  function render(){
-    demo.dataset.size=sizeSelect.value;
-    demo.dataset.state=stateSelect.value;
-    renderTrailing();
-  }
-
-  [sizeSelect,stateSelect,trailingSelect].forEach(control=>{
-    control.addEventListener('change',render);
-  });
-
-  render();
-
-  const copyBtn=document.querySelector('.detail-ref-copy');
-  if(copyBtn){
-    copyBtn.addEventListener('click',async()=>{
+  const btn=document.getElementById('copyUrl');
+  if(btn){
+    btn.addEventListener('click',async()=>{
       try{
         await navigator.clipboard.writeText(window.location.href);
-        const original=copyBtn.textContent;
-        copyBtn.textContent='복사됨';
-        setTimeout(()=>copyBtn.textContent=original,1000);
+        const old=btn.textContent;
+        btn.textContent='복사됨';
+        setTimeout(()=>btn.textContent=old,1000);
       }catch(e){}
     });
   }
