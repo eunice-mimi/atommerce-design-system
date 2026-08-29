@@ -24,7 +24,8 @@ atommerce-design-system/
 │   │   ├── grid.html
 │   │   ├── radius.html
 │   │   ├── elevation.html
-│   │   ├── iconography.html
+│   │   ├── icons.html
+│   │   ├── logo.html
 │   │   ├── motion.html
 │   │   └── accessibility.html
 │   ├── components/
