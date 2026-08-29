@@ -501,3 +501,58 @@ body.detail-ref .detail-usage-gallery .usage-frame{box-shadow:none}
   body.detail-ref .detail-ref-preview-card{height:auto;overflow:visible}
   body.detail-ref .detail-ref-right{height:auto;overflow:visible;padding:18px 0 50px}
 }
+
+
+/* v34 — detail layout: balanced 50/50, stack only when narrow */
+body.detail-ref .detail-ref-workspace{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+}
+
+body.detail-ref .detail-ref-left{
+  min-width:0;
+  padding-right:28px;
+}
+
+body.detail-ref .detail-ref-right{
+  min-width:0;
+  padding-left:28px;
+}
+
+/* Keep both columns side-by-side on ordinary desktop/tablet widths.
+   Stack only when the content becomes genuinely narrow. */
+@media(max-width:860px){
+  body.detail-ref{overflow:auto}
+  body.detail-ref .main{
+    height:auto;
+    min-height:100vh;
+    overflow:visible;
+  }
+  body.detail-ref .content{
+    height:auto;
+    padding-top:32px;
+  }
+  body.detail-ref .detail-ref-page{
+    height:auto;
+    overflow:visible;
+  }
+  body.detail-ref .detail-ref-workspace{
+    display:block!important;
+    overflow:visible;
+  }
+  body.detail-ref .detail-ref-left{
+    height:auto;
+    overflow:visible;
+    padding:24px 0 28px;
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+  body.detail-ref .detail-ref-preview-card{
+    height:auto;
+    overflow:visible;
+  }
+  body.detail-ref .detail-ref-right{
+    height:auto;
+    overflow:visible;
+    padding:18px 0 50px;
+  }
+}
