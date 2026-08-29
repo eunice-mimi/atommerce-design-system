@@ -574,3 +574,160 @@ body.detail-ref .content{
 @media(max-width:760px){
   :root{--doc-side-margin:16px}
 }
+
+
+/* v53 · canonical documentation typography */
+:root{
+  --doc-font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+  --doc-fs-eyebrow:11px;
+  --doc-fs-h1:32px;
+  --doc-fs-h2:20px;
+  --doc-fs-h3:15px;
+  --doc-fs-body:13px;
+  --doc-fs-small:11px;
+  --doc-fs-label:12px;
+
+  --doc-lh-tight:1.25;
+  --doc-lh-heading:1.35;
+  --doc-lh-body:1.65;
+
+  --doc-text:#20262C;
+  --doc-text-secondary:#68727B;
+  --doc-text-tertiary:#8A939B;
+}
+
+html,body{
+  font-family:var(--doc-font-family);
+  color:var(--doc-text);
+}
+
+/* Page hierarchy */
+.content h1,
+.detail-ref .content h1,
+.grid-doc h1,
+.foundation-doc h1{
+  margin:0;
+  font-size:var(--doc-fs-h1)!important;
+  line-height:var(--doc-lh-tight)!important;
+  font-weight:750!important;
+  letter-spacing:-0.02em;
+}
+
+.content h2,
+.detail-ref .content h2,
+.grid-section h2,
+.foundation-section h2{
+  font-size:var(--doc-fs-h2)!important;
+  line-height:var(--doc-lh-heading)!important;
+  font-weight:750!important;
+  letter-spacing:-0.015em;
+}
+
+.content h3,
+.detail-ref .content h3,
+.grid-section h3,
+.foundation-section h3,
+.overview-card-title{
+  font-size:var(--doc-fs-h3)!important;
+  line-height:var(--doc-lh-heading)!important;
+  font-weight:700!important;
+  letter-spacing:-0.01em;
+}
+
+/* Supporting labels */
+.eyebrow{
+  font-size:var(--doc-fs-eyebrow)!important;
+  line-height:1.3!important;
+  font-weight:750!important;
+  letter-spacing:.04em;
+  color:var(--doc-text-tertiary)!important;
+}
+
+/* Default document copy */
+.content p,
+.detail-ref .content p,
+.foundation-doc p,
+.grid-doc p,
+.overview-card-desc,
+.spec-copy,
+.usage-copy,
+.intent-copy{
+  font-size:var(--doc-fs-body)!important;
+  line-height:var(--doc-lh-body)!important;
+  color:var(--doc-text-secondary);
+}
+
+/* Tables / tokens / utility copy */
+.spec-table th,
+.spec-table td,
+.token-line,
+.cell-row,
+.property-table th,
+.property-table td,
+.token-table th,
+.token-table td,
+.component-table th,
+.component-table td{
+  font-size:var(--doc-fs-small)!important;
+  line-height:1.5!important;
+}
+.spec-table th,
+.property-table th,
+.token-table th,
+.component-table th{
+  font-weight:700!important;
+  color:var(--doc-text-tertiary)!important;
+}
+.spec-table td,
+.property-table td,
+.token-table td,
+.component-table td{
+  color:var(--doc-text)!important;
+}
+
+/* Tabs / nav labels */
+.foundation-tab,
+.grid-tab,
+.mode-tab,
+.tab-button,
+.tabs button{
+  font-size:var(--doc-fs-label)!important;
+  line-height:1.35!important;
+  font-weight:700!important;
+}
+
+/* Cards */
+.overview-card-title{margin:0 0 6px!important}
+.overview-card-desc{margin:0!important}
+
+/* Small metadata / status */
+.status-chip,
+.spacing-rule-card span,
+.spacing-rule-note,
+.layout-note,
+.layout-label,
+.spacing-marker-name{
+  font-size:var(--doc-fs-small)!important;
+  line-height:1.45!important;
+}
+
+/* Detail-page title spacing */
+.detail-ref .content > h1,
+.content > h1{
+  margin-bottom:0;
+}
+.overview-head,
+.foundation-head,
+.detail-head{
+  margin-bottom:28px;
+}
+
+@media(max-width:760px){
+  :root{
+    --doc-fs-h1:28px;
+    --doc-fs-h2:19px;
+    --doc-fs-h3:15px;
+    --doc-fs-body:13px;
+  }
+}
