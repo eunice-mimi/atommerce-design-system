@@ -1,246 +1,187 @@
 <!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Icons · Atommerce Design System</title>
-<link rel="stylesheet" href="../../style.css">
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Icons · Atommerce Design System</title><link rel="stylesheet" href="../../style.css">
 <style>
-.icon-doc{padding-bottom:80px}
-.icon-tabs{display:flex;gap:28px;margin-top:28px;border-bottom:1px solid #E8EBED}
-.icon-tab{position:relative;padding:0 0 11px;border:0;background:transparent;color:#9AA2A9;font:inherit;font-size:12px;font-weight:700;cursor:pointer}
-.icon-tab.active{color:#20262C}
-.icon-tab.active:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#20262C}
-.icon-panel{display:none;padding-top:34px}.icon-panel.active{display:block}
-.icon-section{padding:0 0 42px}.icon-section+.icon-section{padding-top:36px;border-top:1px solid #ECEFF1}
-.icon-toolbar{display:flex;gap:12px;align-items:center;margin:18px 0 22px}
-.icon-search{flex:1;height:42px;padding:0 14px;border:1px solid #E1E4E8;border-radius:10px;background:#FAFBFC;font:inherit;font-size:12px;outline:none}
-.icon-search:focus{border-color:#70DCDC;background:#fff}
-.icon-count{font-size:11px;color:#8A939B;white-space:nowrap}
-.icon-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px}
-.icon-card{appearance:none;min-width:0;padding:14px 8px 10px;border:1px solid #E8EBED;border-radius:10px;background:#fff;cursor:pointer;text-align:center}
-.icon-card:hover,.icon-card.active{border-color:#A2EDEE;background:#F6FFFF}
-.icon-visual{display:grid;place-items:center;height:48px}
-.icon-visual svg{width:24px;height:24px;fill:none;stroke:#20262C;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.icon-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px;color:#68727B}
-.icon-popover{position:fixed;z-index:30;display:none;width:250px;padding:16px;border:1px solid #E1E4E8;border-radius:12px;background:#fff;box-shadow:0 12px 32px rgba(32,38,44,.12)}
-.icon-popover.open{display:block}
-.pop-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.pop-title{font-size:14px;font-weight:750}
-.pop-close{border:0;background:transparent;cursor:pointer;font-size:18px;color:#7E8A96}
-.pop-preview{display:grid;place-items:center;height:96px;margin:14px 0;border:1px solid #EDF0F2;border-radius:10px;background:#FAFBFC}
-.pop-preview svg{width:30px;height:30px;fill:none;stroke:#20262C;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.pop-meta{display:grid;grid-template-columns:72px 1fr;gap:7px 10px;font-size:11px}
-.pop-meta dt{color:#8A939B}.pop-meta dd{margin:0;color:#20262C;word-break:break-all}
-.copy-btn{width:100%;height:36px;margin-top:14px;border:1px solid #D2D6DB;border-radius:8px;background:#fff;font:inherit;font-size:11px;font-weight:700;cursor:pointer}
-.custom-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:20px}
-.custom-card{min-height:110px;padding:16px;border:1px solid #E8EBED;border-radius:10px;background:#fff}
-.custom-swatch{display:flex;align-items:center;gap:8px;margin-bottom:12px}.dot{width:22px;height:22px;border-radius:7px}
-.custom-card strong{font-size:12px}.custom-card p{margin:5px 0 0!important;font-size:11px!important}
-.platform-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.icons-doc{padding-bottom:80px}
+.foundation-tabs{display:flex;gap:28px;margin-top:28px;border-bottom:1px solid #E8EBED;overflow-x:auto}
+.foundation-tab{position:relative;flex:0 0 auto;padding:0 0 11px;border:0;background:transparent;color:#9AA2A9;font:inherit;font-size:12px;font-weight:700;cursor:pointer}
+.foundation-tab.active{color:#20262C}
+.foundation-tab.active:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#20262C}
+.icon-page-panel{display:none;padding-top:36px}.icon-page-panel.active{display:block}
+.doc-section{padding-bottom:42px}.doc-section+.doc-section{padding-top:36px;border-top:1px solid #ECEFF1}
+.section-kicker{margin-bottom:8px;color:#007777;font-size:10px;font-weight:750}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.section-head h2{margin:0}
+.icon-size-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.size-chip{padding:5px 8px;border-radius:999px;background:#F3F5F7;color:#4E5760;font-size:10px;font-weight:700}
+.search-row{margin:18px 0 20px}
+.icon-search{width:100%;height:42px;padding:0 14px;border:1px solid #E1E4E8;border-radius:10px;background:#FAFBFC;font:inherit;font-size:12px;outline:none}
+.asset-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.asset-card{min-width:0;padding:13px 10px;border:1px solid #E8EBED;border-radius:10px;background:#fff;text-align:left}
+button.asset-card{cursor:pointer}
+button.asset-card:hover{border-color:#A2EDEE;background:#F6FFFF}
+.asset-preview{display:grid;place-items:center;height:62px;margin-bottom:8px}
+.asset-preview img{display:block;width:32px;height:32px;object-fit:contain}
+.asset-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px;font-weight:700;color:#373D44}
+.asset-meta{margin-top:3px;font-size:9px;color:#8A939B}
+.basic-name-card{min-height:68px;display:flex;flex-direction:column;justify-content:center}
+.custom-subtabs{display:flex;gap:20px;margin:18px 0 22px;border-bottom:1px solid #EDF0F2}
+.custom-subtab{position:relative;padding:0 0 9px;border:0;background:transparent;color:#9AA2A9;font:inherit;font-size:11px;font-weight:700;cursor:pointer}
+.custom-subtab.active{color:#20262C}.custom-subtab.active:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#20262C}
+.custom-panel{display:none}.custom-panel.active{display:block}
+.platform-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
 .platform-card{padding:18px;border:1px solid #E8EBED;border-radius:10px}
-.variation-row{display:flex;gap:12px;align-items:center;margin-top:18px}
-.variation-chip{display:grid;place-items:center;width:56px;height:56px;border:1px solid #E8EBED;border-radius:10px}
-.variation-chip svg{width:22px;height:22px;fill:none;stroke:#20262C;stroke-width:1.8}
-@media(max-width:980px){.icon-grid{grid-template-columns:repeat(6,1fr)}.custom-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:680px){.icon-grid{grid-template-columns:repeat(4,1fr)}.custom-grid,.platform-list{grid-template-columns:1fr}}
-</style>
-</head>
+.pop{position:fixed;z-index:30;display:none;width:260px;padding:16px;border:1px solid #E1E4E8;border-radius:12px;background:#fff;box-shadow:0 12px 32px rgba(32,38,44,.12)}
+.pop.open{display:block}.pop img{display:block;width:42px;height:42px;margin:16px auto;object-fit:contain}
+.pop-head{display:flex;justify-content:space-between;gap:12px}.pop-title{font-size:13px;font-weight:750}.pop-close{border:0;background:transparent;font-size:18px;cursor:pointer}
+.pop dl{display:grid;grid-template-columns:60px 1fr;gap:7px 10px;margin:0;font-size:10px}.pop dt{color:#8A939B}.pop dd{margin:0;word-break:break-all}
+@media(max-width:980px){.asset-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:680px){.asset-grid{grid-template-columns:repeat(2,1fr)}.platform-grid{grid-template-columns:1fr}}
+</style></head>
 <body>
-<header class="global-header">
-  <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
-  <nav class="product-tabs" aria-label="서비스 선택">
-    <a class="product-tab active" href="../index.html">MindCafe</a><a class="product-tab" href="../../tarobom/index.html">Tarobom</a><a class="product-tab" href="../../expert/index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab" href="../../admin/index.html">Admin</a><a class="product-tab" href="../../ai-guide.html">AI Guide</a>
-  </nav>
-</header>
-<aside class="local-sidebar">
-<div class="local-service"><a href="../index.html">MindCafe</a></div>
-<nav class="local-nav" aria-label="MindCafe 문서 메뉴">
-<a class="local-category" href="index.html">Foundations</a>
-<div class="local-children">
-<a class="local-link" href="color.html">Color</a>
-<a class="local-link" href="typography.html">Typography</a>
-<a class="local-link" href="grid.html">Grid</a>
-<a class="local-link" href="radius.html">Radius</a>
-<a class="local-link" href="elevation.html">Elevation</a>
-<a class="local-link active" href="icons.html">Icons</a>
-<a class="local-link" href="logo.html">Logo</a>
-<a class="local-link" href="motion.html">Motion</a>
-<a class="local-link" href="accessibility.html">Accessibility</a>
+<header class="global-header"><a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
+<nav class="product-tabs" aria-label="서비스 선택"><a class="product-tab active" href="../index.html">MindCafe</a><a class="product-tab" href="../../tarobom/index.html">Tarobom</a><a class="product-tab" href="../../expert/index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab" href="../../admin/index.html">Admin</a><a class="product-tab" href="../../ai-guide.html">AI Guide</a></nav></header>
+<aside class="local-sidebar"><div class="local-service"><a href="../index.html">MindCafe</a></div><nav class="local-nav" aria-label="MindCafe 문서 메뉴">
+<a class="local-category" href="index.html">Foundations</a><div class="local-children">
+<a class="local-link" href="color.html">Color</a><a class="local-link" href="typography.html">Typography</a><a class="local-link" href="grid.html">Grid</a><a class="local-link" href="radius.html">Radius</a><a class="local-link" href="elevation.html">Elevation</a><a class="local-link active" href="icons.html">Icons</a><a class="local-link" href="logo.html">Logo</a><a class="local-link" href="motion.html">Motion</a><a class="local-link" href="accessibility.html">Accessibility</a></div>
+<a class="local-category" href="../components/index.html">Components</a><a class="local-category" href="../patterns/index.html">Patterns</a><a class="local-category" href="../templates/index.html">Templates</a></nav></aside>
+
+<main class="main"><div class="content icons-doc">
+<div class="eyebrow">MINDCAFE · FOUNDATIONS</div><h1>Icons</h1>
+<p>Atommerce Core Design System의 아이콘 자산입니다. Logo는 별도 Foundation에서 관리합니다.</p>
+
+<div class="foundation-tabs" role="tablist">
+  <button class="foundation-tab active" data-tab="basic">Basic Icon</button>
+  <button class="foundation-tab" data-tab="custom">Custom Icon</button>
 </div>
-<a class="local-category" href="../components/index.html">Components</a>
-<a class="local-category" href="../patterns/index.html">Patterns</a>
-<a class="local-category" href="../templates/index.html">Templates</a>
-</nav>
-</aside>
-<main class="main">
-<div class="content icon-doc">
-  <div class="eyebrow">MINDCAFE · FOUNDATIONS</div>
-  <h1>Icons</h1>
-  <p>인터페이스의 기능과 상태를 빠르게 인지할 수 있도록 사용하는 아이콘 자산입니다. 이 페이지는 Atommerce Core Design System에서 확인된 아이콘을 기준으로 구성합니다.</p>
 
-  <div class="icon-tabs" role="tablist">
-    <button class="icon-tab active" data-tab="basic">Basic</button>
-    <button class="icon-tab" data-tab="custom">Custom</button>
-    <button class="icon-tab" data-tab="platform">Platform</button>
-    <button class="icon-tab" data-tab="variation">Variation</button>
+<section class="icon-page-panel active" data-panel="basic">
+  <div class="doc-section">
+    <div class="section-kicker">Basic Icon</div>
+    <div class="section-head"><h2>Basic Icon</h2></div>
+    <p>Core Library에 등록된 기본 아이콘 컴포넌트입니다.</p>
+    <div class="search-row"><input class="icon-search" id="basicSearch" type="search" placeholder="아이콘 이름 검색"></div>
+    <div class="asset-grid" id="basicGrid"><div class="asset-card basic-name-card"><div class="asset-name">search</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">delete</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">edit</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">close</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">info</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">arrow_forward_ios</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">mail</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">arrow_drop_up</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">arrow_drop_down</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">add</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">check_circle</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">arrow_back_ios</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">edit_square</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">error</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">vertical_align_bottom</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">calendar_today</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">call</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">replay</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">cancel</div><div class="asset-meta">Core component</div></div><div class="asset-card basic-name-card"><div class="asset-name">person</div><div class="asset-meta">Core component</div></div></div>
   </div>
+  <div class="doc-section">
+    <div class="section-kicker">Platform</div><h2>AOS / iOS 전달용</h2>
+    <p>플랫폼 전달을 위해 별도로 관리하는 아이콘 영역입니다.</p>
+    <div class="platform-grid"><div class="platform-card"><h3>AOS</h3><p>Android 전달용 아이콘.</p></div><div class="platform-card"><h3>iOS</h3><p>iOS 전달용 아이콘.</p></div></div>
+  </div>
+  <div class="doc-section">
+    <div class="section-kicker">Variation</div><h2>Basic Icon Variation</h2>
+    <p>기본 아이콘의 상태 및 강조 표현을 위한 변형입니다.</p>
+  </div>
+</section>
 
-  <section class="icon-panel active" data-panel="basic">
-    <div class="icon-section">
-      <h2>Basic icons</h2>
-      <p>Core Library에 등록된 기본 아이콘 컴포넌트입니다. 로고 자산은 별도 Logo 문서에서 관리합니다.</p>
-      <div class="icon-toolbar">
-        <input class="icon-search" type="search" placeholder="아이콘 이름 검색" aria-label="아이콘 이름 검색">
-        <span class="icon-count">20 icons</span>
-      </div>
-      <div class="icon-grid"><button class="icon-card" type="button" data-name="search">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="5.5"/><path d="m15.2 15.2 4.3 4.3"/></svg></span>
-      <span class="icon-name">search</span>
-    </button><button class="icon-card" type="button" data-name="delete">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10M9 8V6h6v2M9 10v7m3-7v7m3-7v7M8 8l1 11h6l1-11"/></svg></span>
-      <span class="icon-name">delete</span>
-    </button><button class="icon-card" type="button" data-name="edit">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 18 1.2-4.4L15.8 5l3.2 3.2-8.6 8.6L6 18Z"/><path d="m14.5 6.3 3.2 3.2"/></svg></span>
-      <span class="icon-name">edit</span>
-    </button><button class="icon-card" type="button" data-name="close">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg></span>
-      <span class="icon-name">close</span>
-    </button><button class="icon-card" type="button" data-name="info">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 10v6M12 7.5h.01"/></svg></span>
-      <span class="icon-name">info</span>
-    </button><button class="icon-card" type="button" data-name="add">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12"/></svg></span>
-      <span class="icon-name">add</span>
-    </button><button class="icon-card" type="button" data-name="check_circle">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m8.5 12 2.3 2.3 4.8-5"/></svg></span>
-      <span class="icon-name">check_circle</span>
-    </button><button class="icon-card" type="button" data-name="error">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v5M12 16h.01"/></svg></span>
-      <span class="icon-name">error</span>
-    </button><button class="icon-card" type="button" data-name="mail">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="m5 8 7 5 7-5"/></svg></span>
-      <span class="icon-name">mail</span>
-    </button><button class="icon-card" type="button" data-name="call">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5c.6 3.8 2.8 7.2 6.2 9.2l2.2-2.2 3 1.2v3.5c0 .8-.7 1.5-1.5 1.5C11.2 18.2 5.8 12.8 5.8 6.1 5.8 5.3 6.5 4.6 7.3 4.6H8Z"/></svg></span>
-      <span class="icon-name">call</span>
-    </button><button class="icon-card" type="button" data-name="person">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.2"/><path d="M6.5 19c.7-3.3 2.7-5 5.5-5s4.8 1.7 5.5 5"/></svg></span>
-      <span class="icon-name">person</span>
-    </button><button class="icon-card" type="button" data-name="calendar_today">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="6" width="14" height="13" rx="2"/><path d="M8 4v4M16 4v4M5 10h14"/></svg></span>
-      <span class="icon-name">calendar_today</span>
-    </button><button class="icon-card" type="button" data-name="replay">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8H4V4"/><path d="M5 8a8 8 0 1 1 1 9"/></svg></span>
-      <span class="icon-name">replay</span>
-    </button><button class="icon-card" type="button" data-name="cancel">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m9 9 6 6M15 9l-6 6"/></svg></span>
-      <span class="icon-name">cancel</span>
-    </button><button class="icon-card" type="button" data-name="arrow_back_ios">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6"/></svg></span>
-      <span class="icon-name">arrow_back_ios</span>
-    </button><button class="icon-card" type="button" data-name="arrow_forward_ios">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></span>
-      <span class="icon-name">arrow_forward_ios</span>
-    </button><button class="icon-card" type="button" data-name="arrow_drop_up">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 14 4-4 4 4Z"/></svg></span>
-      <span class="icon-name">arrow_drop_up</span>
-    </button><button class="icon-card" type="button" data-name="arrow_drop_down">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4Z"/></svg></span>
-      <span class="icon-name">arrow_drop_down</span>
-    </button><button class="icon-card" type="button" data-name="vertical_align_bottom">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19h14M12 5v10m-4-4 4 4 4-4"/></svg></span>
-      <span class="icon-name">vertical_align_bottom</span>
-    </button><button class="icon-card" type="button" data-name="edit_square">
-      <span class="icon-visual"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="m9 15 .7-2.8 5.5-5.5 2.1 2.1-5.5 5.5L9 15Z"/></svg></span>
-      <span class="icon-name">edit_square</span>
+<section class="icon-page-panel" data-panel="custom">
+  <div class="doc-section">
+    <div class="section-kicker">Custom Icon</div><h2>Custom Icon</h2>
+    <p>제품의 성격에 맞게 커스텀 제작된 아이콘입니다. Figma 기준 하나의 SVG를 추출하여 <strong>32px(xl), 24px(lg), 20px(md), 16px(sm)</strong> 크기로 활용합니다.</p>
+    <div class="icon-size-row"><span class="size-chip">XL · 32px</span><span class="size-chip">LG · 24px</span><span class="size-chip">MD · 20px</span><span class="size-chip">SM · 16px</span></div>
+    <div class="custom-subtabs"><button class="custom-subtab active" data-sub="gradient">Gradient Type</button><button class="custom-subtab" data-sub="flat">Flat Type</button></div>
+    <div class="custom-panel active" data-subpanel="gradient">
+      <p>제품 성격에 맞춰 색상과 그래픽 표현을 확장한 Custom Icon 유형입니다.</p>
+      <div class="asset-grid"><button class="asset-card icon-asset" type="button" data-name="custom_ic_calendar_check" data-src="https://www.figma.com/api/mcp/asset/655ef57d-8f51-4f69-9694-7abdf0611d7e.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/655ef57d-8f51-4f69-9694-7abdf0611d7e.svg" alt=""></span>
+      <span class="asset-name">custom_ic_calendar_check</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_Documents&amp;Safety_file" data-src="https://www.figma.com/api/mcp/asset/97ca1745-418e-40a6-b2ed-5ebebdc5d595.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/97ca1745-418e-40a6-b2ed-5ebebdc5d595.svg" alt=""></span>
+      <span class="asset-name">custom_ic_Documents&amp;Safety_file</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_whistle" data-src="https://www.figma.com/api/mcp/asset/f3edd5ae-000f-47b8-973a-dcec3380faa5.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/f3edd5ae-000f-47b8-973a-dcec3380faa5.svg" alt=""></span>
+      <span class="asset-name">custom_ic_whistle</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_location pin" data-src="https://www.figma.com/api/mcp/asset/e01d1716-872a-48e7-961e-23b884117156.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/e01d1716-872a-48e7-961e-23b884117156.svg" alt=""></span>
+      <span class="asset-name">custom_ic_location pin</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_ pencil" data-src="https://www.figma.com/api/mcp/asset/efc1a6dc-e8f7-4444-b7b7-1cb8a57b3eb6.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/efc1a6dc-e8f7-4444-b7b7-1cb8a57b3eb6.svg" alt=""></span>
+      <span class="asset-name">custom_ic_ pencil</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_message_circle" data-src="https://www.figma.com/api/mcp/asset/9661f039-c39f-4648-a0bf-0e3bc84e848b.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/9661f039-c39f-4648-a0bf-0e3bc84e848b.svg" alt=""></span>
+      <span class="asset-name">custom_ic_message_circle</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_Messages_edit message" data-src="https://www.figma.com/api/mcp/asset/3da4dd5a-32ca-4fac-bb25-2802b08c3489.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/3da4dd5a-32ca-4fac-bb25-2802b08c3489.svg" alt=""></span>
+      <span class="asset-name">custom_ic_Messages_edit message</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_coin_won" data-src="https://www.figma.com/api/mcp/asset/7d549c42-5763-4d58-8fe9-c7ced06ffa4c.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/7d549c42-5763-4d58-8fe9-c7ced06ffa4c.svg" alt=""></span>
+      <span class="asset-name">custom_ic_coin_won</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic__elephant" data-src="https://www.figma.com/api/mcp/asset/973fc84d-29a4-4272-86fd-86afa47f9f94.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/973fc84d-29a4-4272-86fd-86afa47f9f94.svg" alt=""></span>
+      <span class="asset-name">custom_ic__elephant</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_home" data-src="https://www.figma.com/api/mcp/asset/a3c2fc10-e597-42a5-a012-5530fb51176c.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/a3c2fc10-e597-42a5-a012-5530fb51176c.svg" alt=""></span>
+      <span class="asset-name">custom_ic_home</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_eap" data-src="https://www.figma.com/api/mcp/asset/2ab3cc84-39f4-4d32-901f-5e85152b1db0.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/2ab3cc84-39f4-4d32-901f-5e85152b1db0.svg" alt=""></span>
+      <span class="asset-name">custom_ic_eap</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic__youtube" data-src="https://www.figma.com/api/mcp/asset/3cc62220-d049-4b55-b29d-a8ef255967ec.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/3cc62220-d049-4b55-b29d-a8ef255967ec.svg" alt=""></span>
+      <span class="asset-name">custom_ic__youtube</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_magazine" data-src="https://www.figma.com/api/mcp/asset/6af78eff-3ebb-47da-9385-ef0307dc35c5.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/6af78eff-3ebb-47da-9385-ef0307dc35c5.svg" alt=""></span>
+      <span class="asset-name">custom_ic_magazine</span>
     </button></div>
     </div>
-  </section>
-
-  <section class="icon-panel" data-panel="custom">
-    <div class="icon-section">
-      <h2>Custom icons</h2>
-      <p>Core Design System의 Custom icon 영역은 Gradient Type과 Flat Type으로 구분되어 있습니다.</p>
-      <div class="custom-grid">
-        <div class="custom-card"><div class="custom-swatch"><span class="dot" style="background:linear-gradient(135deg,#70DCDC,#007777)"></span><strong>Gradient Type</strong></div><p>브랜드 컬러와 다중 색상을 사용하는 커스텀 아이콘.</p></div>
-        <div class="custom-card"><div class="custom-swatch"><span class="dot" style="background:#007777"></span><strong>Flat Type</strong></div><p>단색 또는 제한된 색상으로 구성된 커스텀 아이콘.</p></div>
-      </div>
+    <div class="custom-panel" data-subpanel="flat">
+      <p>제품 성격에 맞춰 제작된 Flat Type Custom Icon입니다. 동일한 SVG size rule을 적용합니다.</p>
+      <div class="asset-grid"><button class="asset-card icon-asset" type="button" data-name="custom_ic_calendar_check" data-src="https://www.figma.com/api/mcp/asset/655ef57d-8f51-4f69-9694-7abdf0611d7e.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/655ef57d-8f51-4f69-9694-7abdf0611d7e.svg" alt=""></span>
+      <span class="asset-name">custom_ic_calendar_check</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_Documents&amp;Safety_file" data-src="https://www.figma.com/api/mcp/asset/97ca1745-418e-40a6-b2ed-5ebebdc5d595.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/97ca1745-418e-40a6-b2ed-5ebebdc5d595.svg" alt=""></span>
+      <span class="asset-name">custom_ic_Documents&amp;Safety_file</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_whistle" data-src="https://www.figma.com/api/mcp/asset/f3edd5ae-000f-47b8-973a-dcec3380faa5.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/f3edd5ae-000f-47b8-973a-dcec3380faa5.svg" alt=""></span>
+      <span class="asset-name">custom_ic_whistle</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_location pin" data-src="https://www.figma.com/api/mcp/asset/e01d1716-872a-48e7-961e-23b884117156.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/e01d1716-872a-48e7-961e-23b884117156.svg" alt=""></span>
+      <span class="asset-name">custom_ic_location pin</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_ pencil" data-src="https://www.figma.com/api/mcp/asset/efc1a6dc-e8f7-4444-b7b7-1cb8a57b3eb6.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/efc1a6dc-e8f7-4444-b7b7-1cb8a57b3eb6.svg" alt=""></span>
+      <span class="asset-name">custom_ic_ pencil</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_message_circle" data-src="https://www.figma.com/api/mcp/asset/9661f039-c39f-4648-a0bf-0e3bc84e848b.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/9661f039-c39f-4648-a0bf-0e3bc84e848b.svg" alt=""></span>
+      <span class="asset-name">custom_ic_message_circle</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_Messages_edit message" data-src="https://www.figma.com/api/mcp/asset/3da4dd5a-32ca-4fac-bb25-2802b08c3489.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/3da4dd5a-32ca-4fac-bb25-2802b08c3489.svg" alt=""></span>
+      <span class="asset-name">custom_ic_Messages_edit message</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_coin_won" data-src="https://www.figma.com/api/mcp/asset/7d549c42-5763-4d58-8fe9-c7ced06ffa4c.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/7d549c42-5763-4d58-8fe9-c7ced06ffa4c.svg" alt=""></span>
+      <span class="asset-name">custom_ic_coin_won</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic__elephant" data-src="https://www.figma.com/api/mcp/asset/973fc84d-29a4-4272-86fd-86afa47f9f94.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/973fc84d-29a4-4272-86fd-86afa47f9f94.svg" alt=""></span>
+      <span class="asset-name">custom_ic__elephant</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_home" data-src="https://www.figma.com/api/mcp/asset/a3c2fc10-e597-42a5-a012-5530fb51176c.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/a3c2fc10-e597-42a5-a012-5530fb51176c.svg" alt=""></span>
+      <span class="asset-name">custom_ic_home</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_eap" data-src="https://www.figma.com/api/mcp/asset/2ab3cc84-39f4-4d32-901f-5e85152b1db0.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/2ab3cc84-39f4-4d32-901f-5e85152b1db0.svg" alt=""></span>
+      <span class="asset-name">custom_ic_eap</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic__youtube" data-src="https://www.figma.com/api/mcp/asset/3cc62220-d049-4b55-b29d-a8ef255967ec.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/3cc62220-d049-4b55-b29d-a8ef255967ec.svg" alt=""></span>
+      <span class="asset-name">custom_ic__youtube</span>
+    </button><button class="asset-card icon-asset" type="button" data-name="custom_ic_magazine" data-src="https://www.figma.com/api/mcp/asset/6af78eff-3ebb-47da-9385-ef0307dc35c5.svg">
+      <span class="asset-preview"><img src="https://www.figma.com/api/mcp/asset/6af78eff-3ebb-47da-9385-ef0307dc35c5.svg" alt=""></span>
+      <span class="asset-name">custom_ic_magazine</span>
+    </button></div>
     </div>
-  </section>
+  </div>
+</section>
+</div></main>
 
-  <section class="icon-panel" data-panel="platform">
-    <div class="icon-section">
-      <h2>Platform icons</h2>
-      <p>Figma 문서에 AOS / iOS 전달용 아이콘 영역이 별도로 구성되어 있습니다.</p>
-      <div class="platform-list">
-        <div class="platform-card"><h3>AOS</h3><p>Android 전달용 아이콘 자산.</p></div>
-        <div class="platform-card"><h3>iOS</h3><p>iOS 전달용 아이콘 자산.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="icon-panel" data-panel="variation">
-    <div class="icon-section">
-      <h2>Basic icon variation</h2>
-      <p>기본 아이콘의 상태·강조 표현이 필요한 경우 사용하는 variation 영역입니다.</p>
-      <div class="variation-row">
-        <span class="variation-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="m8.5 12 2.3 2.3 4.8-5"/></svg></span>
-        <span class="variation-chip" style="background:#D4F8F8"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="m8.5 12 2.3 2.3 4.8-5"/></svg></span>
-        <span class="variation-chip" style="background:#FEEAED"><svg viewBox="0 0 24 24" style="stroke:#F0143C"><circle cx="12" cy="12" r="8"/><path d="M12 8v5M12 16h.01"/></svg></span>
-      </div>
-    </div>
-  </section>
-</div>
-</main>
-
-<div class="icon-popover" id="iconPopover" role="dialog" aria-modal="false">
-  <div class="pop-head"><div class="pop-title" id="popTitle"></div><button class="pop-close" type="button" aria-label="닫기">×</button></div>
-  <div class="pop-preview" id="popPreview"></div>
-  <dl class="pop-meta"><dt>Name</dt><dd id="popName"></dd><dt>Source</dt><dd>Atommerce Core Design System</dd><dt>Type</dt><dd>Basic icon component</dd></dl>
-  <button class="copy-btn" type="button">이름 복사</button>
-</div>
+<div class="pop" id="pop"><div class="pop-head"><div class="pop-title" id="popTitle"></div><button class="pop-close" type="button">×</button></div><img id="popImg" alt=""><dl><dt>Name</dt><dd id="popName"></dd><dt>Source</dt><dd>Atommerce Core Design System</dd><dt>Size</dt><dd>32 / 24 / 20 / 16px</dd></dl></div>
 
 <script>
 (function(){
-  const tabs=[...document.querySelectorAll('.icon-tab')];
-  const panels=[...document.querySelectorAll('.icon-panel')];
-  tabs.forEach(btn=>btn.addEventListener('click',()=>{
-    tabs.forEach(b=>b.classList.toggle('active',b===btn));
-    panels.forEach(p=>p.classList.toggle('active',p.dataset.panel===btn.dataset.tab));
-  }));
-
-  const search=document.querySelector('.icon-search');
-  const cards=[...document.querySelectorAll('.icon-card')];
-  const count=document.querySelector('.icon-count');
-  search.addEventListener('input',()=>{
-    const q=search.value.trim().toLowerCase();
-    let visible=0;
-    cards.forEach(card=>{
-      const show=card.dataset.name.toLowerCase().includes(q);
-      card.hidden=!show;if(show)visible++;
-    });
-    count.textContent=visible+' icons';
-  });
-
-  const pop=document.getElementById('iconPopover');
-  const title=document.getElementById('popTitle');
-  const name=document.getElementById('popName');
-  const preview=document.getElementById('popPreview');
-  let current='';
-  cards.forEach(card=>card.addEventListener('click',e=>{
-    cards.forEach(c=>c.classList.toggle('active',c===card));
-    current=card.dataset.name;
-    title.textContent=current;name.textContent=current;
-    preview.innerHTML=card.querySelector('.icon-visual').innerHTML;
-    const r=card.getBoundingClientRect();
-    pop.style.left=Math.min(window.innerWidth-270,Math.max(16,r.left+r.width/2-125))+'px';
-    pop.style.top=Math.min(window.innerHeight-260,Math.max(16,r.top-30))+'px';
-    pop.classList.add('open');
-  }));
-  pop.querySelector('.pop-close').addEventListener('click',()=>pop.classList.remove('open'));
-  pop.querySelector('.copy-btn').addEventListener('click',async()=>{
-    try{await navigator.clipboard.writeText(current);pop.querySelector('.copy-btn').textContent='복사됨';setTimeout(()=>pop.querySelector('.copy-btn').textContent='이름 복사',1000)}catch(e){}
-  });
+  const tabs=[...document.querySelectorAll('.foundation-tab')], panels=[...document.querySelectorAll('.icon-page-panel')];
+  tabs.forEach(b=>b.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('active',x===b));panels.forEach(p=>p.classList.toggle('active',p.dataset.panel===b.dataset.tab));}));
+  const subtabs=[...document.querySelectorAll('.custom-subtab')], subpanels=[...document.querySelectorAll('.custom-panel')];
+  subtabs.forEach(b=>b.addEventListener('click',()=>{subtabs.forEach(x=>x.classList.toggle('active',x===b));subpanels.forEach(p=>p.classList.toggle('active',p.dataset.subpanel===b.dataset.sub));}));
+  const q=document.getElementById('basicSearch'); if(q) q.addEventListener('input',()=>{const v=q.value.toLowerCase();document.querySelectorAll('#basicGrid .asset-card').forEach(c=>c.hidden=!c.textContent.toLowerCase().includes(v));});
+  const pop=document.getElementById('pop');
+  document.querySelectorAll('.icon-asset').forEach(c=>c.addEventListener('click',()=>{document.getElementById('popTitle').textContent=c.dataset.name;document.getElementById('popName').textContent=c.dataset.name;document.getElementById('popImg').src=c.dataset.src;const r=c.getBoundingClientRect();pop.style.left=Math.min(innerWidth-280,Math.max(16,r.left+r.width/2-130))+'px';pop.style.top=Math.min(innerHeight-240,Math.max(16,r.top-20))+'px';pop.classList.add('open');}));
+  document.querySelector('.pop-close').addEventListener('click',()=>pop.classList.remove('open'));
 })();
 </script>
 </body></html>
