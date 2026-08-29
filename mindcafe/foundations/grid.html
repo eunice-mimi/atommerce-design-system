@@ -32,6 +32,65 @@
 .spacing-marker.base .spacing-badge{background:#005454;color:#fff}
 </style>
 
+
+<style>
+/* v47 · Grid section width alignment */
+.grid-doc{
+  max-width:1040px;
+}
+.grid-section > h2,
+.grid-section > h3,
+.grid-section > p,
+.grid-section > .spacing-rule-intro,
+.grid-section > .spacing-ruler,
+.grid-section > .mode-tabs,
+.grid-section > .mode-panel,
+.grid-section > .spec-table,
+.grid-section > .layout-list,
+.grid-section > .layout-note,
+.grid-section > div[style*="margin-top"]{
+  width:100%;
+  max-width:none;
+  box-sizing:border-box;
+}
+.grid-section > p{
+  max-width:none!important;
+}
+.spacing-rule-note,
+.layout-note{
+  width:100%;
+  max-width:none!important;
+}
+.spacing-rule-intro{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.spacing-ruler{
+  width:100%;
+}
+.mode-tabs{
+  width:100%;
+}
+.mode-panel{
+  width:100%;
+}
+.token-line,
+.cell-row{
+  width:100%;
+}
+.spec-table{
+  width:100%;
+}
+.layout-list,
+.layout-example{
+  width:100%;
+}
+@media(max-width:780px){
+  .spacing-rule-intro{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="global-header">
