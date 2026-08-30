@@ -1,28 +1,96 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Expert Console · Templates</title><link rel="stylesheet" href="../../style.css">
-</head><body>
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Templates · Atommerce Design System</title><link rel="stylesheet" href="../../style.css">
+<style>
+.overview-grid{gap:0!important}
+.overview-card{border:0!important;border-radius:0!important;border-bottom:1px solid #EEF0F2!important;padding:18px 0!important;background:#fff!important}
+</style>
+
+<style id="v74Overview">
+/* Foundation-aligned overview cards */
+.overview-grid{gap:14px!important}
+.overview-card{
+  padding:14px!important;
+  border:1px solid #E5E8EA!important;
+  border-radius:12px!important;
+  background:#fff!important;
+}
+.overview-card:hover{background:#FAFBFC!important}
+</style>
+
+</head>
+<body>
 <header class="global-header">
   <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
   <nav class="product-tabs" aria-label="서비스 선택">
-    <a class="product-tab" href="../../mindcafe/index.html">MindCafe</a><a class="product-tab" href="../../tarobom/index.html">Tarobom</a><a class="product-tab active" href="../index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab" href="../../admin/index.html">Admin</a>
+    <a class="product-tab" href="../../mindcafe/index.html">MindCafe</a>
+    <a class="product-tab" href="../../tarobom/index.html">Tarobom</a>
+    <a class="product-tab active" href="../index.html">Expert Console</a>
+    <a class="product-tab" href="../../center/index.html">Center Console</a>
+    <a class="product-tab" href="../../admin/index.html">Admin</a>
     <a class="product-tab" href="../../ai-guide.html">AI Guide</a>
   </nav>
-</header><aside class="local-sidebar">
+</header>
+<aside class="local-sidebar">
 <div class="local-service"><a href="../index.html">Expert Console</a></div>
-<nav class="local-nav" aria-label="서비스 문서 메뉴">
+<nav class="local-nav" aria-label="Expert Console 문서 메뉴">
 <a class="local-category" href="../foundations/index.html">Foundations</a>
 <a class="local-category" href="../components/index.html">Components</a>
 <a class="local-category" href="../patterns/index.html">Patterns</a>
 <a class="local-category active" href="index.html">Templates</a>
-</nav></aside>
-<main class="main"><div class="content coming-page">
-      <div class="eyebrow">EXPERT CONSOLE</div>
-      <h1>Templates</h1>
-      <div class="coming-box">Coming soon</div>
-    </div>
-</main>
-<script>
-g.classList.toggle('open');btn.setAttribute('aria-expanded',g.classList.contains('open')?'true':'false');}));
+<div class="local-children">
+<a class="local-link" href="app-shell.html">App Shell</a>
+<a class="local-link" href="form-grid.html">Form Grid</a>
+<a class="local-link" href="list-detail.html">List / Detail</a>
+<a class="local-link" href="dashboard.html">Dashboard</a>
+<a class="local-link" href="full-screen.html">Full Screen</a>
+</div>
+</nav>
+</aside>
 
-const sb=document.getElementById('sidebarToggle'); if(sb) sb.addEventListener('click',()=>document.body.classList.toggle('sidebar-collapsed'));
-</script></body></html>
+<main class="main">
+<div class="content">
+  <div class="overview-head"><div class="eyebrow">TEMPLATES</div><h1>Templates</h1><p class="lead" style="margin-top:10px">현재 별도 Expert Console template source가 없어 shared Core/MindCafe template을 사용합니다.</p></div>
+  <div class="overview-grid"><a class="overview-card" href="app-shell.html">
+  <div class="overview-preview"><div class="pv-template"><div class="side"></div><div class="area"><i></i><i></i></div></div></div>
+  <div class="overview-card-body">
+    <h3 class="overview-card-title">App Shell</h3>
+    <p class="overview-card-desc">서비스 공통 화면 뼈대와 navigation 영역</p>
+    <span class="status-chip ready">Available</span>
+  </div>
+</a><a class="overview-card" href="form-grid.html">
+  <div class="overview-preview"><div class="pv-template"><div class="side"></div><div class="area"><i></i><i></i><i></i></div></div></div>
+  <div class="overview-card-body">
+    <h3 class="overview-card-title">Form Grid</h3>
+    <p class="overview-card-desc">입력 중심 화면의 기본 배치</p>
+    <span class="status-chip ready">Available</span>
+  </div>
+</a><a class="overview-card" href="list-detail.html">
+  <div class="overview-preview"><div class="pv-template"><div class="side"></div><div class="area"><i></i><i></i></div></div></div>
+  <div class="overview-card-body">
+    <h3 class="overview-card-title">List / Detail</h3>
+    <p class="overview-card-desc">목록과 상세 정보를 연결하는 구조</p>
+    <span class="status-chip ready">Available</span>
+  </div>
+</a><a class="overview-card" href="dashboard.html">
+  <div class="overview-preview"><div class="pv-template"><div class="side"></div><div class="area"><i></i><i></i><i></i></div></div></div>
+  <div class="overview-card-body">
+    <h3 class="overview-card-title">Dashboard</h3>
+    <p class="overview-card-desc">요약 정보와 주요 행동을 한 화면에 구성</p>
+    <span class="status-chip ready">Available</span>
+  </div>
+</a><a class="overview-card" href="full-screen.html">
+  <div class="overview-preview"><div class="pv-template"><div class="area" style="grid-column:1/-1"><i></i><i></i></div></div></div>
+  <div class="overview-card-body">
+    <h3 class="overview-card-title">Full Screen</h3>
+    <p class="overview-card-desc">집중이 필요한 전체 화면 흐름</p>
+    <span class="status-chip ready">Available</span>
+  </div>
+</a></div>
+</div>
+</main>
+
+
+
+
+</body></html>

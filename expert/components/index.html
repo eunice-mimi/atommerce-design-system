@@ -1,28 +1,60 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Expert Console · Components</title><link rel="stylesheet" href="../../style.css">
-</head><body>
-<header class="global-header">
+<title>Components · Expert Console · Atommerce Design System</title><link rel="stylesheet" href="../../style.css"><style>
+.component-index{max-width:none;padding-bottom:72px}.component-index h1{margin:0 0 12px;font-size:32px}.component-index>.intro{margin:0 0 12px;color:#68727B;font-size:13px;line-height:1.65}.source-note{margin:0 0 36px;font-size:11px;color:#8A939B}
+.component-overview-group{margin-top:38px}.component-overview-group-title{margin:0 0 12px;font-size:15px;color:#373D44}.overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.overview-card{display:flex;flex-direction:column;gap:5px;padding:14px;border:1px solid #E5E8EA;border-radius:12px;background:#fff;text-decoration:none}.overview-card:hover{background:#FAFBFC}.overview-card strong{font-size:13px;color:#373D44}.overview-card span{font-size:11px;color:#8A939B}@media(max-width:900px){.overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.overview-grid{grid-template-columns:1fr}}
+</style></head><body><header class="global-header">
   <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
   <nav class="product-tabs" aria-label="서비스 선택">
-    <a class="product-tab" href="../../mindcafe/index.html">MindCafe</a><a class="product-tab" href="../../tarobom/index.html">Tarobom</a><a class="product-tab active" href="../index.html">Expert Console</a><a class="product-tab" href="../../center/index.html">Center Console</a><a class="product-tab" href="../../admin/index.html">Admin</a>
+    <a class="product-tab" href="../../mindcafe/index.html">MindCafe</a>
+    <a class="product-tab" href="../../tarobom/index.html">Tarobom</a>
+    <a class="product-tab active" href="../index.html">Expert Console</a>
+    <a class="product-tab" href="../../center/index.html">Center Console</a>
+    <a class="product-tab" href="../../admin/index.html">Admin</a>
     <a class="product-tab" href="../../ai-guide.html">AI Guide</a>
   </nav>
 </header><aside class="local-sidebar">
 <div class="local-service"><a href="../index.html">Expert Console</a></div>
-<nav class="local-nav" aria-label="서비스 문서 메뉴">
+<nav class="local-nav" aria-label="Expert Console 문서 메뉴">
 <a class="local-category" href="../foundations/index.html">Foundations</a>
 <a class="local-category active" href="index.html">Components</a>
+<div class="local-children grouped-components">
+<div class="local-group-label">Actions</div>
+<a class="local-link" href="button.html">Button</a>
+<a class="local-link" href="button-group.html">Button Group</a>
+<div class="local-group-label">Selection & Input</div>
+<a class="local-link" href="input.html">Input / Field</a>
+<a class="local-link" href="search-bar.html">Search Bar</a>
+<a class="local-link" href="checkbox.html">Checkbox</a>
+<a class="local-link" href="radio.html">Radio</a>
+<a class="local-link" href="switch.html">Switch</a>
+<a class="local-link" href="select.html">Select</a>
+<a class="local-link" href="select-box.html">Select Box</a>
+<a class="local-link" href="textarea.html">Textarea</a>
+<a class="local-link" href="chip.html">Chip</a>
+<a class="local-link" href="chip-group.html">Chip Group</a>
+<a class="local-link" href="connect-chip.html">Connect Chip</a>
+<a class="local-link" href="file-upload.html">File Upload</a>
+<div class="local-group-label">Navigation</div>
+<a class="local-link" href="global-navigation-bar.html">Global Navigation Bar</a>
+<a class="local-link" href="breadcrumb.html">Breadcrumb</a>
+<a class="local-link" href="page-navigation.html">Page Navigation</a>
+<a class="local-link" href="tabs.html">Tabs</a>
+<a class="local-link" href="icon-menu-bar.html">Icon Menu Bar</a>
+<div class="local-group-label">Layout & Structure</div>
+<a class="local-link" href="page-header.html">Page Header</a>
+<a class="local-link" href="container.html">Container</a>
+<div class="local-group-label">Data Display</div>
+<a class="local-link" href="badge.html">Badge</a>
+<a class="local-link" href="avatar.html">Avatar</a>
+<a class="local-link" href="card.html">Card</a>
+<a class="local-link" href="list-item.html">List Item</a>
+<a class="local-link" href="accordion.html">Accordion</a>
+<div class="local-group-label">Feedback & Overlay</div>
+<a class="local-link" href="tooltip.html">Tooltip</a>
+<a class="local-link" href="toast.html">Toast / Message</a>
+<a class="local-link" href="modal.html">Dialog / Modal</a>
+</div>
 <a class="local-category" href="../patterns/index.html">Patterns</a>
 <a class="local-category" href="../templates/index.html">Templates</a>
-</nav></aside>
-<main class="main"><div class="content coming-page">
-      <div class="eyebrow">EXPERT CONSOLE</div>
-      <h1>Components</h1>
-      <div class="coming-box">Coming soon</div>
-    </div>
-</main>
-<script>
-g.classList.toggle('open');btn.setAttribute('aria-expanded',g.classList.contains('open')?'true':'false');}));
-
-const sb=document.getElementById('sidebarToggle'); if(sb) sb.addEventListener('click',()=>document.body.classList.toggle('sidebar-collapsed'));
-</script></body></html>
+</nav>
+</aside><main class="main"><div class="content"><article class="component-index"><div class="eyebrow">Expert Console · Components</div><h1>Components</h1><p class="intro">Expert Console에서 사용하는 UI components입니다.</p><p class="source-note">전문가콘솔 전용 Figma node가 확인된 항목은 해당 source를 우선 사용하고, 별도 정의가 없는 항목은 shared Core/MindCafe 문서를 사용합니다.</p><section class="component-overview-group"><h2 class="component-overview-group-title">Actions</h2><div class="overview-grid"><a class="overview-card" href="button.html"><strong>Button</strong><span>Shared Core component</span></a><a class="overview-card" href="button-group.html"><strong>Button Group</strong><span>Shared Core component</span></a></div></section><section class="component-overview-group"><h2 class="component-overview-group-title">Selection & Input</h2><div class="overview-grid"><a class="overview-card" href="input.html"><strong>Input / Field</strong><span>Shared Core component</span></a><a class="overview-card" href="search-bar.html"><strong>Search Bar</strong><span>Shared Core component</span></a><a class="overview-card" href="checkbox.html"><strong>Checkbox</strong><span>Shared Core component</span></a><a class="overview-card" href="radio.html"><strong>Radio</strong><span>Shared Core component</span></a><a class="overview-card" href="switch.html"><strong>Switch</strong><span>Shared Core component</span></a><a class="overview-card" href="select.html"><strong>Select</strong><span>Shared Core component</span></a><a class="overview-card" href="select-box.html"><strong>Select Box</strong><span>Expert Console Figma source</span></a><a class="overview-card" href="textarea.html"><strong>Textarea</strong><span>Shared Core component</span></a><a class="overview-card" href="chip.html"><strong>Chip</strong><span>Shared Core component</span></a><a class="overview-card" href="chip-group.html"><strong>Chip Group</strong><span>Shared Core component</span></a><a class="overview-card" href="connect-chip.html"><strong>Connect Chip</strong><span>Expert Console Figma source</span></a><a class="overview-card" href="file-upload.html"><strong>File Upload</strong><span>Expert Console Figma source</span></a></div></section><section class="component-overview-group"><h2 class="component-overview-group-title">Navigation</h2><div class="overview-grid"><a class="overview-card" href="global-navigation-bar.html"><strong>Global Navigation Bar</strong><span>Expert Console Figma source</span></a><a class="overview-card" href="breadcrumb.html"><strong>Breadcrumb</strong><span>Expert Console Figma source</span></a><a class="overview-card" href="page-navigation.html"><strong>Page Navigation</strong><span>Expert Console Figma source</span></a><a class="overview-card" href="tabs.html"><strong>Tabs</strong><span>Shared Core component</span></a><a class="overview-card" href="icon-menu-bar.html"><strong>Icon Menu Bar</strong><span>Shared Core component</span></a></div></section><section class="component-overview-group"><h2 class="component-overview-group-title">Layout & Structure</h2><div class="overview-grid"><a class="overview-card" href="page-header.html"><strong>Page Header</strong><span>Expert Console Figma source</span></a><a class="overview-card" href="container.html"><strong>Container</strong><span>Expert Console Figma source</span></a></div></section><section class="component-overview-group"><h2 class="component-overview-group-title">Data Display</h2><div class="overview-grid"><a class="overview-card" href="badge.html"><strong>Badge</strong><span>Shared Core component</span></a><a class="overview-card" href="avatar.html"><strong>Avatar</strong><span>Shared Core component</span></a><a class="overview-card" href="card.html"><strong>Card</strong><span>Shared Core component</span></a><a class="overview-card" href="list-item.html"><strong>List Item</strong><span>Expert Console Figma source</span></a><a class="overview-card" href="accordion.html"><strong>Accordion</strong><span>Shared Core component</span></a></div></section><section class="component-overview-group"><h2 class="component-overview-group-title">Feedback & Overlay</h2><div class="overview-grid"><a class="overview-card" href="tooltip.html"><strong>Tooltip</strong><span>Shared Core component</span></a><a class="overview-card" href="toast.html"><strong>Toast / Message</strong><span>Shared Core component</span></a><a class="overview-card" href="modal.html"><strong>Dialog / Modal</strong><span>Shared Core component</span></a></div></section></article></div></main></body></html>

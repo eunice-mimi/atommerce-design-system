@@ -50,3 +50,13 @@ Recommended usage:
 The documentation filesystem now mirrors the product-first IA:
 `/<service>/<category>/<detail>.html`.
 Color documentation is separated per service, while values continue to come from the Figma Color Token service modes.
+
+
+## v78 Expert Console integration
+- Expert Console pages now use the same 1180px content width, 32px desktop gutter, typography, cards and tabs shell as MindCafe.
+- Expert-specific Figma docs added: Global Navigation Bar, Breadcrumb, Page Navigation, Page Header, Container, List Item, Select Box, Connect Chip, File Upload.
+- Expert Pattern added: Side Navigation Bar (latest node 17363:7799).
+- Components/Patterns/Templates without a separate Expert source reuse Shared Core/MindCafe docs.
+- Expert shared Input required mark corrected to #F0143C; unconfirmed Button loading spinner drawing removed.
+
+- Removed superseded Expert navigation docs (`expert/components/navigation.html`, `expert/patterns/navigation.html`) so the Expert menu/source does not expose stale navigation definitions.
