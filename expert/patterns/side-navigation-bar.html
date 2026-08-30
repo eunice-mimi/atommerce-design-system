@@ -1,0 +1,351 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Side Navigation Bar · Expert Console · Atommerce Design System</title><link rel="stylesheet" href="../../style.css"><style>
+:root{
+  --text:#20262C;--sub:#68727B;--line:#E8EBED;
+  --surface:#EEF0F2;--surface-deep:#E1E4E8;--primary:#007777;
+  --hover:#FAFBFC;--active:#F3F5F7;--red:#F0143C;
+}
+*{box-sizing:border-box}
+
+
+.head{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}
+.eyebrow{margin-bottom:10px;font-size:11px;font-weight:700;color:#8A939B}
+h1{margin:0;font-size:32px;line-height:1.15;letter-spacing:-.02em}
+.desc{max-width:760px;margin:14px 0 0;font-size:13px;line-height:1.65;color:var(--sub)}
+.actions{display:flex;gap:8px}
+.actions a,.actions button{
+  width:92px;height:36px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;
+  font:700 11px/1 inherit;text-decoration:none;cursor:pointer
+}
+.actions a{border:1px solid #DDE2E6;background:#fff;color:#373D44}
+.actions button{border:1px solid #20262C;background:#20262C;color:#fff}
+
+.tabs{
+  display:flex;gap:28px;margin-top:28px;border-bottom:1px solid var(--line);
+  overflow:auto;scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{
+  position:relative;flex:0 0 auto;padding:0 0 11px;
+  font-size:12px;font-weight:700;color:#A0A7AD;text-decoration:none;
+}
+.tabs a:first-child{color:#20262C}
+.tabs a:first-child:after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#20262C;
+}
+
+section{padding:38px 0;border-bottom:1px solid #ECEFF1;scroll-margin-top:24px}
+section:last-child{border-bottom:0}
+h2{margin:0 0 10px;font-size:20px;line-height:1.35}
+h3{margin:28px 0 12px;font-size:15px;line-height:1.4}
+.section-desc{max-width:760px;margin:0 0 18px;font-size:12px;line-height:1.65;color:var(--sub)}
+.card{padding:22px;border:1px solid #E5E8EA;border-radius:12px;background:#fff}
+.note{margin-top:18px;padding:14px;border:1px solid #E5E8EA;border-radius:12px;background:#FAFBFC;color:#68727B;font-size:11px;line-height:1.65}
+
+table{width:100%;border-collapse:collapse}
+th,td{padding:12px 8px;border-bottom:1px solid #EDF0F2;text-align:left;vertical-align:top;font-size:11px;line-height:1.55}
+th{width:190px;color:#858E96}
+
+.variant-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.variant-card{padding:14px;border:1px solid #E5E8EA;border-radius:12px;background:#fff}
+.variant-card>strong{display:block;margin-bottom:12px;font-size:12px}
+
+/* SNB */
+.snb{
+  background:var(--surface);border-right:1px solid var(--surface-deep);
+  padding:12px;display:flex;flex-direction:column;gap:4px;min-height:600px
+}
+.snb.full{width:220px}.snb.collapsed{width:72px}
+.account{height:64px;padding:10px 8px;border-radius:8px;display:flex;align-items:center;gap:8px}
+.greeting{flex:1;font-size:14px;line-height:1.6;color:#373D44}
+.icon-btn{width:32px;height:32px;padding:8px;border-radius:8px;background:#EEF0F2;display:grid;place-items:center;font-size:8px;color:#7E8A96}
+.menu-item{
+  height:40px;padding:10px 8px;border-radius:8px;display:flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:700;color:#4E5760
+}
+.menu-item.selected{background:#E1E4E8;color:#007777}
+.menu-item.sub{padding-left:36px;font-weight:400}
+.menu-item.sub.selected{font-weight:700}
+.menu-icon{width:20px;height:20px;border:1px dashed #B6BDC4;border-radius:4px;flex:0 0 20px}
+.menu-label{flex:1}.arrow{font-size:10px}
+.permission{margin-top:auto;padding:12px 8px;font-size:12px;color:#4E5760}
+.permission-row{display:flex;align-items:center;gap:4px;margin-top:8px}
+.status{margin-left:auto;padding:2px 4px;border-radius:4px}
+.status.bad{background:#FEEAED;color:#D40E32}.status.good{background:#E0FFE1;color:#11B81E}
+.version{margin-top:10px;color:#7E8A96}
+.collapsed .greeting,.collapsed .menu-label,.collapsed .arrow,.collapsed .permission-title{display:none}
+.collapsed .account,.collapsed .menu-item{justify-content:center}
+.collapsed .permission-row{flex-direction:column}
+
+/* Account Item */
+.account-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.account-demo{
+  width:196px;height:64px;padding:10px 8px;border-radius:8px;display:flex;align-items:center;gap:8px
+}
+.account-demo.compact{width:auto}
+.account-demo .greeting{font-size:14px}
+
+/* Menu Item */
+.menu-states{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.mi{
+  width:196px;height:40px;padding:10px 8px;border-radius:8px;display:flex;align-items:center;gap:8px;
+  color:#4E5760;font-size:14px
+}
+.mi.hover{background:#EEF0F2}.mi.selected{background:#E1E4E8;color:#007777;font-weight:700}
+.mi.sub{padding-left:36px}.mi.collapse{width:40px;justify-content:center}
+.badge{min-width:20px;height:16px;padding:0 6px;border-radius:8px;background:#F04452;color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700}
+
+/* Shortcut */
+.shortcut-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.shortcut{
+  width:180px;min-height:42px;padding:10px 12px 10px 16px;border:1px solid #E1E4E8;border-radius:10px;
+  display:flex;align-items:center;gap:6px;background:#fff;box-shadow:0 0 4px rgba(55,61,68,.08);
+  font-size:14px;font-weight:700;color:#4E5760
+}
+.shortcut.hover{background:#FAFBFC}.shortcut.pressed{background:#F3F5F7}
+.shortcut.mint{background:#D4F8F8;border-color:#70DCDC}
+.shortcut.mint.hover{background:#A2EDEE}.shortcut.mint.pressed{background:#70DCDC}
+.shortcut .title{flex:1}.shortcut .count{color:#F0143C}
+.shortcut-icon{
+  width:42px;height:42px;padding:10px 12px;border:1px solid #E1E4E8;border-radius:10px;background:#fff;
+  display:grid;place-items:center;box-shadow:0 0 4px rgba(55,61,68,.08);position:relative
+}
+.shortcut-icon.mint{background:#D4F8F8;border-color:#70DCDC}
+.shortcut-icon .badge{position:absolute;right:3px;top:3px}
+
+@media(max-width:900px){
+  .variant-grid,.menu-states,.shortcut-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .head{display:block}.actions{margin-top:20px}
+}
+</style></head><body><header class="global-header">
+  <a class="global-logo" href="../../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
+  <nav class="product-tabs" aria-label="서비스 선택">
+    <a class="product-tab" href="../../mindcafe/index.html">MindCafe</a>
+    <a class="product-tab" href="../../tarobom/index.html">Tarobom</a>
+    <a class="product-tab active" href="../index.html">Expert Console</a>
+    <a class="product-tab" href="../../center/index.html">Center Console</a>
+    <a class="product-tab" href="../../admin/index.html">Admin</a>
+    <a class="product-tab" href="../../ai-guide.html">AI Guide</a>
+  </nav>
+</header><div class="expert-source-note" style="margin:14px 0 0;font-size:11px;line-height:1.6;color:#8A939B">Latest Expert Console SNB source: 17363:7799.</div><aside class="local-sidebar">
+<div class="local-service"><a href="../index.html">Expert Console</a></div>
+<nav class="local-nav" aria-label="Expert Console 문서 메뉴">
+<a class="local-category" href="../components/index.html">Components</a>
+<a class="local-category active" href="index.html">Patterns</a>
+<div class="local-children">
+<a class="local-link active" href="side-navigation-bar.html">Side Navigation Bar</a>
+</div>
+</nav>
+</aside><main class="main"><div class="content"><article class="expert-doc">
+<header class="head">
+  <div>
+    <div class="eyebrow">Expert Console · Pattern</div>
+    <h1>Side Navigation Bar</h1>
+    <p class="desc">
+      전문가콘솔 Side Navigation 전체 패턴과 내부 전용 하위 컴포넌트
+      Account Item, Menu Item, Shortcut Item을 새 Figma source 기준으로 함께 정리한 파일입니다.
+    </p>
+  </div>
+  <div class="actions">
+    <a href="https://www.figma.com/design/OuM9vyMhabODr7BtlRlhe3/-System--Atommerce-Core-Design-System?node-id=17363-7799&m=dev" target="_blank" rel="noopener">Figma ↗</a>
+    <button id="copyUrl" type="button">URL 복사</button>
+  </div>
+</header>
+
+<nav class="tabs">
+  <a href="#overview">Overview</a>
+  <a href="#account-item">Account Item</a>
+  <a href="#menu-item">Menu Item</a>
+  <a href="#shortcut-item">Shortcut Item</a>
+  <a href="#spec">Specification</a>
+</nav>
+
+<section id="overview">
+  <h2>Overview</h2>
+  <p class="section-desc">전체 SNB source는 17363:7799이며 type은 Default · dropdown-open · collapsed로 확인됩니다.</p>
+  <div class="variant-grid">
+    <div class="variant-card">
+      <strong>Default · 17363:7800</strong>
+      <div class="snb full">
+        <div class="account"><div class="greeting">안녕하세요,<br>{이름}님!</div><div class="icon-btn">asset</div></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">일정 캘린더</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">내담자</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">상담방</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">체험방</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">예약</span><span class="arrow">▼</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">일지</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">후기</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">회기 및 정산</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">커뮤니티</span><span class="arrow">▼</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">공지사항</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">설정</span></div>
+        <div class="permission">
+          <div class="permission-title">권한 설정</div>
+          <div class="permission-row">내 PC 마이크 <span class="status bad">없음</span></div>
+          <div class="permission-row">내 PC 카메라 <span class="status good">허용</span></div>
+          <div class="version">콘솔 버전 2.10.2</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="variant-card">
+      <strong>Dropdown open · 17363:7849</strong>
+      <div class="snb full">
+        <div class="account"><div class="greeting">안녕하세요,<br>{이름}님!</div><div class="icon-btn">asset</div></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">일정 캘린더</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">내담자</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">상담방</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">체험방</span></div>
+        <div class="menu-item selected"><span class="menu-icon"></span><span class="menu-label">예약</span><span class="arrow">▲</span></div>
+        <div class="menu-item sub selected"><span class="menu-label">온라인 예약 일정</span></div>
+        <div class="menu-item sub"><span class="menu-label">온라인 예약 관리</span></div>
+        <div class="menu-item sub"><span class="menu-label">수기 예약 관리</span></div>
+        <div class="menu-item sub"><span class="menu-label">워크샵 관리</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">일지</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">후기</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">회기 및 정산</span></div>
+        <div class="menu-item selected"><span class="menu-icon"></span><span class="menu-label">커뮤니티</span><span class="arrow">▲</span></div>
+        <div class="menu-item sub selected"><span class="menu-label">사연</span></div>
+        <div class="menu-item sub"><span class="menu-label">전문답변</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">공지사항</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">설정</span></div>
+      </div>
+    </div>
+
+    <div class="variant-card">
+      <strong>Collapsed · 17363:7827</strong>
+      <div class="snb collapsed">
+        <div class="account"><div class="icon-btn">asset</div></div>
+        <div class="menu-item selected"><span class="menu-icon"></span></div>
+        <div class="menu-item"><span class="menu-icon"></span></div>
+        <div class="menu-item"><span class="menu-icon"></span></div>
+        <div class="menu-item"><span class="menu-icon"></span></div>
+        <div class="menu-item"><span class="menu-icon"></span></div>
+        <div class="menu-item"><span class="menu-icon"></span></div>
+        <div class="menu-item"><span class="menu-icon"></span></div>
+        <div class="menu-item"><span class="menu-icon"></span></div>
+        <div class="menu-item"><span class="menu-icon"></span></div>
+        <div class="menu-item"><span class="menu-icon"></span></div>
+        <div class="menu-item"><span class="menu-icon"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="account-item">
+  <h2>Account Item</h2>
+  <p class="section-desc">Figma node 17363:7736. SNB 상단 인사 영역과 접기/펼치기 액션을 담당합니다.</p>
+  <div class="card">
+    <div class="account-row">
+      <div class="account-demo">
+        <div class="greeting">안녕하세요,<br>{이름}님!</div>
+        <div class="icon-btn">asset</div>
+      </div>
+      <div class="account-demo compact">
+        <div class="icon-btn">asset</div>
+      </div>
+    </div>
+  </div>
+  <table>
+    <tr><th>Property</th><td>collapsed = true · false</td></tr>
+    <tr><th>Height</th><td>64px</td></tr>
+    <tr><th>Padding</th><td>horizontal 8px · vertical 10px</td></tr>
+    <tr><th>Radius</th><td>8px</td></tr>
+    <tr><th>Greeting</th><td>Pretendard Regular · 14px · line-height 1.6</td></tr>
+    <tr><th>Icon button</th><td>32 × 32 · padding 8 · radius 8</td></tr>
+    <tr><th>Icon</th><td>panel_right · 16 × 16</td></tr>
+  </table>
+</section>
+
+<section id="menu-item">
+  <h2>Menu Item</h2>
+  <p class="section-desc">Figma node 17363:7657. SNB에서 상위/하위/축소 메뉴와 선택 상태를 표현합니다.</p>
+
+  <h3>Type</h3>
+  <table>
+    <tr><th>type</th><td>dropdown · sub-item · main-item · collapse · sub-item-icon · mid-item-icon</td></tr>
+    <tr><th>state</th><td>Default · hover · selected</td></tr>
+    <tr><th>Boolean</th><td>badge · leadingIcon · trailingIcon</td></tr>
+  </table>
+
+  <h3>State examples</h3>
+  <div class="menu-states">
+    <div class="variant-card"><strong>Default</strong><div class="mi"><span class="menu-icon"></span><span class="menu-label">상위 메뉴</span><span>▼</span></div></div>
+    <div class="variant-card"><strong>Hover</strong><div class="mi hover"><span class="menu-icon"></span><span class="menu-label">상위 메뉴</span><span>▼</span></div></div>
+    <div class="variant-card"><strong>Selected</strong><div class="mi selected"><span class="menu-icon"></span><span class="menu-label">상위 메뉴</span><span>▲</span></div></div>
+  </div>
+
+  <table>
+    <tr><th>Width</th><td>196px · 일반 타입</td></tr>
+    <tr><th>Height</th><td>40px</td></tr>
+    <tr><th>Padding</th><td>horizontal 8px · vertical 10px</td></tr>
+    <tr><th>Gap</th><td>8px</td></tr>
+    <tr><th>Radius</th><td>8px</td></tr>
+    <tr><th>Icon</th><td>20 × 20</td></tr>
+    <tr><th>Text</th><td>14px</td></tr>
+    <tr><th>Sub-item indent</th><td>left padding 36px</td></tr>
+    <tr><th>Hover surface</th><td>#EEF0F2</td></tr>
+    <tr><th>Selected surface</th><td>#E1E4E8</td></tr>
+    <tr><th>Selected text</th><td>#007777</td></tr>
+    <tr><th>Badge</th><td>height 16 · min-width 20 · radius 8 · text 12 Bold</td></tr>
+  </table>
+</section>
+
+<section id="shortcut-item">
+  <h2>Shortcut / Action Item</h2>
+  <p class="section-desc">Figma node 17363:7882. SNB 안에서 사용하는 별도 text/icon 형태의 액션·바로가기 컴포넌트입니다.</p>
+
+  <h3>Properties</h3>
+  <table>
+    <tr><th>type</th><td>text · icon</td></tr>
+    <tr><th>color</th><td>mint · mono</td></tr>
+    <tr><th>state</th><td>Default · hover · pressed</td></tr>
+    <tr><th>Boolean</th><td>badge · icon · title</td></tr>
+  </table>
+
+  <h3>Examples</h3>
+  <div class="shortcut-grid">
+    <div class="variant-card"><strong>Text / mono</strong><div class="shortcut"><span class="title">Title <span class="count">(N)</span></span><span>›</span></div></div>
+    <div class="variant-card"><strong>Text / mint</strong><div class="shortcut mint"><span class="title">Title <span class="count">(N)</span></span><span>›</span></div></div>
+    <div class="variant-card"><strong>Icon / badge</strong><div class="shortcut-icon"><span class="menu-icon"></span><span class="badge">10</span></div></div>
+  </div>
+
+  <table>
+    <tr><th>Text width</th><td>180px</td></tr>
+    <tr><th>Icon height</th><td>42px</td></tr>
+    <tr><th>Radius</th><td>10px</td></tr>
+    <tr><th>Gap</th><td>6px</td></tr>
+    <tr><th>Text padding</th><td>left 16px · right 12px · vertical 10px</td></tr>
+    <tr><th>Icon padding</th><td>horizontal 12px · vertical 10px</td></tr>
+    <tr><th>Text</th><td>Pretendard Bold · 14px · line-height 1.6</td></tr>
+    <tr><th>Mono Default</th><td>#FFFFFF · border #E1E4E8</td></tr>
+    <tr><th>Mono Hover</th><td>#FAFBFC</td></tr>
+    <tr><th>Mono Pressed</th><td>#F3F5F7</td></tr>
+    <tr><th>Mint Default</th><td>#D4F8F8 · border #70DCDC</td></tr>
+    <tr><th>Mint Hover</th><td>#A2EDEE</td></tr>
+    <tr><th>Mint Pressed</th><td>#70DCDC</td></tr>
+    <tr><th>Shadow</th><td>0 0 4px rgba(55,61,68,0.08)</td></tr>
+  </table>
+</section>
+
+<section id="spec">
+  <h2>Pattern Specification</h2>
+  <table>
+    <tr><th>Pattern node</th><td>17363:7799 · snb_expert-console</td></tr>
+    <tr><th>Account Item</th><td>17363:7736</td></tr>
+    <tr><th>Menu Item</th><td>17363:7657</td></tr>
+    <tr><th>Shortcut / Action Item</th><td>17363:7882</td></tr>
+    <tr><th>Default / open width</th><td>220px</td></tr>
+    <tr><th>Collapsed width</th><td>72px</td></tr>
+    <tr><th>Default / collapsed height</th><td>960px</td></tr>
+    <tr><th>Dropdown-open height</th><td>1224px</td></tr>
+    <tr><th>Outer padding</th><td>12px</td></tr>
+    <tr><th>Gap</th><td>4px</td></tr>
+    <tr><th>Background</th><td>#EEF0F2</td></tr>
+    <tr><th>Right border</th><td>1px · #E1E4E8</td></tr>
+  </table>
+  
+</section>
+
+</article></div></main><script>const b=document.getElementById('copyUrl');if(b)b.addEventListener('click',async function(){try{await navigator.clipboard.writeText(location.href);const o=this.textContent;this.textContent='복사됨';setTimeout(()=>this.textContent=o,1000)}catch(e){}});</script></body></html>

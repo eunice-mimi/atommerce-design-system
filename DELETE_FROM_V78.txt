@@ -1,0 +1,37 @@
+Expert Console v78에서 아래 중복 파일/폴더는 삭제하세요.
+공통 Core/MindCafe 문서는 Expert Console 아래에 복제하지 않고 MindCafe 문서를 사용합니다.
+
+[삭제할 폴더]
+expert/foundations/
+expert/templates/
+
+[삭제할 Expert Components 중복 파일]
+expert/components/accordion.html
+expert/components/avatar.html
+expert/components/badge.html
+expert/components/button-group.html
+expert/components/button.html
+expert/components/card.html
+expert/components/checkbox.html
+expert/components/chip-group.html
+expert/components/chip.html
+expert/components/icon-menu-bar.html
+expert/components/input.html
+expert/components/modal.html
+expert/components/radio.html
+expert/components/search-bar.html
+expert/components/select.html
+expert/components/switch.html
+expert/components/tabs.html
+expert/components/textarea.html
+expert/components/toast.html
+expert/components/tooltip.html
+
+[삭제할 Expert Patterns 중복 파일]
+expert/patterns/confirmation.html
+expert/patterns/empty-state.html
+expert/patterns/error-validation.html
+expert/patterns/form.html
+expert/patterns/loading.html
+expert/patterns/search-filter.html
+expert/patterns/table-list.html
