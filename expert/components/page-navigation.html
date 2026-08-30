@@ -129,6 +129,7 @@ h2{
   font-size:18px;
   white-space:nowrap;
 }
+.nav-icon{width:20px;height:20px;display:block;flex:0 0 20px}
 .icon-ph{
   width:20px;height:20px;
   border:1px dashed #B6BDC4;
@@ -243,8 +244,8 @@ th{
   </p>
   <div class="card">
     <div class="pagination">
-      <button class="page-btn"><span class="icon-ph">asset</span><span>처음</span></button>
-      <button class="page-btn icon-only"><span class="icon-ph">asset</span></button>
+      <button class="page-btn"><img class="nav-icon" src="../assets/page-first.svg" alt=""><span>처음</span></button>
+      <button class="page-btn icon-only"><img class="nav-icon" src="../assets/page-back.svg" alt=""></button>
       <button class="page-btn current">1</button>
       <button class="page-btn">2</button>
       <button class="page-btn">3</button>
@@ -255,13 +256,13 @@ th{
       <button class="page-btn">8</button>
       <button class="page-btn">9</button>
       <button class="page-btn">10</button>
-      <button class="page-btn icon-only"><span class="icon-ph">asset</span></button>
-      <button class="page-btn"><span>마지막</span><span class="icon-ph">asset</span></button>
+      <button class="page-btn icon-only"><img class="nav-icon" src="../assets/page-forward.svg" alt=""></button>
+      <button class="page-btn"><span>마지막</span><img class="nav-icon" src="../assets/page-last.svg" alt=""></button>
     </div>
   </div>
   <div class="note">
     처음/이전/다음/마지막 아이콘은 Figma의 first_page / arrow_back_ios / arrow_forward_ios / last_page asset을 사용합니다.
-    문서 예시에서는 임의 SVG를 만들지 않고 asset placeholder로만 표시했습니다.
+    처음/이전/다음/마지막에는 Figma에서 확인한 실제 SVG asset을 사용합니다.
   </div>
 </section>
 
@@ -272,19 +273,19 @@ th{
     <div class="variant-card">
       <strong>page-position = false</strong>
       <div class="pagination">
-        <button class="page-btn"><span class="icon-ph">asset</span><span>처음</span></button>
-        <button class="page-btn icon-only"><span class="icon-ph">asset</span></button>
+        <button class="page-btn"><img class="nav-icon" src="../assets/page-first.svg" alt=""><span>처음</span></button>
+        <button class="page-btn icon-only"><img class="nav-icon" src="../assets/page-back.svg" alt=""></button>
         <div class="range">1 ~ 10 of 230</div>
-        <button class="page-btn icon-only"><span class="icon-ph">asset</span></button>
-        <button class="page-btn"><span>마지막</span><span class="icon-ph">asset</span></button>
+        <button class="page-btn icon-only"><img class="nav-icon" src="../assets/page-forward.svg" alt=""></button>
+        <button class="page-btn"><span>마지막</span><img class="nav-icon" src="../assets/page-last.svg" alt=""></button>
       </div>
     </div>
 
     <div class="variant-card">
       <strong>page-position = true</strong>
       <div class="pagination">
-        <button class="page-btn"><span class="icon-ph">asset</span><span>처음</span></button>
-        <button class="page-btn icon-only"><span class="icon-ph">asset</span></button>
+        <button class="page-btn"><img class="nav-icon" src="../assets/page-first.svg" alt=""><span>처음</span></button>
+        <button class="page-btn icon-only"><img class="nav-icon" src="../assets/page-back.svg" alt=""></button>
         <button class="page-btn current">1</button>
         <button class="page-btn">2</button>
         <button class="page-btn">3</button>
@@ -295,8 +296,8 @@ th{
         <button class="page-btn">8</button>
         <button class="page-btn">9</button>
         <button class="page-btn">10</button>
-        <button class="page-btn icon-only"><span class="icon-ph">asset</span></button>
-        <button class="page-btn"><span>마지막</span><span class="icon-ph">asset</span></button>
+        <button class="page-btn icon-only"><img class="nav-icon" src="../assets/page-forward.svg" alt=""></button>
+        <button class="page-btn"><span>마지막</span><img class="nav-icon" src="../assets/page-last.svg" alt=""></button>
       </div>
     </div>
   </div>

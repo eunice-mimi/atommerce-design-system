@@ -57,6 +57,7 @@ th{width:190px;color:#858E96}
 .snb.full{width:220px}.snb.collapsed{width:72px}
 .account{height:64px;padding:10px 8px;border-radius:8px;display:flex;align-items:center;gap:8px}
 .greeting{flex:1;font-size:14px;line-height:1.6;color:#373D44}
+.collapse-svg{width:32px;height:32px;display:block;flex:0 0 32px}
 .icon-btn{width:32px;height:32px;padding:8px;border-radius:8px;background:#EEF0F2;display:grid;place-items:center;font-size:8px;color:#7E8A96}
 .menu-item{
   height:40px;padding:10px 8px;border-radius:8px;display:flex;align-items:center;gap:8px;
@@ -66,7 +67,7 @@ th{width:190px;color:#858E96}
 .menu-item.sub{padding-left:36px;font-weight:400}
 .menu-item.sub.selected{font-weight:700}
 .menu-icon{width:20px;height:20px;border:1px dashed #B6BDC4;border-radius:4px;flex:0 0 20px}
-.menu-label{flex:1}.arrow{font-size:10px}
+.menu-label{flex:1}.snb-arrow{width:20px;height:20px;display:block;flex:0 0 20px}.arrow{font-size:10px}
 .permission{margin-top:auto;padding:12px 8px;font-size:12px;color:#4E5760}
 .permission-row{display:flex;align-items:center;gap:4px;margin-top:8px}
 .status{margin-left:auto;padding:2px 4px;border-radius:4px}
@@ -168,16 +169,16 @@ th{width:190px;color:#858E96}
     <div class="variant-card">
       <strong>Default · 17363:7800</strong>
       <div class="snb full">
-        <div class="account"><div class="greeting">안녕하세요,<br>{이름}님!</div><div class="icon-btn">asset</div></div>
+        <div class="account"><div class="greeting">안녕하세요,<br>{이름}님!</div><img class="collapse-svg" src="../assets/snb-collapse-button.svg" alt=""></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">일정 캘린더</span></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">내담자</span></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">상담방</span></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">체험방</span></div>
-        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">예약</span><span class="arrow">▼</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">예약</span><img class="snb-arrow" src="../assets/snb-arrow-down.svg" alt=""></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">일지</span></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">후기</span></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">회기 및 정산</span></div>
-        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">커뮤니티</span><span class="arrow">▼</span></div>
+        <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">커뮤니티</span><img class="snb-arrow" src="../assets/snb-arrow-down.svg" alt=""></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">공지사항</span></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">설정</span></div>
         <div class="permission">
@@ -192,12 +193,12 @@ th{width:190px;color:#858E96}
     <div class="variant-card">
       <strong>Dropdown open · 17363:7849</strong>
       <div class="snb full">
-        <div class="account"><div class="greeting">안녕하세요,<br>{이름}님!</div><div class="icon-btn">asset</div></div>
+        <div class="account"><div class="greeting">안녕하세요,<br>{이름}님!</div><img class="collapse-svg" src="../assets/snb-collapse-button.svg" alt=""></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">일정 캘린더</span></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">내담자</span></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">상담방</span></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">체험방</span></div>
-        <div class="menu-item selected"><span class="menu-icon"></span><span class="menu-label">예약</span><span class="arrow">▲</span></div>
+        <div class="menu-item selected"><span class="menu-icon"></span><span class="menu-label">예약</span><img class="snb-arrow" src="../assets/snb-arrow-up.svg" alt=""></div>
         <div class="menu-item sub selected"><span class="menu-label">온라인 예약 일정</span></div>
         <div class="menu-item sub"><span class="menu-label">온라인 예약 관리</span></div>
         <div class="menu-item sub"><span class="menu-label">수기 예약 관리</span></div>
@@ -205,7 +206,7 @@ th{width:190px;color:#858E96}
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">일지</span></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">후기</span></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">회기 및 정산</span></div>
-        <div class="menu-item selected"><span class="menu-icon"></span><span class="menu-label">커뮤니티</span><span class="arrow">▲</span></div>
+        <div class="menu-item selected"><span class="menu-icon"></span><span class="menu-label">커뮤니티</span><img class="snb-arrow" src="../assets/snb-arrow-up.svg" alt=""></div>
         <div class="menu-item sub selected"><span class="menu-label">사연</span></div>
         <div class="menu-item sub"><span class="menu-label">전문답변</span></div>
         <div class="menu-item"><span class="menu-icon"></span><span class="menu-label">공지사항</span></div>
@@ -216,7 +217,7 @@ th{width:190px;color:#858E96}
     <div class="variant-card">
       <strong>Collapsed · 17363:7827</strong>
       <div class="snb collapsed">
-        <div class="account"><div class="icon-btn">asset</div></div>
+        <div class="account"><img class="collapse-svg" src="../assets/snb-collapse-button.svg" alt=""></div>
         <div class="menu-item selected"><span class="menu-icon"></span></div>
         <div class="menu-item"><span class="menu-icon"></span></div>
         <div class="menu-item"><span class="menu-icon"></span></div>
@@ -240,10 +241,10 @@ th{width:190px;color:#858E96}
     <div class="account-row">
       <div class="account-demo">
         <div class="greeting">안녕하세요,<br>{이름}님!</div>
-        <div class="icon-btn">asset</div>
+        <img class="collapse-svg" src="../assets/snb-collapse-button.svg" alt="">
       </div>
       <div class="account-demo compact">
-        <div class="icon-btn">asset</div>
+        <img class="collapse-svg" src="../assets/snb-collapse-button.svg" alt="">
       </div>
     </div>
   </div>

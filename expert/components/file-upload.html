@@ -147,6 +147,8 @@ h3{
   display:grid;
   place-items:center;
 }
+.upload-icon{width:24px;height:24px;display:block}
+.file-svg{width:20px;height:20px;display:block;flex:0 0 20px}
 .icon-ph{
   width:24px;
   height:24px;
@@ -304,7 +306,7 @@ th{
   <div class="card">
     <div class="upload-zone default">
       <div class="upload-icon-wrap">
-        <span class="icon-ph">asset</span>
+        <img class="upload-icon" src="../assets/upload.svg" alt="">
       </div>
       <div class="upload-text">엑셀 파일(.xlsx/.xls/.csv)을 끌어다 놓거나 여기를 클릭하여 업로드할 수 있어요.</div>
     </div>
@@ -321,7 +323,7 @@ th{
     <div class="variant-card">
       <strong>default · 10168:19797</strong>
       <div class="upload-zone default">
-        <div class="upload-icon-wrap"><span class="icon-ph">asset</span></div>
+        <div class="upload-icon-wrap"><img class="upload-icon" src="../assets/upload.svg" alt=""></div>
         <div class="upload-text">엑셀 파일(.xlsx/.xls/.csv)을 끌어다 놓거나 여기를 클릭하여 업로드할 수 있어요.</div>
       </div>
     </div>
@@ -329,7 +331,7 @@ th{
     <div class="variant-card">
       <strong>hover · 10168:19796</strong>
       <div class="upload-zone hover">
-        <div class="upload-icon-wrap"><span class="icon-ph">asset</span></div>
+        <div class="upload-icon-wrap"><img class="upload-icon" src="../assets/upload.svg" alt=""></div>
         <div class="upload-text">엑셀 파일(.xlsx/.xls/.csv)을 끌어다 놓거나 여기를 클릭하여 업로드할 수 있어요.</div>
       </div>
     </div>
@@ -337,7 +339,7 @@ th{
     <div class="variant-card">
       <strong>pressed · 10168:19795</strong>
       <div class="upload-zone pressed">
-        <div class="upload-icon-wrap"><span class="icon-ph">asset</span></div>
+        <div class="upload-icon-wrap"><img class="upload-icon" src="../assets/upload.svg" alt=""></div>
         <div class="upload-text">엑셀 파일(.xlsx/.xls/.csv)을 끌어다 놓거나 여기를 클릭하여 업로드할 수 있어요.</div>
       </div>
     </div>
@@ -346,12 +348,12 @@ th{
       <strong>upload · 10168:19794</strong>
       <div class="upload-zone uploaded">
         <div class="file-row">
-          <span class="file-icon">asset</span>
+          <img class="file-svg" src="../assets/file-draft.svg" alt="">
           <div class="file-meta">
             <span class="file-name"><span>파일명</span><span>.xlsx</span></span>
             <span class="file-size">(69KB)</span>
           </div>
-          <span class="close-icon">asset</span>
+          <img class="file-svg" src="../assets/file-close.svg" alt="">
         </div>
       </div>
     </div>
