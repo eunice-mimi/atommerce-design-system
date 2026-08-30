@@ -1,0 +1,56 @@
+/* Expert Console documentation theme
+   Primary source: Expert Console Global Navigation Bar background = #34495E.
+   This styles the documentation chrome only; component-spec colors inside previews/specs remain factual. */
+
+:root{
+  --expert-doc-primary:#34495E;
+}
+
+.product-tab.active{
+  color:var(--expert-doc-primary);
+  border-bottom-color:var(--expert-doc-primary);
+}
+
+.local-service a{
+  color:var(--expert-doc-primary);
+}
+
+.expert-flat-nav .local-link.active{
+  background:var(--expert-doc-primary) !important;
+  color:#FFFFFF !important;
+}
+
+.expert-flat-nav .local-link:hover:not(.active){
+  color:var(--expert-doc-primary);
+}
+
+.expert-home .eyebrow,
+.component-doc .eyebrow,
+.component-index .eyebrow,
+.overview-head .eyebrow{
+  color:var(--expert-doc-primary);
+}
+
+.expert-home .expert-card-body em,
+.status-chip.ready{
+  background:var(--expert-doc-primary) !important;
+  color:#FFFFFF !important;
+}
+
+.expert-home .expert-overview-card:hover{
+  border-color:var(--expert-doc-primary);
+}
+
+/* Documentation-level tab emphasis only */
+.doc-tabs .active,
+.tabs .active,
+.tabs a:first-child{
+  color:var(--expert-doc-primary);
+}
+.doc-tabs .active::after,
+.tabs .active::after,
+.tabs a:first-child::after{
+  background:var(--expert-doc-primary) !important;
+}
+
+/* Do not use this selector inside component preview surfaces. */
