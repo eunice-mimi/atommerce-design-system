@@ -1,6 +1,8 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Expert Console · Atommerce Design System</title><link rel="stylesheet" href="../style.css">
-</head><body>
+<style id="expert-flat-nav-style">
+.expert-flat-nav{padding-top:8px}.expert-flat-nav .local-link{margin:0 0 2px}
+</style></head><body>
 <header class="global-header">
   <a class="global-logo" href="../index.html"><span class="global-logo-text">Atommerce Design System</span></a>
   <nav class="product-tabs" aria-label="서비스 선택">
@@ -13,38 +15,101 @@
   </nav>
 </header><aside class="local-sidebar">
 <div class="local-service"><a href="index.html">Expert Console</a></div>
-<nav class="local-nav" aria-label="Expert Console 문서 메뉴">
-<a class="local-category" href="components/index.html">Components</a>
-<a class="local-category" href="patterns/index.html">Patterns</a>
+<nav class="local-nav expert-flat-nav" aria-label="Expert Console 문서 메뉴">
+<a class="local-link" href="components/global-navigation-bar.html">Global Navigation Bar</a>
+<a class="local-link" href="patterns/side-navigation-bar.html">Side Navigation Bar</a>
+<a class="local-link" href="components/breadcrumb.html">Breadcrumb</a>
+<a class="local-link" href="components/page-navigation.html">Page Navigation</a>
+<a class="local-link" href="components/page-header.html">Page Header</a>
+<a class="local-link" href="components/container.html">Container</a>
+<a class="local-link" href="components/list-item.html">List Item</a>
+<a class="local-link" href="components/select-box.html">Select Box</a>
+<a class="local-link" href="components/connect-chip.html">Connect Chip</a>
+<a class="local-link" href="components/file-upload.html">File Upload</a>
 </nav>
 </aside>
-<main class="main"><div class="content">
-      <div class="product-intro-head">
-        <div>
-          <div class="eyebrow">PRODUCT</div>
-          <h1>Expert Console</h1>
-          <p class="lead">전문가용 상담 업무 서비스</p>
-        </div>
-        <div class="product-updated" id="productUpdated">Last updated · —</div>
-      </div>
-      <div class="product-section-grid">
-        <a class="product-section-card" href="components/index.html"><h3>Components</h3></a>
-        <a class="product-section-card" href="patterns/index.html"><h3>Patterns</h3></a>
-      </div>
-      <p style="margin:20px 0 0;font-size:12px;line-height:1.65;color:#68727B">
-        Expert Console 메뉴에는 전문가콘솔 전용 Figma source가 확인된 문서만 표시합니다.
-        공통 Core 컴포넌트는 MindCafe 문서를 기준으로 사용합니다.
-      </p>
-    </div>
-</main>
-<script>
-(function(){
-  const el=document.getElementById('productUpdated');
-  if(!el) return;
-  const d=new Date(document.lastModified);
-  if(!Number.isNaN(d.getTime())){
-    el.textContent='Last updated · '+new Intl.DateTimeFormat('ko-KR',{year:'numeric',month:'2-digit',day:'2-digit'}).format(d);
-  }
-})();
-</script>
+
+<main class="main"><div class="content expert-home">
+  <div class="overview-head">
+    <div class="eyebrow">EXPERT CONSOLE</div>
+    <h1>Expert Console</h1>
+    <p class="lead">전문가콘솔 전용 Figma source가 확인된 UI 문서입니다.</p>
+  </div>
+  <div class="expert-overview-grid">
+
+    <a class="expert-overview-card" href="components/global-navigation-bar.html">
+      <div class="expert-preview gnb-preview"><div class="mini-gnb"><img src="assets/global-menu.svg"><img src="assets/expert-logo-mark.svg"><b>MINDCAFE</b><strong>전문가 콘솔</strong><span>수동 예약 필요 · 예약 확정 필요</span></div></div>
+      <div class="expert-card-body"><h3>Global Navigation Bar</h3><p>Expert Console desktop global header</p><em>Available</em></div>
+    </a>
+
+    <a class="expert-overview-card" href="patterns/side-navigation-bar.html">
+      <div class="expert-preview snb-preview"><div class="mini-snb">
+        <div><img src="assets/snb-event-add.svg">일정 캘린더</div>
+        <div><img src="assets/snb-group.svg">내담자</div>
+        <div><img src="assets/snb-forum.svg">상담방</div>
+        <div class="on"><img src="assets/snb-calendar-selected.svg">예약<img class="arrow" src="assets/snb-arrow-up.svg"></div>
+        <small>온라인 예약 일정</small><small>온라인 예약 관리</small>
+      </div></div>
+      <div class="expert-card-body"><h3>Side Navigation Bar</h3><p>Default · dropdown-open · collapsed</p><em>Available</em></div>
+    </a>
+
+    <a class="expert-overview-card" href="components/breadcrumb.html">
+      <div class="expert-preview breadcrumb-preview"><div class="mini-breadcrumb"><span>Home</span><img src="assets/breadcrumb-arrow-forward.svg"><span>1th Depth</span><img src="assets/breadcrumb-arrow-forward.svg"><b>Current</b></div></div>
+      <div class="expert-card-body"><h3>Breadcrumb</h3><p>Depth navigation with arrow_forward_ios</p><em>Available</em></div>
+    </a>
+
+    <a class="expert-overview-card" href="components/page-navigation.html">
+      <div class="expert-preview pagination-preview"><div class="mini-pagination"><img src="assets/page-first.svg"><img src="assets/page-back.svg"><b>1</b><span>2</span><span>3</span><img src="assets/page-forward.svg"><img src="assets/page-last.svg"></div></div>
+      <div class="expert-card-body"><h3>Page Navigation</h3><p>First · previous · page · next · last</p><em>Available</em></div>
+    </a>
+
+    <a class="expert-overview-card" href="components/page-header.html">
+      <div class="expert-preview header-preview"><div class="mini-page-header"><img src="assets/header-back.svg"><div><small>상위 메뉴</small><b>페이지 제목</b></div><img src="assets/header-info.svg"></div></div>
+      <div class="expert-card-body"><h3>Page Header</h3><p>Page title header and supporting actions</p><em>Available</em></div>
+    </a>
+
+    <a class="expert-overview-card" href="components/container.html">
+      <div class="expert-preview container-preview"><div class="mini-container"><div class="mc-head"><img src="assets/container-favorite-20.svg"><b>메뉴명</b><span>업데이트 사항</span><img src="assets/container-arrow-forward.svg"></div><div class="mc-card"><small>심리상담 · 기업</small><strong>2025. 01. 01. 13:00 ~ 13:50</strong><div><img src="assets/container-call.svg">2급) 페이스 테라피 4회권 · 2회 남음</div></div></div></div>
+      <div class="expert-card-body"><h3>Container</h3><p>Default · action-card · info-card</p><em>Available</em></div>
+    </a>
+
+    <a class="expert-overview-card" href="components/list-item.html">
+      <div class="expert-preview list-preview"><div class="mini-list"><img src="assets/list-drag.svg"><div><b>심리상담을 망설이는 분에게</b><span>상담이라는 새로운 도전을 앞두고 두려움과 불안감이 클 거라 생각해요.</span></div><img src="assets/list-delete.svg"></div><div class="mini-control"><img src="assets/list-drag.svg"><b>라벨이름</b><span>내용을 입력할 수 있어요</span><img src="assets/list-switch.svg"></div></div>
+      <div class="expert-card-body"><h3>List Item</h3><p>Content item · control item</p><em>Available</em></div>
+    </a>
+
+    <a class="expert-overview-card" href="components/select-box.html">
+      <div class="expert-preview select-preview"><div class="mini-select positive"><span>선택요소</span><img src="assets/select-arrow-positive.svg"></div><div class="mini-select"><span>선택요소</span><img src="assets/select-arrow-neutral.svg"></div></div>
+      <div class="expert-card-body"><h3>Select Box</h3><p>Positive · negative · state variants</p><em>Available</em></div>
+    </a>
+
+    <a class="expert-overview-card" href="components/connect-chip.html">
+      <div class="expert-preview chip-preview"><div class="mini-chip selected"><img src="assets/connect-calendar-selected.svg"><span>버튼 이름</span><img src="assets/connect-close-selected.svg"></div><div class="mini-chip"><img src="assets/connect-calendar.svg"><span>버튼 이름</span><img src="assets/connect-close.svg"></div></div>
+      <div class="expert-card-body"><h3>Connect Chip</h3><p>Connected segmented chip usage</p><em>Available</em></div>
+    </a>
+
+    <a class="expert-overview-card" href="components/file-upload.html">
+      <div class="expert-preview upload-preview"><div class="mini-upload"><img src="assets/upload.svg"><b>파일을 첨부해주세요</b><span>파일을 끌어놓거나 선택할 수 있습니다.</span></div><div class="mini-file"><img src="assets/file-draft.svg">파일명.pdf<img src="assets/file-close.svg"></div></div>
+      <div class="expert-card-body"><h3>File Upload</h3><p>Upload area and attached file item</p><em>Available</em></div>
+    </a>
+
+  </div>
+</div></main>
+<style>
+.expert-home{padding-bottom:72px}.expert-home .overview-head{margin-bottom:32px}
+.expert-overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.expert-overview-card{display:block;border:1px solid #E1E4E8;border-radius:16px;overflow:hidden;background:#fff;text-decoration:none;color:#373D44}
+.expert-overview-card:hover{border-color:#D2D6DB;background:#FAFBFC}
+.expert-preview{height:198px;background:#FAFBFC;border-bottom:1px solid #E1E4E8;display:flex;align-items:center;justify-content:center;padding:24px;overflow:hidden}
+.expert-card-body{padding:20px 24px 22px}.expert-card-body h3{margin:0 0 7px;font-size:15px}.expert-card-body p{margin:0 0 16px;font-size:12px;color:#68727B;line-height:1.55}.expert-card-body em{font-style:normal;font-size:11px;font-weight:700;color:#4E7777;background:#EEF7F7;padding:6px 10px;border-radius:999px}
+.mini-gnb{height:44px;width:100%;background:#34495E;color:#fff;display:flex;align-items:center;gap:8px;padding:0 12px;font-size:9px}.mini-gnb img{width:18px;height:18px}.mini-gnb b{letter-spacing:.08em}.mini-gnb strong{font-size:10px}.mini-gnb span{margin-left:auto;font-size:8px}
+.mini-snb{width:150px;background:#EEF0F2;padding:10px;font-size:9px}.mini-snb div{height:26px;display:flex;gap:7px;align-items:center;padding:0 6px;border-radius:6px}.mini-snb img{width:14px;height:14px}.mini-snb div.on{color:#007777;font-weight:700;background:#E1E4E8}.mini-snb .arrow{margin-left:auto}.mini-snb small{display:block;padding:5px 6px 5px 28px;color:#4E5760}
+.mini-breadcrumb{display:flex;align-items:center;gap:9px;font-size:11px}.mini-breadcrumb img{width:14px;height:14px}.mini-pagination{display:flex;align-items:center;gap:5px}.mini-pagination img{width:20px;height:20px}.mini-pagination span,.mini-pagination b{width:30px;height:30px;display:grid;place-items:center;border-radius:8px;font-size:11px}.mini-pagination b{background:#373D44;color:#fff}
+.mini-page-header{width:90%;display:flex;align-items:center;gap:12px;border-bottom:1px solid #E1E4E8;padding:13px 4px}.mini-page-header>img{width:22px;height:22px}.mini-page-header div{flex:1}.mini-page-header small,.mini-page-header b{display:block}.mini-page-header small{font-size:9px;color:#7E8A96}.mini-page-header b{font-size:14px}
+.mini-container{width:220px;border:1px solid #E1E4E8;border-radius:10px;overflow:hidden;background:#F3F5F7}.mc-head{background:#fff;display:flex;align-items:center;gap:5px;padding:8px}.mc-head img{width:14px}.mc-head b{font-size:10px;flex:1}.mc-head span{font-size:8px;color:#D40E32;background:#FEEAED;border-radius:4px;padding:4px}.mc-card{margin:8px;background:#fff;border:1px solid #EEF0F2;border-radius:8px;padding:9px}.mc-card small,.mc-card strong{display:block}.mc-card small{font-size:8px;color:#7E8A96}.mc-card strong{font-size:10px;margin:4px 0}.mc-card div{font-size:8px;color:#007777;display:flex;gap:3px;align-items:center}.mc-card img{width:11px}
+.list-preview{flex-direction:column;gap:10px}.mini-list,.mini-control{width:94%;display:flex;align-items:center;gap:8px;background:#fff;border-bottom:1px solid #EEF0F2;padding:9px}.mini-list>img,.mini-control>img{width:16px;height:16px}.mini-list div{min-width:0;flex:1}.mini-list b,.mini-list span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mini-list b{font-size:9px}.mini-list span{font-size:8px}.mini-control b{font-size:8px;color:#005454;background:#D4F8F8;padding:4px;border-radius:4px}.mini-control span{font-size:9px;flex:1}
+.select-preview,.chip-preview{gap:10px}.mini-select,.mini-chip{display:flex;align-items:center;gap:8px;height:34px;padding:0 12px;border-radius:8px;border:1px solid #E1E4E8;background:#fff;font-size:10px}.mini-select.positive,.mini-chip.selected{background:#007777;color:#fff;border-color:#007777}.mini-select img,.mini-chip img{width:14px;height:14px}
+.upload-preview{flex-direction:column;gap:10px}.mini-upload{width:80%;height:86px;border:1px dashed #B6BDC4;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff}.mini-upload img{width:22px}.mini-upload b{font-size:10px;margin-top:5px}.mini-upload span{font-size:8px;color:#7E8A96}.mini-file{width:80%;height:34px;display:flex;align-items:center;gap:7px;padding:0 10px;background:#fff;border:1px solid #EEF0F2;border-radius:8px;font-size:9px}.mini-file img{width:16px}.mini-file img:last-child{margin-left:auto}
+@media(max-width:980px){.expert-overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:640px){.expert-overview-grid{grid-template-columns:1fr}}
+</style>
 </body></html>
